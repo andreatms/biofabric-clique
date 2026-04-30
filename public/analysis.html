@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analisi Risultati - BGW</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/analysis.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+<nav>
+    <span class="nav-brand">BGW</span>
+    <a href="/">Home</a>
+    <a href="/graph.html">Graph</a>
+    <a href="/pipeline.html">Pipeline</a>
+    <a href="/dataset.html">Dataset</a>
+    <a href="/generator.html">Generatore</a>
+    <a href="/scheduler.html">Scheduler</a>
+    <a href="/analysis.html" class="active">Analisi</a>
+  </nav>
+
+  <div class="page-header">
+    <h1>Analisi Risultati</h1>
+    <p>Seleziona una pipeline, una queue o dei dati importati e visualizza metriche e grafico.</p>
+  </div>
+
+  <div class="container">
+    <div class="box" style="flex:1 1 100%;">
+      <h2 style="margin-top:0;">Selezione analisi</h2>
+      <div class="analysis-row">
+        <div style="flex:2;min-width:320px;">
+          <div class="analysis-label-row">
+            <label class="field-label" for="pipeline-saves">Pipeline salvate (multi-selezione)</label>
+            <button class="icon-trash-btn" title="Elimina pipeline selezionate"
+              data-tooltip="Elimina pipeline selezionate" aria-label="Elimina pipeline selezionate"
+              onclick="deleteSelectedPipelineSaves()">
+              <i class="fa-solid fa-trash" aria-hidden="true"></i>
+            </button>
+          </div>
+          <select id="pipeline-saves" multiple size="8"></select>
+        </div>
+        <div style="flex:2;min-width:320px;">
+          <div class="analysis-label-row">
+            <label class="field-label" for="queue-saves">Queue salvate (multi-selezione)</label>
+            <button class="icon-trash-btn" title="Elimina queue selezionate" data-tooltip="Elimina queue selezionate"
+              aria-label="Elimina queue selezionate" onclick="deleteSelectedQueueSaves()">
+              <i class="fa-solid fa-trash" aria-hidden="true"></i>
+            </button>
+          </div>
+          <select id="queue-saves" multiple size="8"></select>
+        </div>
+        <div style="flex:2;min-width:320px;">
+          <label class="field-label" for="imported-set-saves">Risultati graph set importati (multi-selezione)</label>
+          <select id="imported-set-saves" multiple size="8"></select>
+        </div>
+      </div>
+      <p class="info-note" style="margin-top:8px;">Puoi selezionare piu elementi tenendo premuto Ctrl (o Cmd su Mac).
+      </p>
+      <div class="analysis-action-row">
+        <button id="analyze-btn" class="btn-primary analysis-analyze-btn" onclick="runAnalysis()">Analizza</button>
+      </div>
+      <p class="info-note" style="margin-top:8px;">L'output dell'ultimo avvio viene mostrato come <strong>Analisi
+          corrente</strong> fino al salvataggio.</p>
+      <p id="analysis-msg" class="info-note"></p>
+      <p id="analysis-error" class="error-msg"></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="box" style="flex:1 1 100%;">
+      <h2 style="margin-top:0;">Analisi salvate</h2>
+      <div class="analysis-snapshot-grid">
+        <div class="analysis-snapshot-col analysis-snapshot-left">
+          <label class="field-label" for="analysis-snapshots">Analisi salvate</label>
+          <input id="analysis-snapshots-filter" type="text" placeholder="Filtro nome analisi salvata..."
+            oninput="onAnalysisSnapshotFilterChange(this.value)"
+            style="width:100%;padding:8px 10px;border:1px solid #ccc;border-radius:6px;font-size:13px;box-sizing:border-box;margin-bottom:8px;">
+          <select id="analysis-snapshots" size="8"></select>
+        </div>
+
+        <div class="analysis-snapshot-col analysis-snapshot-actions">
+          <label class="field-label">Azioni analisi salvata</label>
+          <button class="btn-secondary" onclick="openSelectedAnalysisSnapshot()">Apri analisi salvata</button>
+          <button class="btn-secondary" onclick="exportSelectedAnalysisSnapshot()">Esporta analisi salvata</button>
+          <button class="btn-secondary" onclick="triggerImportAnalysisSnapshot()">Importa analisi salvata</button>
+          <input type="file" id="analysis-snapshot-import-file" accept="application/json,.json" style="display:none;"
+            onchange="onImportAnalysisSnapshotFile(this)">
+          <button class="btn-danger" onclick="deleteSelectedAnalysisSnapshot()">Elimina analisi salvata</button>
+        </div>
+
+        <div class="analysis-snapshot-col analysis-snapshot-right">
+          <label class="field-label" for="analysis-save-name">Nome analisi salvata</label>
+          <input id="analysis-save-name" type="text" placeholder="es. confronto_set_marzo"
+            style="width:100%;padding:9px 10px;border:1px solid #ccc;border-radius:6px;font-size:13px;box-sizing:border-box;">
+          <button class="btn-primary" onclick="saveCurrentAnalysis()">Salva analisi corrente</button>
+          <button class="btn-secondary" onclick="loadAnalysisSnapshots()">Aggiorna elenco</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="box" style="flex:1 1 100%;">
+      <div class="analysis-point-controls-panel">
+        <h2 style="margin-top:0;">Analisi corrente: visualizzazione e aggregazione metriche</h2>
+        <div class="analysis-point-controls">
+          <div class="analysis-point-mode-wrap">
+            <label class="field-label" for="analysis-point-mode">Visualizzazione punti</label>
+            <select id="analysis-point-mode">
+              <option value="average" selected>Media per punto</option>
+              <option value="all">Tutte le istanze</option>
+              <option value="boxplot">Boxplot</option>
+            </select>
+          </div>
+          <div class="analysis-point-mode-wrap">
+            <label class="field-label" for="analysis-show-completed">Mostra grafi completati</label>
+            <input id="analysis-show-completed" type="checkbox" checked style="width:18px;height:18px;">
+          </div>
+          <div class="analysis-point-mode-wrap">
+            <label class="field-label" for="analysis-show-failed">Mostra grafi senza soluzione</label>
+            <input id="analysis-show-failed" type="checkbox" checked style="width:18px;height:18px;">
+          </div>
+          <div class="analysis-point-mode-wrap">
+            <label class="field-label" for="analysis-show-legend">Mostra legenda</label>
+            <input id="analysis-show-legend" type="checkbox" checked style="width:18px;height:18px;">
+          </div>
+          <div class="analysis-point-mode-wrap">
+            <label class="field-label" for="analysis-foreground-layer">In primo piano</label>
+            <select id="analysis-foreground-layer">
+              <option value="failed" selected>Grafi non completati</option>
+              <option value="completed">Grafi completati</option>
+            </select>
+          </div>
+          <div class="analysis-point-mode-wrap">
+            <label class="field-label" for="analysis-failed-color">Colore grafi senza soluzione</label>
+            <input id="analysis-failed-color" type="color" value="#ff8c00"
+              style="width:56px;height:36px;padding:3px;border:1px solid #ccc;border-radius:6px;">
+          </div>
+          <div class="analysis-point-mode-wrap">
+            <label class="field-label" for="analysis-failed-shape">Forma grafi senza soluzione</label>
+            <select id="analysis-failed-shape">
+              <option value="triangle" selected>Triangolo</option>
+              <option value="diamond">Rombo</option>
+              <option value="square">Quadrato</option>
+              <option value="circle">Cerchio</option>
+              <option value="cross">Croce</option>
+            </select>
+          </div>
+          <div id="analysis-point-tuning" class="analysis-point-tuning-inline" hidden>
+            <div class="analysis-slider-wrap">
+              <label class="field-label" for="analysis-overlap-slider">Sovrapposizione punti</label>
+              <div class="analysis-slider-inline">
+                <input id="analysis-overlap-slider" type="range" min="0.4" max="1" step="0.05" value="0.7">
+                <span id="analysis-overlap-value">0.70</span>
+              </div>
+            </div>
+            <div class="analysis-slider-wrap">
+              <label class="field-label" for="analysis-attract-slider">Compattazione verso punto originale</label>
+              <div class="analysis-slider-inline">
+                <input id="analysis-attract-slider" type="range" min="0.1" max="0.7" step="0.05" value="0.35">
+                <span id="analysis-attract-value">0.35</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:0;">Grafici - asse X: nodi</h2>
+      <div class="analysis-extra-grid analysis-main-grid">
+        <div class="analysis-chart-panel">
+          <h3 class="analysis-subtitle">Correttezza clique</h3>
+          <p class="info-note">Ascissa: nodi, ordinata: numero clique, colore: % clique corrette (bianco -> rosso),
+            dimensione punto: media nodi per clique.</p>
+          <div id="analysis-chart"></div>
+        </div>
+        <div class="analysis-chart-panel">
+          <h3 class="analysis-subtitle">Tempo di esecuzione</h3>
+          <p class="info-note">Ascissa: nodi, ordinata: numero clique, colore: tempo medio (bianco -> blu), dimensione
+            punto: media nodi per clique.</p>
+          <div id="analysis-time-chart"></div>
+          <div class="analysis-scale-control">
+            <label class="field-label" for="exec-scale-mode" style="margin-bottom:0;">Scala colore tempi</label>
+            <select id="exec-scale-mode">
+              <option value="linear">Lineare</option>
+              <option value="log" selected>Logaritmica</option>
+            </select>
+            <label class="field-label" for="exec-cap-time" style="margin-bottom:0;">Tempo massimo (s)</label>
+            <input id="exec-cap-time" type="number" min="0" step="0.01" placeholder="Opzionale">
+          </div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:22px;">Grafici - asse X: archi</h2>
+      <div class="analysis-extra-grid">
+        <div class="analysis-chart-panel">
+          <h3 class="analysis-subtitle">Correttezza clique</h3>
+          <div id="analysis-edges-chart"></div>
+        </div>
+        <div class="analysis-chart-panel">
+          <h3 class="analysis-subtitle">Tempo di esecuzione</h3>
+          <div id="analysis-edges-time-chart"></div>
+          <div class="analysis-scale-control">
+            <label class="field-label" for="exec-scale-mode-edges" style="margin-bottom:0;">Scala colore tempi</label>
+            <select id="exec-scale-mode-edges">
+              <option value="linear">Lineare</option>
+              <option value="log" selected>Logaritmica</option>
+            </select>
+            <label class="field-label" for="exec-cap-time-edges" style="margin-bottom:0;">Tempo massimo (s)</label>
+            <input id="exec-cap-time-edges" type="number" min="0" step="0.01" placeholder="Opzionale">
+          </div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:22px;">Grafici - asse X: grado medio nodi</h2>
+      <div class="analysis-extra-grid">
+        <div class="analysis-chart-panel">
+          <h3 class="analysis-subtitle">Correttezza clique</h3>
+          <div id="analysis-degree-chart"></div>
+        </div>
+        <div class="analysis-chart-panel">
+          <h3 class="analysis-subtitle">Tempo di esecuzione</h3>
+          <div id="analysis-degree-time-chart"></div>
+          <div class="analysis-scale-control">
+            <label class="field-label" for="exec-scale-mode-degree" style="margin-bottom:0;">Scala colore tempi</label>
+            <select id="exec-scale-mode-degree">
+              <option value="linear">Lineare</option>
+              <option value="log" selected>Logaritmica</option>
+            </select>
+            <label class="field-label" for="exec-cap-time-degree" style="margin-bottom:0;">Tempo massimo (s)</label>
+            <input id="exec-cap-time-degree" type="number" min="0" step="0.01" placeholder="Opzionale">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box" style="flex:1 1 100%;">
+      <h2 style="margin-top:22px;">Grafico personalizzato (singolo)</h2>
+      <div class="analysis-single-grid" style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;">
+        <div class="analysis-single-config-panel">
+          <h3 class="analysis-subtitle">Configura visualizzazione</h3>
+          <div class="analysis-single-config-grid">
+            <div class="analysis-single-config-item">
+              <label class="field-label">Asse X</label>
+              <select id="single-x-select"></select>
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label">Asse Y</label>
+              <select id="single-y-select"></select>
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-custom-x-label">Etichetta asse X</label>
+              <input id="single-custom-x-label" type="text" placeholder="Default: metrica selezionata">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-custom-y-label">Etichetta asse Y</label>
+              <input id="single-custom-y-label" type="text" placeholder="Default: metrica selezionata">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-custom-color-label">Etichetta scala colori</label>
+              <input id="single-custom-color-label" type="text" placeholder="Default: metrica colore">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-custom-legend-completed-label">Etichetta legenda completati</label>
+              <input id="single-custom-legend-completed-label" type="text" placeholder="Default: Grafi calcolati">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-custom-legend-failed-label">Etichetta legenda non completati</label>
+              <input id="single-custom-legend-failed-label" type="text" placeholder="Default: Grafi non completati">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-point-mode">Visualizzazione grafico</label>
+              <select id="single-point-mode">
+                <option value="scatter" selected>Punti</option>
+                <option value="boxplot">Boxplot</option>
+                <option value="confidence-interval">Intervallo di confidenza</option>
+              </select>
+            </div>
+
+            <div class="analysis-single-check-item">
+              <label class="field-label" for="single-enable-bucketing">Bucketing campioni asse X</label>
+              <input id="single-enable-bucketing" type="checkbox">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-bucket-size">Ampiezza bucket asse X</label>
+              <input id="single-bucket-size" type="number" min="0.0001" step="0.1" value="1">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-bucket-start">Inizio bucket asse X</label>
+              <input id="single-bucket-start" type="number" step="0.1" value="0">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-area-fill-color">CI - Colore area intervallo</label>
+              <input id="single-ci-area-fill-color" type="color" value="#9fb8ff">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-area-stroke-color">CI - Colore bordo area</label>
+              <input id="single-ci-area-stroke-color" type="color" value="#4f77c6">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-median-color">CI - Colore linea mediana</label>
+              <input id="single-ci-median-color" type="color" value="#1f3f88">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-p25-color">CI - Colore linea P25</label>
+              <input id="single-ci-p25-color" type="color" value="#2958b8">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-p75-color">CI - Colore linea P75</label>
+              <input id="single-ci-p75-color" type="color" value="#2958b8">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-outlier-fill-color">CI - Colore fill outlier</label>
+              <input id="single-ci-outlier-fill-color" type="color" value="#ffffff">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-outlier-stroke-color">CI - Colore bordo outlier</label>
+              <input id="single-ci-outlier-stroke-color" type="color" value="#cf1b1b">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-area-stroke-width">CI - Spessore bordo area</label>
+              <input id="single-ci-area-stroke-width" type="number" min="0" max="8" step="0.1" value="0.8">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-median-width">CI - Spessore linea mediana</label>
+              <input id="single-ci-median-width" type="number" min="0.2" max="10" step="0.1" value="2.3">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-p25-width">CI - Spessore linea P25</label>
+              <input id="single-ci-p25-width" type="number" min="0.2" max="10" step="0.1" value="1.2">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-p75-width">CI - Spessore linea P75</label>
+              <input id="single-ci-p75-width" type="number" min="0.2" max="10" step="0.1" value="1.2">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-outlier-stroke-width">CI - Spessore bordo outlier</label>
+              <input id="single-ci-outlier-stroke-width" type="number" min="0.2" max="10" step="0.1" value="1.3">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-outlier-opacity">CI - Opacita outlier</label>
+              <input id="single-ci-outlier-opacity" type="number" min="0.05" max="1" step="0.05" value="0.85">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-outlier-size-multiplier">CI - Moltiplicatore dimensione outlier</label>
+              <input id="single-ci-outlier-size-multiplier" type="number" min="0.5" max="6" step="0.1" value="1">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-ci-outlier-shape">CI - Forma outlier</label>
+              <select id="single-ci-outlier-shape">
+                <option value="circle" selected>Cerchio</option>
+                <option value="triangle">Triangolo</option>
+                <option value="diamond">Rombo</option>
+                <option value="square">Quadrato</option>
+                <option value="cross">Croce</option>
+              </select>
+            </div>
+
+            <div class="analysis-single-check-item">
+              <label class="field-label" for="single-ci-outlier-extremes-only">CI - Solo outlier min/max per X</label>
+              <input id="single-ci-outlier-extremes-only" type="checkbox">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-point-fill-mode">Stile punti</label>
+              <select id="single-point-fill-mode">
+                <option value="filled" selected>Pieni</option>
+                <option value="stroke-only">Solo bordo</option>
+              </select>
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label">Colore punti (completati e non completati)</label>
+              <select id="single-color-select"></select>
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label">Dimensione punti (completati e non completati)</label>
+              <select id="single-size-select"></select>
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-hex-color">Colore fill completati (fisso)</label>
+              <input id="single-hex-color" type="color" value="#1f77b4">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-failed-color">Colore fill non completati (fallback)</label>
+              <input id="single-failed-color" type="color" value="#ff8c00">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-point-stroke-color-completed">Colore bordo completati</label>
+              <input id="single-point-stroke-color-completed" type="color" value="#222222" data-user-set="1">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-point-stroke-color-failed">Colore bordo non completati</label>
+              <input id="single-point-stroke-color-failed" type="color" value="#3b2a00" data-user-set="1">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-point-opacity">Opacita punti</label>
+              <input id="single-point-opacity" type="number" min="0.05" max="1" step="0.05" value="0.95">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-point-size-base">Dimensione punto base/minima</label>
+              <input id="single-point-size-base" type="number" min="1" max="30" step="0.5" value="7">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-max-time-cap">Tempo massimo (s)</label>
+              <input id="single-max-time-cap" type="number" min="0" step="0.01" placeholder="Opzionale">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-failed-shape">Forma grafi non completati (grafico personalizzato)</label>
+              <select id="single-failed-shape">
+                <option value="triangle" selected>Triangolo</option>
+                <option value="diamond">Rombo</option>
+                <option value="square">Quadrato</option>
+                <option value="circle">Cerchio</option>
+                <option value="cross">Croce</option>
+              </select>
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-foreground-layer">In primo piano (grafico personalizzato)</label>
+              <select id="single-foreground-layer">
+                <option value="failed" selected>Grafi non completati</option>
+                <option value="completed">Grafi completati</option>
+              </select>
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-axis-ratio-x">Proporzione asse X</label>
+              <input id="single-axis-ratio-x" type="number" min="0.2" max="4" step="0.1" value="1">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-axis-ratio-y">Proporzione asse Y</label>
+              <input id="single-axis-ratio-y" type="number" min="0.2" max="4" step="0.1" value="1">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-chart-size-unit">Unita dimensione grafico</label>
+              <select id="single-chart-size-unit">
+                <option value="px" selected>pixel (px)</option>
+                <option value="cm">centimetri (cm)</option>
+              </select>
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-chart-width">Larghezza grafico</label>
+              <input id="single-chart-width" type="number" min="1" max="5000" step="1" value="680">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-chart-height">Altezza grafico</label>
+              <input id="single-chart-height" type="number" min="1" max="5000" step="1" value="680">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-tick-font-size">Dimensione etichette assi</label>
+              <input id="single-tick-font-size" type="number" min="8" max="100" step="1" value="24">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-axis-name-font-size">Dimensione nomi assi</label>
+              <input id="single-axis-name-font-size" type="number" min="8" max="40" step="1" value="26">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-axis-tick-interval-x">Intervallo label asse X</label>
+              <input id="single-axis-tick-interval-x" type="number" min="0" step="0.1" placeholder="Opzionale">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-axis-tick-start-x">Valore iniziale label asse X</label>
+              <input id="single-axis-tick-start-x" type="number" step="0.1" placeholder="Opzionale">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-axis-tick-max-x">Valore massimo label asse X</label>
+              <input id="single-axis-tick-max-x" type="number" step="0.1" placeholder="Opzionale">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-axis-tick-interval-y">Intervallo label asse Y</label>
+              <input id="single-axis-tick-interval-y" type="number" min="0" step="0.1" placeholder="Opzionale">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-axis-tick-start-y">Valore iniziale label asse Y</label>
+              <input id="single-axis-tick-start-y" type="number" step="0.1" placeholder="Opzionale">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-axis-tick-max-y">Valore massimo label asse Y</label>
+              <input id="single-axis-tick-max-y" type="number" step="0.1" placeholder="Opzionale">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-legend-font-size">Dimensione testo legenda</label>
+              <input id="single-legend-font-size" type="number" min="8" max="40" step="1" value="11">
+            </div>
+
+            <div class="analysis-single-config-item">
+              <label class="field-label" for="single-color-scale-values-font-size">Dimensione valori scala colore</label>
+              <input id="single-color-scale-values-font-size" type="number" min="8" max="40" step="1" value="10">
+            </div>
+
+            <div class="analysis-single-check-item">
+              <label class="field-label" for="single-hide-axis-names">Nascondi nomi assi</label>
+              <input id="single-hide-axis-names" type="checkbox">
+            </div>
+
+            <div class="analysis-single-check-item">
+              <label class="field-label" for="single-hide-axis-x">Nascondi asse X</label>
+              <input id="single-hide-axis-x" type="checkbox">
+            </div>
+
+            <div class="analysis-single-check-item">
+              <label class="field-label" for="single-hide-axis-y">Nascondi asse Y</label>
+              <input id="single-hide-axis-y" type="checkbox">
+            </div>
+
+            <div class="analysis-single-check-item">
+              <label class="field-label" for="single-show-completed">Mostra grafi completati</label>
+              <input id="single-show-completed" type="checkbox" checked>
+            </div>
+
+            <div class="analysis-single-check-item">
+              <label class="field-label" for="single-show-failed">Mostra grafi non completati</label>
+              <input id="single-show-failed" type="checkbox" checked>
+            </div>
+
+            <div class="analysis-single-check-item">
+              <label class="field-label" for="single-show-legend">Mostra legenda</label>
+              <input id="single-show-legend" type="checkbox" checked>
+            </div>
+
+            <div class="analysis-single-check-item">
+              <label class="field-label" for="single-show-color-legend">Mostra legenda colore</label>
+              <input id="single-show-color-legend" type="checkbox" checked>
+            </div>
+
+            <div class="analysis-single-actions">
+              <button id="single-redraw-btn" class="btn-secondary" onclick="redrawSingleScatter()">Ridisegna
+                grafico</button>
+              <button id="single-save-default-config-btn" class="btn-secondary" onclick="saveSingleChartConfigAsDefault()">Salva config default</button>
+              <button id="single-reset-default-config-btn" class="btn-secondary" onclick="resetSingleChartConfigToDefault()">Reset config</button>
+              <select id="single-export-format">
+                <option value="png">PNG</option>
+                <option value="pdf" selected>PDF</option>
+                <option value="svg">SVG</option>
+              </select>
+              <button id="single-export-btn" class="btn-secondary" onclick="exportSingleScatter()">Esporta
+                immagine</button>
+              <button id="single-export-grid-btn" class="btn-secondary" onclick="openSingleGridExportModal()" title="Scegli i campi da includere prima dell'esportazione a griglia">Esporta griglia</button>
+              <button id="single-open-grid-page-btn" class="btn-secondary" onclick="openSingleGridExportModal('web')" title="Scegli i campi e apri una pagina web temporanea navigabile con tutti i grafici">Apri pagina griglia</button>
+            </div>
+
+            <p class="info-note analysis-single-note">Seleziona le metriche da visualizzare. Scala
+              tempi disponibile come opzione colore o dimensione.</p>
+          </div>
+        </div>
+
+        <div style="flex:1 1 520px;min-width:360px;">
+          <h3 class="analysis-subtitle">Grafico</h3>
+          <div id="analysis-single-scatter"
+            style="background:#ffffff;border:1px solid #e1e1e1;border-radius:8px;padding:8px;"></div>
+          <div id="analysis-single-scatter-legend" class="info-note" style="margin-top:8px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="box" style="flex:1 1 100%;">
+      <h2 style="margin-top:0;">Statistiche dataset</h2>
+      <p class="info-note" id="analysis-dataset-stats-summary">Nessun dato disponibile.</p>
+      <div class="analysis-dataset-stats-wrap" id="analysis-dataset-stats-container">
+        <table class="analysis-tbl analysis-dataset-stats-table" id="analysis-dataset-stats-table">
+          <thead>
+            <tr>
+              <th>Metrica</th>
+              <th>Statistica</th>
+              <th>Grafi completi</th>
+              <th>Grafi non completi</th>
+              <th>Totale</th>
+            </tr>
+          </thead>
+          <tbody id="analysis-dataset-stats-tbody">
+            <tr>
+              <td colspan="5" class="list-empty">Nessuna statistica disponibile.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="box" style="flex:1 1 100%;">
+      <h2 style="margin-top:0;">Metriche estratte</h2>
+      <div style="overflow-x:auto;">
+        <table class="analysis-tbl" id="analysis-table">
+          <thead>
+            <tr>
+              <th>Pipeline Save</th>
+              <th>Istanza</th>
+              <th>Nodi</th>
+              <th>Clique</th>
+              <th>% Corrette</th>
+              <th>% Clique compatte</th>
+              <th>% Nodi in clique</th>
+              <th>Media dim. clique</th>
+              <th>Obiettivo</th>
+              <th>Tempo</th>
+              <th>Graph</th>
+              <th>Biofabric</th>
+            </tr>
+          </thead>
+          <tbody id="analysis-tbody">
+            <tr>
+              <td colspan="12" class="list-empty">Nessuna analisi eseguita.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="js/analysis.js"></script>
+
+  <div id="single-grid-export-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="single-grid-export-title">
+    <div class="modal-box" style="max-width:760px;">
+      <h3 id="single-grid-export-title">Esporta griglia: selezione campi</h3>
+      <p class="modal-sub">Seleziona i campi da usare su ascissa e ordinata. Di default sono tutti selezionati.</p>
+
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
+        <button type="button" class="btn-secondary" onclick="selectAllSingleGridFields(true)">Seleziona tutti</button>
+        <button type="button" class="btn-secondary" onclick="selectAllSingleGridFields(false)">Deseleziona tutti</button>
+      </div>
+
+      <div id="single-grid-fields-list" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;max-height:320px;overflow:auto;padding:4px 2px;"></div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="closeSingleGridExportModal()">Annulla</button>
+        <button id="single-grid-modal-open-page-btn" type="button" class="btn-secondary" onclick="confirmSingleGridWebPage()">Apri pagina web</button>
+        <button id="single-grid-modal-export-btn" type="button" class="btn-primary" onclick="confirmSingleGridExport()">Esporta</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

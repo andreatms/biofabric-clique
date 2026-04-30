@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheduler Job - BGW</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/scheduler.css">
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">BGW</span>
+  <a href="/">Home</a>
+  <a href="/graph.html">Graph</a>
+  <a href="/pipeline.html">Pipeline</a>
+  <a href="/dataset.html">Dataset</a>
+  <a href="/generator.html">Generatore</a>
+  <a href="/scheduler.html" class="active">Scheduler</a>
+  <a href="/analysis.html">Analisi</a>
+</nav>
+
+<div class="page-header">
+  <h1>Scheduler Sequenziale</h1>
+  <p>Pianifica una serie di job: quando finisce il primo, parte automaticamente il successivo.</p>
+</div>
+
+<div class="container">
+  <div class="box" style="flex:1 1 100%;">
+    <h2 style="margin-top:0;">Nuova coda</h2>
+
+    <div class="pipe-row">
+      <div style="flex:2;min-width:220px;">
+        <label class="field-label" for="queue-name">Nome coda</label>
+        <input type="text" id="queue-name" placeholder="es. batch_dataset_1"
+          style="width:100%;padding:8px 10px;border:1px solid #2196f3;border-radius:6px;font-size:14px;box-sizing:border-box;">
+      </div>
+      <div style="min-width:180px;">
+        <button class="btn-sm btn-ok" style="width:100%;padding:10px 12px;font-size:12px;margin-top:22px;" onclick="addJobRow()">+ Aggiungi job</button>
+      </div>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table class="job-tbl">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome job</th>
+            <th>Dataset JSON</th>
+            <th>Opt</th>
+            <th>TimeLimit</th>
+            <th>MIPGap</th>
+            <th>NodeLimit</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="jobs-tbody"></tbody>
+      </table>
+    </div>
+
+    <button id="start-queue-btn" onclick="startQueue()"
+      style="width:100%;padding:13px;font-size:1.05rem;font-weight:700;background:linear-gradient(90deg,#2f80ed,#56ccf2);color:#fff;border:none;border-radius:8px;cursor:pointer;letter-spacing:.3px;margin-top:12px;">
+      Avvia coda sequenziale
+    </button>
+    <p id="queue-error" class="error-msg"></p>
+    <p id="queue-ok" class="ok-msg"></p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="box" style="flex:1 1 100%;">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <h2 style="margin:0;">Code attive/storico sessione</h2>
+      <button onclick="loadQueues()">Aggiorna</button>
+    </div>
+
+    <div id="no-queues" class="no-queues">Nessuna coda avviata.</div>
+    <div id="queues-wrap"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="box" style="flex:1 1 100%;">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;">
+      <h2 style="margin:0;">Graph Sets</h2>
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+        <button onclick="loadGraphSets()">Aggiorna set</button>
+        <button class="btn-sm btn-fold" onclick="triggerImportGraphSetResults()">Import risultati</button>
+        <input type="file" id="import-set-results-file" accept="application/zip,.zip" style="display:none;" onchange="onImportGraphSetResultsFile(this)">
+      </div>
+    </div>
+    <p class="info-note" style="margin:8px 0 0;">Esegui in sequenza tutti i grafi di un set salvato in data/sets. Export/Import risultati usa un pacchetto ZIP con execution_results.json + grafi del set.</p>
+
+    <div id="no-sets" class="no-queues" style="display:none;">Nessun graph set disponibile.</div>
+    <div class="set-queue-draft" id="set-queue-draft-box">
+      <div class="set-queue-draft-head">
+        <strong>Coda graph set (solo sessione corrente)</strong>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+          <label for="set-queue-opt" class="field-label" style="margin:0;">Opt</label>
+          <select id="set-queue-opt" style="padding:6px 8px;border:1px solid #ccc;border-radius:4px;">
+            <option value="max" selected>max</option>
+            <option value="min">min</option>
+          </select>
+          <button id="start-set-queue-btn" class="btn-sm btn-ok" onclick="startGraphSetQueue()">Avvia coda set</button>
+        </div>
+      </div>
+      <div id="set-queue-empty" class="no-queues" style="padding:8px 0;">Nessun set in coda.</div>
+      <div style="overflow-x:auto;">
+        <table class="set-queue-tbl" id="set-queue-tbl" style="display:none;">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Set</th>
+              <th>Grafi</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="set-queue-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="overflow-x:auto;margin-top:10px;">
+      <table class="set-tbl" id="set-tbl">
+        <thead>
+          <tr>
+            <th>Set</th>
+            <th>Creato</th>
+            <th>Grafi</th>
+            <th>Nodi</th>
+            <th>Clique</th>
+            <th>Status</th>
+            <th>Progresso</th>
+            <th>Tempi</th>
+            <th>Azione</th>
+          </tr>
+        </thead>
+        <tbody id="sets-tbody"></tbody>
+      </table>
+    </div>
+
+    <div id="set-details-wrap" style="margin-top:12px;"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="box" style="flex:1 1 100%;">
+    <h2 style="margin-top:0;">Gestione Workflow Persistente</h2>
+    <div class="pipe-row" style="align-items:end;">
+      <div style="flex:3;min-width:320px;">
+        <p id="workflow-summary" class="info-note" style="margin:0;">Caricamento stato workflow...</p>
+      </div>
+      <div style="min-width:180px;">
+        <label class="field-label" style="visibility:hidden;">Azioni</label>
+        <button class="btn-sm btn-fold" style="width:100%;padding:10px 12px;font-size:12px;" onclick="clearWorkflow('pipelines')">Svuota Pipeline</button>
+      </div>
+      <div style="min-width:180px;">
+        <label class="field-label" style="visibility:hidden;">Azioni</label>
+        <button class="btn-sm btn-fold" style="width:100%;padding:10px 12px;font-size:12px;" onclick="clearWorkflow('queues')">Svuota Queue</button>
+      </div>
+      <div style="min-width:180px;">
+        <label class="field-label" style="visibility:hidden;">Azioni</label>
+        <button class="btn-sm btn-del" style="width:100%;padding:10px 12px;font-size:12px;" onclick="clearWorkflow('all')">Svuota Tutto</button>
+      </div>
+    </div>
+    <p id="workflow-msg" class="ok-msg"></p>
+    <p id="workflow-error" class="error-msg"></p>
+  </div>
+</div>
+
+<script src="js/scheduler.js"></script>
+</body>
+</html>

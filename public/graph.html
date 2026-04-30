@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graph - BGW</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<nav>
+    <span class="nav-brand">BGW</span>
+    <a href="/">Home</a>
+    <a href="/graph.html" class="active">Graph</a>
+    <a href="/pipeline.html">Pipeline</a>
+    <a href="/dataset.html">Dataset</a>
+    <a href="/generator.html">Generatore</a>
+    <a href="/scheduler.html">Scheduler</a>
+    <a href="/analysis.html">Analisi</a>
+  </nav>
+
+<div class="page-header">
+  <h1>Graph</h1>
+  <p>Visualizzazione force-directed del grafo JSON</p>
+</div>
+
+<div class="container">
+
+    <div class="box box-fluid">
+    <div class="section-div">
+      <h2>Upload JSON</h2>
+      <input type="file" id="jsonfile" accept=".json">
+      <button id="upload-json-btn" onclick="uploadJsonFile()" class="mt-8">Carica</button>
+    </div>
+
+    <div class="section-div">
+            <div class="section-head">
+                <h2 class="section-title-plain">JSON caricati</h2>
+                <div class="reload-slot">
+                    <button class="btn-secondary btn-sm" onclick="forceReloadJson()">Reload</button>
+                </div>
+      </div>
+            <div class="json-list-wrap graph-list-scrollpane">
+        <table id="loaded-json-file-list" class="file-tbl">
+                    <thead><tr><th>Nome</th><th class="actions-col">Azioni</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-div">
+      <div class="section-head">
+        <h2 class="section-title-plain">Grafi dei Set</h2>
+        <div class="reload-slot">
+          <button class="btn-secondary btn-sm" onclick="loadGraphSetList()">Reload Set</button>
+        </div>
+      </div>
+      <div class="graph-controls" style="margin-bottom:8px;">
+        <select id="graph-set-select" class="graph-select"></select>
+        <select id="graph-set-graph-select" class="graph-select"></select>
+        <button onclick="drawGraphFromSetSelection()">Disegna grafo set</button>
+      </div>
+      <div class="json-list-wrap graph-list-scrollpane">
+        <table id="loaded-set-graph-list" class="file-tbl">
+          <thead><tr><th>Set</th><th>Graph</th><th>Nodi</th><th>Archi</th><th class="actions-col">Azioni</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+    <div class="box box-fluid" id="graph-section">
+    <h2>Grafo</h2>
+    <div class="section-div">
+            <div class="graph-controls">
+                <select id="graph-select" class="graph-select"></select>
+        <button onclick="drawGraph()">Disegna</button>
+      </div>
+    </div>
+        <div id="graph" class="graph-canvas-wrap"></div>
+  </div>
+
+</div>
+
+        <script src="js/graph.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <title>Risultati - Biofabric</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="css/result.css">
+</head>
+<body>
+
+<nav>
+    <span class="nav-brand">BGW</span>
+    <a href="/">Home</a>
+    <a href="/graph.html">Graph</a>
+    <a href="/pipeline.html">Pipeline</a>
+    <a href="/dataset.html">Dataset</a>
+    <a href="/generator.html">Generatore</a>
+    <a href="/scheduler.html">Scheduler</a>
+    <a href="/analysis.html">Analisi</a>
+  </nav>
+
+<div id="result-header">
+  <h2 id="result-title">Risultati</h2>
+  <span class="meta-chip" id="chip-graph" style="display:none">Grafo: -</span>
+  <span class="meta-chip" id="chip-sol"   style="display:none">Soluzione: -</span>
+  <span class="meta-chip gap-badge" id="chip-gap" style="display:none">Gap: -</span>
+  <a id="dl-link" class="dl-btn" style="display:none" download>Scarica file .sol</a>
+</div>
+
+<div id="status-banner">
+  <div class="spinner"></div>
+  <span id="banner-text">Caricamento...</span>
+</div>
+
+<div id="load-error"></div>
+
+<div id="viz-container">
+  <div id="biofabric-wrap">
+    <div class="biofabric-head">
+      <h3>Biofabric</h3>
+      <label class="biofabric-mode-wrap" for="biofabric-mode-select">
+        Modalita visualizzazione
+        <select id="biofabric-mode-select">
+          <option value="full" selected>Completa (attuale)</option>
+          <option value="clique-squares-only">Solo quadrati clique + archi fuori clique</option>
+          <option value="clique-negative-holes">Clique complete con buchi su archi mancanti</option>
+          <option value="clique-squares-negative-holes">Quadrati clique + buchi su archi mancanti</option>
+        </select>
+      </label>
+      <label class="biofabric-contiguous-wrap" for="biofabric-contiguous-checkbox">
+        <input type="checkbox" id="biofabric-contiguous-checkbox">
+        Mostra solo clique con nodi contigui
+      </label>
+      <label class="biofabric-contiguous-wrap" for="biofabric-hide-synthetic-checkbox">
+        <input type="checkbox" id="biofabric-hide-synthetic-checkbox" checked>
+        Nascondi archi fittizi
+      </label>
+      <label class="biofabric-contiguous-wrap" for="biofabric-show-all-clique-markers-checkbox">
+        <input type="checkbox" id="biofabric-show-all-clique-markers-checkbox">
+        Mostra sempre i marker delle clique
+      </label>
+      <label class="biofabric-opacity-wrap" for="biofabric-clique-opacity-slider">
+        Opacita riempimento clique
+        <input type="range" id="biofabric-clique-opacity-slider" min="0.05" max="1" step="0.01" value="0.12">
+        <span id="biofabric-clique-opacity-value">12%</span>
+      </label>
+      <label class="biofabric-opacity-wrap" for="biofabric-negative-hole-width-slider">
+        Spessore buchi archi negativi
+        <input type="range" id="biofabric-negative-hole-width-slider" min="1" max="24" step="0.5" value="6">
+        <span id="biofabric-negative-hole-width-value">6.0 px</span>
+      </label>
+      <label class="biofabric-axis-spacing-wrap" for="biofabric-edge-stroke-width">
+        Spessore archi
+        <input type="number" id="biofabric-edge-stroke-width" min="0.5" max="16" step="0.1" value="3">
+        <span id="biofabric-edge-stroke-width-value">3.0 px</span>
+      </label>
+      <label class="biofabric-axis-spacing-wrap" for="biofabric-node-axis-spacing">
+        Distanza assi nodi
+        <input type="number" id="biofabric-node-axis-spacing" min="4" max="120" step="0.5" value="8">
+        <span id="biofabric-node-axis-spacing-value">8.0 px (auto)</span>
+      </label>
+      <label class="biofabric-axis-spacing-wrap" for="biofabric-node-label-size">
+        Dimensione label nodi
+        <input type="number" id="biofabric-node-label-size" min="8" max="36" step="0.5" value="12">
+        <span id="biofabric-node-label-size-value">12.0 px</span>
+      </label>
+      <label class="biofabric-axis-spacing-wrap" for="biofabric-clique-border-width">
+        Spessore bordi clique
+        <input type="number" id="biofabric-clique-border-width" min="0.5" max="12" step="0.1" value="1.4">
+        <span id="biofabric-clique-border-width-value">1.4 px</span>
+      </label>
+      <label class="biofabric-axis-spacing-wrap" for="biofabric-marker-stroke-width">
+        Spessore marker laterali
+        <input type="number" id="biofabric-marker-stroke-width" min="0.5" max="12" step="0.1" value="3">
+        <span id="biofabric-marker-stroke-width-value">3.0 px</span>
+      </label>
+      <label class="biofabric-contiguous-wrap" for="biofabric-lock-node-axis-spacing">
+        <input type="checkbox" id="biofabric-lock-node-axis-spacing">
+        Blocca distanza assi nodi
+      </label>
+      <label class="biofabric-export-wrap" for="biofabric-export-format">
+        Esporta figura
+        <select id="biofabric-export-format">
+          <option value="pdf">PDF</option>
+          <option value="svg">SVG</option>
+          <option value="png">PNG</option>
+        </select>
+      </label>
+      <button id="biofabric-export-button" class="biofabric-export-btn" type="button">Esporta</button>
+    </div>
+    <div id="result-biofabric"><div class="placeholder">In attesa dei dati...</div></div>
+  </div>
+  <div id="graph-wrap">
+    <div class="graph-head">
+      <h3>Grafo</h3>
+      <label class="biofabric-export-wrap" for="graph-export-format">
+        Esporta figura
+        <select id="graph-export-format">
+          <option value="pdf">PDF</option>
+          <option value="svg">SVG</option>
+          <option value="png">PNG</option>
+        </select>
+      </label>
+      <button id="graph-export-button" class="biofabric-export-btn" type="button">Esporta</button>
+    </div>
+    <div id="result-graph"><div class="placeholder">In attesa dei dati...</div></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/result.js"></script>
+</body>
+</html>
+
+
