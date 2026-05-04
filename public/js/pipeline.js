@@ -16,7 +16,7 @@ async function loadDatasets() {
     if (files.length === 0) {
       const opt = document.createElement('option');
       opt.value = '';
-      opt.textContent = 'Nessun JSON disponibile';
+      opt.textContent = 'No JSON available';
       select.appendChild(opt);
       return;
     }
@@ -28,7 +28,7 @@ async function loadDatasets() {
       select.appendChild(opt);
     });
   } catch (e) {
-    console.error('Errore caricamento dataset JSON', e);
+    console.error('Error loading JSON dataset', e);
   }
 }
 
@@ -36,8 +36,8 @@ function validateForm() {
   const errors = [];
   const name = document.getElementById('pipe-name').value.trim();
   const jsonFileId = document.getElementById('dataset-select').value;
-  if (!name) errors.push('Il nome della pipeline e obbligatorio.');
-  if (!jsonFileId) errors.push('Seleziona un dataset JSON.');
+  if (!name) errors.push('Pipeline name is required.');
+  if (!jsonFileId) errors.push('Select a JSON dataset.');
   return errors;
 }
 
@@ -67,7 +67,7 @@ function launchPipeline() {
 
   const btn = document.getElementById('launch-btn');
   btn.disabled    = true;
-  btn.textContent = 'Avvio in corso...';
+  btn.textContent = 'Launching...';
 
   fetch('/pipelines/run-from-json', {
     method: 'POST',
@@ -80,12 +80,12 @@ function launchPipeline() {
       loadPipelines();
     })
     .catch(err => {
-      errEl.textContent  = 'Errore: ' + err.message;
+      errEl.textContent  = 'Error: ' + err.message;
       errEl.style.display = 'block';
     })
     .finally(() => {
       btn.disabled    = false;
-      btn.textContent = 'Lancia Pipeline da JSON';
+      btn.textContent = 'Launch Pipeline from JSON';
     });
 }
 
@@ -99,16 +99,16 @@ function fmtDuration(start, end) {
 
 function fmtTime(dt) {
   if (!dt) return '-';
-  return new Date(dt).toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  return new Date(dt).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 }
 
 const STATUS_META = {
-  'generating-graph': { cls: 'badge-gen',  label: 'Generazione grafo' },
-  'generating-lp':    { cls: 'badge-gen',  label: 'Generazione LP'    },
-  'running':          { cls: 'badge-run',  label: 'In esecuzione'     },
-  'completed':        { cls: 'badge-ok',   label: 'Completata'        },
-  'failed':           { cls: 'badge-fail', label: 'Fallita'           },
-  'stopped':          { cls: 'badge-stop', label: 'Interrotta'        },
+  'generating-graph': { cls: 'badge-gen',  label: 'Graph generation' },
+  'generating-lp':    { cls: 'badge-gen',  label: 'LP generation'    },
+  'running':          { cls: 'badge-run',  label: 'Running'          },
+  'completed':        { cls: 'badge-ok',   label: 'Completed'        },
+  'failed':           { cls: 'badge-fail', label: 'Failed'           },
+  'stopped':          { cls: 'badge-stop', label: 'Stopped'          },
 };
 
 function statusBadge(status) {
@@ -149,7 +149,7 @@ function renderPipelineList(list, { noMsgId, tableId, tbodyId }) {
       actions.push(`<button class="btn-sm btn-stop" onclick="stopPipeline('${p.id}')">Stop</button>`);
     }
     if (isDone(p.status)) {
-      actions.push(`<button class="btn-sm btn-del" onclick="deletePipeline('${p.id}')">Elimina</button>`);
+      actions.push(`<button class="btn-sm btn-del" onclick="deletePipeline('${p.id}')">Delete</button>`);
     }
 
     return `<tr${errTip}>
@@ -191,19 +191,19 @@ function loadPipelines() {
 // Actions
 
 function stopPipeline(id) {
-  if (!confirm('Vuoi interrompere questa pipeline? Il job Gurobi verra terminato.')) return;
+  if (!confirm('Stop this pipeline? The Gurobi job will be terminated.')) return;
   fetch(`/pipelines/${id}?action=stop`, { method: 'DELETE' })
     .then(r => r.json())
     .then(() => loadPipelines())
-    .catch(err => alert('Errore: ' + err.message));
+    .catch(err => alert('Error: ' + err.message));
 }
 
 function deletePipeline(id) {
-  if (!confirm('Eliminare la pipeline e tutti i file associati (grafo JSON, file LP, soluzione .sol)?')) return;
+  if (!confirm('Delete the pipeline and all associated files (JSON graph, LP file, .sol solution)?')) return;
   fetch(`/pipelines/${id}?action=delete`, { method: 'DELETE' })
     .then(r => r.json())
     .then(() => loadPipelines())
-    .catch(err => alert('Errore: ' + err.message));
+    .catch(err => alert('Error: ' + err.message));
 }
 
 // Log modal

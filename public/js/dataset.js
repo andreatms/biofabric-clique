@@ -13,7 +13,7 @@ async function uploadLstFile() {
   const file = input.files[0];
 
   if (!file) {
-    msg.textContent = 'Seleziona prima un file .lst';
+    msg.textContent = 'Select a .lst file first';
     return;
   }
 
@@ -21,22 +21,22 @@ async function uploadLstFile() {
   fd.append('lstfile', file);
 
   btn.disabled = true;
-  btn.textContent = 'Upload...';
+  btn.textContent = 'Uploading...';
   msg.textContent = '';
 
   try {
     const r = await fetch('/upload-lst', { method: 'POST', body: fd });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore conversione .lst');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error converting .lst');
 
-    msg.textContent = `Convertito: ${data.stats.nodes} nodi, ${data.stats.edges} archi`;
+    msg.textContent = `Converted: ${data.stats.nodes} nodes, ${data.stats.edges} edges`;
     input.value = '';
     await loadDatasets();
   } catch (e) {
-    msg.textContent = 'Errore: ' + e.message;
+    msg.textContent = 'Error: ' + e.message;
   } finally {
     btn.disabled = false;
-    btn.textContent = 'Carica e converti';
+    btn.textContent = 'Upload and convert';
   }
 }
 
@@ -73,7 +73,7 @@ async function loadDatasets() {
       <td>${edges}</td>
       <td>
         <button class="btn-sm btn-view" onclick="openGraph('${esc(f.id)}')">Graph</button>
-        <button class="btn-sm btn-del" onclick="deleteDataset('${esc(f.id)}')">Elimina</button>
+        <button class="btn-sm btn-del" onclick="deleteDataset('${esc(f.id)}')">Delete</button>
       </td>
     `;
     tbody.appendChild(tr);
@@ -85,11 +85,11 @@ function openGraph(fileId) {
 }
 
 async function deleteDataset(fileId) {
-  if (!confirm('Eliminare questo dataset JSON?')) return;
+  if (!confirm('Delete this JSON dataset?')) return;
   const r = await fetch(`/delete-json-file/${encodeURIComponent(fileId)}`, { method: 'DELETE' });
   const data = await r.json();
   if (!r.ok || data.error) {
-    alert('Errore: ' + (data.error || 'delete failed'));
+    alert('Error: ' + (data.error || 'delete failed'));
     return;
   }
   await loadDatasets();

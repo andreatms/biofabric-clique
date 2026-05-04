@@ -53,7 +53,7 @@
                         if (!tbody) return;
                         tbody.innerHTML = '';
                         if (data.files.length === 0) {
-                            tbody.innerHTML = '<tr><td colspan="2" class="list-empty">Nessun file</td></tr>';
+                            tbody.innerHTML = '<tr><td colspan="2" class="list-empty">No files</td></tr>';
                             return;
                         }
                         data.files.forEach(file => {
@@ -61,7 +61,7 @@
                             tr.innerHTML = `<td>${file.name}</td>
                                 <td class="td-actions actions-col">
                                   <div class="actions-wrap">
-                                    <button class="btn-sm" onclick="drawGraphById('${file.id}')">Disegna</button>
+                                    <button class="btn-sm" onclick="drawGraphById('${file.id}')">Draw</button>
                                     <button class="btn-sm btn-danger" onclick="deleteJsonFile('${file.id}')">&#128465;</button>
                                   </div>
                                 </td>`;
@@ -122,7 +122,7 @@
 
                         function drawGraphFromSet(setName, graphId, shouldScroll = true) {
                             if (!setName || !graphId) {
-                                alert('Seleziona set e grafo del set.');
+                                alert('Select a set and a set graph.');
                                 return;
                             }
                             fetch(`/graph-sets/${encodeURIComponent(setName)}/graphs/${encodeURIComponent(graphId)}`)
@@ -138,7 +138,7 @@
                                 })
                                 .catch((error) => {
                                     console.error('Error:', error);
-                                    alert('Errore caricamento grafo set: ' + error.message);
+                                    alert('Error loading set graph: ' + error.message);
                                 });
                         }
 
@@ -159,7 +159,7 @@
                             if (!graphs.length) {
                                 const opt = document.createElement('option');
                                 opt.value = '';
-                                opt.textContent = 'Nessun grafo nel set';
+                                opt.textContent = 'No graph in set';
                                 graphSel.appendChild(opt);
                                 return;
                             }
@@ -201,9 +201,9 @@
                                     if (!graphSetsCache.length) {
                                         const opt = document.createElement('option');
                                         opt.value = '';
-                                        opt.textContent = 'Nessun set disponibile';
+                                        opt.textContent = 'No sets available';
                                         setSel.appendChild(opt);
-                                        tbody.innerHTML = '<tr><td colspan="5" class="list-empty">Nessun set disponibile</td></tr>';
+                                        tbody.innerHTML = '<tr><td colspan="5" class="list-empty">No sets available</td></tr>';
                                         syncSetGraphSelect('');
                                         return;
                                     }
@@ -223,7 +223,7 @@
                                                 <td>${g.edges ?? '-'}</td>
                                                 <td class="td-actions actions-col">
                                                     <div class="actions-wrap">
-                                                        <button class="btn-sm" onclick="drawGraphFromSet('${setData.setName}','${g.id}',true)">Disegna</button>
+                                                        <button class="btn-sm" onclick="drawGraphFromSet('${setData.setName}','${g.id}',true)">Draw</button>
                                                     </div>
                                                 </td>`;
                                             tbody.appendChild(tr);
@@ -254,7 +254,7 @@
             function drawGraph(graphId, shouldScroll) {
             const selectedGraphId = graphId || document.getElementById('graph-select').value;
             if (!selectedGraphId) {
-                alert('Seleziona un grafo da disegnare.');
+                alert('Select a graph to draw.');
                 return;
             }
 

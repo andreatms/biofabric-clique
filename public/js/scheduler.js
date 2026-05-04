@@ -14,7 +14,7 @@ function formatStamp(date) {
 }
 
 function sanitizeNamePart(str) {
-  return String(str || 'grafo')
+  return String(str || 'graph')
     .replace(/\.json$/i, '')
     .replace(/\s+/g, '_')
     .replace(/[^a-zA-Z0-9._-]/g, '_');
@@ -22,7 +22,7 @@ function sanitizeNamePart(str) {
 
 function getGraphNameById(jsonFileId) {
   const file = availableJsonFiles.find(f => f.id === jsonFileId);
-  return file ? sanitizeNamePart(file.name) : 'grafo';
+  return file ? sanitizeNamePart(file.name) : 'graph';
 }
 
 function buildDynamicJobName(job) {
@@ -44,7 +44,7 @@ function renderWorkflowSummary() {
   const el = document.getElementById('workflow-summary');
   if (!el) return;
   if (!workflowRegistry) {
-    el.textContent = 'Stato workflow non disponibile.';
+    el.textContent = 'Workflow status not available.';
     return;
   }
 
@@ -52,7 +52,7 @@ function renderWorkflowSummary() {
   const q = workflowRegistry.queues || {};
   const pTime = p.updatedAt ? new Date(p.updatedAt).toLocaleString('it-IT') : '-';
   const qTime = q.updatedAt ? new Date(q.updatedAt).toLocaleString('it-IT') : '-';
-  el.textContent = `Pipeline registry: ${p.count ?? 0} (agg. ${pTime}) | Queue registry: ${q.count ?? 0} (agg. ${qTime})`;
+  el.textContent = `Pipeline registry: ${p.count ?? 0} (updated ${pTime}) | Queue registry: ${q.count ?? 0} (updated ${qTime})`;
 }
 
 async function loadWorkflowRegistry() {
@@ -68,24 +68,24 @@ async function loadWorkflowRegistry() {
 }
 
 async function clearWorkflow(scope) {
-  const label = scope === 'all' ? 'tutto il workflow' : `workflow ${scope}`;
-  if (!confirm(`Confermi di svuotare ${label} in logs/workflow?`)) return;
+  const label = scope === 'all' ? 'the entire workflow' : `workflow ${scope}`;
+  if (!confirm(`Confirm clearing ${label} in logs/workflow?`)) return;
 
   const err = document.getElementById('workflow-error');
   const msg = document.getElementById('workflow-msg');
   try {
     const r = await fetch(`/workflow/registry?scope=${encodeURIComponent(scope)}`, { method: 'DELETE' });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore pulizia workflow');
+    if (!r.ok || data.error) throw new Error(data.error || 'Workflow cleanup error');
 
     workflowRegistry = data.registry || null;
     renderWorkflowSummary();
-    msg.textContent = data.message || 'Workflow pulito con successo.';
+    msg.textContent = data.message || 'Workflow cleared successfully.';
     msg.style.display = 'block';
     if (err) err.style.display = 'none';
   } catch (e) {
     if (err) {
-      err.textContent = 'Errore: ' + e.message;
+      err.textContent = 'Error: ' + e.message;
       err.style.display = 'block';
     }
   }
@@ -137,7 +137,7 @@ function renderQueuedGraphSets() {
         <td>${idx + 1}</td>
         <td>${esc(setName)}</td>
         <td>${esc(String(total))}</td>
-        <td><button class="btn-sm btn-del" onclick="removeGraphSetFromQueue('${esc(setName)}')">Rimuovi</button></td>
+        <td><button class="btn-sm btn-del" onclick="removeGraphSetFromQueue('${esc(setName)}')">Remove</button></td>
       </tr>`;
   }).join('');
 }
@@ -149,7 +149,7 @@ function addGraphSetToQueue(setName) {
     renderQueuedGraphSets();
     return;
   }
-  alert(`Set gia in coda: ${setName}`);
+  alert(`Set already in queue: ${setName}`);
 }
 
 function removeGraphSetFromQueue(setName) {
@@ -163,7 +163,7 @@ async function buildSetQueueJobs(setNames, optType) {
     const r = await fetch(`/graph-sets/${encodeURIComponent(setName)}`);
     const data = await r.json();
     if (!r.ok || data.error) {
-      throw new Error(data.error || `Errore caricamento set ${setName}`);
+      throw new Error(data.error || `Error loading set ${setName}`);
     }
 
     const setJobs = (data.graphs || []).map((g) => ({
@@ -182,14 +182,14 @@ async function buildSetQueueJobs(setNames, optType) {
 
 async function startGraphSetQueue() {
   if (!queuedGraphSets.length) {
-    alert('Aggiungi almeno un graph set alla coda.');
+    alert('Add at least one graph set to the queue.');
     return;
   }
 
   const btn = document.getElementById('start-set-queue-btn');
   if (btn) {
     btn.disabled = true;
-    btn.textContent = 'Avvio coda set...';
+    btn.textContent = 'Starting set queue...';
   }
 
   try {
@@ -198,7 +198,7 @@ async function startGraphSetQueue() {
     const jobs = await buildSetQueueJobs(queuedGraphSets, optType);
 
     if (!jobs.length) {
-      throw new Error('Nessun job generato dai set selezionati.');
+      throw new Error('No jobs generated from selected sets.');
     }
 
     const queueName = `set_batch_${formatStamp(new Date())}`;
@@ -208,19 +208,19 @@ async function startGraphSetQueue() {
       body: JSON.stringify({ name: queueName, jobs }),
     });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore avvio coda set');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error starting set queue');
 
     queuedGraphSets = [];
     renderQueuedGraphSets();
     await loadQueues();
     await loadGraphSets();
-    alert(`Coda set avviata (${data.queueId}).`);
+    alert(`Set queue started (${data.queueId}).`);
   } catch (e) {
-    alert('Errore: ' + e.message);
+    alert('Error: ' + e.message);
   } finally {
     if (btn) {
       btn.disabled = false;
-      btn.textContent = 'Avvia coda set';
+      btn.textContent = 'Start set queue';
     }
   }
 }
@@ -310,7 +310,7 @@ function renderDraftJobs() {
 function validateQueue() {
   const errors = [];
   if (queueDraftJobs.length === 0) {
-    errors.push('Aggiungi almeno un job.');
+    errors.push('Add at least one job.');
   }
 
   queueDraftJobs.forEach((j, i) => {
@@ -356,7 +356,7 @@ async function startQueue() {
 
   const btn = document.getElementById('start-queue-btn');
   btn.disabled = true;
-  btn.textContent = 'Avvio coda...';
+  btn.textContent = 'Starting queue...';
 
   try {
     const body = {
@@ -369,17 +369,17 @@ async function startQueue() {
       body: JSON.stringify(body),
     });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore avvio coda');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error starting queue');
 
-    okEl.textContent = `Coda avviata con id ${data.queueId}`;
+    okEl.textContent = `Queue started with id ${data.queueId}`;
     okEl.style.display = 'block';
     await loadQueues();
   } catch (e) {
-    errEl.textContent = 'Errore: ' + e.message;
+    errEl.textContent = 'Error: ' + e.message;
     errEl.style.display = 'block';
   } finally {
     btn.disabled = false;
-    btn.textContent = 'Avvia coda sequenziale';
+    btn.textContent = 'Start sequential queue';
   }
 }
 
@@ -403,7 +403,7 @@ function renderQueues(queues) {
     if (q.status === 'running') {
       actions.push(`<button class="btn-sm btn-stop" onclick="stopQueue('${esc(q.id)}')">Stop</button>`);
     }
-    actions.push(`<button class="btn-sm btn-del" onclick="deleteQueue('${esc(q.id)}')">Elimina</button>`);
+    actions.push(`<button class="btn-sm btn-del" onclick="deleteQueue('${esc(q.id)}')">Delete</button>`);
 
     const jobsRows = (q.items || []).map((it, idx) => {
       const pipeCell = it.pipelineId
@@ -430,7 +430,7 @@ function renderQueues(queues) {
           </div>
           <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
             <span style="font-size:12px;color:#666;">job: ${q.totalItems} | corrente: ${q.currentIndex >= 0 ? (q.currentIndex + 1) : '-'}</span>
-            <button class="btn-sm btn-fold" onclick="toggleQueueCard('${esc(q.id)}')">${isExpanded ? 'Nascondi dettagli' : 'Mostra dettagli'}</button>
+            <button class="btn-sm btn-fold" onclick="toggleQueueCard('${esc(q.id)}')">${isExpanded ? 'Hide details' : 'Show details'}</button>
             ${actions.join('')}
           </div>
         </div>
@@ -443,7 +443,7 @@ function renderQueues(queues) {
               <th>JSON</th>
               <th>Status</th>
               <th>Pipeline</th>
-              <th>Errore</th>
+              <th>Error</th>
             </tr>
           </thead>
           <tbody>${jobsRows}</tbody>
@@ -462,26 +462,26 @@ function toggleQueueCard(queueId) {
 }
 
 async function stopQueue(queueId) {
-  if (!confirm('Fermare questa coda? Il job corrente verra interrotto e i successivi annullati.')) return;
+  if (!confirm('Stop this queue? The current job will be interrupted and subsequent jobs canceled.')) return;
   try {
     const r = await fetch(`/pipeline-queues/${encodeURIComponent(queueId)}?action=stop`, { method: 'DELETE' });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore stop queue');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error stopping queue');
     await loadQueues();
   } catch (e) {
-    alert('Errore: ' + e.message);
+    alert('Error: ' + e.message);
   }
 }
 
 async function deleteQueue(queueId) {
-  if (!confirm('Eliminare questa coda dallo storico? Se e attiva verra prima fermata.')) return;
+  if (!confirm('Delete this queue from history? If active it will be stopped first.')) return;
   try {
     const r = await fetch(`/pipeline-queues/${encodeURIComponent(queueId)}?action=delete`, { method: 'DELETE' });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore delete queue');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error deleting queue');
     await loadQueues();
   } catch (e) {
-    alert('Errore: ' + e.message);
+    alert('Error: ' + e.message);
   }
 }
 
@@ -492,7 +492,7 @@ async function loadQueues() {
     latestQueuesSnapshot = data.queues || [];
     renderQueues(latestQueuesSnapshot);
   } catch (e) {
-    console.error('Errore loadQueues', e);
+    console.error('Error loading queues', e);
   }
 }
 
@@ -517,12 +517,12 @@ function renderGraphSetDetails(data) {
   `).join('');
 
   const q = data.queue || {};
-  const queueTiming = `Start: ${formatDateTime(q.startTime)} | End: ${formatDateTime(q.endTime)} | Durata: ${formatDuration(q.startTime, q.endTime)}`;
+  const queueTiming = `Start: ${formatDateTime(q.startTime)} | End: ${formatDateTime(q.endTime)} | Duration: ${formatDuration(q.startTime, q.endTime)}`;
 
   wrap.innerHTML = `
     <div class="set-detail-card">
       <div class="set-detail-head">
-        <strong>Dettaglio set: ${esc(data.setName)}</strong>
+        <strong>Set details: ${esc(data.setName)}</strong>
         <span>Queue: ${statusBadge(data.queue && data.queue.status ? data.queue.status : 'idle')}</span>
       </div>
       <div style="font-size:12px;color:#556; margin-bottom:8px;">${esc(queueTiming)}</div>
@@ -531,15 +531,15 @@ function renderGraphSetDetails(data) {
           <tr>
             <th>#</th>
             <th>Graph ID</th>
-            <th>Nodi</th>
-            <th>Archi</th>
+            <th>Nodes</th>
+            <th>Edges</th>
             <th>Clique list</th>
             <th>Status</th>
             <th>Start</th>
             <th>End</th>
-            <th>Durata</th>
+            <th>Duration</th>
             <th>Pipeline</th>
-            <th>Errore</th>
+            <th>Error</th>
           </tr>
         </thead>
         <tbody>${rows}</tbody>
@@ -560,10 +560,10 @@ async function toggleGraphSetDetails(setName) {
   try {
     const r = await fetch(`/graph-sets/${encodeURIComponent(expandedSetName)}`);
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore caricamento dettaglio set');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error loading set details');
     renderGraphSetDetails(data);
   } catch (e) {
-    alert('Errore: ' + e.message);
+    alert('Error: ' + e.message);
   }
   renderGraphSets();
 }
@@ -586,38 +586,38 @@ async function runGraphSetQueue(setName) {
       body: JSON.stringify({ optType: 'max' }),
     });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore avvio queue set');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error starting set queue');
     await loadGraphSets();
     if (expandedSetName === setName) await loadExpandedGraphSetDetails();
   } catch (e) {
-    alert('Errore: ' + e.message);
+    alert('Error: ' + e.message);
   }
 }
 
 async function cancelGraphSetQueue(setName) {
-  if (!confirm(`Fermare la queue del set ${setName}?`)) return;
+  if (!confirm(`Stop the queue for set ${setName}?`)) return;
   try {
     const r = await fetch(`/graph-sets/${encodeURIComponent(setName)}/queue`, { method: 'DELETE' });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore stop queue set');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error stopping set queue');
     await loadGraphSets();
     if (expandedSetName === setName) await loadExpandedGraphSetDetails();
   } catch (e) {
-    alert('Errore: ' + e.message);
+    alert('Error: ' + e.message);
   }
 }
 
 async function deleteGraphSetQueueExecution(setName) {
-  if (!confirm(`Eliminare l'esecuzione queue del set ${setName} dallo storico attivo? I risultati gia calcolati NON verranno eliminati.`)) return;
+  if (!confirm(`Delete the set queue execution for ${setName} from active history? Already computed results will NOT be deleted.`)) return;
   try {
     const r = await fetch(`/graph-sets/${encodeURIComponent(setName)}/queue?action=delete`, { method: 'DELETE' });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore eliminazione queue set');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error deleting set queue');
     await loadQueues();
     await loadGraphSets();
     if (expandedSetName === setName) await loadExpandedGraphSetDetails();
   } catch (e) {
-    alert('Errore: ' + e.message);
+    alert('Error: ' + e.message);
   }
 }
 
@@ -625,24 +625,24 @@ async function deleteGraphSet(setName) {
   try {
     const previewResp = await fetch(`/graph-sets/${encodeURIComponent(setName)}/delete-preview`);
     const preview = await previewResp.json();
-    if (!previewResp.ok || preview.error) throw new Error(preview.error || 'Errore preview eliminazione set');
+    if (!previewResp.ok || preview.error) throw new Error(preview.error || 'Error preparing set delete preview');
 
     const confirmMsg = [
-      `Eliminare definitivamente il graph set ${setName}?`,
+      `Permanently delete graph set ${setName}?`,
       ``,
-      `Verranno eliminati:`,
-      `- metadata set: ${preview.metadataFile || `${setName}.json`}`,
-      `- file grafi: ${preview.graphFiles || 0}`,
-      `- stato importato: ${preview.hasImportedExecution ? 'si' : 'no'}`,
-      `- riferimenti queue attivi/storico: ${preview.queueRefs || 0}`,
+      `The following will be deleted:`,
+      `- set metadata: ${preview.metadataFile || `${setName}.json`}`,
+      `- graph files: ${preview.graphFiles || 0}`,
+      `- imported status: ${preview.hasImportedExecution ? 'yes' : 'no'}`,
+      `- active/history queue references: ${preview.queueRefs || 0}`,
       ``,
-      `NON verranno eliminati i risultati calcolati (soluzioni/log gia prodotti).`,
+      `Computed results will NOT be deleted (solutions/logs already produced).`,
     ].join('\n');
     if (!confirm(confirmMsg)) return;
 
     const r = await fetch(`/graph-sets/${encodeURIComponent(setName)}`, { method: 'DELETE' });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore eliminazione graph set');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error deleting graph set');
 
     queuedGraphSets = queuedGraphSets.filter((s) => s !== setName);
     if (expandedSetName === setName) {
@@ -655,7 +655,7 @@ async function deleteGraphSet(setName) {
     await loadQueues();
     await loadGraphSets();
   } catch (e) {
-    alert('Errore: ' + e.message);
+    alert('Error: ' + e.message);
   }
 }
 
@@ -685,7 +685,7 @@ async function onImportGraphSetResultsFile(inputEl) {
       body: fd,
     });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore import risultati');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error importing results');
 
     await loadGraphSets();
     if (data.setName && expandedSetName === data.setName) {
@@ -693,7 +693,7 @@ async function onImportGraphSetResultsFile(inputEl) {
     }
     alert(`Import completato per set ${data.setName}.`);
   } catch (e) {
-    alert('Errore import: ' + e.message);
+    alert('Import error: ' + e.message);
   } finally {
     if (inputEl) inputEl.value = '';
   }
@@ -719,13 +719,13 @@ function renderGraphSets() {
       ? `<button class="btn-sm btn-stop" onclick="cancelGraphSetQueue('${esc(s.setName)}')">Cancel</button>`
       : `<button class="btn-sm btn-ok" onclick="runGraphSetQueue('${esc(s.setName)}')">Run Queue</button>`;
     const deleteExecutionBtn = hasExecution
-      ? `<button class="btn-sm btn-del" onclick="deleteGraphSetQueueExecution('${esc(s.setName)}')">Elimina esecuzione</button>`
+      ? `<button class="btn-sm btn-del" onclick="deleteGraphSetQueueExecution('${esc(s.setName)}')">Delete execution</button>`
       : '';
     const enqueueBtn = isQueued
-      ? `<button class="btn-sm btn-del" onclick="removeGraphSetFromQueue('${esc(s.setName)}')">Rimuovi da coda</button>`
-      : `<button class="btn-sm btn-fold" onclick="addGraphSetToQueue('${esc(s.setName)}')">Aggiungi in coda</button>`;
-    const exportBtn = `<button class="btn-sm btn-fold" onclick="exportGraphSetResults('${esc(s.setName)}')">Export risultati</button>`;
-    const deleteSetBtn = `<button class="btn-sm btn-del" onclick="deleteGraphSet('${esc(s.setName)}')">Elimina set</button>`;
+      ? `<button class="btn-sm btn-del" onclick="removeGraphSetFromQueue('${esc(s.setName)}')">Remove from queue</button>`
+      : `<button class="btn-sm btn-fold" onclick="addGraphSetToQueue('${esc(s.setName)}')">Add to queue</button>`;
+    const exportBtn = `<button class="btn-sm btn-fold" onclick="exportGraphSetResults('${esc(s.setName)}')">Export results</button>`;
+    const deleteSetBtn = `<button class="btn-sm btn-del" onclick="deleteGraphSet('${esc(s.setName)}')">Delete set</button>`;
     const progress = s.progress ? `${s.progress.processed}/${s.progress.total}` : `0/${s.totalGraphs || 0}`;
     const selectedClass = expandedSetName === s.setName ? 'set-row-active' : '';
     const timing = `Q: ${formatDuration(s.queueStartTime, s.queueEndTime)}`;
@@ -753,7 +753,7 @@ async function loadGraphSets() {
     renderGraphSets();
     await loadExpandedGraphSetDetails();
   } catch (e) {
-    console.error('Errore loadGraphSets', e);
+    console.error('Error loading graph sets', e);
   }
 }
 

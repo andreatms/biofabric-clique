@@ -81,7 +81,7 @@ function removeClique(i) {
 function validateForm() {
   const errors = [];
   const name = document.getElementById('graph-name').value.trim();
-  if (!name) errors.push('Il nome del grafo e obbligatorio.');
+  if (!name) errors.push('Graph name is required.');
 
   const strategy = document.getElementById('graph-strategy').value;
   if (strategy === 'dataset-sperimentazione') {
@@ -95,31 +95,31 @@ function validateForm() {
     const minCliques = getIntFieldValue('exp-min-cliques');
     const maxCliques = getIntFieldValue('exp-max-cliques');
 
-    if (!Number.isInteger(minNodes) || minNodes < 1) errors.push('minNodes deve essere un intero >= 1.');
-    if (!Number.isInteger(maxNodes) || maxNodes < 1) errors.push('maxNodes deve essere un intero >= 1.');
+    if (!Number.isInteger(minNodes) || minNodes < 1) errors.push('minNodes must be an integer >= 1.');
+    if (!Number.isInteger(maxNodes) || maxNodes < 1) errors.push('maxNodes must be an integer >= 1.');
     if (Number.isInteger(minNodes) && Number.isInteger(maxNodes) && minNodes > maxNodes) {
-      errors.push('minNodes non puo essere maggiore di maxNodes.');
+      errors.push('minNodes cannot be greater than maxNodes.');
     }
 
-    if (!Number.isInteger(minCliqueSize) || minCliqueSize < 1) errors.push('minCliqueSize deve essere un intero >= 1.');
-    if (!Number.isInteger(maxCliqueSize) || maxCliqueSize < 1) errors.push('maxCliqueSize deve essere un intero >= 1.');
+    if (!Number.isInteger(minCliqueSize) || minCliqueSize < 1) errors.push('minCliqueSize must be an integer >= 1.');
+    if (!Number.isInteger(maxCliqueSize) || maxCliqueSize < 1) errors.push('maxCliqueSize must be an integer >= 1.');
     if (Number.isInteger(minCliqueSize) && Number.isInteger(maxCliqueSize) && minCliqueSize > maxCliqueSize) {
-      errors.push('minCliqueSize non puo essere maggiore di maxCliqueSize.');
+      errors.push('minCliqueSize cannot be greater than maxCliqueSize.');
     }
 
     if (typeof avgCliqueSize !== 'number' || Number.isNaN(avgCliqueSize)) {
-      errors.push('avgCliqueSize deve essere un numero valido.');
+      errors.push('avgCliqueSize must be a valid number.');
     }
 
-    if (!Number.isInteger(minCliques) || minCliques < 1) errors.push('minCliques deve essere un intero >= 1.');
-    if (!Number.isInteger(maxCliques) || maxCliques < 1) errors.push('maxCliques deve essere un intero >= 1.');
+    if (!Number.isInteger(minCliques) || minCliques < 1) errors.push('minCliques must be an integer >= 1.');
+    if (!Number.isInteger(maxCliques) || maxCliques < 1) errors.push('maxCliques must be an integer >= 1.');
     if (Number.isInteger(minCliques) && Number.isInteger(maxCliques) && minCliques > maxCliques) {
-      errors.push('minCliques non puo essere maggiore di maxCliques.');
+      errors.push('minCliques cannot be greater than maxCliques.');
     }
 
     if (mode === 'set') {
       const setName = document.getElementById('exp-set-name').value.trim();
-      if (!setName) errors.push('setName e obbligatorio in modalita set.');
+      if (!setName) errors.push('setName is required in set mode.');
 
       const nodeStep = getIntFieldValue('exp-node-step');
       const graphsPerNodeStep = getIntFieldValue('exp-graphs-per-node-step');
@@ -130,17 +130,17 @@ function validateForm() {
       const hasCliqueAxis = cliqueStep !== null || graphsPerCliqueStep !== null;
 
       if (!hasNodeAxis && !hasCliqueAxis) {
-        errors.push('Per mode=set devi definire almeno nodeStep+graphsPerNodeStep o cliqueStep+graphsPerCliqueStep.');
+        errors.push('For mode=set you must define at least nodeStep+graphsPerNodeStep or cliqueStep+graphsPerCliqueStep.');
       }
 
       if (hasNodeAxis) {
-        if (!Number.isInteger(nodeStep) || nodeStep < 1) errors.push('nodeStep deve essere un intero >= 1.');
-        if (!Number.isInteger(graphsPerNodeStep) || graphsPerNodeStep < 1) errors.push('graphsPerNodeStep deve essere un intero >= 1.');
+        if (!Number.isInteger(nodeStep) || nodeStep < 1) errors.push('nodeStep must be an integer >= 1.');
+        if (!Number.isInteger(graphsPerNodeStep) || graphsPerNodeStep < 1) errors.push('graphsPerNodeStep must be an integer >= 1.');
       }
 
       if (hasCliqueAxis) {
-        if (!Number.isInteger(cliqueStep) || cliqueStep < 1) errors.push('cliqueStep deve essere un intero >= 1.');
-        if (!Number.isInteger(graphsPerCliqueStep) || graphsPerCliqueStep < 1) errors.push('graphsPerCliqueStep deve essere un intero >= 1.');
+        if (!Number.isInteger(cliqueStep) || cliqueStep < 1) errors.push('cliqueStep must be an integer >= 1.');
+        if (!Number.isInteger(graphsPerCliqueStep) || graphsPerCliqueStep < 1) errors.push('graphsPerCliqueStep must be an integer >= 1.');
       }
     }
 
@@ -150,11 +150,11 @@ function validateForm() {
   syncAllCliques();
   cliqueRows.forEach((r, i) => {
     const p = `Clique ${i + 1}: `;
-    if (!Number.isInteger(r.nodesMin) || r.nodesMin < 1) errors.push(p + 'nodesMin deve essere >= 1.');
-    if (!Number.isInteger(r.nodesMax) || r.nodesMax < r.nodesMin) errors.push(p + 'nodesMax deve essere >= nodesMin.');
-    if (r.intraProbMin < 0 || r.intraProbMin > 1) errors.push(p + 'intraProbMin fuori [0,1].');
+    if (!Number.isInteger(r.nodesMin) || r.nodesMin < 1) errors.push(p + 'nodesMin must be >= 1.');
+    if (!Number.isInteger(r.nodesMax) || r.nodesMax < r.nodesMin) errors.push(p + 'nodesMax must be >= nodesMin.');
+    if (r.intraProbMin < 0 || r.intraProbMin > 1) errors.push(p + 'intraProbMin out of [0,1].');
     if (r.intraProbMax < r.intraProbMin) errors.push(p + 'intraProbMax < intraProbMin.');
-    if (r.interProbMin < 0 || r.interProbMin > 1) errors.push(p + 'interProbMin fuori [0,1].');
+    if (r.interProbMin < 0 || r.interProbMin > 1) errors.push(p + 'interProbMin out of [0,1].');
     if (r.interProbMax < r.interProbMin) errors.push(p + 'interProbMax < interProbMin.');
   });
 
@@ -222,7 +222,7 @@ function generateGraph() {
 
   const btn = document.getElementById('generate-btn');
   btn.disabled = true;
-  btn.textContent = 'Generazione in corso...';
+  btn.textContent = 'Generating...';
 
   fetch('/generate-graph', {
     method: 'POST',
@@ -241,9 +241,9 @@ function generateGraph() {
 
         const total = Array.isArray(data.graphSet.graphs) ? data.graphSet.graphs.length : 0;
         const failed = Array.isArray(data.graphSet.failures) ? data.graphSet.failures.length : 0;
-        document.getElementById('graph-meta').textContent = `Set: ${data.graphSet.setName} | grafi: ${total} | falliti: ${failed}`;
+        document.getElementById('graph-meta').textContent = `Set: ${data.graphSet.setName} | graphs: ${total} | failed: ${failed}`;
 
-        okEl.textContent = `Set generato con successo: ${data.graphSet.setName}.`;
+        okEl.textContent = `Set generated successfully: ${data.graphSet.setName}.`;
         okEl.style.display = 'block';
 
         const graphSection = document.getElementById('generated-graph-section');
@@ -259,23 +259,23 @@ function generateGraph() {
         const n = (generatedGraphData.nodes || []).length;
         const e = (generatedGraphData.links || generatedGraphData.edges || []).length;
         const c = (generatedGraphData.cliques || []).length;
-        document.getElementById('graph-meta').textContent = `File: ${data.id} | nodi: ${n} | archi: ${e} | clique: ${c}`;
+        document.getElementById('graph-meta').textContent = `File: ${data.id} | nodes: ${n} | edges: ${e} | cliques: ${c}`;
         renderGraph(generatedGraphData);
       }
 
-      okEl.textContent = 'Grafo generato e salvato con successo.';
+      okEl.textContent = 'Graph generated and saved successfully.';
       okEl.style.display = 'block';
 
       const graphSection = document.getElementById('generated-graph-section');
       if (graphSection) graphSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     })
     .catch(err => {
-      errEl.textContent = 'Errore: ' + err.message;
+      errEl.textContent = 'Error: ' + err.message;
       errEl.style.display = 'block';
     })
     .finally(() => {
       btn.disabled = false;
-      btn.textContent = 'Genera Grafo';
+      btn.textContent = 'Generate Graph';
     });
 }
 

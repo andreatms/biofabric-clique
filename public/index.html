@@ -1,79 +1,140 @@
 ﻿<!DOCTYPE html>
-<html lang="it">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BioFabric - Home</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<nav>
+  <nav>
     <span class="nav-brand">BGW</span>
     <a href="/" class="active">Home</a>
     <a href="/graph.html">Graph</a>
     <a href="/pipeline.html">Pipeline</a>
     <a href="/dataset.html">Dataset</a>
-    <a href="/generator.html">Generatore</a>
+    <a href="/generator.html">Generator</a>
     <a href="/scheduler.html">Scheduler</a>
-    <a href="/analysis.html">Analisi</a>
-</nav>
+    <a href="/analysis.html">Analysis</a>
+  </nav>
 
-<div class="page-header">
-  <h1>BGW - BioFabric Graph Workspace</h1>
-  <p>Generazione, ottimizzazione ILP e visualizzazione BioFabric di grafi a clique</p>
-</div>
+  <div class="page-header">
+    <h1>BGW - BioFabric Graph Workspace</h1>
+    <p>Software for visualising clique and community motifs modelled using integer linear programming (ILP) in BioFabric visualization.</p>
+  </div>
 
-<div class="container mt-12">
+  <div class="container mt-12">
 
-  <a href="/graph.html" class="home-link">
-    <div class="box home-card">
-      <div class="home-icon graph" aria-hidden="true">
-        <svg viewBox="0 0 24 24" role="img" focusable="false">
-          <path d="M12 6a1.8 1.8 0 1 0 0-3.6A1.8 1.8 0 0 0 12 6Zm6.4 3.6a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6ZM5.6 9.6a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Zm0 12a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Zm12.8 0a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6ZM12 21.6a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Z"></path>
-          <path d="M6.9 7.7 10.7 11m6.3-3.3-3.8 3.3M7.4 18l3.4-3m5.8 3-3.3-3.1M12 6v4.6m0 2.8V18"></path>
-        </svg>
+    <a href="/graph.html" class="home-link">
+      <div class="box home-card">
+        <div class="home-icon graph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" focusable="false">
+            <path
+              d="M12 6a1.8 1.8 0 1 0 0-3.6A1.8 1.8 0 0 0 12 6Zm6.4 3.6a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6ZM5.6 9.6a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Zm0 12a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Zm12.8 0a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6ZM12 21.6a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Z">
+            </path>
+            <path d="M6.9 7.7 10.7 11m6.3-3.3-3.8 3.3M7.4 18l3.4-3m5.8 3-3.3-3.1M12 6v4.6m0 2.8V18"></path>
+          </svg>
+        </div>
+        <h2 class="home-card-title">Graph</h2>
+        <p class="text-muted home-card-desc">Force-directed visualization of the loaded JSON graph.</p>
       </div>
-      <h2 class="home-card-title">Graph</h2>
-      <p class="text-muted home-card-desc">Visualizzazione force-directed del grafo JSON caricato.</p>
-    </div>
-  </a>
+    </a>
 
-  <a href="/analysis.html" class="home-link">
-    <div class="box home-card">
-      <div class="home-icon dataset" aria-hidden="true">
-        <svg viewBox="0 0 24 24" role="img" focusable="false">
-          <path d="M4 19h16"></path>
-          <path d="M6 17V9M12 17V6M18 17v-4"></path>
-          <circle cx="6" cy="9" r="1.4"></circle>
-          <circle cx="12" cy="6" r="1.4"></circle>
-          <circle cx="18" cy="13" r="1.4"></circle>
-        </svg>
+    <a href="/pipeline.html" class="home-link">
+      <div class="box home-card">
+        <div class="home-icon pipeline" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" focusable="false">
+            <path d="M4 4h16v16H4z"></path>
+            <path d="M8 8h8v8H8z"></path>
+          </svg>
+        </div>
+        <h2 class="home-card-title">Pipeline</h2>
+        <p class="text-muted home-card-desc">Create pipelines to generate ILP problems and run Gurobi on loaded graphs.</p>
       </div>
-      <h2 class="home-card-title">Analisi</h2>
-      <p class="text-muted home-card-desc">Analizza pipeline/queue salvate e visualizza il grafico comparativo delle clique.</p>
-    </div>
-  </a>
+    </a>
 
-  <a href="/risultati_staircase.html" class="home-link" hidden>
-    <div class="box home-card">
-      <div class="home-icon dataset" aria-hidden="true">
-        <svg viewBox="0 0 24 24" role="img" focusable="false">
-          <path d="M4 20h16"></path>
-          <path d="M6 17h3v-3h3v-3h3V8h3"></path>
-          <circle cx="6" cy="17" r="1.1"></circle>
-          <circle cx="9" cy="14" r="1.1"></circle>
-          <circle cx="12" cy="11" r="1.1"></circle>
-          <circle cx="15" cy="8" r="1.1"></circle>
-          <circle cx="18" cy="8" r="1.1"></circle>
-        </svg>
+    <a href="/dataset.html" class="home-link">
+      <div class="box home-card">
+        <div class="home-icon dataset" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" focusable="false">
+            <path d="M4 19h16"></path>
+            <path d="M6 17V9M12 17V6M18 17v-4"></path>
+            <circle cx="6" cy="9" r="1.4"></circle>
+            <circle cx="12" cy="6" r="1.4"></circle>
+            <circle cx="18" cy="13" r="1.4"></circle>
+          </svg>
+        </div>
+        <h2 class="home-card-title">Dataset</h2>
+        <p class="text-muted home-card-desc">Upload new graphs in JSON format or manage existing ones.</p>
       </div>
-      <h2 class="home-card-title">Risultati Staircase</h2>
-      <p class="text-muted home-card-desc">Carica JSON e SOL locali e visualizza il layout Biofabric con overlay staircase.</p>
-    </div>
-  </a>
+    </a>
 
-</div>
+    <a href="/generator.html" class="home-link">
+      <div class="box home-card">
+        <div class="home-icon graph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" focusable="false">
+            <path d="M4 4h16v16H4z"></path>
+            <path d="M8 8h8v8H8z"></path>
+          </svg>
+        </div>
+        <h2 class="home-card-title">Generator</h2>
+        <p class="text-muted home-card-desc">Generate clique graphs with custom parameters and save them as JSON.</p>
+      </div>
+    </a>
+
+    <a href="/scheduler.html" class="home-link">
+      <div class="box home-card">
+        <div class="home-icon dataset" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" focusable="false">
+            <path d="M4 4h16v16H4z"></path>
+            <path d="M8 8h8v8H8z"></path>
+          </svg>
+        </div>
+        <h2 class="home-card-title">Scheduler</h2>
+        <p class="text-muted home-card-desc">View and manage scheduled and running pipelines.</p>
+      </div>
+    </a>
+
+    <a href="/analysis.html" class="home-link">
+      <div class="box home-card">
+        <div class="home-icon dataset" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" focusable="false">
+            <path d="M4 19h16"></path>
+            <path d="M6 17V9M12 17V6M18 17v-4"></path>
+            <circle cx="6" cy="9" r="1.4"></circle>
+            <circle cx="12" cy="6" r="1.4"></circle>
+            <circle cx="18" cy="13" r="1.4"></circle>
+          </svg>
+        </div>
+        <h2 class="home-card-title">Analysis</h2>
+        <p class="text-muted home-card-desc">Analyze saved pipelines/queues and view the comparative clique chart.</p>
+      </div>
+    </a>
+
+    <a href="/risultati_staircase.html" class="home-link" hidden>
+      <div class="box home-card">
+        <div class="home-icon dataset" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" focusable="false">
+            <path d="M4 20h16"></path>
+            <path d="M6 17h3v-3h3v-3h3V8h3"></path>
+            <circle cx="6" cy="17" r="1.1"></circle>
+            <circle cx="9" cy="14" r="1.1"></circle>
+            <circle cx="12" cy="11" r="1.1"></circle>
+            <circle cx="15" cy="8" r="1.1"></circle>
+            <circle cx="18" cy="8" r="1.1"></circle>
+          </svg>
+        </div>
+        <h2 class="home-card-title">Staircase Results</h2>
+        <p class="text-muted home-card-desc">Load local JSON and SOL files and view the Biofabric layout with a staircase
+          overlay.</p>
+      </div>
+    </a>
+
+  </div>
 
 </body>
+
 </html>

@@ -53,7 +53,7 @@ function isNodeAxisSpacingLocked() {
 function updateNodeAxisSpacingLabel() {
   if (!_spacingLabel) return;
   const spacing = getNodeAxisSpacing();
-  const mode = isNodeAxisSpacingLocked() ? 'bloccato' : 'auto';
+  const mode = isNodeAxisSpacingLocked() ? 'locked' : 'auto';
   _spacingLabel.textContent = `${spacing.toFixed(1)} px (${mode})`;
 }
 
@@ -188,7 +188,7 @@ function svgTextToImage(svgText) {
     };
     image.onerror = () => {
       URL.revokeObjectURL(url);
-      reject(new Error('Impossibile caricare l\'SVG per l\'esportazione.'));
+      reject(new Error('Unable to load the SVG for export.'));
     };
     image.src = url;
   });
@@ -212,21 +212,21 @@ async function exportSvgFigure({ svgEl, format, filenameBase, emptyMessage }) {
   canvas.width = width;
   canvas.height = height;
   const ctx = canvas.getContext('2d');
-  if (!ctx) throw new Error('Canvas 2D non disponibile nel browser.');
+  if (!ctx) throw new Error('Canvas 2D is not available in this browser.');
   ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, width, height);
   ctx.drawImage(image, 0, 0, width, height);
 
   if (format === 'png') {
     const pngBlob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
-    if (!pngBlob) throw new Error('Impossibile generare il file PNG.');
+    if (!pngBlob) throw new Error('Unable to generate the PNG file.');
     triggerBlobDownload(pngBlob, `${filenameBase}.png`);
     return;
   }
 
   const jsPdfCtor = window.jspdf?.jsPDF;
   if (!jsPdfCtor) {
-    throw new Error('Libreria PDF non caricata.');
+    throw new Error('PDF library not loaded.');
   }
   const pdf = new jsPdfCtor({
     orientation: width >= height ? 'landscape' : 'portrait',
@@ -244,7 +244,7 @@ async function exportBiofabricFigure() {
     svgEl: getSvgElementForContainer('#result-biofabric'),
     format: getBiofabricExportFormat(),
     filenameBase: `${getExportBaseFilename()}_biofabric`,
-    emptyMessage: 'Nessuna figura Biofabric disponibile da esportare.',
+    emptyMessage: 'No Biofabric figure available to export.',
   });
 }
 
@@ -253,7 +253,7 @@ async function exportGraphFigure() {
     svgEl: getSvgElementForContainer('#result-graph'),
     format: getGraphExportFormat(),
     filenameBase: `${getExportBaseFilename()}_graph`,
-    emptyMessage: 'Nessun grafo node-link disponibile da esportare.',
+    emptyMessage: 'No node-link graph available to export.',
   });
 }
 
@@ -264,10 +264,10 @@ function updateHeaderChips(meta) {
   const nodeChip = document.getElementById('chip-node-order');
   const edgeChip = document.getElementById('chip-edge-order');
 
-  graphChip.textContent = `Grafo: ${meta.graphName}`;
+  graphChip.textContent = `Graph: ${meta.graphName}`;
   graphChip.style.display = '';
 
-  solChip.textContent = `Soluzione: ${meta.solName}`;
+  solChip.textContent = `Solution: ${meta.solName}`;
   solChip.style.display = '';
 
   if (meta.objectiveValue !== null) {
@@ -277,10 +277,10 @@ function updateHeaderChips(meta) {
     objChip.style.display = 'none';
   }
 
-  nodeChip.textContent = `Nodi: ${meta.nodeOrderMethod}`;
+  nodeChip.textContent = `Nodes: ${meta.nodeOrderMethod}`;
   nodeChip.style.display = '';
 
-  edgeChip.textContent = `Archi: ${meta.edgeOrderMethod}`;
+  edgeChip.textContent = `Edges: ${meta.edgeOrderMethod}`;
   edgeChip.style.display = '';
 }
 
@@ -300,7 +300,7 @@ function getNumericId(value) {
 
 function normalizeGraphData(rawGraph) {
   if (!rawGraph || !Array.isArray(rawGraph.nodes)) {
-    throw new Error('JSON non valido: campo nodes mancante.');
+    throw new Error('Invalid JSON: missing nodes field.');
   }
 
   const nodes = rawGraph.nodes
@@ -311,7 +311,7 @@ function normalizeGraphData(rawGraph) {
     .filter(Boolean);
 
   if (!nodes.length) {
-    throw new Error('JSON non valido: nessun nodo valido trovato.');
+    throw new Error('Invalid JSON: no valid nodes found.');
   }
 
   const rawEdges = Array.isArray(rawGraph.links)
@@ -340,7 +340,7 @@ function normalizeGraphData(rawGraph) {
     : [];
 
   return {
-    name: rawGraph.name || 'grafo_locale',
+    name: rawGraph.name || 'local_graph',
     nodes,
     links: edges,
     cliques,
@@ -387,7 +387,7 @@ function deriveNodeOrder(nodes, solVars) {
 
     return {
       orderedNodes: ordered.map((entry, idx) => ({ id: entry.id, pos: idx })),
-      methodLabel: 'da pos_n',
+      methodLabel: 'from pos_n',
     };
   }
 
@@ -424,8 +424,8 @@ function deriveNodeOrder(nodes, solVars) {
   const orderedNodes = orderedIds.map((id, idx) => ({ id, pos: idx }));
 
   const methodLabel = pairCount > 0
-    ? `da y_n* (${pairCount} confronti)`
-    : 'fallback su id nodo';
+    ? `from y_n* (${pairCount} comparisons)`
+    : 'fallback to node id';
 
   return { orderedNodes, methodLabel };
 }
@@ -450,7 +450,7 @@ function deriveEdgeOrder(edges, solVars) {
 
     return {
       orderedEdges: ordered.map((entry, idx) => ({ id: entry.id, pos: idx })),
-      methodLabel: 'da pos_e',
+      methodLabel: 'from pos_e',
     };
   }
 
@@ -487,8 +487,8 @@ function deriveEdgeOrder(edges, solVars) {
   const orderedEdges = orderedIds.map((id, idx) => ({ id, pos: idx }));
 
   const methodLabel = pairCount > 0
-    ? `da x_e* (${pairCount} confronti)`
-    : 'fallback su id arco';
+    ? `from x_e* (${pairCount} comparisons)`
+    : 'fallback to edge id';
 
   return { orderedEdges, methodLabel };
 }
@@ -533,15 +533,15 @@ function drawAll() {
   });
 
   updateHeaderChips({
-    graphName: _lastGraphData.name || 'grafo_locale',
-    solName: _lastSolParsed.fileName || 'soluzione_locale.sol',
+    graphName: _lastGraphData.name || 'local_graph',
+    solName: _lastSolParsed.fileName || 'local_solution.sol',
     objectiveValue: _lastSolParsed.objectiveValue,
     nodeOrderMethod: drawResult.nodeOrderMethod,
     edgeOrderMethod: drawResult.edgeOrderMethod,
   });
 
   updateStaircaseSummary(
-    `Staircase attive: ${drawResult.staircaseCount} | Nodi: ${drawResult.nodeOrderMethod} | Archi: ${drawResult.edgeOrderMethod}`,
+    `Active staircases: ${drawResult.staircaseCount} | Nodes: ${drawResult.nodeOrderMethod} | Edges: ${drawResult.edgeOrderMethod}`,
   );
 
   renderGraph(_lastGraphData, drawResult.coloredLinks, 'result-graph');
@@ -705,7 +705,7 @@ function renderGraph(graphData, coloredLinks, containerId) {
   container.innerHTML = '';
 
   if (!Array.isArray(graphData.nodes) || !graphData.nodes.length) {
-    container.innerHTML = '<div class="placeholder">Nessun nodo disponibile nel JSON.</div>';
+    container.innerHTML = '<div class="placeholder">No nodes available in the JSON.</div>';
     return;
   }
 
@@ -861,11 +861,11 @@ async function loadFilesAndRender() {
   const solFile = _solInput?.files?.[0];
 
   if (!jsonFile || !solFile) {
-    showError('Seleziona sia il file JSON sia il file SOL.');
+    showError('Select both the JSON file and the SOL file.');
     return;
   }
 
-  showBanner('waiting', 'Lettura file locali in corso...');
+  showBanner('waiting', 'Reading local files...');
 
   try {
     const [jsonText, solText] = await Promise.all([jsonFile.text(), solFile.text()]);
@@ -881,7 +881,7 @@ async function loadFilesAndRender() {
     hideBanner();
   } catch (err) {
     hideBanner();
-    showError('Errore nel caricamento: ' + (err?.message || String(err)));
+    showError('Loading error: ' + (err?.message || String(err)));
   }
 }
 
@@ -926,11 +926,11 @@ async function loadFilesAndRender() {
     _biofabricExportButton.addEventListener('click', async () => {
       const prevText = _biofabricExportButton.textContent;
       _biofabricExportButton.disabled = true;
-      _biofabricExportButton.textContent = 'Esporto...';
+      _biofabricExportButton.textContent = 'Exporting...';
       try {
         await exportBiofabricFigure();
       } catch (err) {
-        showError(`Errore esportazione figura: ${err.message}`);
+        showError(`Export error (figure): ${err.message}`);
       } finally {
         _biofabricExportButton.disabled = false;
         _biofabricExportButton.textContent = prevText;
@@ -942,11 +942,11 @@ async function loadFilesAndRender() {
     _graphExportButton.addEventListener('click', async () => {
       const prevText = _graphExportButton.textContent;
       _graphExportButton.disabled = true;
-      _graphExportButton.textContent = 'Esporto...';
+      _graphExportButton.textContent = 'Exporting...';
       try {
         await exportGraphFigure();
       } catch (err) {
-        showError(`Errore esportazione grafo: ${err.message}`);
+        showError(`Export error (graph): ${err.message}`);
       } finally {
         _graphExportButton.disabled = false;
         _graphExportButton.textContent = prevText;

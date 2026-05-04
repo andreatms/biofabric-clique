@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <title>Pipeline - Biofabric</title>
   <link rel="stylesheet" href="css/style.css">
@@ -13,9 +13,9 @@
     <a href="/graph.html">Graph</a>
     <a href="/pipeline.html" class="active">Pipeline</a>
     <a href="/dataset.html">Dataset</a>
-    <a href="/generator.html">Generatore</a>
+    <a href="/generator.html">Generator</a>
     <a href="/scheduler.html">Scheduler</a>
-    <a href="/analysis.html">Analisi</a>
+    <a href="/analysis.html">Analysis</a>
   </nav>
 
   
@@ -23,32 +23,32 @@
     <div id="log-modal-inner">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
         <div>
-          <h3 style="margin:0;color:#3a7bd5;font-size:16px;">Log Pipeline</h3>
+          <h3 style="margin:0;color:#3a7bd5;font-size:16px;">Pipeline Log</h3>
           <div id="log-modal-title" style="font-size:12px;color:#888;margin-top:2px;"></div>
         </div>
-        <button class="btn-sm btn-log" onclick="closeLogModal()" style="padding:5px 14px;font-size:12px;">x Chiudi</button>
+        <button class="btn-sm btn-log" onclick="closeLogModal()" style="padding:5px 14px;font-size:12px;">x Close</button>
       </div>
       <div id="log-modal-content"></div>
       <div style="margin-top:10px;font-size:11px;color:#aaa;">
-        Il log si aggiorna automaticamente ogni 1.5 s mentre la pipeline e' in corso.
+        The log auto-refreshes every 1.5 s while the pipeline is running.
       </div>
     </div>
   </div>
 
   <h1 style="margin:20px 24px 4px;">Pipeline</h1>
   <p class="info-note" style="margin:0 24px 20px;">
-    Seleziona un file JSON gia caricato, genera il problema LP e lancia Gurobi.
+    Select an already uploaded JSON file, generate the LP problem, and run Gurobi.
   </p>
 
   <!-- New pipeline form -->
   <div class="container">
     <div class="box" style="flex:1 1 100%;">
-      <h2 style="margin-top:0;">Nuova Pipeline</h2>
+      <h2 style="margin-top:0;">New Pipeline</h2>
 
       <!-- Basic params -->
       <div class="pipe-row">
         <div style="flex:2;min-width:200px;">
-          <label class="field-label" for="pipe-name">Nome Pipeline *</label>
+          <label class="field-label" for="pipe-name">Pipeline Name *</label>
           <input type="text" id="pipe-name" placeholder="es. test_pipeline"
             style="width:100%;padding:8px 10px;border:1px solid #2196f3;border-radius:6px;font-size:14px;box-sizing:border-box;">
         </div>
@@ -59,7 +59,7 @@
           </select>
         </div>
         <div>
-          <label class="field-label" for="pipe-opt-type">Tipo ottimizzazione</label>
+          <label class="field-label" for="pipe-opt-type">Optimization Type</label>
           <select id="pipe-opt-type"
             style="width:100%;padding:9px 10px;border:1px solid #ccc;border-radius:6px;font-size:13px;box-sizing:border-box;">
             <option value="max">Maximize (max)</option>
@@ -70,21 +70,21 @@
 
       <!-- Solver params -->
       <details>
-        <summary style="cursor:pointer; font-weight:600; font-size:13px; color:#3a7bd5;">Parametri Solver (opzionale)</summary>
+        <summary style="cursor:pointer; font-weight:600; font-size:13px; color:#3a7bd5;">Solver Parameters (optional)</summary>
         <div class="pipe-row" style="margin-top:12px;margin-bottom:0;">
           <div>
-            <label class="field-label">Time Limit (secondi)</label>
-            <input type="number" id="pipe-time-limit" min="1" placeholder="&infin; illimitato"
+            <label class="field-label">Time Limit (seconds)</label>
+            <input type="number" id="pipe-time-limit" min="1" placeholder="&infin; unlimited"
               style="width:100%;padding:7px 8px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;">
           </div>
           <div>
-            <label class="field-label">MIP Gap (es. 0.01 = 1%)</label>
+            <label class="field-label">MIP Gap (e.g., 0.01 = 1%)</label>
             <input type="number" id="pipe-mip-gap" min="0" step="0.001" placeholder="default Gurobi"
               style="width:100%;padding:7px 8px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;">
           </div>
           <div>
             <label class="field-label">Node Limit</label>
-            <input type="number" id="pipe-node-limit" min="1" placeholder="&infin; illimitato"
+            <input type="number" id="pipe-node-limit" min="1" placeholder="&infin; unlimited"
               style="width:100%;padding:7px 8px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;">
           </div>
         </div>
@@ -94,7 +94,7 @@
         style="width:100%;padding:13px;font-size:1.05rem;font-weight:700;
                background:linear-gradient(90deg,#3a7bd5,#00d2ff);color:#fff;
                border:none;border-radius:8px;cursor:pointer;letter-spacing:.3px;">
-        Lancia Pipeline da JSON
+        Launch Pipeline from JSON
       </button>
       <p id="launch-error" class="error-msg"></p>
     </div>
@@ -104,30 +104,30 @@
   <div class="container">
     <div class="box" style="flex:1 1 100%;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-        <h2 style="margin:0;">Pipeline Lanciate</h2>
+        <h2 style="margin:0;">Launched Pipelines</h2>
         <div style="display:flex;align-items:center;gap:12px;">
           <span id="live-dot"
             style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4caf50;"
-            title="Aggiornamento automatico attivo"></span>
+            title="Auto-refresh active"></span>
           <span style="font-size:12px;color:#888;">auto-refresh 2 s</span>
-          <button onclick="loadPipelines()">Aggiorna</button>
+          <button onclick="loadPipelines()">Refresh</button>
         </div>
       </div>
 
-      <div id="no-pipelines" class="no-pipelines">Nessuna pipeline ancora lanciata in questa sessione.</div>
+      <div id="no-pipelines" class="no-pipelines">No pipelines launched yet in this session.</div>
 
       <div class="pipeline-list-scrollpane">
         <table class="pipe-tbl" id="pipeline-table" style="display:none;">
           <thead>
             <tr>
-              <th>Nome</th>
+              <th>Name</th>
               <th>Tipo</th>
               <th>Status</th>
               <th>Gap</th>
-              <th>Grafo</th>
-              <th>Avviata</th>
-              <th>Durata</th>
-              <th>Azioni</th>
+              <th>Graph</th>
+              <th>Started</th>
+              <th>Duration</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody id="pipeline-tbody"></tbody>
@@ -139,27 +139,27 @@
   <div class="container">
     <div class="box" style="flex:1 1 100%;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-        <h2 style="margin:0;">Pipeline da Graph Set</h2>
+        <h2 style="margin:0;">Pipelines from Graph Set</h2>
         <div style="display:flex;align-items:center;gap:12px;">
           <span style="font-size:12px;color:#888;">auto-refresh 2 s</span>
-          <button onclick="loadPipelines()">Aggiorna</button>
+          <button onclick="loadPipelines()">Refresh</button>
         </div>
       </div>
 
-      <div id="no-set-pipelines" class="no-pipelines">Nessuna pipeline da set ancora lanciata.</div>
+      <div id="no-set-pipelines" class="no-pipelines">No graph-set pipelines launched yet.</div>
 
       <div class="pipeline-list-scrollpane">
         <table class="pipe-tbl" id="set-pipeline-table" style="display:none;">
           <thead>
             <tr>
-              <th>Nome</th>
+              <th>Name</th>
               <th>Tipo</th>
               <th>Status</th>
               <th>Gap</th>
-              <th>Grafo</th>
-              <th>Avviata</th>
-              <th>Durata</th>
-              <th>Azioni</th>
+              <th>Graph</th>
+              <th>Started</th>
+              <th>Duration</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody id="set-pipeline-tbody"></tbody>

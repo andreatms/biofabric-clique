@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generatore Grafi - BGW</title>
+  <title>Graph Generator - BGW</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/generator.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -16,57 +16,57 @@
   <a href="/graph.html">Graph</a>
   <a href="/pipeline.html">Pipeline</a>
   <a href="/dataset.html">Dataset</a>
-  <a href="/generator.html" class="active">Generatore</a>
+  <a href="/generator.html" class="active">Generator</a>
   <a href="/scheduler.html">Scheduler</a>
-  <a href="/analysis.html">Analisi</a>
+  <a href="/analysis.html">Analysis</a>
 </nav>
 
 <div class="page-header">
-  <h1>Generatore Grafi</h1>
-  <p>Genera un grafo con parametri clique e visualizzalo subito.</p>
+  <h1>Graph Generator</h1>
+  <p>Generate a graph with clique parameters and preview it instantly.</p>
 </div>
 
 <div class="container">
   <div class="box" style="flex:1 1 100%;">
-    <h2 style="margin-top:0;">Nuovo grafo</h2>
+    <h2 style="margin-top:0;">New Graph</h2>
 
     <div class="pipe-row">
       <div style="flex:2;min-width:220px;">
-        <label class="field-label" for="graph-name">Nome grafo *</label>
+        <label class="field-label" for="graph-name">Graph Name *</label>
         <input type="text" id="graph-name" placeholder="es. test_generator"
           style="width:100%;padding:8px 10px;border:1px solid #2196f3;border-radius:6px;font-size:14px;box-sizing:border-box;">
       </div>
       <div>
-        <label class="field-label" for="graph-strategy">Modalità generazione</label>
+        <label class="field-label" for="graph-strategy">Generation Mode</label>
         <select id="graph-strategy"
           style="width:100%;padding:9px 10px;border:1px solid #ccc;border-radius:6px;font-size:13px;box-sizing:border-box;">
           <option value="default">cluster-mode</option>
-          <option value="dataset-sperimentazione">dataset-sperimentazione</option>
+          <option value="dataset-sperimentazione">dataset-experiment</option>
         </select>
       </div>
       <div>
-        <label class="field-label" for="graph-seed">Seed RNG (opzionale)</label>
-        <input type="number" id="graph-seed" placeholder="riproducibilita"
+        <label class="field-label" for="graph-seed">RNG Seed (optional)</label>
+        <input type="number" id="graph-seed" placeholder="reproducibility"
           style="width:100%;padding:8px 10px;border:1px solid #ccc;border-radius:6px;font-size:13px;box-sizing:border-box;">
       </div>
     </div>
 
     <div id="cluster-params-section" style="margin-bottom:16px;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <label class="field-label" style="margin:0;">Definizione clique *</label>
-        <button class="btn-sm" style="background:#4caf50;font-size:12px;" onclick="addClique()">+ Aggiungi Clique</button>
+        <label class="field-label" style="margin:0;">Clique Definition *</label>
+        <button class="btn-sm" style="background:#4caf50;font-size:12px;" onclick="addClique()">+ Add Clique</button>
       </div>
       <p class="info-note" style="margin:0 0 8px;">
-        Ogni riga definisce i range di nodi e probabilita intra/inter clique.
+        Each row defines node ranges and intra/inter-clique probabilities.
       </p>
       <div style="overflow-x:auto;">
         <table class="clique-tbl">
           <thead>
             <tr>
               <th rowspan="2" style="width:36px;">#</th>
-              <th colspan="2">Nodi</th>
-              <th colspan="2">Prob. Intra-clique</th>
-              <th colspan="2">Prob. Inter-clique</th>
+              <th colspan="2">Nodes</th>
+              <th colspan="2">Intra-clique Prob.</th>
+              <th colspan="2">Inter-clique Prob.</th>
               <th rowspan="2" style="width:36px;"></th>
             </tr>
             <tr>
@@ -81,18 +81,18 @@
     </div>
 
     <div id="dataset-exp-params-section" class="gen-panel" style="display:none; margin-bottom:16px;">
-      <h3 style="margin:0 0 10px; font-size:14px; color:#2c3e50;">Parametri dataset-sperimentazione</h3>
+      <h3 style="margin:0 0 10px; font-size:14px; color:#2c3e50;">Dataset Experiment Parameters</h3>
 
       <div class="pipe-row" style="margin-bottom:10px;">
         <div>
-          <label class="field-label" for="exp-mode">Modalita</label>
+          <label class="field-label" for="exp-mode">Mode</label>
           <select id="exp-mode" class="gen-input">
             <option value="single">single</option>
             <option value="set">set</option>
           </select>
         </div>
         <div>
-          <label class="field-label" for="exp-set-name">Nome set (solo set)</label>
+          <label class="field-label" for="exp-set-name">Set Name (set only)</label>
           <input type="text" id="exp-set-name" class="gen-input" placeholder="es. set_test_1">
         </div>
       </div>
@@ -140,22 +140,22 @@
           </div>
           <div>
             <label class="field-label" for="exp-clique-step">cliqueStep</label>
-            <input type="number" id="exp-clique-step" class="gen-input" min="1" placeholder="opzionale">
+            <input type="number" id="exp-clique-step" class="gen-input" min="1" placeholder="optional">
           </div>
           <div>
             <label class="field-label" for="exp-graphs-per-clique-step">graphsPerCliqueStep</label>
-            <input type="number" id="exp-graphs-per-clique-step" class="gen-input" min="1" placeholder="opzionale">
+            <input type="number" id="exp-graphs-per-clique-step" class="gen-input" min="1" placeholder="optional">
           </div>
         </div>
         <p class="info-note" style="margin:0;">
-          In modalita set devi definire almeno una coppia valida: nodeStep + graphsPerNodeStep oppure cliqueStep + graphsPerCliqueStep.
+          In set mode you must define at least one valid pair: nodeStep + graphsPerNodeStep or cliqueStep + graphsPerCliqueStep.
         </p>
       </div>
     </div>
 
     <button id="generate-btn" onclick="generateGraph()"
       style="width:100%;padding:13px;font-size:1.05rem;font-weight:700;background:linear-gradient(90deg,#3a7bd5,#00d2ff);color:#fff;border:none;border-radius:8px;cursor:pointer;letter-spacing:.3px;">
-      Genera Grafo
+      Generate Graph
     </button>
     <p id="generate-error" class="error-msg"></p>
     <p id="generate-ok" class="ok-msg"></p>
@@ -165,10 +165,10 @@
 <div class="container">
   <div class="box" style="flex:1 1 100%;" id="generated-graph-section">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;">
-      <h2 style="margin:0;">Anteprima grafo generato</h2>
-      <button id="open-graph-page" class="btn-sm btn-view" style="display:none;" onclick="openInGraphPage()">Apri in pagina Graph</button>
+      <h2 style="margin:0;">Generated Graph Preview</h2>
+      <button id="open-graph-page" class="btn-sm btn-view" style="display:none;" onclick="openInGraphPage()">Open in Graph Page</button>
     </div>
-    <p id="graph-meta" class="info-note" style="margin-top:8px;">Nessun grafo generato.</p>
+    <p id="graph-meta" class="info-note" style="margin-top:8px;">No graph generated.</p>
     <div id="generated-graph" class="graph-canvas-wrap"></div>
   </div>
 </div>

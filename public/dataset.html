@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,27 +15,27 @@
     <a href="/graph.html">Graph</a>
     <a href="/pipeline.html">Pipeline</a>
     <a href="/dataset.html" class="active">Dataset</a>
-    <a href="/generator.html">Generatore</a>
+    <a href="/generator.html">Generator</a>
     <a href="/scheduler.html">Scheduler</a>
-    <a href="/analysis.html">Analisi</a>
+    <a href="/analysis.html">Analysis</a>
   </nav>
 
   <h1 style="margin:20px 24px 4px;">Dataset</h1>
   <p class="info-note" style="margin:0 24px 20px;">
-    Carica un grafo in formato <code>.lst</code> e convertilo in JSON.
-    L'esecuzione della pipeline va fatta dalla pagina Pipeline.
+    Upload a graph in <code>.lst</code> format and convert it to JSON.
+    Run the pipeline from the Pipeline page.
   </p>
 
   <div class="container">
     <div class="box" style="flex:1 1 100%;">
-      <h2 style="margin-top:0;">Upload Dataset .lst</h2>
+      <h2 style="margin-top:0;">Upload .lst dataset</h2>
       <div class="pipe-row" style="align-items:flex-end;">
         <div style="flex:2;min-width:260px;">
-          <label class="field-label" for="lst-file">File .lst</label>
+          <label class="field-label" for="lst-file">.lst file</label>
           <input type="file" id="lst-file" accept=".lst" style="width:100%;">
         </div>
         <div style="min-width:180px;">
-          <button id="upload-lst-btn" class="btn-sm btn-ok" style="width:100%;padding:10px 12px;font-size:12px;" onclick="uploadLstFile()">Carica e converti</button>
+          <button id="upload-lst-btn" class="btn-sm btn-ok" style="width:100%;padding:10px 12px;font-size:12px;" onclick="uploadLstFile()">Upload and convert</button>
         </div>
       </div>
       <p id="upload-msg" class="info-note" style="margin-top:0;"></p>
@@ -45,15 +45,15 @@
           <thead>
             <tr>
               <th>Dataset JSON</th>
-              <th>Nodi</th>
-              <th>Archi</th>
-              <th>Azioni</th>
+              <th>Nodes</th>
+              <th>Edges</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody id="dataset-tbody"></tbody>
         </table>
       </div>
-      <div id="no-datasets" class="no-datasets">Nessun dataset convertito trovato.</div>
+      <div id="no-datasets" class="no-datasets">No converted datasets found.</div>
     </div>
   </div>
 

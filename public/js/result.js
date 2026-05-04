@@ -239,7 +239,7 @@ function isBiofabricNodeAxisSpacingLocked() {
 function updateBiofabricNodeAxisSpacingLabel() {
   if (!_biofabricNodeAxisSpacingValue) return;
   const spacing = getBiofabricNodeAxisSpacing();
-  const modeLabel = isBiofabricNodeAxisSpacingLocked() ? 'bloccato' : 'auto';
+  const modeLabel = isBiofabricNodeAxisSpacingLocked() ? 'locked' : 'auto';
   _biofabricNodeAxisSpacingValue.textContent = `${spacing.toFixed(1)} px (${modeLabel})`;
 }
 
@@ -385,7 +385,7 @@ function svgTextToImage(svgText) {
     };
     image.onerror = () => {
       URL.revokeObjectURL(url);
-      reject(new Error('Impossibile caricare l\'SVG per l\'esportazione.'));
+      reject(new Error('Unable to load the SVG for export.'));
     };
     image.src = url;
   });
@@ -409,21 +409,21 @@ async function exportSvgFigure({ svgEl, format, filenameBase, emptyMessage }) {
   canvas.width = width;
   canvas.height = height;
   const ctx = canvas.getContext('2d');
-  if (!ctx) throw new Error('Canvas 2D non disponibile nel browser.');
+  if (!ctx) throw new Error('Canvas 2D is not available in this browser.');
   ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, width, height);
   ctx.drawImage(image, 0, 0, width, height);
 
   if (format === 'png') {
     const pngBlob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
-    if (!pngBlob) throw new Error('Impossibile generare il file PNG.');
+    if (!pngBlob) throw new Error('Unable to generate the PNG file.');
     triggerBlobDownload(pngBlob, `${filenameBase}.png`);
     return;
   }
 
   const jsPdfCtor = window.jspdf?.jsPDF;
   if (!jsPdfCtor) {
-    throw new Error('Libreria PDF non caricata.');
+    throw new Error('PDF library not loaded.');
   }
   const pdf = new jsPdfCtor({
     orientation: width >= height ? 'landscape' : 'portrait',
@@ -441,7 +441,7 @@ async function exportBiofabricFigure() {
     svgEl: getSvgElementForContainer('#result-biofabric'),
     format: getBiofabricExportFormat(),
     filenameBase: `${getExportBaseFilename()}_biofabric`,
-    emptyMessage: 'Nessuna figura Biofabric disponibile da esportare.',
+    emptyMessage: 'No Biofabric figure available to export.',
   });
 }
 
@@ -450,7 +450,7 @@ async function exportGraphFigure() {
     svgEl: getSvgElementForContainer('#result-graph'),
     format: getGraphExportFormat(),
     filenameBase: `${getExportBaseFilename()}_graph`,
-    emptyMessage: 'Nessun grafo node-link disponibile da esportare.',
+    emptyMessage: 'No node-link graph available to export.',
   });
 }
 
@@ -481,7 +481,7 @@ function updateGapChip(gap) {
 // -€-€ Entry point -€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€
 (function init() {
   if (!_solId) {
-    showError('Nessun parametro ?sol=<filename> fornito. Torna alla pagina precedente.');
+    showError('Missing ?sol=<filename> parameter. Go back to the previous page.');
     return;
   }
 
@@ -577,11 +577,11 @@ function updateGapChip(gap) {
     _biofabricExportButton.addEventListener('click', async () => {
       const prevText = _biofabricExportButton.textContent;
       _biofabricExportButton.disabled = true;
-      _biofabricExportButton.textContent = 'Esporto...';
+      _biofabricExportButton.textContent = 'Exporting...';
       try {
         await exportBiofabricFigure();
       } catch (err) {
-        showError(`Errore esportazione figura: ${err.message}`);
+        showError(`Export error (figure): ${err.message}`);
       } finally {
         _biofabricExportButton.disabled = false;
         _biofabricExportButton.textContent = prevText;
@@ -593,11 +593,11 @@ function updateGapChip(gap) {
     _graphExportButton.addEventListener('click', async () => {
       const prevText = _graphExportButton.textContent;
       _graphExportButton.disabled = true;
-      _graphExportButton.textContent = 'Esporto...';
+      _graphExportButton.textContent = 'Exporting...';
       try {
         await exportGraphFigure();
       } catch (err) {
-        showError(`Errore esportazione grafo: ${err.message}`);
+        showError(`Export error (graph): ${err.message}`);
       } finally {
         _graphExportButton.disabled = false;
         _graphExportButton.textContent = prevText;
@@ -608,7 +608,7 @@ function updateGapChip(gap) {
   // Header chips
   if (_solId) {
     const c = document.getElementById('chip-sol');
-    c.textContent = 'Soluzione: ' + _solId;
+    c.textContent = 'Solution: ' + _solId;
     c.style.display = '';
     document.getElementById('result-title').textContent = _solId.replace(/\.sol$/i, '');
 
@@ -630,7 +630,7 @@ function updateGapChip(gap) {
 
 // -€-€ Job polling -€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€
 function pollJobAndRender() {
-  showBanner('running', 'Job in esecuzione - in attesa del completamento...');
+  showBanner('running', 'Job running - waiting for completion...');
 
   function poll() {
     fetch(`/jobs`)
@@ -647,16 +647,16 @@ function pollJobAndRender() {
         updateGapChip(job.gap);
 
         if (job.gap !== null && job.gap !== undefined) {
-          showBanner('running', `Job in esecuzione - MIP Gap: ${Number(job.gap).toFixed(2)}%`);
+          showBanner('running', `Job running - MIP Gap: ${Number(job.gap).toFixed(2)}%`);
         }
 
         if (job.status === 'completed' || job.status === 'done') {
           clearInterval(_pollTimer);
-          showBanner('done', 'Job completato! Caricamento risultati...');
+          showBanner('done', 'Job completed! Loading results...');
           setTimeout(loadAndRender, 400);
         } else if (job.status === 'failed' || job.status === 'error' || job.status === 'killed') {
           clearInterval(_pollTimer);
-          showBanner('failed', `Job terminato con stato: ${job.status}`);
+          showBanner('failed', `Job finished with status: ${job.status}`);
           loadAndRender();
         }
       })
@@ -669,18 +669,18 @@ function pollJobAndRender() {
 
 // -€-€ Load graph + solution and render -€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€-€
 function loadAndRender() {
-  showBanner('waiting', 'Caricamento dati...');
+  showBanner('waiting', 'Loading data...');
 
   // Determine graph source: graph-set params, explicit graph param, or auto-detect fallback.
   let graphPromise;
   if (_setName && _setGraphId) {
     graphPromise = fetch(`/graph-sets/${encodeURIComponent(_setName)}/graphs/${encodeURIComponent(_setGraphId)}`).then(r => {
-      if (!r.ok) throw new Error(`Grafo set non trovato: ${_setName}/${_setGraphId}`);
+      if (!r.ok) throw new Error(`Set graph not found: ${_setName}/${_setGraphId}`);
       return r.json();
     });
   } else if (_graphId) {
     graphPromise = fetch(`/jsonFiles/${encodeURIComponent(_graphId)}`).then(r => {
-      if (!r.ok) throw new Error(`Grafo non trovato: ${_graphId}`);
+      if (!r.ok) throw new Error(`Graph not found: ${_graphId}`);
       return r.json();
     });
   } else {
@@ -689,7 +689,7 @@ function loadAndRender() {
 
   const solPromise = fetch(`/results/${encodeURIComponent(_solId)}`)
     .then(r => {
-      if (!r.ok) throw new Error(`Soluzione non trovata: ${_solId}`);
+      if (!r.ok) throw new Error(`Solution not found: ${_solId}`);
       return r.text();
     });
 
@@ -697,10 +697,10 @@ function loadAndRender() {
     .then(([graphData, solData]) => {
       const c = document.getElementById('chip-graph');
       if (_setName && _setGraphId) {
-        c.textContent = `Grafo set: ${_setName}/${_setGraphId}`;
+        c.textContent = `Set graph: ${_setName}/${_setGraphId}`;
         c.style.display = '';
       } else if (_graphId) {
-        c.textContent = 'Grafo: ' + (graphData.name || _graphId);
+        c.textContent = 'Graph: ' + (graphData.name || _graphId);
         c.style.display = '';
       }
       hideBanner();
@@ -711,7 +711,7 @@ function loadAndRender() {
     })
     .catch(err => {
       hideBanner();
-      showError('Errore nel caricamento: ' + err.message);
+      showError('Loading error: ' + err.message);
     });
 }
 
@@ -731,9 +731,9 @@ function fetchGraphByName(solName) {
         const jBase = f.name.replace(/\.json$/i, '');
         return solBase.startsWith(jBase) || solBase.includes(jBase);
       });
-      if (!best) throw new Error('Grafo non trovato automaticamente. Usa ?graph=<id> per specificarlo.');
+      if (!best) throw new Error('Graph not found automatically. Use ?graph=<id> to specify it.');
       const c = document.getElementById('chip-graph');
-      c.textContent = 'Grafo: ' + best.name;
+      c.textContent = 'Graph: ' + best.name;
       c.style.display = '';
       return fetch(`/jsonFiles/${encodeURIComponent(best.id)}`).then(r => r.json());
     });
@@ -899,7 +899,7 @@ function drawBiofabricOLD(gfData, slData, containerId, options = {}) {
 
   if (nodesPositions.length === 0) {
     document.getElementById(containerId).innerHTML =
-      '<div class="placeholder">Nessun dato di posizione (pos_n) trovato nella soluzione.</div>';
+      '<div class="placeholder">No position data (pos_n) found in the solution.</div>';
     return null;
   }
 
@@ -1418,7 +1418,7 @@ function drawBiofabric(gfData, slData, containerId, options = {}) {
 
   if (nodesPositions.length === 0) {
     document.getElementById(containerId).innerHTML =
-      '<div class="placeholder">Nessun dato di posizione (pos_n) trovato nella soluzione.</div>';
+      '<div class="placeholder">No position data (pos_n) found in the solution.</div>';
     return null;
   }
 

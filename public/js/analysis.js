@@ -474,8 +474,8 @@ function renderSingleScatterLegend({
   failedUsesColorScale = false,
   failedUsesSizeScale = false,
   completedDisplayMode = 'points',
-  completedLegendLabel = 'Grafi calcolati',
-  failedLegendLabel = 'Grafi non completati',
+  completedLegendLabel = 'Completed graphs',
+  failedLegendLabel = 'Incomplete graphs',
   legendFontSize = 11,
   bucketLabel = '',
 }) {
@@ -486,7 +486,7 @@ function renderSingleScatterLegend({
   };
   const completedModeLabelMap = {
     boxplot: `${completedLegendLabel} (boxplot)`,
-    'confidence-interval': `${completedLegendLabel} (intervallo di confidenza)`,
+    'confidence-interval': `${completedLegendLabel} (confidence interval)`,
     points: completedLegendLabel,
   };
   const completedModeSuffix = completedModeSuffixMap[completedDisplayMode] || '';
@@ -496,17 +496,17 @@ function renderSingleScatterLegend({
   if (legendEl) {
     legendEl.style.fontSize = `${legendFontSize}px`;
     const shapeLabelMap = {
-      triangle: 'triangolo',
-      diamond: 'rombo',
-      square: 'quadrato',
-      circle: 'cerchio',
-      cross: 'croce',
+      triangle: 'triangle',
+      diamond: 'diamond',
+      square: 'square',
+      circle: 'circle',
+      cross: 'cross',
     };
-    const shapeLabel = shapeLabelMap[String(failedShape || 'triangle').toLowerCase()] || 'triangolo';
-    const failedColorLabel = failedUsesColorScale ? 'colore da metrica' : failedColor;
-    const failedSizeLabel = failedUsesSizeScale ? ', dimensione da metrica' : '';
+    const shapeLabel = shapeLabelMap[String(failedShape || 'triangle').toLowerCase()] || 'triangle';
+    const failedColorLabel = failedUsesColorScale ? 'color from metric' : failedColor;
+    const failedSizeLabel = failedUsesSizeScale ? ', size from metric' : '';
     const bucketSuffix = bucketLabel ? ` | ${bucketLabel}` : '';
-    legendEl.textContent = `Legenda: ${completedLegendLabel}${completedModeSuffix}=${pointsCount} | ${failedLegendLabel}=${failedCount} (${shapeLabel}, ${failedColorLabel}${failedSizeLabel})${bucketSuffix}`;
+    legendEl.textContent = `Legend: ${completedLegendLabel}${completedModeSuffix}=${pointsCount} | ${failedLegendLabel}=${failedCount} (${shapeLabel}, ${failedColorLabel}${failedSizeLabel})${bucketSuffix}`;
   }
   if (!shouldShowLegend()) {
     if (legendEl) legendEl.textContent = '';
@@ -760,7 +760,7 @@ function renderWorkflowSummary() {
   const el = document.getElementById('workflow-summary');
   if (!el) return;
   if (!workflowRegistry) {
-    el.textContent = 'Stato workflow non disponibile.';
+    el.textContent = 'Workflow status not available.';
     return;
   }
 
@@ -768,7 +768,7 @@ function renderWorkflowSummary() {
   const q = workflowRegistry.queues || {};
   const pTime = p.updatedAt ? new Date(p.updatedAt).toLocaleString('it-IT') : '-';
   const qTime = q.updatedAt ? new Date(q.updatedAt).toLocaleString('it-IT') : '-';
-  el.textContent = `Pipeline registry: ${p.count ?? 0} (agg. ${pTime}) | Queue registry: ${q.count ?? 0} (agg. ${qTime})`;
+  el.textContent = `Pipeline registry: ${p.count ?? 0} (updated ${pTime}) | Queue registry: ${q.count ?? 0} (updated ${qTime})`;
 }
 
 async function loadWorkflowRegistry() {
@@ -784,24 +784,24 @@ async function loadWorkflowRegistry() {
 }
 
 async function clearWorkflow(scope) {
-  const label = scope === 'all' ? 'tutto il workflow' : `workflow ${scope}`;
-  if (!confirm(`Confermi di svuotare ${label} in logs/workflow?`)) return;
+  const label = scope === 'all' ? 'the entire workflow' : `workflow ${scope}`;
+  if (!confirm(`Confirm clearing ${label} in logs/workflow?`)) return;
 
   const err = document.getElementById('analysis-error');
   const msg = document.getElementById('analysis-msg');
   try {
     const r = await fetch(`/workflow/registry?scope=${encodeURIComponent(scope)}`, { method: 'DELETE' });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore pulizia workflow');
+    if (!r.ok || data.error) throw new Error(data.error || 'Workflow cleanup error');
 
     workflowRegistry = data.registry || null;
     renderWorkflowSummary();
     await loadSavedItems();
-    msg.textContent = data.message || 'Workflow pulito con successo.';
+    msg.textContent = data.message || 'Workflow cleared successfully.';
     msg.style.display = 'block';
     err.style.display = 'none';
   } catch (e) {
-    err.textContent = 'Errore: ' + e.message;
+    err.textContent = 'Error: ' + e.message;
     err.style.display = 'block';
   }
 }
@@ -822,17 +822,17 @@ async function deleteSelectedQueueSaves() {
     .map(o => o.value)
     .filter(Boolean);
   if (!selectedQueueSaves.length) {
-    alert('Seleziona almeno una queue salvata da eliminare.');
+    alert('Select at least one saved queue to delete.');
     return;
   }
-  if (!confirm(`Eliminare ${selectedQueueSaves.length} queue salvata/e dall'elenco analisi?`)) return;
+  if (!confirm(`Delete ${selectedQueueSaves.length} saved queue(s) from the analysis list?`)) return;
 
   const failed = [];
   for (const fileName of selectedQueueSaves) {
     try {
       const r = await fetch(`/analysis/saved-items/queue/${encodeURIComponent(fileName)}`, { method: 'DELETE' });
       const data = await r.json();
-      if (!r.ok || data.error) throw new Error(data.error || 'Errore eliminazione queue save');
+      if (!r.ok || data.error) throw new Error(data.error || 'Error deleting queue save');
     } catch (e) {
       failed.push({ fileName, error: e.message });
     }
@@ -840,7 +840,7 @@ async function deleteSelectedQueueSaves() {
 
   await loadSavedItems();
   if (failed.length) {
-    alert(`Alcune eliminazioni non sono riuscite (${failed.length}). Vedi console.`);
+    alert(`Some deletions failed (${failed.length}). See console.`);
     console.warn('Queue save delete errors', failed);
   }
 }
@@ -850,17 +850,17 @@ async function deleteSelectedPipelineSaves() {
     .map(o => o.value)
     .filter(Boolean);
   if (!selectedPipelineSaves.length) {
-    alert('Seleziona almeno una pipeline salvata da eliminare.');
+    alert('Select at least one saved pipeline to delete.');
     return;
   }
-  if (!confirm(`Eliminare ${selectedPipelineSaves.length} pipeline salvata/e dall'elenco analisi?`)) return;
+  if (!confirm(`Delete ${selectedPipelineSaves.length} saved pipeline(s) from the analysis list?`)) return;
 
   const failed = [];
   for (const fileName of selectedPipelineSaves) {
     try {
       const r = await fetch(`/analysis/saved-items/pipeline/${encodeURIComponent(fileName)}`, { method: 'DELETE' });
       const data = await r.json();
-      if (!r.ok || data.error) throw new Error(data.error || 'Errore eliminazione pipeline save');
+      if (!r.ok || data.error) throw new Error(data.error || 'Error deleting pipeline save');
     } catch (e) {
       failed.push({ fileName, error: e.message });
     }
@@ -886,7 +886,7 @@ function populateAnalysisSnapshots() {
   if (!visibleSnapshots.length) {
     const opt = document.createElement('option');
     opt.value = '';
-    opt.textContent = query ? 'Nessuna analisi trovata con questo filtro' : 'Nessuna analisi salvata';
+    opt.textContent = query ? 'No analyses found with this filter' : 'No saved analyses';
     sel.appendChild(opt);
     return;
   }
@@ -895,7 +895,7 @@ function populateAnalysisSnapshots() {
     const opt = document.createElement('option');
     opt.value = snap.fileName;
     const stamp = snap.createdAt ? new Date(snap.createdAt).toLocaleString('it-IT') : '-';
-    opt.textContent = `${snap.name || snap.fileName} | risultati: ${snap.resultCount || 0} | ${stamp}`;
+    opt.textContent = `${snap.name || snap.fileName} | results: ${snap.resultCount || 0} | ${stamp}`;
     sel.appendChild(opt);
   });
 }
@@ -907,7 +907,7 @@ async function loadAnalysisSnapshots() {
     analysisSnapshots = data.snapshots || [];
     populateAnalysisSnapshots();
   } catch (e) {
-    console.error('Errore loadAnalysisSnapshots', e);
+    console.error('Error loading analysis snapshots', e);
   }
 }
 
@@ -920,7 +920,7 @@ function exportSelectedAnalysisSnapshot() {
   const sel = document.getElementById('analysis-snapshots');
   const fileName = sel && sel.value ? sel.value : '';
   if (!fileName) {
-    alert('Seleziona una analisi salvata da esportare.');
+    alert('Select a saved analysis to export.');
     return;
   }
   window.open(`/analysis/snapshots/${encodeURIComponent(fileName)}/export`, '_blank');
@@ -945,11 +945,11 @@ async function onImportAnalysisSnapshotFile(inputEl) {
       body: fd,
     });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore import analisi salvata');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error importing saved analysis');
     await loadAnalysisSnapshots();
-    alert(`Analisi salvata importata: ${data.fileName}`);
+    alert(`Saved analysis imported: ${data.fileName}`);
   } catch (e) {
-    alert('Errore: ' + e.message);
+    alert('Error: ' + e.message);
   } finally {
     if (inputEl) inputEl.value = '';
   }
@@ -957,7 +957,7 @@ async function onImportAnalysisSnapshotFile(inputEl) {
 
 async function saveCurrentAnalysis() {
   if (!lastAnalysisResults || !lastAnalysisResults.length) {
-    alert('Non ci sono risultati da salvare. Esegui prima una analisi.');
+    alert('No results to save. Run an analysis first.');
     return;
   }
 
@@ -988,12 +988,12 @@ async function saveCurrentAnalysis() {
       }),
     });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore salvataggio analisi');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error saving analysis');
 
     await loadAnalysisSnapshots();
-    alert(`Analisi salvata: ${data.fileName}`);
+    alert(`Analysis saved: ${data.fileName}`);
   } catch (e) {
-    alert('Errore: ' + e.message);
+    alert('Error: ' + e.message);
   }
 }
 
@@ -1001,14 +1001,14 @@ async function openSelectedAnalysisSnapshot() {
   const sel = document.getElementById('analysis-snapshots');
   const fileName = sel && sel.value ? sel.value : '';
   if (!fileName) {
-    alert('Seleziona una analisi salvata da aprire.');
+    alert('Select a saved analysis to open.');
     return;
   }
 
   try {
     const r = await fetch(`/analysis/snapshots/${encodeURIComponent(fileName)}`);
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore apertura analisi salvata');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error opening saved analysis');
 
     lastAnalysisResults = Array.isArray(data.results) ? data.results : [];
     lastAnalysisFailedEntries = Array.isArray(data.failedEntries) ? data.failedEntries : [];
@@ -1020,10 +1020,10 @@ async function openSelectedAnalysisSnapshot() {
 
     const msg = document.getElementById('analysis-msg');
     const totalCount = lastAnalysisResults.length + (lastAnalysisFailedEntries ? lastAnalysisFailedEntries.length : 0);
-    msg.textContent = `Analisi salvata caricata: ${data.name || fileName} (${totalCount} elemento/i: ${lastAnalysisResults.length} completati, ${lastAnalysisFailedEntries.length} non completati).`;
+    msg.textContent = `Saved analysis loaded: ${data.name || fileName} (${totalCount} item(s): ${lastAnalysisResults.length} completed, ${lastAnalysisFailedEntries.length} incomplete).`;
     msg.style.display = 'block';
   } catch (e) {
-    alert('Errore: ' + e.message);
+    alert('Error: ' + e.message);
   }
 }
 
@@ -1031,18 +1031,18 @@ async function deleteSelectedAnalysisSnapshot() {
   const sel = document.getElementById('analysis-snapshots');
   const fileName = sel && sel.value ? sel.value : '';
   if (!fileName) {
-    alert('Seleziona una analisi salvata da eliminare.');
+    alert('Select a saved analysis to delete.');
     return;
   }
-  if (!confirm(`Eliminare l'analisi salvata ${fileName}?`)) return;
+  if (!confirm(`Delete saved analysis ${fileName}?`)) return;
 
   try {
     const r = await fetch(`/analysis/snapshots/${encodeURIComponent(fileName)}`, { method: 'DELETE' });
     const data = await r.json();
-    if (!r.ok || data.error) throw new Error(data.error || 'Errore eliminazione analisi salvata');
+    if (!r.ok || data.error) throw new Error(data.error || 'Error deleting saved analysis');
     await loadAnalysisSnapshots();
   } catch (e) {
-    alert('Errore: ' + e.message);
+    alert('Error: ' + e.message);
   }
 }
 
@@ -1057,7 +1057,7 @@ function populateSaveSelects() {
   if (!savedItems.pipelines.length) {
     const opt = document.createElement('option');
     opt.value = '';
-    opt.textContent = 'Nessuna pipeline salvata';
+    opt.textContent = 'No saved pipelines';
     pipelineSel.appendChild(opt);
   } else {
     savedItems.pipelines.forEach(item => {
@@ -1072,7 +1072,7 @@ function populateSaveSelects() {
   if (!savedItems.queues.length) {
     const opt = document.createElement('option');
     opt.value = '';
-    opt.textContent = 'Nessuna queue salvata';
+    opt.textContent = 'No saved queues';
     queueSel.appendChild(opt);
   } else {
     savedItems.queues.forEach(item => {
@@ -1089,7 +1089,7 @@ function populateSaveSelects() {
   if (!savedItems.importedSets.length) {
     const opt = document.createElement('option');
     opt.value = '';
-    opt.textContent = 'Nessun risultato importato';
+    opt.textContent = 'No imported results';
     importedSetSel.appendChild(opt);
   } else {
     savedItems.importedSets.forEach(item => {
@@ -1105,7 +1105,7 @@ function populateSaveSelects() {
 function renderTable(results) {
   const tbody = document.getElementById('analysis-tbody');
   if (!results.length) {
-    tbody.innerHTML = '<tr><td colspan="12" class="list-empty">Nessuna metrica disponibile.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="12" class="list-empty">No metrics available.</td></tr>';
     return;
   }
 
@@ -1198,10 +1198,10 @@ const DATASET_STATS_DEFINITIONS = [
 ];
 
 const DATASET_STATS_ROW_DEFINITIONS = [
-  { key: 'min', label: 'Minimo' },
-  { key: 'max', label: 'Massimo' },
-  { key: 'mean', label: 'Media' },
-  { key: 'std', label: 'Deviazione standard' },
+  { key: 'min', label: 'Minimum' },
+  { key: 'max', label: 'Maximum' },
+  { key: 'mean', label: 'Mean' },
+  { key: 'std', label: 'Standard deviation' },
 ];
 
 function buildCombinedAnalysisEntries(results, failedEntries) {
@@ -1307,14 +1307,14 @@ function renderDatasetStats(results, failedEntries = lastAnalysisFailedEntries) 
 
   const entries = buildCombinedAnalysisEntries(results, failedEntries);
   if (!entries.length) {
-    summary.textContent = 'Nessun dato disponibile.';
-    tbody.innerHTML = '<tr><td colspan="5" class="list-empty">Nessuna statistica disponibile.</td></tr>';
+    summary.textContent = 'No data available.';
+    tbody.innerHTML = '<tr><td colspan="5" class="list-empty">No statistics available.</td></tr>';
     return;
   }
 
   const completeEntries = entries.filter((entry) => entry.isComplete === true);
   const nonCompleteEntries = entries.filter((entry) => entry.isComplete === false);
-  summary.textContent = `Grafi analizzati: ${entries.length} (completi: ${completeEntries.length}, non completi: ${nonCompleteEntries.length}).`;
+  summary.textContent = `Graphs analyzed: ${entries.length} (complete: ${completeEntries.length}, incomplete: ${nonCompleteEntries.length}).`;
 
   const rowHtml = [];
   DATASET_STATS_DEFINITIONS.forEach((metricDef) => {
@@ -1346,9 +1346,9 @@ function buildFailedPointsByX(xAccessor) {
     .map((entry) => {
       const m = entry.metrics || {};
       return {
-        name: m.instance || entry.pipelineSaveFile || 'grafo non risolto',
+        name: m.instance || entry.pipelineSaveFile || 'unsolved graph',
         pipelineSaveFile: entry.pipelineSaveFile || '-',
-        error: entry.error || 'Soluzione non disponibile',
+        error: entry.error || 'Solution unavailable',
         x: Number(xAccessor(m)),
         y: Number(m.totalCliques),
       };
@@ -1386,8 +1386,8 @@ function renderFailedOverlayPoints(g, points, xScale, yScale, radius = 7, option
           `Pipeline save: ${esc(d.pipelineSaveFile)}<br>` +
           `X: ${fmtNum(d.x, 2)}<br>` +
           `Clique: ${fmtNum(d.y, 0)}<br>` +
-          `Stato: soluzione non calcolata<br>` +
-          `Errore: ${esc(d.error || '-')}`
+          `Status: solution not computed<br>` +
+          `Error: ${esc(d.error || '-')}`
         );
     })
     .on('mouseleave', () => chartTooltip.style('opacity', 0));
@@ -1681,7 +1681,7 @@ function buildAccuracyPoints(results, xAccessor, pointMode = 'average') {
     pct: g.pctSum / g.count,
     avg: g.avgSum / g.count,
     count: g.count,
-    name: g.count === 1 ? g.names[0] : `${g.count} analisi`,
+    name: g.count === 1 ? g.names[0] : `${g.count} analyses`,
     pipelineSaveFile: g.count === 1 ? g.pipelineSaveFiles[0] : g.pipelineSaveFiles.join(', '),
   }));
 }
@@ -1724,7 +1724,7 @@ function buildTimePoints(results, xAccessor, pointMode = 'average') {
     avg: g.avgSum / g.count,
     execS: g.execSum / g.count,
     count: g.count,
-    name: g.count === 1 ? g.names[0] : `${g.count} analisi`,
+    name: g.count === 1 ? g.names[0] : `${g.count} analyses`,
     pipelineSaveFile: g.count === 1 ? g.pipelineSaveFiles[0] : g.pipelineSaveFiles.join(', '),
   }));
 }
@@ -2024,7 +2024,7 @@ function renderAccuracyScatterByX(results, { containerId, xAccessor, xLabel, poi
   root.selectAll('*').remove();
 
   if (!visiblePoints.length && !visibleFailedPoints.length) {
-    root.append('div').attr('class', 'list-empty').style('padding', '14px').text('Dati insufficienti per il grafico.');
+    root.append('div').attr('class', 'list-empty').style('padding', '14px').text('Insufficient data for the chart.');
     return;
   }
 
@@ -2170,7 +2170,7 @@ function renderAccuracyBoxplotByX(results, { containerId, xAccessor, xLabel }) {
   const visibleFailedPoints = shouldShowFailedPoints() ? failedPoints : [];
   const series = buildBoxplotSeriesByX(visibleRawPoints, (d) => d.pct);
   if (!series.length && !visibleFailedPoints.length) {
-    root.append('div').attr('class', 'list-empty').style('padding', '14px').text('Dati insufficienti per il boxplot.');
+    root.append('div').attr('class', 'list-empty').style('padding', '14px').text('Insufficient data for the boxplot.');
     return;
   }
 
@@ -2364,7 +2364,7 @@ function renderExecutionTimeScatterByX(results, { containerId, xAccessor, xLabel
   const visiblePoints = shouldShowCompletedPoints() ? points : [];
   const visibleFailedPoints = shouldShowFailedPoints() ? failedPoints : [];
   if (!visiblePoints.length && !visibleFailedPoints.length) {
-    root.append('div').attr('class', 'list-empty').style('padding', '14px').text('Dati insufficienti per il grafico dei tempi.');
+    root.append('div').attr('class', 'list-empty').style('padding', '14px').text('Insufficient data for the time chart.');
     return;
   }
 
@@ -2429,7 +2429,7 @@ function renderExecutionTimeScatterByX(results, { containerId, xAccessor, xLabel
         .attr('y', -6)
         .attr('font-size', 11)
         .attr('fill', '#375a9e')
-        .text(`Tempo medio esecuzione (s) - ${scaleMode === 'log' ? 'log' : 'lineare'}${maxTimeCapS !== null ? ` - cap ${fmtNum(maxTimeCapS, 2)} s` : ''}`);
+        .text(`Average execution time (s) - ${scaleMode === 'log' ? 'log' : 'linear'}${maxTimeCapS !== null ? ` - cap ${fmtNum(maxTimeCapS, 2)} s` : ''}`);
 
       legend.append('rect')
         .attr('width', legendW)
@@ -2494,7 +2494,7 @@ function renderExecutionTimeScatterByX(results, { containerId, xAccessor, xLabel
           `Pipeline save: ${esc(d.pipelineSaveFile)}<br>` +
           `X: ${fmtNum(d.x, 2)}<br>` +
           `Clique: ${d.y}<br>` +
-          `Tempo medio: ${fmtNum(d.execS, 2)} s<br>` +
+          `Average time: ${fmtNum(d.execS, 2)} s<br>` +
           `Media dim clique: ${fmtNum(d.avg, 2)}`
         );
     })
@@ -2514,7 +2514,7 @@ function renderExecutionTimeBoxplotByX(results, { containerId, xAccessor, xLabel
   const visibleFailedPoints = shouldShowFailedPoints() ? failedPoints : [];
   const series = buildBoxplotSeriesByX(visibleRawPoints, (d) => d.execS);
   if (!series.length && !visibleFailedPoints.length) {
-    root.append('div').attr('class', 'list-empty').style('padding', '14px').text('Dati insufficienti per il boxplot dei tempi.');
+    root.append('div').attr('class', 'list-empty').style('padding', '14px').text('Insufficient data for the time boxplot.');
     return;
   }
 
@@ -2581,7 +2581,7 @@ function renderExecutionTimeBoxplotByX(results, { containerId, xAccessor, xLabel
         .attr('y', -6)
         .attr('font-size', 11)
         .attr('fill', '#375a9e')
-        .text(`Tempo medio esecuzione (s) - ${scaleMode === 'log' ? 'log' : 'lineare'}${maxTimeCapS !== null ? ` - cap ${fmtNum(maxTimeCapS, 2)} s` : ''}`);
+        .text(`Average execution time (s) - ${scaleMode === 'log' ? 'log' : 'linear'}${maxTimeCapS !== null ? ` - cap ${fmtNum(maxTimeCapS, 2)} s` : ''}`);
 
       legend.append('rect')
         .attr('width', legendW)
@@ -2689,7 +2689,7 @@ function renderExecutionTimeBoxplotByX(results, { containerId, xAccessor, xLabel
           `Mediana: ${fmtNum(d.medianY, 2)}<br>` +
           `Q3: ${fmtNum(d.q3Y, 2)}<br>` +
           `Max: ${fmtNum(d.highY, 2)}<br>` +
-          `Tempo medio: ${fmtNum(d.metricMean, 2)} s<br>` +
+          `Average time: ${fmtNum(d.metricMean, 2)} s<br>` +
           `Pipeline save: ${esc(d.pipelineSaveFile)}`
         );
     })
@@ -2703,7 +2703,7 @@ function renderScatter(results) {
   renderAccuracyScatterByX(results, {
     containerId: 'analysis-chart',
     xAccessor: (m) => m.totalNodes,
-    xLabel: 'Dimensione grafo (numero nodi)',
+    xLabel: 'Graph size (number of nodes)',
     pointMode: getAnalysisPointMode(),
   });
 }
@@ -2712,7 +2712,7 @@ function renderExecutionTimeScatter(results) {
   renderExecutionTimeScatterByX(results, {
     containerId: 'analysis-time-chart',
     xAccessor: (m) => m.totalNodes,
-    xLabel: 'Dimensione grafo (numero nodi)',
+    xLabel: 'Graph size (number of nodes)',
     scaleMode: getExecScaleMode('exec-scale-mode'),
     maxTimeCapS: getExecTimeCap('exec-cap-time'),
     pointMode: getAnalysisPointMode(),
@@ -2723,7 +2723,7 @@ function renderEdgesScatter(results) {
   renderAccuracyScatterByX(results, {
     containerId: 'analysis-edges-chart',
     xAccessor: (m) => m.totalEdges,
-    xLabel: 'Dimensione grafo (numero archi)',
+    xLabel: 'Graph size (number of edges)',
     pointMode: getAnalysisPointMode(),
   });
 }
@@ -2732,7 +2732,7 @@ function renderEdgesExecutionTimeScatter(results) {
   renderExecutionTimeScatterByX(results, {
     containerId: 'analysis-edges-time-chart',
     xAccessor: (m) => m.totalEdges,
-    xLabel: 'Dimensione grafo (numero archi)',
+    xLabel: 'Graph size (number of edges)',
     scaleMode: getExecScaleMode('exec-scale-mode-edges'),
     maxTimeCapS: getExecTimeCap('exec-cap-time-edges'),
     pointMode: getAnalysisPointMode(),
@@ -2743,7 +2743,7 @@ function renderDegreeScatter(results) {
   renderAccuracyScatterByX(results, {
     containerId: 'analysis-degree-chart',
     xAccessor: (m) => m.avgNodeDegree,
-    xLabel: 'Grado medio nodi',
+    xLabel: 'Average node degree',
     pointMode: getAnalysisPointMode(),
   });
 }
@@ -2752,7 +2752,7 @@ function renderDegreeExecutionTimeScatter(results) {
   renderExecutionTimeScatterByX(results, {
     containerId: 'analysis-degree-time-chart',
     xAccessor: (m) => m.avgNodeDegree,
-    xLabel: 'Grado medio nodi',
+    xLabel: 'Average node degree',
     scaleMode: getExecScaleMode('exec-scale-mode-degree'),
     maxTimeCapS: getExecTimeCap('exec-cap-time-degree'),
     pointMode: getAnalysisPointMode(),
@@ -2771,19 +2771,19 @@ function renderAllAnalysisCharts(results) {
 
 // --- Single custom scatter: options, metric accessors, renderer ---
 const SINGLE_SELECT_OPTIONS = [
-  { value: 'totalNodes', label: 'numero nodi' },
-  { value: 'totalEdges', label: 'numero archi' },
-  { value: 'graphDensity', label: 'densita grafo' },
-  { value: 'totalCliques', label: 'numero clique' },
-  { value: 'avgCliqueDegree', label: 'grado medio clique' },
-  { value: 'pctCompactCliques', label: '% clique compatte' },
-  { value: 'pctNodesInClique', label: '% nodi in almeno una clique' },
-  { value: 'avgNodeDegree', label: 'grado medio nodi' },
-  { value: 'maxNodeDegree', label: 'grado massimo nodi' },
-  { value: 'avgCliqueSize', label: 'dimensione media clique' },
-  { value: 'maxCliqueSize', label: 'dimensione massima clique' },
-  { value: 'execTimeLog', label: 'tempo (logaritmico)' },
-  { value: 'execTimeLinear', label: 'tempo (lineare)' },
+  { value: 'totalNodes', label: 'number of nodes' },
+  { value: 'totalEdges', label: 'number of edges' },
+  { value: 'graphDensity', label: 'graph density' },
+  { value: 'totalCliques', label: 'number of cliques' },
+  { value: 'avgCliqueDegree', label: 'average clique degree' },
+  { value: 'pctCompactCliques', label: '% compact cliques' },
+  { value: 'pctNodesInClique', label: '% nodes in at least one clique' },
+  { value: 'avgNodeDegree', label: 'average node degree' },
+  { value: 'maxNodeDegree', label: 'max node degree' },
+  { value: 'avgCliqueSize', label: 'average clique size' },
+  { value: 'maxCliqueSize', label: 'max clique size' },
+  { value: 'execTimeLog', label: 'time (logarithmic)' },
+  { value: 'execTimeLinear', label: 'time (linear)' },
 ];
 
 function computeAvgCliqueDegree(metrics) {
@@ -2865,7 +2865,7 @@ function populateSingleSelects() {
     if (id === 'single-color-select' || id === 'single-size-select') {
       const none = document.createElement('option');
       none.value = 'none';
-      none.textContent = 'nessuno';
+      none.textContent = 'none';
       sel.appendChild(none);
     }
     SINGLE_SELECT_OPTIONS.forEach(opt => {
@@ -2985,9 +2985,9 @@ function saveSingleChartConfigAsDefault() {
   try {
     const config = readSingleChartConfigFromControls();
     localStorage.setItem(SINGLE_CHART_CONFIG_STORAGE_KEY, JSON.stringify(config));
-    alert('Configurazione del grafico personalizzato salvata come predefinita.');
+    alert('Custom chart configuration saved as default.');
   } catch (e) {
-    alert(`Errore salvataggio configurazione: ${e.message}`);
+    alert(`Error saving configuration: ${e.message}`);
   }
 }
 
@@ -3003,7 +3003,7 @@ function resetSingleChartConfigToDefault() {
 }
 
 function getMetricLabelByKey(key) {
-  if (key === 'none') return 'nessuno';
+  if (key === 'none') return 'none';
   const found = SINGLE_SELECT_OPTIONS.find((o) => o.value === key);
   return found ? found.label : key;
 }
@@ -3100,7 +3100,7 @@ function renderSingleScatter(results) {
   const root = d3.select(`#${containerId}`);
   root.selectAll('*').remove();
   if (!results || !results.length) {
-    root.append('div').attr('class', 'list-empty').style('padding', '14px').text('Nessun dato disponibile per il grafico.');
+    root.append('div').attr('class', 'list-empty').style('padding', '14px').text('No data available for this chart.');
     return;
   }
 
@@ -3128,8 +3128,8 @@ function renderSingleScatter(results) {
   const hideYAxis = shouldHideSingleYAxis();
   const failedColor = getSingleFailedPointsColor();
   const failedShape = getSingleFailedPointsShape();
-  const completedLegendLabel = getSingleCustomLabelValue('single-custom-legend-completed-label') || 'Grafi calcolati';
-  const failedLegendLabel = getSingleCustomLabelValue('single-custom-legend-failed-label') || 'Grafi non completati';
+  const completedLegendLabel = getSingleCustomLabelValue('single-custom-legend-completed-label') || 'Completed graphs';
+  const failedLegendLabel = getSingleCustomLabelValue('single-custom-legend-failed-label') || 'Incomplete graphs';
   const pointOpacity = getSinglePointOpacity();
   const pointFillMode = getSinglePointFillMode();
   const completedPointStrokeColor = getSingleCompletedPointStrokeColor();
@@ -3171,9 +3171,9 @@ function renderSingleScatter(results) {
     .map((entry) => {
       const m = entry.metrics || {};
       return {
-        name: m.instance || entry.pipelineSaveFile || 'grafo non risolto',
+        name: m.instance || entry.pipelineSaveFile || 'unsolved graph',
         pipelineSaveFile: entry.pipelineSaveFile || '-',
-        error: entry.error || 'Soluzione non disponibile',
+        error: entry.error || 'Solution unavailable',
         x: getMetricValueForSingleChart(m, xKey),
         y: getMetricValueForSingleChart(m, yKey),
         colorV: getMetricValueForSingleChart(m, cKey),
@@ -3190,8 +3190,8 @@ function renderSingleScatter(results) {
 
   if (!visiblePoints.length && !visibleFailedPoints.length) {
     const legendEl = document.getElementById('analysis-single-scatter-legend');
-    if (legendEl) legendEl.textContent = 'Legenda: nessun punto disponibile.';
-    root.append('div').attr('class', 'list-empty').style('padding', '14px').text('Dati insufficienti per il grafico selezionato.');
+    if (legendEl) legendEl.textContent = 'Legend: no points available.';
+    root.append('div').attr('class', 'list-empty').style('padding', '14px').text('Insufficient data for the selected chart.');
     return;
   }
 
@@ -3385,8 +3385,8 @@ function renderSingleScatter(results) {
             `${getMetricLabelByKey(yKey)}: ${formatMetricValueForDisplay(yKey, d.y, 2)}<br>` +
             `${cKey === 'none' ? 'colore fisso' : getMetricLabelByKey(cKey)}: ${cKey === 'none' ? esc(failedColor) : formatMetricValueForDisplay(cKey, d.colorV,2)}<br>` +
             `${sKey === 'none' ? 'dimensione fissa' : getMetricLabelByKey(sKey)}: ${sKey === 'none' ? fmtNum(basePointSize, 1) : formatMetricValueForDisplay(sKey, d.sizeV,2)}<br>` +
-            `Stato: soluzione non calcolata<br>` +
-            `Errore: ${esc(d.error || '-')}`
+            `Status: solution not computed<br>` +
+            `Error: ${esc(d.error || '-')}`
           );
       })
       .on('mouseleave', () => chartTooltip.style('opacity', 0));
@@ -3774,7 +3774,7 @@ function getSingleScatterSvgElement() {
   if (!container) return null;
   const svgEl = container.querySelector('svg');
   if (!svgEl) {
-    alert('Grafico non disponibile da esportare.');
+    alert('No chart available to export.');
     return null;
   }
   return svgEl;
@@ -3827,7 +3827,7 @@ function renderSvgToCanvas(svgString, svgEl, scale = 2) {
 
     image.onerror = () => {
       URL.revokeObjectURL(url);
-      reject(new Error('Errore rendering SVG.'));
+      reject(new Error('SVG rendering error.'));
     };
 
     image.src = url;
@@ -3857,7 +3857,7 @@ async function exportSingleScatter(formatOverride) {
     if (selectedFormat === 'png') {
       canvas.toBlob((pngBlob) => {
         if (!pngBlob) {
-          alert('Errore durante l\'esportazione PNG del grafico.');
+          alert('Error exporting chart PNG.');
           return;
         }
         downloadBlob(pngBlob, `${baseName}.png`);
@@ -3888,8 +3888,8 @@ async function exportSingleScatter(formatOverride) {
 
     alert('Formato export non supportato.');
   } catch (e) {
-    console.error('Errore export grafico singolo', e);
-    alert('Errore durante l\'esportazione del grafico.');
+    console.error('Error exporting single chart', e);
+    alert('Error exporting chart.');
   }
 }
 
@@ -3934,7 +3934,7 @@ function openSingleGridExportModal(mode = 'export') {
   if (titleEl) {
     titleEl.textContent = singleGridModalMode === 'web'
       ? 'Apri pagina griglia: selezione campi'
-      : 'Esporta griglia: selezione campi';
+      : 'Export grid: select fields';
   }
   if (exportBtn && webBtn) {
     exportBtn.classList.toggle('btn-primary', singleGridModalMode !== 'web');
@@ -3977,7 +3977,7 @@ function collectSelectedSingleGridFields() {
   const checks = Array.from(document.querySelectorAll('#single-grid-fields-list input[name="single-grid-field"]:checked'));
   const selected = checks.map((c) => String(c.value || '').trim()).filter(Boolean);
   if (!selected.length) {
-    alert('Seleziona almeno un campo da esportare.');
+    alert('Select at least one field to export.');
     return null;
   }
   return selected;
@@ -3985,7 +3985,7 @@ function collectSelectedSingleGridFields() {
 
 async function buildSingleGridMatrixData(selectedMetricKeys) {
   if ((!lastAnalysisResults || !lastAnalysisResults.length) && (!lastAnalysisFailedEntries || !lastAnalysisFailedEntries.length)) {
-    alert('Non ci sono risultati da esportare. Esegui prima una analisi.');
+    alert('No results to export. Run an analysis first.');
     return null;
   }
 
@@ -4001,7 +4001,7 @@ async function buildSingleGridMatrixData(selectedMetricKeys) {
   const metricLabels = filteredOptions.map((o) => o.label);
 
   if (!metrics.length) {
-    alert('Nessuna metrica disponibile per la griglia.');
+    alert('No metrics available for the grid.');
     return null;
   }
 
@@ -4199,7 +4199,7 @@ async function openTemporarySingleGridPage(selectedMetricKeys) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrice Grafici Personalizzati</title>
+  <title>Custom Chart Matrix</title>
   <style>
     body { margin:0; font-family: Segoe UI, Arial, sans-serif; background:#f4f6fb; color:#1f2a44; }
     .topbar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid #dbe1f1; padding:10px 14px; display:flex; justify-content:space-between; gap:10px; align-items:center; }
@@ -4224,8 +4224,8 @@ async function openTemporarySingleGridPage(selectedMetricKeys) {
 </head>
 <body>
   <div class="topbar">
-    <div><strong>Matrice grafici personalizzati</strong></div>
-    <small>${rows} x ${cols} grafici. Clicca un grafico per ingrandirlo.</small>
+    <div><strong>Custom chart matrix</strong></div>
+    <small>${rows} x ${cols} charts. Click a chart to enlarge it.</small>
   </div>
   <div class="matrix-wrap">
     <table>
@@ -4235,7 +4235,7 @@ async function openTemporarySingleGridPage(selectedMetricKeys) {
   <div id="sg-lightbox" class="lightbox">
     <div class="lightbox-inner">
       <p id="sg-lightbox-title" class="lightbox-title"></p>
-      <img id="sg-lightbox-img" class="lightbox-img" alt="Dettaglio grafico">
+      <img id="sg-lightbox-img" class="lightbox-img" alt="Chart detail">
       <button id="sg-lightbox-close" class="close-btn" type="button">Chiudi</button>
     </div>
   </div>
@@ -4267,7 +4267,7 @@ async function openTemporarySingleGridPage(selectedMetricKeys) {
   const url = URL.createObjectURL(blob);
   const opened = window.open(url, '_blank');
   if (!opened) {
-    alert('Popup bloccato dal browser. Abilita i popup per aprire la pagina temporanea.');
+    alert('Popup blocked by the browser. Enable popups to open the temporary page.');
     URL.revokeObjectURL(url);
     return;
   }
@@ -4305,7 +4305,7 @@ async function exportSingleGrid(formatOverride, selectedMetricKeys) {
     if (selectedFormat === 'png') {
       canvas.toBlob((pngBlob) => {
         if (!pngBlob) {
-          alert('Errore durante l\'esportazione PNG della griglia.');
+          alert('Error exporting grid PNG.');
           return;
         }
         downloadBlob(pngBlob, `${baseName}.png`);
@@ -4329,8 +4329,8 @@ async function exportSingleGrid(formatOverride, selectedMetricKeys) {
 
     document.body.removeChild(temp);
   } catch (e) {
-    console.error('Errore export griglia matriciale', e);
-    alert('Errore durante l\'esportazione della griglia.');
+    console.error('Error exporting matrix grid', e);
+    alert('Error exporting grid.');
   }
 }
 
@@ -4356,7 +4356,7 @@ async function runAnalysis() {
   ];
 
   if (!requests.length) {
-    err.textContent = 'Seleziona almeno una pipeline, una queue o un risultato graph set importato.';
+    err.textContent = 'Select at least one pipeline, queue, or imported graph-set result.';
     err.style.display = 'block';
     return;
   }
@@ -4364,7 +4364,7 @@ async function runAnalysis() {
   err.style.display = 'none';
   msg.textContent = '';
   btn.disabled = true;
-  btn.textContent = 'Analisi in corso...';
+  btn.textContent = 'Analysis in progress...';
 
   try {
     const analysisResponses = await Promise.all(requests.map(async (payload) => {
@@ -4375,7 +4375,7 @@ async function runAnalysis() {
       });
       const data = await r.json();
       if (!r.ok || data.error) {
-        return { results: [], errors: [{ source: payload.saveFileName, error: data.error || 'Errore analisi' }] };
+        return { results: [], errors: [{ source: payload.saveFileName, error: data.error || 'Analysis error' }] };
       }
       return data;
     }));
@@ -4403,7 +4403,7 @@ async function runAnalysis() {
       try {
         const r = await fetch(`/analysis/pipelines/${encodeURIComponent(fileName)}/basic-metrics`);
         const data = await r.json();
-        if (!r.ok || data.error) throw new Error(data.error || 'Errore metriche base');
+        if (!r.ok || data.error) throw new Error(data.error || 'Error fetching basic metrics');
 
         const relatedErrors = mergedErrors
           .filter((e) => String(e.pipelineSaveFile || '').trim() === fileName)
@@ -4416,7 +4416,7 @@ async function runAnalysis() {
           graphSetName: data.graphSetName || null,
           graphSetGraphId: data.graphSetGraphId || null,
           metrics: data.metrics || {},
-          error: relatedErrors.join(' | ') || 'Soluzione non disponibile',
+          error: relatedErrors.join(' | ') || 'Solution unavailable',
         });
       } catch (_) {
         // Ignore entries that cannot be resolved to graph metrics.
@@ -4440,7 +4440,7 @@ async function runAnalysis() {
         const graphId = extractImportedSetGraphId(e && e.pipelineSaveFile, setName);
         if (!graphId) return;
         const prev = errorByGraphId.get(graphId);
-        const msg = String((e && e.error) || 'Soluzione non disponibile').trim();
+        const msg = String((e && e.error) || 'Solution unavailable').trim();
         errorByGraphId.set(graphId, prev ? `${prev} | ${msg}` : msg);
       });
 
@@ -4476,7 +4476,7 @@ async function runAnalysis() {
           if (!metrics) return;
 
           const status = failedStatusByGraphId.get(graphId);
-          const fallbackErr = status ? `Stato esecuzione: ${status}` : 'Soluzione non disponibile';
+          const fallbackErr = status ? `Execution status: ${status}` : 'Solution unavailable';
           const errMsg = errorByGraphId.get(graphId) || fallbackErr;
 
           importedEntries.push({
@@ -4507,17 +4507,17 @@ async function runAnalysis() {
     renderAllAnalysisCharts(lastAnalysisResults);
 
     const errCount = mergedErrors.length;
-    const baseMsg = `Analisi completata: ${lastAnalysisResults.length} risultato/i.`;
+    const baseMsg = `Analysis completed: ${lastAnalysisResults.length} result(s).`;
     msg.textContent = errCount > 0 ? `${baseMsg} Errori: ${errCount}.` : baseMsg;
     msg.style.display = 'block';
 
     if (errCount > 0) {
-      console.warn('Analisi con errori', mergedErrors);
+      console.warn('Analysis with errors', mergedErrors);
     }
   } catch (e) {
     lastAnalysisFailedEntries = [];
     renderDatasetStats([], []);
-    err.textContent = 'Errore: ' + e.message;
+    err.textContent = 'Error: ' + e.message;
     err.style.display = 'block';
   } finally {
     btn.disabled = false;
