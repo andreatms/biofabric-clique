@@ -18,7 +18,7 @@ Workspace has the following views:
 - **Dataset**: Generate and manage datasets of graphs with varying sizes and densities for testing and analysis.
 - **Generator**: Create and customize graph generators to produce specific types of graphs.
 - **Scheduler**: Schedule and manage the execution of ILP solving tasks and monitor progress.
-- ***Analysis**: Analyze sets of graphs using different metrics and parameters to gain insights into their properties and characteristics.
+- **Analysis**: Analyze sets of graphs using different metrics and parameters to gain insights into their properties and characteristics.
 - **Results**: View and compare the BioFabric visualizations from ILP solving and Node-Link layout, allowing users to apply motif simplification.
 
 ## Main Workflow
