@@ -1,0 +1,57 @@
+{
+  "name": "exp_2_test1_n005_c001_g002",
+  "nodes": [
+    {
+      "id": 0
+    },
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "source": 2,
+      "target": 3
+    },
+    {
+      "id": 2,
+      "source": 0,
+      "target": 3
+    },
+    {
+      "id": 3,
+      "source": 0,
+      "target": 1
+    },
+    {
+      "id": 4,
+      "source": 1,
+      "target": 4
+    },
+    {
+      "id": 5,
+      "source": 1,
+      "target": 3
+    }
+  ],
+  "cliques": [
+    {
+      "id": 1,
+      "nodes": [
+        0,
+        1,
+        3
+      ]
+    }
+  ]
+}

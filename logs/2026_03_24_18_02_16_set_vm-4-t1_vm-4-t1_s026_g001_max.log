@@ -1,0 +1,80 @@
+[2026-03-24T18:02:16.297Z] Pipeline "set_vm-4-t1_vm-4-t1_s026_g001" → 2026_03_24_18_02_16_set_vm-4-t1_vm-4-t1_s026_g001_max.sol
+Set parameter Username
+Set parameter LicenseID to value 2797659
+Set parameter LogFile to value "gurobi.log"
+Using license file /opt/gurobi/gurobi.lic
+Academic license - for non-commercial use only - expires 2027-03-24
+
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64 - "Ubuntu 24.04.4 LTS")
+Copyright (c) 2026, Gurobi Optimization, LLC
+
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Further warnings of this type will be omitted.
+Read LP format model from file /root/bgw/data/uploads/2026_03_24_18_02_16_set_vm-4-t1_vm-4-t1_s026_g001_max.lp
+Reading time = 0.04 seconds
+: 55833 rows, 1678 columns, 170143 nonzeros
+
+Using Gurobi shared library /opt/gurobi1301/linux64/lib/libgurobi.so.13.0.1
+
+CPU model: AMD EPYC-Genoa Processor, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 16 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 55833 rows, 1678 columns and 170143 nonzeros (Max)
+Model fingerprint: 0xd0533e2b
+Model has 5 linear objective coefficients
+Variable types: 61 continuous, 1617 integer (1617 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 6e+01]
+
+Found heuristic solution: objective 5.0000000
+Presolve removed 377 rows and 128 columns
+Presolve time: 0.17s
+Presolved: 55456 rows, 1550 columns, 166580 nonzeros
+Variable types: 0 continuous, 1550 integer (1546 binary)
+Root relaxation presolved: 27736 rows, 29270 columns, 111140 nonzeros
+
+
+Root relaxation: objective 2.300000e+01, 231 iterations, 0.12 seconds (0.17 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   23.00000    0   10    5.00000   23.00000   360%     -    0s
+H    0     0                      14.0000000   23.00000  64.3%     -    0s
+     0     0   23.00000    0    4   14.00000   23.00000  64.3%     -    0s
+     0     0   23.00000    0   10   14.00000   23.00000  64.3%     -    0s
+     0     0   23.00000    0    9   14.00000   23.00000  64.3%     -    0s
+     0     0   23.00000    0    9   14.00000   23.00000  64.3%     -    1s
+     0     0   23.00000    0    9   14.00000   23.00000  64.3%     -    1s
+     0     0   23.00000    0   10   14.00000   23.00000  64.3%     -    1s
+     0     0   23.00000    0   10   14.00000   23.00000  64.3%     -    1s
+     0     0   23.00000    0   10   14.00000   23.00000  64.3%     -    1s
+     0     2   23.00000    0   10   14.00000   23.00000  64.3%     -    1s
+
+Cutting planes:
+  Gomory: 1
+  MIR: 2
+  Zero half: 2
+
+Explored 45 nodes (12937 simplex iterations) in 2.75 seconds (4.09 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 2: 14 5 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.400000000000e+01, best bound 1.400000000000e+01, gap 0.0000%
+
+Wrote result file '/root/bgw/data/results/2026_03_24_18_02_16_set_vm-4-t1_vm-4-t1_s026_g001_max.sol'
+

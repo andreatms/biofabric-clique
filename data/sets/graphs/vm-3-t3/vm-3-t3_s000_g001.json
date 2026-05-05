@@ -1,0 +1,202 @@
+{
+  "name": "vm-3-t3_s000_g001",
+  "nodes": [
+    {
+      "id": 0
+    },
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "source": 6,
+      "target": 9
+    },
+    {
+      "id": 2,
+      "source": 2,
+      "target": 6
+    },
+    {
+      "id": 3,
+      "source": 5,
+      "target": 6
+    },
+    {
+      "id": 4,
+      "source": 0,
+      "target": 6
+    },
+    {
+      "id": 5,
+      "source": 6,
+      "target": 7
+    },
+    {
+      "id": 6,
+      "source": 2,
+      "target": 9
+    },
+    {
+      "id": 7,
+      "source": 5,
+      "target": 9
+    },
+    {
+      "id": 8,
+      "source": 0,
+      "target": 9
+    },
+    {
+      "id": 9,
+      "source": 7,
+      "target": 9
+    },
+    {
+      "id": 10,
+      "source": 2,
+      "target": 5
+    },
+    {
+      "id": 11,
+      "source": 0,
+      "target": 2
+    },
+    {
+      "id": 12,
+      "source": 2,
+      "target": 7
+    },
+    {
+      "id": 13,
+      "source": 0,
+      "target": 5
+    },
+    {
+      "id": 14,
+      "source": 5,
+      "target": 7
+    },
+    {
+      "id": 15,
+      "source": 0,
+      "target": 7
+    },
+    {
+      "id": 16,
+      "source": 2,
+      "target": 4
+    },
+    {
+      "id": 17,
+      "source": 1,
+      "target": 2
+    },
+    {
+      "id": 18,
+      "source": 0,
+      "target": 4
+    },
+    {
+      "id": 19,
+      "source": 0,
+      "target": 1
+    },
+    {
+      "id": 20,
+      "source": 4,
+      "target": 7
+    },
+    {
+      "id": 21,
+      "source": 1,
+      "target": 7
+    },
+    {
+      "id": 22,
+      "source": 4,
+      "target": 5
+    },
+    {
+      "id": 23,
+      "source": 1,
+      "target": 5
+    },
+    {
+      "id": 24,
+      "source": 4,
+      "target": 6
+    },
+    {
+      "id": 25,
+      "source": 1,
+      "target": 4
+    },
+    {
+      "id": 26,
+      "source": 1,
+      "target": 6
+    },
+    {
+      "id": 27,
+      "source": 3,
+      "target": 5
+    },
+    {
+      "id": 28,
+      "source": 3,
+      "target": 8
+    }
+  ],
+  "cliques": [
+    {
+      "id": 1,
+      "nodes": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 2,
+      "nodes": [
+        0,
+        2,
+        5,
+        6,
+        7,
+        9
+      ]
+    }
+  ]
+}

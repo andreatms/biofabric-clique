@@ -1,0 +1,658 @@
+{
+  "setName": "prova_set",
+  "createdAt": "2026-03-22T14:26:30.854Z",
+  "parameters": {
+    "mode": "set",
+    "setName": "prova_set",
+    "minNodes": 12,
+    "maxNodes": 24,
+    "nodeStep": 4,
+    "graphsPerNodeStep": 5,
+    "minCliqueSize": 3,
+    "maxCliqueSize": 5,
+    "avgCliqueSize": 3.5,
+    "minCliques": 2,
+    "maxCliques": 6,
+    "cliqueStep": 1,
+    "graphsPerCliqueStep": 3
+  },
+  "graphs": [
+    {
+      "id": "prova_set_s000_g001",
+      "filePath": "prova_set_s000_g001.json",
+      "nodes": 12,
+      "edges": 29,
+      "cliques": [
+        3,
+        3,
+        3,
+        4,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "prova_set_s000_g002",
+      "filePath": "prova_set_s000_g002.json",
+      "nodes": 12,
+      "edges": 16,
+      "cliques": [
+        4,
+        3,
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "prova_set_s000_g003",
+      "filePath": "prova_set_s000_g003.json",
+      "nodes": 12,
+      "edges": 20,
+      "cliques": [
+        3,
+        4,
+        3,
+        4,
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "prova_set_s000_g004",
+      "filePath": "prova_set_s000_g004.json",
+      "nodes": 12,
+      "edges": 31,
+      "cliques": [
+        5,
+        4,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "prova_set_s000_g005",
+      "filePath": "prova_set_s000_g005.json",
+      "nodes": 12,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        4,
+        4,
+        4,
+        3,
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "prova_set_s001_g001",
+      "filePath": "prova_set_s001_g001.json",
+      "nodes": 16,
+      "edges": 20,
+      "cliques": [
+        4,
+        3,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "prova_set_s001_g002",
+      "filePath": "prova_set_s001_g002.json",
+      "nodes": 16,
+      "edges": 25,
+      "cliques": [
+        4,
+        4,
+        3,
+        3,
+        4
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "prova_set_s001_g003",
+      "filePath": "prova_set_s001_g003.json",
+      "nodes": 16,
+      "edges": 20,
+      "cliques": [
+        4,
+        3,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "prova_set_s001_g004",
+      "filePath": "prova_set_s001_g004.json",
+      "nodes": 16,
+      "edges": 18,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "prova_set_s001_g005",
+      "filePath": "prova_set_s001_g005.json",
+      "nodes": 16,
+      "edges": 34,
+      "cliques": [
+        5,
+        5,
+        4,
+        3,
+        4,
+        4,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "prova_set_s002_g001",
+      "filePath": "prova_set_s002_g001.json",
+      "nodes": 20,
+      "edges": 38,
+      "cliques": [
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "prova_set_s002_g002",
+      "filePath": "prova_set_s002_g002.json",
+      "nodes": 20,
+      "edges": 28,
+      "cliques": [
+        4,
+        3,
+        3,
+        4,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "prova_set_s002_g003",
+      "filePath": "prova_set_s002_g003.json",
+      "nodes": 20,
+      "edges": 28,
+      "cliques": [
+        3,
+        4,
+        3,
+        4,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "prova_set_s002_g004",
+      "filePath": "prova_set_s002_g004.json",
+      "nodes": 20,
+      "edges": 29,
+      "cliques": [
+        4,
+        3,
+        4,
+        3,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "prova_set_s002_g005",
+      "filePath": "prova_set_s002_g005.json",
+      "nodes": 20,
+      "edges": 31,
+      "cliques": [
+        3,
+        4,
+        3,
+        4,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "prova_set_s003_g001",
+      "filePath": "prova_set_s003_g001.json",
+      "nodes": 24,
+      "edges": 36,
+      "cliques": [
+        4,
+        3,
+        4,
+        4,
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "prova_set_s003_g002",
+      "filePath": "prova_set_s003_g002.json",
+      "nodes": 24,
+      "edges": 27,
+      "cliques": [
+        4,
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "prova_set_s003_g003",
+      "filePath": "prova_set_s003_g003.json",
+      "nodes": 24,
+      "edges": 38,
+      "cliques": [
+        3,
+        4,
+        3,
+        4,
+        3,
+        3,
+        4,
+        3,
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "prova_set_s003_g004",
+      "filePath": "prova_set_s003_g004.json",
+      "nodes": 24,
+      "edges": 28,
+      "cliques": [
+        4,
+        3,
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "prova_set_s003_g005",
+      "filePath": "prova_set_s003_g005.json",
+      "nodes": 24,
+      "edges": 27,
+      "cliques": [
+        3,
+        4
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "prova_set_s004_g001",
+      "filePath": "prova_set_s004_g001.json",
+      "nodes": 17,
+      "edges": 20,
+      "cliques": [
+        3,
+        4
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 2
+    },
+    {
+      "id": "prova_set_s004_g002",
+      "filePath": "prova_set_s004_g002.json",
+      "nodes": 24,
+      "edges": 25,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 2
+    },
+    {
+      "id": "prova_set_s004_g003",
+      "filePath": "prova_set_s004_g003.json",
+      "nodes": 21,
+      "edges": 24,
+      "cliques": [
+        4,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 2
+    },
+    {
+      "id": "prova_set_s005_g001",
+      "filePath": "prova_set_s005_g001.json",
+      "nodes": 19,
+      "edges": 29,
+      "cliques": [
+        3,
+        4,
+        4,
+        4
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 3
+    },
+    {
+      "id": "prova_set_s005_g002",
+      "filePath": "prova_set_s005_g002.json",
+      "nodes": 21,
+      "edges": 27,
+      "cliques": [
+        4,
+        3,
+        3,
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 3
+    },
+    {
+      "id": "prova_set_s005_g003",
+      "filePath": "prova_set_s005_g003.json",
+      "nodes": 19,
+      "edges": 27,
+      "cliques": [
+        3,
+        4,
+        4
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 3
+    },
+    {
+      "id": "prova_set_s006_g001",
+      "filePath": "prova_set_s006_g001.json",
+      "nodes": 23,
+      "edges": 34,
+      "cliques": [
+        4,
+        3,
+        3,
+        4,
+        4,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 4
+    },
+    {
+      "id": "prova_set_s006_g002",
+      "filePath": "prova_set_s006_g002.json",
+      "nodes": 20,
+      "edges": 29,
+      "cliques": [
+        4,
+        4,
+        4,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 4
+    },
+    {
+      "id": "prova_set_s006_g003",
+      "filePath": "prova_set_s006_g003.json",
+      "nodes": 20,
+      "edges": 34,
+      "cliques": [
+        4,
+        3,
+        3,
+        4,
+        4,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 4
+    },
+    {
+      "id": "prova_set_s007_g001",
+      "filePath": "prova_set_s007_g001.json",
+      "nodes": 16,
+      "edges": 31,
+      "cliques": [
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 5
+    },
+    {
+      "id": "prova_set_s007_g002",
+      "filePath": "prova_set_s007_g002.json",
+      "nodes": 16,
+      "edges": 28,
+      "cliques": [
+        4,
+        3,
+        4,
+        3,
+        4,
+        4
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 5
+    },
+    {
+      "id": "prova_set_s007_g003",
+      "filePath": "prova_set_s007_g003.json",
+      "nodes": 13,
+      "edges": 26,
+      "cliques": [
+        4,
+        4,
+        3,
+        4,
+        4,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 5
+    },
+    {
+      "id": "prova_set_s008_g001",
+      "filePath": "prova_set_s008_g001.json",
+      "nodes": 15,
+      "edges": 33,
+      "cliques": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 6
+    },
+    {
+      "id": "prova_set_s008_g002",
+      "filePath": "prova_set_s008_g002.json",
+      "nodes": 18,
+      "edges": 27,
+      "cliques": [
+        3,
+        3,
+        3,
+        4,
+        3,
+        3,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 6
+    },
+    {
+      "id": "prova_set_s008_g003",
+      "filePath": "prova_set_s008_g003.json",
+      "nodes": 23,
+      "edges": 35,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        3,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 6
+    }
+  ],
+  "failures": []
+}

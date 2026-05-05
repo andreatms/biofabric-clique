@@ -1,0 +1,65 @@
+{
+  "name": "exp_3_n006_c001_g004",
+  "nodes": [
+    {
+      "id": 0
+    },
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "source": 1,
+      "target": 4
+    },
+    {
+      "id": 2,
+      "source": 4,
+      "target": 5
+    },
+    {
+      "id": 3,
+      "source": 3,
+      "target": 5
+    },
+    {
+      "id": 4,
+      "source": 0,
+      "target": 3
+    },
+    {
+      "id": 5,
+      "source": 0,
+      "target": 2
+    },
+    {
+      "id": 6,
+      "source": 0,
+      "target": 5
+    }
+  ],
+  "cliques": [
+    {
+      "id": 1,
+      "nodes": [
+        0,
+        3,
+        5
+      ]
+    }
+  ]
+}

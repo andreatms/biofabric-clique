@@ -1,0 +1,105 @@
+{
+  "name": "set_s001_g001",
+  "nodes": [
+    {
+      "id": 0
+    },
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "source": 0,
+      "target": 4
+    },
+    {
+      "id": 2,
+      "source": 1,
+      "target": 4
+    },
+    {
+      "id": 3,
+      "source": 0,
+      "target": 1
+    },
+    {
+      "id": 4,
+      "source": 3,
+      "target": 4
+    },
+    {
+      "id": 5,
+      "source": 1,
+      "target": 3
+    },
+    {
+      "id": 6,
+      "source": 2,
+      "target": 4
+    },
+    {
+      "id": 7,
+      "source": 4,
+      "target": 5
+    },
+    {
+      "id": 8,
+      "source": 2,
+      "target": 3
+    },
+    {
+      "id": 9,
+      "source": 3,
+      "target": 5
+    },
+    {
+      "id": 10,
+      "source": 2,
+      "target": 5
+    },
+    {
+      "id": 11,
+      "source": 1,
+      "target": 5
+    },
+    {
+      "id": 12,
+      "source": 1,
+      "target": 2
+    }
+  ],
+  "cliques": [
+    {
+      "id": 1,
+      "nodes": [
+        0,
+        1,
+        4
+      ]
+    },
+    {
+      "id": 2,
+      "nodes": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ]
+}

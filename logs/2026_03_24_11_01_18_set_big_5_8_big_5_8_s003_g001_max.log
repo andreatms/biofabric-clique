@@ -1,0 +1,154 @@
+[2026-03-24T11:01:18.658Z] Pipeline "set_big_5_8_big_5_8_s003_g001" → 2026_03_24_11_01_18_set_big_5_8_big_5_8_s003_g001_max.sol
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2792458
+Set parameter LogFile to value "gurobi.log"
+Using license file /root/gurobi.lic
+Academic license 2792458 - for non-commercial use only - registered to an___@studenti.unipg.it
+
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64 - "Ubuntu 24.04.4 LTS")
+Copyright (c) 2026, Gurobi Optimization, LLC
+
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Further warnings of this type will be omitted.
+Read LP format model from file /root/bgw/data/uploads/2026_03_24_11_01_18_set_big_5_8_big_5_8_s003_g001_max.lp
+Reading time = 0.01 seconds
+: 6305 rows, 573 columns, 19072 nonzeros
+
+Using Gurobi shared library /opt/gurobi1301/linux64/lib/libgurobi.so.13.0.1
+
+CPU model: AMD EPYC-Genoa Processor, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 16 physical cores, 16 logical processors, using up to 16 threads
+
+Academic license 2792458 - for non-commercial use only - registered to an___@studenti.unipg.it
+Optimize a model with 6305 rows, 573 columns and 19072 nonzeros (Max)
+Model fingerprint: 0xc60937c0
+Model has 123 linear objective coefficients
+Variable types: 149 continuous, 424 integer (424 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+01]
+
+Found heuristic solution: objective 123.0000000
+Presolve removed 1028 rows and 204 columns
+Presolve time: 0.02s
+Presolved: 5277 rows, 369 columns, 16084 nonzeros
+Variable types: 0 continuous, 369 integer (358 binary)
+Found heuristic solution: objective 232.0000000
+
+Root relaxation: objective 8.840000e+02, 578 iterations, 0.04 seconds (0.05 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  884.00000    0   62  232.00000  884.00000   281%     -    0s
+H    0     0                     242.0000000  884.00000   265%     -    0s
+H    0     0                     265.0000000  884.00000   234%     -    0s
+H    0     0                     273.0000000  884.00000   224%     -    0s
+H    0     0                     291.0000000  884.00000   204%     -    0s
+H    0     0                     330.0000000  884.00000   168%     -    0s
+     0     0  884.00000    0   60  330.00000  884.00000   168%     -    0s
+     0     0  884.00000    0   70  330.00000  884.00000   168%     -    0s
+     0     0  884.00000    0   63  330.00000  884.00000   168%     -    0s
+H    0     0                     336.0000000  884.00000   163%     -    0s
+H    0     0                     340.0000000  884.00000   160%     -    0s
+     0     0  884.00000    0   63  340.00000  884.00000   160%     -    0s
+     0     0  884.00000    0   63  340.00000  884.00000   160%     -    0s
+H    0     0                     341.0000000  884.00000   159%     -    0s
+     0     0  883.00000    0   63  341.00000  883.00000   159%     -    0s
+     0     0  883.00000    0   63  341.00000  883.00000   159%     -    0s
+     0     0  883.00000    0   63  341.00000  883.00000   159%     -    0s
+     0     0  883.00000    0   63  341.00000  883.00000   159%     -    0s
+     0     0  883.00000    0   63  341.00000  883.00000   159%     -    0s
+     0     0  883.00000    0   63  341.00000  883.00000   159%     -    0s
+     0     0  883.00000    0   63  341.00000  883.00000   159%     -    0s
+     0     0  883.00000    0   63  341.00000  883.00000   159%     -    0s
+     0     0  883.00000    0   62  341.00000  883.00000   159%     -    0s
+     0     2  883.00000    0   62  341.00000  883.00000   159%     -    0s
+* 3097  1641              34     348.0000000  812.70833   134%   127    3s
+  3238  1645  372.91667   32   63  348.00000  811.70833   133%   126    5s
+H 3538  1678                     349.0000000  811.70833   133%   127    6s
+  8670  2414  588.96181   32  120  349.00000  730.12500   109%   116   10s
+ 20430  5986  625.14389   31   62  349.00000  649.02083  86.0%   112   15s
+ 26722  7009  400.83333   60  114  349.00000  649.02083  86.0%   110   20s
+ 39055  8155 infeasible   64       349.00000  649.02083  86.0%   109   25s
+ 53089 13168 infeasible   65       349.00000  649.02083  86.0%   109   30s
+ 62058 15477  369.62500   52   60  349.00000  649.02083  86.0%   109   36s
+ 62223 19369  373.00000   50   80  349.00000  649.02083  86.0%   109   41s
+ 83627 21820  526.62500   49   42  349.00000  629.66667  80.4%   111   45s
+ 96346 25127  385.47500   57   72  349.00000  611.79167  75.3%   112   50s
+ 107812 27627 infeasible   57       349.00000  599.82292  71.9%   113   55s
+ 119146 30017  489.95000   53   74  349.00000  586.89583  68.2%   114   60s
+ 132354 32475  412.91667   56   40  349.00000  576.95833  65.3%   115   65s
+ 143586 34464  389.20833   56   37  349.00000  567.87500  62.7%   115   70s
+ 155347 36201  391.52778   55   87  349.00000  557.62500  59.8%   116   75s
+ 168259 38569  363.62500   58   44  349.00000  550.32500  57.7%   117   80s
+ 179608 40352  388.28333   59   58  349.00000  545.00000  56.2%   117   85s
+ 191995 41931  439.16667   55   63  349.00000  539.00000  54.4%   118   90s
+ 203664 43257     cutoff   58       349.00000  531.43750  52.3%   119   95s
+ 213009 44208 infeasible   52       349.00000  525.43750  50.6%   119  100s
+ 224485 45484  460.90476   55  149  349.00000  520.10833  49.0%   120  105s
+ 234367 46461 infeasible   59       349.00000  516.62500  48.0%   120  110s
+ 246402 47524  511.48611   54  113  349.00000  512.62500  46.9%   120  115s
+ 257340 48291     cutoff   58       349.00000  508.70833  45.8%   121  120s
+ 269162 48815     cutoff   58       349.00000  503.79167  44.4%   121  125s
+ 280215 49162 infeasible   58       349.00000  498.66667  42.9%   121  130s
+ 292045 49373  399.91071   53   53  349.00000  492.95833  41.2%   122  135s
+ 303230 49742  359.91667   61   39  349.00000  488.41667  39.9%   122  140s
+ 314578 50038 infeasible   54       349.00000  485.29167  39.1%   122  145s
+ 316410 49380     cutoff   57       349.00000  485.04167  39.0%   122  152s
+ 332628 49482  387.83333   49   66  349.00000  482.03333  38.1%   122  155s
+ 341962 49506  375.54167   61  116  349.00000  479.16667  37.3%   122  160s
+ 353122 49306  381.23611   55   58  349.00000  475.54167  36.3%   123  165s
+ 364916 48816  408.83333   57   83  349.00000  471.16667  35.0%   123  170s
+ 376659 48131  404.20238   52   53  349.00000  466.49167  33.7%   123  175s
+ 389811 47477     cutoff   61       349.00000  460.90000  32.1%   123  180s
+ 400648 47070 infeasible   57       349.00000  457.66667  31.1%   123  185s
+ 412218 46549     cutoff   56       349.00000  454.73611  30.3%   123  190s
+ 423115 46018  419.20833   54   95  349.00000  452.54532  29.7%   123  195s
+ 431220 45587  376.20833   59  134  349.00000  450.91667  29.2%   124  200s
+ 443381 44670 infeasible   57       349.00000  447.79167  28.3%   124  205s
+ 453586 43820  384.08333   54   40  349.00000  445.14744  27.5%   124  210s
+ 465264 42659 infeasible   56       349.00000  442.00000  26.6%   124  215s
+ 477120 41034  354.95833   58   70  349.00000  437.21642  25.3%   124  220s
+ 488567 39677 infeasible   56       349.00000  433.06667  24.1%   124  225s
+ 499664 38215  426.35417   57   61  349.00000  429.13510  23.0%   123  230s
+ 511167 36904  355.29167   64   24  349.00000  425.70833  22.0%   124  235s
+ 522541 35410  388.45833   56   85  349.00000  422.96377  21.2%   124  240s
+ 534978 33732     cutoff   52       349.00000  420.12500  20.4%   124  245s
+ 546435 31878 infeasible   60       349.00000  417.04167  19.5%   124  250s
+ 557253 29991     cutoff   55       349.00000  413.79167  18.6%   124  255s
+ 567435 27777 infeasible   55       349.00000  409.95833  17.5%   124  260s
+ 575275 25813     cutoff   58       349.00000  405.08333  16.1%   124  265s
+ 586599 23151  390.87500   58   43  349.00000  399.70833  14.5%   124  270s
+ 597121 20676  358.29167   57   34  349.00000  394.45588  13.0%   124  275s
+ 608725 18436 infeasible   62       349.00000  390.62037  11.9%   124  280s
+ 620599 15872 infeasible   61       349.00000  386.29167  10.7%   124  285s
+ 632117 12844  353.00000   57   85  349.00000  381.75000  9.38%   124  290s
+ 644961  7543 infeasible   55       349.00000  373.54167  7.03%   124  295s
+ 658792   520 infeasible   60       349.00000  359.90278  3.12%   124  300s
+
+Cutting planes:
+  Inf proof: 1
+
+Explored 661266 nodes (81536602 simplex iterations) in 300.68 seconds (789.97 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 10: 349 348 348 ... 336
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.490000000000e+02, best bound 3.490000000000e+02, gap 0.0000%
+
+Wrote result file '/root/bgw/data/results/2026_03_24_11_01_18_set_big_5_8_big_5_8_s003_g001_max.sol'
+

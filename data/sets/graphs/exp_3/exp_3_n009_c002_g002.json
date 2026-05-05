@@ -1,0 +1,112 @@
+{
+  "name": "exp_3_n009_c002_g002",
+  "nodes": [
+    {
+      "id": 0
+    },
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "source": 0,
+      "target": 7
+    },
+    {
+      "id": 2,
+      "source": 0,
+      "target": 4
+    },
+    {
+      "id": 3,
+      "source": 2,
+      "target": 4
+    },
+    {
+      "id": 4,
+      "source": 2,
+      "target": 6
+    },
+    {
+      "id": 5,
+      "source": 1,
+      "target": 6
+    },
+    {
+      "id": 6,
+      "source": 1,
+      "target": 5
+    },
+    {
+      "id": 7,
+      "source": 3,
+      "target": 5
+    },
+    {
+      "id": 8,
+      "source": 3,
+      "target": 8
+    },
+    {
+      "id": 9,
+      "source": 0,
+      "target": 5
+    },
+    {
+      "id": 10,
+      "source": 3,
+      "target": 6
+    },
+    {
+      "id": 11,
+      "source": 4,
+      "target": 6
+    },
+    {
+      "id": 12,
+      "source": 0,
+      "target": 1
+    }
+  ],
+  "cliques": [
+    {
+      "id": 1,
+      "nodes": [
+        0,
+        1,
+        5
+      ]
+    },
+    {
+      "id": 2,
+      "nodes": [
+        2,
+        4,
+        6
+      ]
+    }
+  ]
+}

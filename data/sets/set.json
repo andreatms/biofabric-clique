@@ -1,0 +1,2026 @@
+{
+  "setName": "set",
+  "createdAt": "2026-03-23T00:30:54.669Z",
+  "parameters": {
+    "mode": "set",
+    "setName": "set",
+    "seed": 1,
+    "minNodes": 5,
+    "maxNodes": 15,
+    "nodeStep": 1,
+    "graphsPerNodeStep": 10,
+    "minCliqueSize": 3,
+    "maxCliqueSize": 4,
+    "avgCliqueSize": 3.5,
+    "minCliques": 2,
+    "maxCliques": 6,
+    "cliqueStep": 2,
+    "graphsPerCliqueStep": 3
+  },
+  "graphs": [
+    {
+      "id": "set_s000_g001",
+      "filePath": "set_s000_g001.json",
+      "nodes": 5,
+      "edges": 10,
+      "cliques": [
+        5
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 5
+    },
+    {
+      "id": "set_s000_g002",
+      "filePath": "set_s000_g002.json",
+      "nodes": 5,
+      "edges": 10,
+      "cliques": [
+        5
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 5
+    },
+    {
+      "id": "set_s000_g003",
+      "filePath": "set_s000_g003.json",
+      "nodes": 5,
+      "edges": 6,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 5
+    },
+    {
+      "id": "set_s000_g004",
+      "filePath": "set_s000_g004.json",
+      "nodes": 5,
+      "edges": 9,
+      "cliques": [
+        4,
+        4
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 5
+    },
+    {
+      "id": "set_s000_g005",
+      "filePath": "set_s000_g005.json",
+      "nodes": 5,
+      "edges": 8,
+      "cliques": [
+        4,
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 5
+    },
+    {
+      "id": "set_s000_g006",
+      "filePath": "set_s000_g006.json",
+      "nodes": 5,
+      "edges": 9,
+      "cliques": [
+        4,
+        4
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 5
+    },
+    {
+      "id": "set_s000_g007",
+      "filePath": "set_s000_g007.json",
+      "nodes": 5,
+      "edges": 9,
+      "cliques": [
+        4,
+        4
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 5
+    },
+    {
+      "id": "set_s000_g008",
+      "filePath": "set_s000_g008.json",
+      "nodes": 5,
+      "edges": 9,
+      "cliques": [
+        4,
+        4
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 5
+    },
+    {
+      "id": "set_s000_g009",
+      "filePath": "set_s000_g009.json",
+      "nodes": 5,
+      "edges": 10,
+      "cliques": [
+        5
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 5
+    },
+    {
+      "id": "set_s000_g010",
+      "filePath": "set_s000_g010.json",
+      "nodes": 5,
+      "edges": 10,
+      "cliques": [
+        5
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 5
+    },
+    {
+      "id": "set_s001_g001",
+      "filePath": "set_s001_g001.json",
+      "nodes": 6,
+      "edges": 12,
+      "cliques": [
+        3,
+        5
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 6
+    },
+    {
+      "id": "set_s001_g002",
+      "filePath": "set_s001_g002.json",
+      "nodes": 6,
+      "edges": 10,
+      "cliques": [
+        3,
+        4,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 6
+    },
+    {
+      "id": "set_s001_g003",
+      "filePath": "set_s001_g003.json",
+      "nodes": 6,
+      "edges": 14,
+      "cliques": [
+        5,
+        5
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 6
+    },
+    {
+      "id": "set_s001_g004",
+      "filePath": "set_s001_g004.json",
+      "nodes": 6,
+      "edges": 14,
+      "cliques": [
+        5,
+        5
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 6
+    },
+    {
+      "id": "set_s001_g005",
+      "filePath": "set_s001_g005.json",
+      "nodes": 6,
+      "edges": 13,
+      "cliques": [
+        4,
+        5
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 6
+    },
+    {
+      "id": "set_s001_g006",
+      "filePath": "set_s001_g006.json",
+      "nodes": 6,
+      "edges": 11,
+      "cliques": [
+        4,
+        4
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 6
+    },
+    {
+      "id": "set_s001_g007",
+      "filePath": "set_s001_g007.json",
+      "nodes": 6,
+      "edges": 9,
+      "cliques": [
+        4,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 6
+    },
+    {
+      "id": "set_s001_g008",
+      "filePath": "set_s001_g008.json",
+      "nodes": 6,
+      "edges": 9,
+      "cliques": [
+        3,
+        4
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 6
+    },
+    {
+      "id": "set_s001_g009",
+      "filePath": "set_s001_g009.json",
+      "nodes": 6,
+      "edges": 14,
+      "cliques": [
+        5,
+        5
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 6
+    },
+    {
+      "id": "set_s001_g010",
+      "filePath": "set_s001_g010.json",
+      "nodes": 6,
+      "edges": 11,
+      "cliques": [
+        4,
+        3,
+        4
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 6
+    },
+    {
+      "id": "set_s002_g001",
+      "filePath": "set_s002_g001.json",
+      "nodes": 7,
+      "edges": 12,
+      "cliques": [
+        3,
+        4,
+        4
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 7
+    },
+    {
+      "id": "set_s002_g002",
+      "filePath": "set_s002_g002.json",
+      "nodes": 7,
+      "edges": 8,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 7
+    },
+    {
+      "id": "set_s002_g003",
+      "filePath": "set_s002_g003.json",
+      "nodes": 7,
+      "edges": 14,
+      "cliques": [
+        4,
+        4,
+        4,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 7
+    },
+    {
+      "id": "set_s002_g004",
+      "filePath": "set_s002_g004.json",
+      "nodes": 7,
+      "edges": 11,
+      "cliques": [
+        4,
+        3,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 7
+    },
+    {
+      "id": "set_s002_g005",
+      "filePath": "set_s002_g005.json",
+      "nodes": 7,
+      "edges": 11,
+      "cliques": [
+        4,
+        4
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 7
+    },
+    {
+      "id": "set_s002_g006",
+      "filePath": "set_s002_g006.json",
+      "nodes": 7,
+      "edges": 10,
+      "cliques": [
+        3,
+        4
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 7
+    },
+    {
+      "id": "set_s002_g007",
+      "filePath": "set_s002_g007.json",
+      "nodes": 7,
+      "edges": 15,
+      "cliques": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 7
+    },
+    {
+      "id": "set_s002_g008",
+      "filePath": "set_s002_g008.json",
+      "nodes": 7,
+      "edges": 15,
+      "cliques": [
+        5,
+        4,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 7
+    },
+    {
+      "id": "set_s002_g009",
+      "filePath": "set_s002_g009.json",
+      "nodes": 7,
+      "edges": 11,
+      "cliques": [
+        4,
+        4
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 7
+    },
+    {
+      "id": "set_s002_g010",
+      "filePath": "set_s002_g010.json",
+      "nodes": 7,
+      "edges": 15,
+      "cliques": [
+        3,
+        4,
+        5
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 7
+    },
+    {
+      "id": "set_s003_g001",
+      "filePath": "set_s003_g001.json",
+      "nodes": 8,
+      "edges": 20,
+      "cliques": [
+        4,
+        5,
+        5,
+        4
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 8
+    },
+    {
+      "id": "set_s003_g002",
+      "filePath": "set_s003_g002.json",
+      "nodes": 8,
+      "edges": 11,
+      "cliques": [
+        3,
+        4
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 8
+    },
+    {
+      "id": "set_s003_g003",
+      "filePath": "set_s003_g003.json",
+      "nodes": 8,
+      "edges": 16,
+      "cliques": [
+        5,
+        4
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 8
+    },
+    {
+      "id": "set_s003_g004",
+      "filePath": "set_s003_g004.json",
+      "nodes": 8,
+      "edges": 16,
+      "cliques": [
+        4,
+        5
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 8
+    },
+    {
+      "id": "set_s003_g005",
+      "filePath": "set_s003_g005.json",
+      "nodes": 8,
+      "edges": 20,
+      "cliques": [
+        3,
+        6,
+        4
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 8
+    },
+    {
+      "id": "set_s003_g006",
+      "filePath": "set_s003_g006.json",
+      "nodes": 8,
+      "edges": 13,
+      "cliques": [
+        3,
+        4,
+        4
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 8
+    },
+    {
+      "id": "set_s003_g007",
+      "filePath": "set_s003_g007.json",
+      "nodes": 8,
+      "edges": 15,
+      "cliques": [
+        4,
+        4,
+        4
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 8
+    },
+    {
+      "id": "set_s003_g008",
+      "filePath": "set_s003_g008.json",
+      "nodes": 8,
+      "edges": 20,
+      "cliques": [
+        5,
+        5,
+        4,
+        4
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 8
+    },
+    {
+      "id": "set_s003_g009",
+      "filePath": "set_s003_g009.json",
+      "nodes": 8,
+      "edges": 13,
+      "cliques": [
+        4,
+        4,
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 8
+    },
+    {
+      "id": "set_s003_g010",
+      "filePath": "set_s003_g010.json",
+      "nodes": 8,
+      "edges": 15,
+      "cliques": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 8
+    },
+    {
+      "id": "set_s004_g001",
+      "filePath": "set_s004_g001.json",
+      "nodes": 9,
+      "edges": 12,
+      "cliques": [
+        4,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 9
+    },
+    {
+      "id": "set_s004_g002",
+      "filePath": "set_s004_g002.json",
+      "nodes": 9,
+      "edges": 23,
+      "cliques": [
+        4,
+        4,
+        4,
+        5,
+        5
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 9
+    },
+    {
+      "id": "set_s004_g003",
+      "filePath": "set_s004_g003.json",
+      "nodes": 9,
+      "edges": 20,
+      "cliques": [
+        3,
+        5,
+        5,
+        4
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 9
+    },
+    {
+      "id": "set_s004_g004",
+      "filePath": "set_s004_g004.json",
+      "nodes": 9,
+      "edges": 21,
+      "cliques": [
+        3,
+        4,
+        3,
+        4,
+        5
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 9
+    },
+    {
+      "id": "set_s004_g005",
+      "filePath": "set_s004_g005.json",
+      "nodes": 9,
+      "edges": 14,
+      "cliques": [
+        4,
+        4,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 9
+    },
+    {
+      "id": "set_s004_g006",
+      "filePath": "set_s004_g006.json",
+      "nodes": 9,
+      "edges": 16,
+      "cliques": [
+        3,
+        3,
+        4,
+        3,
+        3,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 9
+    },
+    {
+      "id": "set_s004_g007",
+      "filePath": "set_s004_g007.json",
+      "nodes": 9,
+      "edges": 12,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 9
+    },
+    {
+      "id": "set_s004_g008",
+      "filePath": "set_s004_g008.json",
+      "nodes": 9,
+      "edges": 16,
+      "cliques": [
+        3,
+        4,
+        3,
+        3,
+        4
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 9
+    },
+    {
+      "id": "set_s004_g009",
+      "filePath": "set_s004_g009.json",
+      "nodes": 9,
+      "edges": 13,
+      "cliques": [
+        4,
+        4
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 9
+    },
+    {
+      "id": "set_s004_g010",
+      "filePath": "set_s004_g010.json",
+      "nodes": 9,
+      "edges": 19,
+      "cliques": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 9
+    },
+    {
+      "id": "set_s005_g001",
+      "filePath": "set_s005_g001.json",
+      "nodes": 10,
+      "edges": 22,
+      "cliques": [
+        4,
+        3,
+        4,
+        4,
+        4,
+        4
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "set_s005_g002",
+      "filePath": "set_s005_g002.json",
+      "nodes": 10,
+      "edges": 16,
+      "cliques": [
+        4,
+        4,
+        4
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "set_s005_g003",
+      "filePath": "set_s005_g003.json",
+      "nodes": 10,
+      "edges": 18,
+      "cliques": [
+        3,
+        3,
+        4,
+        3,
+        3,
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "set_s005_g004",
+      "filePath": "set_s005_g004.json",
+      "nodes": 10,
+      "edges": 11,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "set_s005_g005",
+      "filePath": "set_s005_g005.json",
+      "nodes": 10,
+      "edges": 17,
+      "cliques": [
+        5,
+        4
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "set_s005_g006",
+      "filePath": "set_s005_g006.json",
+      "nodes": 10,
+      "edges": 18,
+      "cliques": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "set_s005_g007",
+      "filePath": "set_s005_g007.json",
+      "nodes": 10,
+      "edges": 21,
+      "cliques": [
+        5,
+        4,
+        5,
+        4
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "set_s005_g008",
+      "filePath": "set_s005_g008.json",
+      "nodes": 10,
+      "edges": 15,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "set_s005_g009",
+      "filePath": "set_s005_g009.json",
+      "nodes": 10,
+      "edges": 12,
+      "cliques": [
+        4
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "set_s005_g010",
+      "filePath": "set_s005_g010.json",
+      "nodes": 10,
+      "edges": 15,
+      "cliques": [
+        3,
+        4,
+        3,
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "set_s006_g001",
+      "filePath": "set_s006_g001.json",
+      "nodes": 11,
+      "edges": 21,
+      "cliques": [
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "set_s006_g002",
+      "filePath": "set_s006_g002.json",
+      "nodes": 11,
+      "edges": 22,
+      "cliques": [
+        4,
+        4,
+        4,
+        3,
+        4
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "set_s006_g003",
+      "filePath": "set_s006_g003.json",
+      "nodes": 11,
+      "edges": 13,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "set_s006_g004",
+      "filePath": "set_s006_g004.json",
+      "nodes": 11,
+      "edges": 17,
+      "cliques": [
+        3,
+        4,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "set_s006_g005",
+      "filePath": "set_s006_g005.json",
+      "nodes": 11,
+      "edges": 15,
+      "cliques": [
+        4,
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "set_s006_g006",
+      "filePath": "set_s006_g006.json",
+      "nodes": 11,
+      "edges": 22,
+      "cliques": [
+        5,
+        5,
+        4
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "set_s006_g007",
+      "filePath": "set_s006_g007.json",
+      "nodes": 11,
+      "edges": 18,
+      "cliques": [
+        4,
+        3,
+        4,
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "set_s006_g008",
+      "filePath": "set_s006_g008.json",
+      "nodes": 11,
+      "edges": 18,
+      "cliques": [
+        4,
+        4,
+        4
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "set_s006_g009",
+      "filePath": "set_s006_g009.json",
+      "nodes": 11,
+      "edges": 20,
+      "cliques": [
+        4,
+        4,
+        4,
+        3,
+        4
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "set_s006_g010",
+      "filePath": "set_s006_g010.json",
+      "nodes": 11,
+      "edges": 19,
+      "cliques": [
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "set_s007_g001",
+      "filePath": "set_s007_g001.json",
+      "nodes": 12,
+      "edges": 25,
+      "cliques": [
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        4
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "set_s007_g002",
+      "filePath": "set_s007_g002.json",
+      "nodes": 12,
+      "edges": 18,
+      "cliques": [
+        5,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "set_s007_g003",
+      "filePath": "set_s007_g003.json",
+      "nodes": 12,
+      "edges": 18,
+      "cliques": [
+        4,
+        4,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "set_s007_g004",
+      "filePath": "set_s007_g004.json",
+      "nodes": 12,
+      "edges": 22,
+      "cliques": [
+        4,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "set_s007_g005",
+      "filePath": "set_s007_g005.json",
+      "nodes": 12,
+      "edges": 23,
+      "cliques": [
+        3,
+        4,
+        3,
+        4,
+        3,
+        4
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "set_s007_g006",
+      "filePath": "set_s007_g006.json",
+      "nodes": 12,
+      "edges": 18,
+      "cliques": [
+        3,
+        4,
+        4
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "set_s007_g007",
+      "filePath": "set_s007_g007.json",
+      "nodes": 12,
+      "edges": 25,
+      "cliques": [
+        4,
+        3,
+        3,
+        4,
+        4,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "set_s007_g008",
+      "filePath": "set_s007_g008.json",
+      "nodes": 12,
+      "edges": 14,
+      "cliques": [
+        4
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "set_s007_g009",
+      "filePath": "set_s007_g009.json",
+      "nodes": 12,
+      "edges": 15,
+      "cliques": [
+        3,
+        4
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "set_s007_g010",
+      "filePath": "set_s007_g010.json",
+      "nodes": 12,
+      "edges": 20,
+      "cliques": [
+        4,
+        3,
+        4,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "set_s008_g001",
+      "filePath": "set_s008_g001.json",
+      "nodes": 13,
+      "edges": 24,
+      "cliques": [
+        4,
+        4,
+        5
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "set_s008_g002",
+      "filePath": "set_s008_g002.json",
+      "nodes": 13,
+      "edges": 26,
+      "cliques": [
+        4,
+        3,
+        5,
+        5,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "set_s008_g003",
+      "filePath": "set_s008_g003.json",
+      "nodes": 13,
+      "edges": 20,
+      "cliques": [
+        3,
+        3,
+        3,
+        4
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "set_s008_g004",
+      "filePath": "set_s008_g004.json",
+      "nodes": 13,
+      "edges": 23,
+      "cliques": [
+        3,
+        4,
+        4,
+        3,
+        3,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "set_s008_g005",
+      "filePath": "set_s008_g005.json",
+      "nodes": 13,
+      "edges": 18,
+      "cliques": [
+        4,
+        4
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "set_s008_g006",
+      "filePath": "set_s008_g006.json",
+      "nodes": 13,
+      "edges": 23,
+      "cliques": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "set_s008_g007",
+      "filePath": "set_s008_g007.json",
+      "nodes": 13,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "set_s008_g008",
+      "filePath": "set_s008_g008.json",
+      "nodes": 13,
+      "edges": 25,
+      "cliques": [
+        4,
+        3,
+        3,
+        4,
+        4,
+        3,
+        4
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "set_s008_g009",
+      "filePath": "set_s008_g009.json",
+      "nodes": 13,
+      "edges": 18,
+      "cliques": [
+        3,
+        3,
+        4,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "set_s008_g010",
+      "filePath": "set_s008_g010.json",
+      "nodes": 13,
+      "edges": 24,
+      "cliques": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "set_s009_g001",
+      "filePath": "set_s009_g001.json",
+      "nodes": 14,
+      "edges": 21,
+      "cliques": [
+        3,
+        4,
+        3,
+        3,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "set_s009_g002",
+      "filePath": "set_s009_g002.json",
+      "nodes": 14,
+      "edges": 18,
+      "cliques": [
+        4,
+        3,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "set_s009_g003",
+      "filePath": "set_s009_g003.json",
+      "nodes": 14,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        4,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "set_s009_g004",
+      "filePath": "set_s009_g004.json",
+      "nodes": 14,
+      "edges": 23,
+      "cliques": [
+        4,
+        4,
+        4
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "set_s009_g005",
+      "filePath": "set_s009_g005.json",
+      "nodes": 14,
+      "edges": 27,
+      "cliques": [
+        3,
+        4,
+        3,
+        4,
+        4,
+        4
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "set_s009_g006",
+      "filePath": "set_s009_g006.json",
+      "nodes": 14,
+      "edges": 20,
+      "cliques": [
+        4,
+        3,
+        4
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "set_s009_g007",
+      "filePath": "set_s009_g007.json",
+      "nodes": 14,
+      "edges": 22,
+      "cliques": [
+        4,
+        3,
+        3,
+        4,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "set_s009_g008",
+      "filePath": "set_s009_g008.json",
+      "nodes": 14,
+      "edges": 23,
+      "cliques": [
+        3,
+        3,
+        3,
+        4,
+        3,
+        3,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "set_s009_g009",
+      "filePath": "set_s009_g009.json",
+      "nodes": 14,
+      "edges": 30,
+      "cliques": [
+        4,
+        4,
+        3,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "set_s009_g010",
+      "filePath": "set_s009_g010.json",
+      "nodes": 14,
+      "edges": 21,
+      "cliques": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "set_s010_g001",
+      "filePath": "set_s010_g001.json",
+      "nodes": 15,
+      "edges": 25,
+      "cliques": [
+        4,
+        3,
+        3,
+        4,
+        3,
+        3,
+        4
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "set_s010_g002",
+      "filePath": "set_s010_g002.json",
+      "nodes": 15,
+      "edges": 30,
+      "cliques": [
+        3,
+        3,
+        4,
+        4,
+        3,
+        4,
+        3,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "set_s010_g003",
+      "filePath": "set_s010_g003.json",
+      "nodes": 15,
+      "edges": 28,
+      "cliques": [
+        4,
+        3,
+        4,
+        4,
+        3,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "set_s010_g004",
+      "filePath": "set_s010_g004.json",
+      "nodes": 15,
+      "edges": 29,
+      "cliques": [
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "set_s010_g005",
+      "filePath": "set_s010_g005.json",
+      "nodes": 15,
+      "edges": 28,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "set_s010_g006",
+      "filePath": "set_s010_g006.json",
+      "nodes": 15,
+      "edges": 32,
+      "cliques": [
+        4,
+        4,
+        5,
+        4,
+        4,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "set_s010_g007",
+      "filePath": "set_s010_g007.json",
+      "nodes": 15,
+      "edges": 21,
+      "cliques": [
+        4,
+        4,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "set_s010_g008",
+      "filePath": "set_s010_g008.json",
+      "nodes": 15,
+      "edges": 22,
+      "cliques": [
+        4,
+        4,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "set_s010_g009",
+      "filePath": "set_s010_g009.json",
+      "nodes": 15,
+      "edges": 25,
+      "cliques": [
+        4,
+        3,
+        4,
+        3,
+        4
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "set_s010_g010",
+      "filePath": "set_s010_g010.json",
+      "nodes": 15,
+      "edges": 26,
+      "cliques": [
+        3,
+        4,
+        5,
+        4
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "set_s011_g001",
+      "filePath": "set_s011_g001.json",
+      "nodes": 13,
+      "edges": 14,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 2
+    },
+    {
+      "id": "set_s011_g002",
+      "filePath": "set_s011_g002.json",
+      "nodes": 10,
+      "edges": 14,
+      "cliques": [
+        3,
+        4,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 2
+    },
+    {
+      "id": "set_s011_g003",
+      "filePath": "set_s011_g003.json",
+      "nodes": 12,
+      "edges": 17,
+      "cliques": [
+        4,
+        4
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 2
+    },
+    {
+      "id": "set_s012_g001",
+      "filePath": "set_s012_g001.json",
+      "nodes": 14,
+      "edges": 24,
+      "cliques": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 4
+    },
+    {
+      "id": "set_s012_g002",
+      "filePath": "set_s012_g002.json",
+      "nodes": 15,
+      "edges": 25,
+      "cliques": [
+        4,
+        4,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 4
+    },
+    {
+      "id": "set_s012_g003",
+      "filePath": "set_s012_g003.json",
+      "nodes": 8,
+      "edges": 16,
+      "cliques": [
+        3,
+        4,
+        4,
+        4
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 4
+    },
+    {
+      "id": "set_s013_g001",
+      "filePath": "set_s013_g001.json",
+      "nodes": 8,
+      "edges": 19,
+      "cliques": [
+        4,
+        5,
+        4,
+        4
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 6
+    },
+    {
+      "id": "set_s013_g002",
+      "filePath": "set_s013_g002.json",
+      "nodes": 13,
+      "edges": 25,
+      "cliques": [
+        4,
+        4,
+        4,
+        3,
+        4,
+        4
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 6
+    },
+    {
+      "id": "set_s013_g003",
+      "filePath": "set_s013_g003.json",
+      "nodes": 12,
+      "edges": 27,
+      "cliques": [
+        4,
+        4,
+        3,
+        3,
+        4,
+        3,
+        3,
+        4,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 6
+    }
+  ],
+  "failures": []
+}

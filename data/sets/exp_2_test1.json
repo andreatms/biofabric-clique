@@ -1,0 +1,3026 @@
+{
+  "setName": "exp_2_test1",
+  "createdAt": "2026-03-23T13:28:04.176Z",
+  "parameters": {
+    "mode": "set",
+    "algorithm": "dataset-sperimentazione-2",
+    "setName": "exp_2_test1",
+    "minNodes": 5,
+    "maxNodes": 30,
+    "nodeStep": 5,
+    "minCliques": 1,
+    "maxCliques": 5,
+    "cliqueStep": 1,
+    "graphsPerCombination": 5,
+    "totalCombinations": 30
+  },
+  "graphs": [
+    {
+      "id": "exp_2_test1_n005_c001_g001",
+      "filePath": "exp_2_test1_n005_c001_g001.json",
+      "nodes": 5,
+      "edges": 6,
+      "cliques": [
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c001_g002",
+      "filePath": "exp_2_test1_n005_c001_g002.json",
+      "nodes": 5,
+      "edges": 5,
+      "cliques": [
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c001_g003",
+      "filePath": "exp_2_test1_n005_c001_g003.json",
+      "nodes": 5,
+      "edges": 7,
+      "cliques": [
+        4
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c001_g004",
+      "filePath": "exp_2_test1_n005_c001_g004.json",
+      "nodes": 5,
+      "edges": 7,
+      "cliques": [
+        4
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c001_g005",
+      "filePath": "exp_2_test1_n005_c001_g005.json",
+      "nodes": 5,
+      "edges": 6,
+      "cliques": [
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c002_g001",
+      "filePath": "exp_2_test1_n005_c002_g001.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 1,
+      "status": "failed",
+      "error": "Combinazione non generabile: 2 clique richiedono almeno 6 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c002_g002",
+      "filePath": "exp_2_test1_n005_c002_g002.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 1,
+      "status": "failed",
+      "error": "Combinazione non generabile: 2 clique richiedono almeno 6 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c002_g003",
+      "filePath": "exp_2_test1_n005_c002_g003.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 1,
+      "status": "failed",
+      "error": "Combinazione non generabile: 2 clique richiedono almeno 6 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c002_g004",
+      "filePath": "exp_2_test1_n005_c002_g004.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 1,
+      "status": "failed",
+      "error": "Combinazione non generabile: 2 clique richiedono almeno 6 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c002_g005",
+      "filePath": "exp_2_test1_n005_c002_g005.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 1,
+      "status": "failed",
+      "error": "Combinazione non generabile: 2 clique richiedono almeno 6 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c003_g001",
+      "filePath": "exp_2_test1_n005_c003_g001.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 2,
+      "status": "failed",
+      "error": "Combinazione non generabile: 3 clique richiedono almeno 9 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c003_g002",
+      "filePath": "exp_2_test1_n005_c003_g002.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 2,
+      "status": "failed",
+      "error": "Combinazione non generabile: 3 clique richiedono almeno 9 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c003_g003",
+      "filePath": "exp_2_test1_n005_c003_g003.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 2,
+      "status": "failed",
+      "error": "Combinazione non generabile: 3 clique richiedono almeno 9 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c003_g004",
+      "filePath": "exp_2_test1_n005_c003_g004.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 2,
+      "status": "failed",
+      "error": "Combinazione non generabile: 3 clique richiedono almeno 9 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c003_g005",
+      "filePath": "exp_2_test1_n005_c003_g005.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 2,
+      "status": "failed",
+      "error": "Combinazione non generabile: 3 clique richiedono almeno 9 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c004_g001",
+      "filePath": "exp_2_test1_n005_c004_g001.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 3,
+      "status": "failed",
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c004_g002",
+      "filePath": "exp_2_test1_n005_c004_g002.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 3,
+      "status": "failed",
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c004_g003",
+      "filePath": "exp_2_test1_n005_c004_g003.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 3,
+      "status": "failed",
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c004_g004",
+      "filePath": "exp_2_test1_n005_c004_g004.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 3,
+      "status": "failed",
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c004_g005",
+      "filePath": "exp_2_test1_n005_c004_g005.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 3,
+      "status": "failed",
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c005_g001",
+      "filePath": "exp_2_test1_n005_c005_g001.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 4,
+      "status": "failed",
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c005_g002",
+      "filePath": "exp_2_test1_n005_c005_g002.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 4,
+      "status": "failed",
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c005_g003",
+      "filePath": "exp_2_test1_n005_c005_g003.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 4,
+      "status": "failed",
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c005_g004",
+      "filePath": "exp_2_test1_n005_c005_g004.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 4,
+      "status": "failed",
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n005_c005_g005",
+      "filePath": "exp_2_test1_n005_c005_g005.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 4,
+      "status": "failed",
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c001_g001",
+      "filePath": "exp_2_test1_n010_c001_g001.json",
+      "nodes": 10,
+      "edges": 15,
+      "cliques": [
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c001_g002",
+      "filePath": "exp_2_test1_n010_c001_g002.json",
+      "nodes": 10,
+      "edges": 14,
+      "cliques": [
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c001_g003",
+      "filePath": "exp_2_test1_n010_c001_g003.json",
+      "nodes": 10,
+      "edges": 13,
+      "cliques": [
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c001_g004",
+      "filePath": "exp_2_test1_n010_c001_g004.json",
+      "nodes": 10,
+      "edges": 14,
+      "cliques": [
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c001_g005",
+      "filePath": "exp_2_test1_n010_c001_g005.json",
+      "nodes": 10,
+      "edges": 12,
+      "cliques": [
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c002_g001",
+      "filePath": "exp_2_test1_n010_c002_g001.json",
+      "nodes": 10,
+      "edges": 13,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c002_g002",
+      "filePath": "exp_2_test1_n010_c002_g002.json",
+      "nodes": 10,
+      "edges": 12,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c002_g003",
+      "filePath": "exp_2_test1_n010_c002_g003.json",
+      "nodes": 10,
+      "edges": 13,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c002_g004",
+      "filePath": "exp_2_test1_n010_c002_g004.json",
+      "nodes": 10,
+      "edges": 12,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c002_g005",
+      "filePath": "exp_2_test1_n010_c002_g005.json",
+      "nodes": 10,
+      "edges": 14,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c003_g001",
+      "filePath": "exp_2_test1_n010_c003_g001.json",
+      "nodes": 10,
+      "edges": 15,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c003_g002",
+      "filePath": "exp_2_test1_n010_c003_g002.json",
+      "nodes": 10,
+      "edges": 13,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c003_g003",
+      "filePath": "exp_2_test1_n010_c003_g003.json",
+      "nodes": 10,
+      "edges": 15,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c003_g004",
+      "filePath": "exp_2_test1_n010_c003_g004.json",
+      "nodes": 10,
+      "edges": 14,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c003_g005",
+      "filePath": "exp_2_test1_n010_c003_g005.json",
+      "nodes": 10,
+      "edges": 15,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c004_g001",
+      "filePath": "exp_2_test1_n010_c004_g001.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 8,
+      "status": "failed",
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c004_g002",
+      "filePath": "exp_2_test1_n010_c004_g002.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 8,
+      "status": "failed",
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c004_g003",
+      "filePath": "exp_2_test1_n010_c004_g003.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 8,
+      "status": "failed",
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c004_g004",
+      "filePath": "exp_2_test1_n010_c004_g004.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 8,
+      "status": "failed",
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c004_g005",
+      "filePath": "exp_2_test1_n010_c004_g005.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 8,
+      "status": "failed",
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c005_g001",
+      "filePath": "exp_2_test1_n010_c005_g001.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 9,
+      "status": "failed",
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c005_g002",
+      "filePath": "exp_2_test1_n010_c005_g002.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 9,
+      "status": "failed",
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c005_g003",
+      "filePath": "exp_2_test1_n010_c005_g003.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 9,
+      "status": "failed",
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c005_g004",
+      "filePath": "exp_2_test1_n010_c005_g004.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 9,
+      "status": "failed",
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n010_c005_g005",
+      "filePath": "exp_2_test1_n010_c005_g005.json",
+      "nodes": 0,
+      "edges": 0,
+      "cliques": [],
+      "step": 9,
+      "status": "failed",
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi.",
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c001_g001",
+      "filePath": "exp_2_test1_n015_c001_g001.json",
+      "nodes": 15,
+      "edges": 25,
+      "cliques": [
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c001_g002",
+      "filePath": "exp_2_test1_n015_c001_g002.json",
+      "nodes": 15,
+      "edges": 21,
+      "cliques": [
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c001_g003",
+      "filePath": "exp_2_test1_n015_c001_g003.json",
+      "nodes": 15,
+      "edges": 25,
+      "cliques": [
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c001_g004",
+      "filePath": "exp_2_test1_n015_c001_g004.json",
+      "nodes": 15,
+      "edges": 20,
+      "cliques": [
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c001_g005",
+      "filePath": "exp_2_test1_n015_c001_g005.json",
+      "nodes": 15,
+      "edges": 20,
+      "cliques": [
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c002_g001",
+      "filePath": "exp_2_test1_n015_c002_g001.json",
+      "nodes": 15,
+      "edges": 23,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c002_g002",
+      "filePath": "exp_2_test1_n015_c002_g002.json",
+      "nodes": 15,
+      "edges": 21,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c002_g003",
+      "filePath": "exp_2_test1_n015_c002_g003.json",
+      "nodes": 15,
+      "edges": 21,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c002_g004",
+      "filePath": "exp_2_test1_n015_c002_g004.json",
+      "nodes": 15,
+      "edges": 19,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c002_g005",
+      "filePath": "exp_2_test1_n015_c002_g005.json",
+      "nodes": 15,
+      "edges": 20,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c003_g001",
+      "filePath": "exp_2_test1_n015_c003_g001.json",
+      "nodes": 15,
+      "edges": 23,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c003_g002",
+      "filePath": "exp_2_test1_n015_c003_g002.json",
+      "nodes": 15,
+      "edges": 23,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c003_g003",
+      "filePath": "exp_2_test1_n015_c003_g003.json",
+      "nodes": 15,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c003_g004",
+      "filePath": "exp_2_test1_n015_c003_g004.json",
+      "nodes": 15,
+      "edges": 19,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c003_g005",
+      "filePath": "exp_2_test1_n015_c003_g005.json",
+      "nodes": 15,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c004_g001",
+      "filePath": "exp_2_test1_n015_c004_g001.json",
+      "nodes": 15,
+      "edges": 25,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c004_g002",
+      "filePath": "exp_2_test1_n015_c004_g002.json",
+      "nodes": 15,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c004_g003",
+      "filePath": "exp_2_test1_n015_c004_g003.json",
+      "nodes": 15,
+      "edges": 21,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c004_g004",
+      "filePath": "exp_2_test1_n015_c004_g004.json",
+      "nodes": 15,
+      "edges": 24,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c004_g005",
+      "filePath": "exp_2_test1_n015_c004_g005.json",
+      "nodes": 15,
+      "edges": 21,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c005_g001",
+      "filePath": "exp_2_test1_n015_c005_g001.json",
+      "nodes": 15,
+      "edges": 25,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c005_g002",
+      "filePath": "exp_2_test1_n015_c005_g002.json",
+      "nodes": 15,
+      "edges": 24,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c005_g003",
+      "filePath": "exp_2_test1_n015_c005_g003.json",
+      "nodes": 15,
+      "edges": 21,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c005_g004",
+      "filePath": "exp_2_test1_n015_c005_g004.json",
+      "nodes": 15,
+      "edges": 27,
+      "cliques": [
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n015_c005_g005",
+      "filePath": "exp_2_test1_n015_c005_g005.json",
+      "nodes": 15,
+      "edges": 25,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 15,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c001_g001",
+      "filePath": "exp_2_test1_n020_c001_g001.json",
+      "nodes": 20,
+      "edges": 29,
+      "cliques": [
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c001_g002",
+      "filePath": "exp_2_test1_n020_c001_g002.json",
+      "nodes": 20,
+      "edges": 31,
+      "cliques": [
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c001_g003",
+      "filePath": "exp_2_test1_n020_c001_g003.json",
+      "nodes": 20,
+      "edges": 30,
+      "cliques": [
+        4
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c001_g004",
+      "filePath": "exp_2_test1_n020_c001_g004.json",
+      "nodes": 20,
+      "edges": 34,
+      "cliques": [
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c001_g005",
+      "filePath": "exp_2_test1_n020_c001_g005.json",
+      "nodes": 20,
+      "edges": 31,
+      "cliques": [
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c002_g001",
+      "filePath": "exp_2_test1_n020_c002_g001.json",
+      "nodes": 20,
+      "edges": 38,
+      "cliques": [
+        4,
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c002_g002",
+      "filePath": "exp_2_test1_n020_c002_g002.json",
+      "nodes": 20,
+      "edges": 37,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c002_g003",
+      "filePath": "exp_2_test1_n020_c002_g003.json",
+      "nodes": 20,
+      "edges": 36,
+      "cliques": [
+        3,
+        4
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c002_g004",
+      "filePath": "exp_2_test1_n020_c002_g004.json",
+      "nodes": 20,
+      "edges": 31,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c002_g005",
+      "filePath": "exp_2_test1_n020_c002_g005.json",
+      "nodes": 20,
+      "edges": 31,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c003_g001",
+      "filePath": "exp_2_test1_n020_c003_g001.json",
+      "nodes": 20,
+      "edges": 28,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c003_g002",
+      "filePath": "exp_2_test1_n020_c003_g002.json",
+      "nodes": 20,
+      "edges": 36,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c003_g003",
+      "filePath": "exp_2_test1_n020_c003_g003.json",
+      "nodes": 20,
+      "edges": 34,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c003_g004",
+      "filePath": "exp_2_test1_n020_c003_g004.json",
+      "nodes": 20,
+      "edges": 37,
+      "cliques": [
+        4,
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c003_g005",
+      "filePath": "exp_2_test1_n020_c003_g005.json",
+      "nodes": 20,
+      "edges": 30,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c004_g001",
+      "filePath": "exp_2_test1_n020_c004_g001.json",
+      "nodes": 20,
+      "edges": 34,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c004_g002",
+      "filePath": "exp_2_test1_n020_c004_g002.json",
+      "nodes": 20,
+      "edges": 32,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c004_g003",
+      "filePath": "exp_2_test1_n020_c004_g003.json",
+      "nodes": 20,
+      "edges": 29,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c004_g004",
+      "filePath": "exp_2_test1_n020_c004_g004.json",
+      "nodes": 20,
+      "edges": 34,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c004_g005",
+      "filePath": "exp_2_test1_n020_c004_g005.json",
+      "nodes": 20,
+      "edges": 38,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c005_g001",
+      "filePath": "exp_2_test1_n020_c005_g001.json",
+      "nodes": 20,
+      "edges": 34,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c005_g002",
+      "filePath": "exp_2_test1_n020_c005_g002.json",
+      "nodes": 20,
+      "edges": 32,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c005_g003",
+      "filePath": "exp_2_test1_n020_c005_g003.json",
+      "nodes": 20,
+      "edges": 36,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c005_g004",
+      "filePath": "exp_2_test1_n020_c005_g004.json",
+      "nodes": 20,
+      "edges": 31,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n020_c005_g005",
+      "filePath": "exp_2_test1_n020_c005_g005.json",
+      "nodes": 20,
+      "edges": 34,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 20,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c001_g001",
+      "filePath": "exp_2_test1_n025_c001_g001.json",
+      "nodes": 25,
+      "edges": 62,
+      "cliques": [
+        4
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c001_g002",
+      "filePath": "exp_2_test1_n025_c001_g002.json",
+      "nodes": 25,
+      "edges": 44,
+      "cliques": [
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c001_g003",
+      "filePath": "exp_2_test1_n025_c001_g003.json",
+      "nodes": 25,
+      "edges": 52,
+      "cliques": [
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c001_g004",
+      "filePath": "exp_2_test1_n025_c001_g004.json",
+      "nodes": 25,
+      "edges": 45,
+      "cliques": [
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c001_g005",
+      "filePath": "exp_2_test1_n025_c001_g005.json",
+      "nodes": 25,
+      "edges": 44,
+      "cliques": [
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c002_g001",
+      "filePath": "exp_2_test1_n025_c002_g001.json",
+      "nodes": 25,
+      "edges": 44,
+      "cliques": [
+        3,
+        4
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c002_g002",
+      "filePath": "exp_2_test1_n025_c002_g002.json",
+      "nodes": 25,
+      "edges": 53,
+      "cliques": [
+        3,
+        4
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c002_g003",
+      "filePath": "exp_2_test1_n025_c002_g003.json",
+      "nodes": 25,
+      "edges": 46,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c002_g004",
+      "filePath": "exp_2_test1_n025_c002_g004.json",
+      "nodes": 25,
+      "edges": 50,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c002_g005",
+      "filePath": "exp_2_test1_n025_c002_g005.json",
+      "nodes": 25,
+      "edges": 49,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c003_g001",
+      "filePath": "exp_2_test1_n025_c003_g001.json",
+      "nodes": 25,
+      "edges": 55,
+      "cliques": [
+        4,
+        3,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c003_g002",
+      "filePath": "exp_2_test1_n025_c003_g002.json",
+      "nodes": 25,
+      "edges": 40,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c003_g003",
+      "filePath": "exp_2_test1_n025_c003_g003.json",
+      "nodes": 25,
+      "edges": 44,
+      "cliques": [
+        4,
+        3,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c003_g004",
+      "filePath": "exp_2_test1_n025_c003_g004.json",
+      "nodes": 25,
+      "edges": 52,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c003_g005",
+      "filePath": "exp_2_test1_n025_c003_g005.json",
+      "nodes": 25,
+      "edges": 46,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c004_g001",
+      "filePath": "exp_2_test1_n025_c004_g001.json",
+      "nodes": 25,
+      "edges": 50,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c004_g002",
+      "filePath": "exp_2_test1_n025_c004_g002.json",
+      "nodes": 25,
+      "edges": 44,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c004_g003",
+      "filePath": "exp_2_test1_n025_c004_g003.json",
+      "nodes": 25,
+      "edges": 44,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c004_g004",
+      "filePath": "exp_2_test1_n025_c004_g004.json",
+      "nodes": 25,
+      "edges": 48,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c004_g005",
+      "filePath": "exp_2_test1_n025_c004_g005.json",
+      "nodes": 25,
+      "edges": 39,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c005_g001",
+      "filePath": "exp_2_test1_n025_c005_g001.json",
+      "nodes": 25,
+      "edges": 45,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c005_g002",
+      "filePath": "exp_2_test1_n025_c005_g002.json",
+      "nodes": 25,
+      "edges": 46,
+      "cliques": [
+        4,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c005_g003",
+      "filePath": "exp_2_test1_n025_c005_g003.json",
+      "nodes": 25,
+      "edges": 42,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c005_g004",
+      "filePath": "exp_2_test1_n025_c005_g004.json",
+      "nodes": 25,
+      "edges": 49,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n025_c005_g005",
+      "filePath": "exp_2_test1_n025_c005_g005.json",
+      "nodes": 25,
+      "edges": 49,
+      "cliques": [
+        4,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 25,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c001_g001",
+      "filePath": "exp_2_test1_n030_c001_g001.json",
+      "nodes": 30,
+      "edges": 52,
+      "cliques": [
+        3
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c001_g002",
+      "filePath": "exp_2_test1_n030_c001_g002.json",
+      "nodes": 30,
+      "edges": 82,
+      "cliques": [
+        4
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c001_g003",
+      "filePath": "exp_2_test1_n030_c001_g003.json",
+      "nodes": 30,
+      "edges": 70,
+      "cliques": [
+        4
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c001_g004",
+      "filePath": "exp_2_test1_n030_c001_g004.json",
+      "nodes": 30,
+      "edges": 65,
+      "cliques": [
+        3
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c001_g005",
+      "filePath": "exp_2_test1_n030_c001_g005.json",
+      "nodes": 30,
+      "edges": 66,
+      "cliques": [
+        4
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 1
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c002_g001",
+      "filePath": "exp_2_test1_n030_c002_g001.json",
+      "nodes": 30,
+      "edges": 71,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c002_g002",
+      "filePath": "exp_2_test1_n030_c002_g002.json",
+      "nodes": 30,
+      "edges": 70,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c002_g003",
+      "filePath": "exp_2_test1_n030_c002_g003.json",
+      "nodes": 30,
+      "edges": 74,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c002_g004",
+      "filePath": "exp_2_test1_n030_c002_g004.json",
+      "nodes": 30,
+      "edges": 61,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c002_g005",
+      "filePath": "exp_2_test1_n030_c002_g005.json",
+      "nodes": 30,
+      "edges": 64,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 2
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c003_g001",
+      "filePath": "exp_2_test1_n030_c003_g001.json",
+      "nodes": 30,
+      "edges": 59,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c003_g002",
+      "filePath": "exp_2_test1_n030_c003_g002.json",
+      "nodes": 30,
+      "edges": 66,
+      "cliques": [
+        4,
+        3,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c003_g003",
+      "filePath": "exp_2_test1_n030_c003_g003.json",
+      "nodes": 30,
+      "edges": 60,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c003_g004",
+      "filePath": "exp_2_test1_n030_c003_g004.json",
+      "nodes": 30,
+      "edges": 63,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c003_g005",
+      "filePath": "exp_2_test1_n030_c003_g005.json",
+      "nodes": 30,
+      "edges": 58,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 3
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c004_g001",
+      "filePath": "exp_2_test1_n030_c004_g001.json",
+      "nodes": 30,
+      "edges": 55,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c004_g002",
+      "filePath": "exp_2_test1_n030_c004_g002.json",
+      "nodes": 30,
+      "edges": 66,
+      "cliques": [
+        3,
+        3,
+        3,
+        4
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c004_g003",
+      "filePath": "exp_2_test1_n030_c004_g003.json",
+      "nodes": 30,
+      "edges": 65,
+      "cliques": [
+        4,
+        3,
+        4,
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c004_g004",
+      "filePath": "exp_2_test1_n030_c004_g004.json",
+      "nodes": 30,
+      "edges": 64,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c004_g005",
+      "filePath": "exp_2_test1_n030_c004_g005.json",
+      "nodes": 30,
+      "edges": 58,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 4
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c005_g001",
+      "filePath": "exp_2_test1_n030_c005_g001.json",
+      "nodes": 30,
+      "edges": 59,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c005_g002",
+      "filePath": "exp_2_test1_n030_c005_g002.json",
+      "nodes": 30,
+      "edges": 75,
+      "cliques": [
+        4,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c005_g003",
+      "filePath": "exp_2_test1_n030_c005_g003.json",
+      "nodes": 30,
+      "edges": 75,
+      "cliques": [
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c005_g004",
+      "filePath": "exp_2_test1_n030_c005_g004.json",
+      "nodes": 30,
+      "edges": 61,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 5
+      }
+    },
+    {
+      "id": "exp_2_test1_n030_c005_g005",
+      "filePath": "exp_2_test1_n030_c005_g005.json",
+      "nodes": 30,
+      "edges": 60,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 30,
+        "cliques": 5
+      }
+    }
+  ],
+  "failures": [
+    {
+      "id": "exp_2_test1_n005_c002_g001",
+      "step": 1,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 2
+      },
+      "error": "Combinazione non generabile: 2 clique richiedono almeno 6 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c002_g002",
+      "step": 1,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 2
+      },
+      "error": "Combinazione non generabile: 2 clique richiedono almeno 6 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c002_g003",
+      "step": 1,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 2
+      },
+      "error": "Combinazione non generabile: 2 clique richiedono almeno 6 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c002_g004",
+      "step": 1,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 2
+      },
+      "error": "Combinazione non generabile: 2 clique richiedono almeno 6 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c002_g005",
+      "step": 1,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 2
+      },
+      "error": "Combinazione non generabile: 2 clique richiedono almeno 6 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c003_g001",
+      "step": 2,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 3
+      },
+      "error": "Combinazione non generabile: 3 clique richiedono almeno 9 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c003_g002",
+      "step": 2,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 3
+      },
+      "error": "Combinazione non generabile: 3 clique richiedono almeno 9 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c003_g003",
+      "step": 2,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 3
+      },
+      "error": "Combinazione non generabile: 3 clique richiedono almeno 9 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c003_g004",
+      "step": 2,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 3
+      },
+      "error": "Combinazione non generabile: 3 clique richiedono almeno 9 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c003_g005",
+      "step": 2,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 3
+      },
+      "error": "Combinazione non generabile: 3 clique richiedono almeno 9 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c004_g001",
+      "step": 3,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 4
+      },
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c004_g002",
+      "step": 3,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 4
+      },
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c004_g003",
+      "step": 3,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 4
+      },
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c004_g004",
+      "step": 3,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 4
+      },
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c004_g005",
+      "step": 3,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 4
+      },
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c005_g001",
+      "step": 4,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 5
+      },
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c005_g002",
+      "step": 4,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 5
+      },
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c005_g003",
+      "step": 4,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 5
+      },
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c005_g004",
+      "step": 4,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 5
+      },
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi."
+    },
+    {
+      "id": "exp_2_test1_n005_c005_g005",
+      "step": 4,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 5,
+        "cliques": 5
+      },
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi."
+    },
+    {
+      "id": "exp_2_test1_n010_c004_g001",
+      "step": 8,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 4
+      },
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi."
+    },
+    {
+      "id": "exp_2_test1_n010_c004_g002",
+      "step": 8,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 4
+      },
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi."
+    },
+    {
+      "id": "exp_2_test1_n010_c004_g003",
+      "step": 8,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 4
+      },
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi."
+    },
+    {
+      "id": "exp_2_test1_n010_c004_g004",
+      "step": 8,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 4
+      },
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi."
+    },
+    {
+      "id": "exp_2_test1_n010_c004_g005",
+      "step": 8,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 4
+      },
+      "error": "Combinazione non generabile: 4 clique richiedono almeno 12 nodi."
+    },
+    {
+      "id": "exp_2_test1_n010_c005_g001",
+      "step": 9,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 5
+      },
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi."
+    },
+    {
+      "id": "exp_2_test1_n010_c005_g002",
+      "step": 9,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 5
+      },
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi."
+    },
+    {
+      "id": "exp_2_test1_n010_c005_g003",
+      "step": 9,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 5
+      },
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi."
+    },
+    {
+      "id": "exp_2_test1_n010_c005_g004",
+      "step": 9,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 5
+      },
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi."
+    },
+    {
+      "id": "exp_2_test1_n010_c005_g005",
+      "step": 9,
+      "axis": "grid",
+      "axisValue": {
+        "nodes": 10,
+        "cliques": 5
+      },
+      "error": "Combinazione non generabile: 5 clique richiedono almeno 15 nodi."
+    }
+  ]
+}

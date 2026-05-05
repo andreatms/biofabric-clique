@@ -1,0 +1,7044 @@
+{
+  "setName": "local_test",
+  "createdAt": "2026-03-23T09:58:50.238Z",
+  "parameters": {
+    "mode": "set",
+    "setName": "local_test",
+    "minNodes": 10,
+    "maxNodes": 50,
+    "nodeStep": 1,
+    "graphsPerNodeStep": 10,
+    "minCliqueSize": 3,
+    "maxCliqueSize": 3,
+    "avgCliqueSize": 3,
+    "minCliques": 1,
+    "maxCliques": 5,
+    "cliqueStep": 1,
+    "graphsPerCliqueStep": 3
+  },
+  "graphs": [
+    {
+      "id": "local_test_s000_g001",
+      "filePath": "local_test_s000_g001.json",
+      "nodes": 10,
+      "edges": 10,
+      "cliques": [
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "local_test_s000_g002",
+      "filePath": "local_test_s000_g002.json",
+      "nodes": 10,
+      "edges": 18,
+      "cliques": [
+        3,
+        4,
+        4,
+        3,
+        3,
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "local_test_s000_g003",
+      "filePath": "local_test_s000_g003.json",
+      "nodes": 10,
+      "edges": 12,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "local_test_s000_g004",
+      "filePath": "local_test_s000_g004.json",
+      "nodes": 10,
+      "edges": 14,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "local_test_s000_g005",
+      "filePath": "local_test_s000_g005.json",
+      "nodes": 10,
+      "edges": 13,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "local_test_s000_g006",
+      "filePath": "local_test_s000_g006.json",
+      "nodes": 10,
+      "edges": 17,
+      "cliques": [
+        4,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "local_test_s000_g007",
+      "filePath": "local_test_s000_g007.json",
+      "nodes": 10,
+      "edges": 10,
+      "cliques": [
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "local_test_s000_g008",
+      "filePath": "local_test_s000_g008.json",
+      "nodes": 10,
+      "edges": 14,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "local_test_s000_g009",
+      "filePath": "local_test_s000_g009.json",
+      "nodes": 10,
+      "edges": 10,
+      "cliques": [
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "local_test_s000_g010",
+      "filePath": "local_test_s000_g010.json",
+      "nodes": 10,
+      "edges": 12,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "local_test_s001_g001",
+      "filePath": "local_test_s001_g001.json",
+      "nodes": 11,
+      "edges": 13,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "local_test_s001_g002",
+      "filePath": "local_test_s001_g002.json",
+      "nodes": 11,
+      "edges": 15,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "local_test_s001_g003",
+      "filePath": "local_test_s001_g003.json",
+      "nodes": 11,
+      "edges": 15,
+      "cliques": [
+        3,
+        4,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "local_test_s001_g004",
+      "filePath": "local_test_s001_g004.json",
+      "nodes": 11,
+      "edges": 12,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "local_test_s001_g005",
+      "filePath": "local_test_s001_g005.json",
+      "nodes": 11,
+      "edges": 14,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "local_test_s001_g006",
+      "filePath": "local_test_s001_g006.json",
+      "nodes": 11,
+      "edges": 12,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "local_test_s001_g007",
+      "filePath": "local_test_s001_g007.json",
+      "nodes": 11,
+      "edges": 14,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "local_test_s001_g008",
+      "filePath": "local_test_s001_g008.json",
+      "nodes": 11,
+      "edges": 15,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "local_test_s001_g009",
+      "filePath": "local_test_s001_g009.json",
+      "nodes": 11,
+      "edges": 13,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "local_test_s001_g010",
+      "filePath": "local_test_s001_g010.json",
+      "nodes": 11,
+      "edges": 15,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "local_test_s002_g001",
+      "filePath": "local_test_s002_g001.json",
+      "nodes": 12,
+      "edges": 13,
+      "cliques": [
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "local_test_s002_g002",
+      "filePath": "local_test_s002_g002.json",
+      "nodes": 12,
+      "edges": 12,
+      "cliques": [
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "local_test_s002_g003",
+      "filePath": "local_test_s002_g003.json",
+      "nodes": 12,
+      "edges": 14,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "local_test_s002_g004",
+      "filePath": "local_test_s002_g004.json",
+      "nodes": 12,
+      "edges": 14,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "local_test_s002_g005",
+      "filePath": "local_test_s002_g005.json",
+      "nodes": 12,
+      "edges": 18,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "local_test_s002_g006",
+      "filePath": "local_test_s002_g006.json",
+      "nodes": 12,
+      "edges": 18,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "local_test_s002_g007",
+      "filePath": "local_test_s002_g007.json",
+      "nodes": 12,
+      "edges": 13,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "local_test_s002_g008",
+      "filePath": "local_test_s002_g008.json",
+      "nodes": 12,
+      "edges": 14,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "local_test_s002_g009",
+      "filePath": "local_test_s002_g009.json",
+      "nodes": 12,
+      "edges": 17,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "local_test_s002_g010",
+      "filePath": "local_test_s002_g010.json",
+      "nodes": 12,
+      "edges": 17,
+      "cliques": [
+        3,
+        4,
+        3,
+        3
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "local_test_s003_g001",
+      "filePath": "local_test_s003_g001.json",
+      "nodes": 13,
+      "edges": 18,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "local_test_s003_g002",
+      "filePath": "local_test_s003_g002.json",
+      "nodes": 13,
+      "edges": 14,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "local_test_s003_g003",
+      "filePath": "local_test_s003_g003.json",
+      "nodes": 13,
+      "edges": 13,
+      "cliques": [
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "local_test_s003_g004",
+      "filePath": "local_test_s003_g004.json",
+      "nodes": 13,
+      "edges": 17,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "local_test_s003_g005",
+      "filePath": "local_test_s003_g005.json",
+      "nodes": 13,
+      "edges": 14,
+      "cliques": [
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "local_test_s003_g006",
+      "filePath": "local_test_s003_g006.json",
+      "nodes": 13,
+      "edges": 21,
+      "cliques": [
+        4,
+        4,
+        4,
+        3,
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "local_test_s003_g007",
+      "filePath": "local_test_s003_g007.json",
+      "nodes": 13,
+      "edges": 16,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "local_test_s003_g008",
+      "filePath": "local_test_s003_g008.json",
+      "nodes": 13,
+      "edges": 20,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "local_test_s003_g009",
+      "filePath": "local_test_s003_g009.json",
+      "nodes": 13,
+      "edges": 15,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "local_test_s003_g010",
+      "filePath": "local_test_s003_g010.json",
+      "nodes": 13,
+      "edges": 17,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "local_test_s004_g001",
+      "filePath": "local_test_s004_g001.json",
+      "nodes": 14,
+      "edges": 14,
+      "cliques": [
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "local_test_s004_g002",
+      "filePath": "local_test_s004_g002.json",
+      "nodes": 14,
+      "edges": 14,
+      "cliques": [
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "local_test_s004_g003",
+      "filePath": "local_test_s004_g003.json",
+      "nodes": 14,
+      "edges": 15,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "local_test_s004_g004",
+      "filePath": "local_test_s004_g004.json",
+      "nodes": 14,
+      "edges": 16,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "local_test_s004_g005",
+      "filePath": "local_test_s004_g005.json",
+      "nodes": 14,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        4,
+        4,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "local_test_s004_g006",
+      "filePath": "local_test_s004_g006.json",
+      "nodes": 14,
+      "edges": 23,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "local_test_s004_g007",
+      "filePath": "local_test_s004_g007.json",
+      "nodes": 14,
+      "edges": 16,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "local_test_s004_g008",
+      "filePath": "local_test_s004_g008.json",
+      "nodes": 14,
+      "edges": 14,
+      "cliques": [
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "local_test_s004_g009",
+      "filePath": "local_test_s004_g009.json",
+      "nodes": 14,
+      "edges": 20,
+      "cliques": [
+        4,
+        4,
+        3,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "local_test_s004_g010",
+      "filePath": "local_test_s004_g010.json",
+      "nodes": 14,
+      "edges": 21,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "local_test_s005_g001",
+      "filePath": "local_test_s005_g001.json",
+      "nodes": 15,
+      "edges": 18,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "local_test_s005_g002",
+      "filePath": "local_test_s005_g002.json",
+      "nodes": 15,
+      "edges": 16,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "local_test_s005_g003",
+      "filePath": "local_test_s005_g003.json",
+      "nodes": 15,
+      "edges": 15,
+      "cliques": [
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "local_test_s005_g004",
+      "filePath": "local_test_s005_g004.json",
+      "nodes": 15,
+      "edges": 16,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "local_test_s005_g005",
+      "filePath": "local_test_s005_g005.json",
+      "nodes": 15,
+      "edges": 21,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "local_test_s005_g006",
+      "filePath": "local_test_s005_g006.json",
+      "nodes": 15,
+      "edges": 23,
+      "cliques": [
+        3,
+        3,
+        3,
+        4,
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "local_test_s005_g007",
+      "filePath": "local_test_s005_g007.json",
+      "nodes": 15,
+      "edges": 19,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "local_test_s005_g008",
+      "filePath": "local_test_s005_g008.json",
+      "nodes": 15,
+      "edges": 19,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "local_test_s005_g009",
+      "filePath": "local_test_s005_g009.json",
+      "nodes": 15,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        3,
+        4,
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "local_test_s005_g010",
+      "filePath": "local_test_s005_g010.json",
+      "nodes": 15,
+      "edges": 15,
+      "cliques": [
+        3
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "local_test_s006_g001",
+      "filePath": "local_test_s006_g001.json",
+      "nodes": 16,
+      "edges": 17,
+      "cliques": [
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "local_test_s006_g002",
+      "filePath": "local_test_s006_g002.json",
+      "nodes": 16,
+      "edges": 19,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "local_test_s006_g003",
+      "filePath": "local_test_s006_g003.json",
+      "nodes": 16,
+      "edges": 20,
+      "cliques": [
+        3,
+        3,
+        4
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "local_test_s006_g004",
+      "filePath": "local_test_s006_g004.json",
+      "nodes": 16,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "local_test_s006_g005",
+      "filePath": "local_test_s006_g005.json",
+      "nodes": 16,
+      "edges": 20,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "local_test_s006_g006",
+      "filePath": "local_test_s006_g006.json",
+      "nodes": 16,
+      "edges": 16,
+      "cliques": [
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "local_test_s006_g007",
+      "filePath": "local_test_s006_g007.json",
+      "nodes": 16,
+      "edges": 18,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "local_test_s006_g008",
+      "filePath": "local_test_s006_g008.json",
+      "nodes": 16,
+      "edges": 19,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "local_test_s006_g009",
+      "filePath": "local_test_s006_g009.json",
+      "nodes": 16,
+      "edges": 17,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "local_test_s006_g010",
+      "filePath": "local_test_s006_g010.json",
+      "nodes": 16,
+      "edges": 21,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "local_test_s007_g001",
+      "filePath": "local_test_s007_g001.json",
+      "nodes": 17,
+      "edges": 21,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 17
+    },
+    {
+      "id": "local_test_s007_g002",
+      "filePath": "local_test_s007_g002.json",
+      "nodes": 17,
+      "edges": 19,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 17
+    },
+    {
+      "id": "local_test_s007_g003",
+      "filePath": "local_test_s007_g003.json",
+      "nodes": 17,
+      "edges": 17,
+      "cliques": [
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 17
+    },
+    {
+      "id": "local_test_s007_g004",
+      "filePath": "local_test_s007_g004.json",
+      "nodes": 17,
+      "edges": 21,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 17
+    },
+    {
+      "id": "local_test_s007_g005",
+      "filePath": "local_test_s007_g005.json",
+      "nodes": 17,
+      "edges": 19,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 17
+    },
+    {
+      "id": "local_test_s007_g006",
+      "filePath": "local_test_s007_g006.json",
+      "nodes": 17,
+      "edges": 23,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 17
+    },
+    {
+      "id": "local_test_s007_g007",
+      "filePath": "local_test_s007_g007.json",
+      "nodes": 17,
+      "edges": 21,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 17
+    },
+    {
+      "id": "local_test_s007_g008",
+      "filePath": "local_test_s007_g008.json",
+      "nodes": 17,
+      "edges": 18,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 17
+    },
+    {
+      "id": "local_test_s007_g009",
+      "filePath": "local_test_s007_g009.json",
+      "nodes": 17,
+      "edges": 22,
+      "cliques": [
+        4,
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 17
+    },
+    {
+      "id": "local_test_s007_g010",
+      "filePath": "local_test_s007_g010.json",
+      "nodes": 17,
+      "edges": 21,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 17
+    },
+    {
+      "id": "local_test_s008_g001",
+      "filePath": "local_test_s008_g001.json",
+      "nodes": 18,
+      "edges": 18,
+      "cliques": [
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 18
+    },
+    {
+      "id": "local_test_s008_g002",
+      "filePath": "local_test_s008_g002.json",
+      "nodes": 18,
+      "edges": 20,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 18
+    },
+    {
+      "id": "local_test_s008_g003",
+      "filePath": "local_test_s008_g003.json",
+      "nodes": 18,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 18
+    },
+    {
+      "id": "local_test_s008_g004",
+      "filePath": "local_test_s008_g004.json",
+      "nodes": 18,
+      "edges": 23,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 18
+    },
+    {
+      "id": "local_test_s008_g005",
+      "filePath": "local_test_s008_g005.json",
+      "nodes": 18,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        4
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 18
+    },
+    {
+      "id": "local_test_s008_g006",
+      "filePath": "local_test_s008_g006.json",
+      "nodes": 18,
+      "edges": 19,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 18
+    },
+    {
+      "id": "local_test_s008_g007",
+      "filePath": "local_test_s008_g007.json",
+      "nodes": 18,
+      "edges": 27,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 18
+    },
+    {
+      "id": "local_test_s008_g008",
+      "filePath": "local_test_s008_g008.json",
+      "nodes": 18,
+      "edges": 24,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 18
+    },
+    {
+      "id": "local_test_s008_g009",
+      "filePath": "local_test_s008_g009.json",
+      "nodes": 18,
+      "edges": 20,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 18
+    },
+    {
+      "id": "local_test_s008_g010",
+      "filePath": "local_test_s008_g010.json",
+      "nodes": 18,
+      "edges": 23,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 18
+    },
+    {
+      "id": "local_test_s009_g001",
+      "filePath": "local_test_s009_g001.json",
+      "nodes": 19,
+      "edges": 21,
+      "cliques": [
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 19
+    },
+    {
+      "id": "local_test_s009_g002",
+      "filePath": "local_test_s009_g002.json",
+      "nodes": 19,
+      "edges": 21,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 19
+    },
+    {
+      "id": "local_test_s009_g003",
+      "filePath": "local_test_s009_g003.json",
+      "nodes": 19,
+      "edges": 26,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 19
+    },
+    {
+      "id": "local_test_s009_g004",
+      "filePath": "local_test_s009_g004.json",
+      "nodes": 19,
+      "edges": 26,
+      "cliques": [
+        4,
+        3,
+        3,
+        4
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 19
+    },
+    {
+      "id": "local_test_s009_g005",
+      "filePath": "local_test_s009_g005.json",
+      "nodes": 19,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 19
+    },
+    {
+      "id": "local_test_s009_g006",
+      "filePath": "local_test_s009_g006.json",
+      "nodes": 19,
+      "edges": 27,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 19
+    },
+    {
+      "id": "local_test_s009_g007",
+      "filePath": "local_test_s009_g007.json",
+      "nodes": 19,
+      "edges": 20,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 19
+    },
+    {
+      "id": "local_test_s009_g008",
+      "filePath": "local_test_s009_g008.json",
+      "nodes": 19,
+      "edges": 20,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 19
+    },
+    {
+      "id": "local_test_s009_g009",
+      "filePath": "local_test_s009_g009.json",
+      "nodes": 19,
+      "edges": 25,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 19
+    },
+    {
+      "id": "local_test_s009_g010",
+      "filePath": "local_test_s009_g010.json",
+      "nodes": 19,
+      "edges": 21,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 19
+    },
+    {
+      "id": "local_test_s010_g001",
+      "filePath": "local_test_s010_g001.json",
+      "nodes": 20,
+      "edges": 25,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "local_test_s010_g002",
+      "filePath": "local_test_s010_g002.json",
+      "nodes": 20,
+      "edges": 21,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "local_test_s010_g003",
+      "filePath": "local_test_s010_g003.json",
+      "nodes": 20,
+      "edges": 21,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "local_test_s010_g004",
+      "filePath": "local_test_s010_g004.json",
+      "nodes": 20,
+      "edges": 25,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "local_test_s010_g005",
+      "filePath": "local_test_s010_g005.json",
+      "nodes": 20,
+      "edges": 28,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "local_test_s010_g006",
+      "filePath": "local_test_s010_g006.json",
+      "nodes": 20,
+      "edges": 24,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "local_test_s010_g007",
+      "filePath": "local_test_s010_g007.json",
+      "nodes": 20,
+      "edges": 21,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "local_test_s010_g008",
+      "filePath": "local_test_s010_g008.json",
+      "nodes": 20,
+      "edges": 21,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "local_test_s010_g009",
+      "filePath": "local_test_s010_g009.json",
+      "nodes": 20,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "local_test_s010_g010",
+      "filePath": "local_test_s010_g010.json",
+      "nodes": 20,
+      "edges": 27,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "local_test_s011_g001",
+      "filePath": "local_test_s011_g001.json",
+      "nodes": 21,
+      "edges": 21,
+      "cliques": [
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 21
+    },
+    {
+      "id": "local_test_s011_g002",
+      "filePath": "local_test_s011_g002.json",
+      "nodes": 21,
+      "edges": 23,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 21
+    },
+    {
+      "id": "local_test_s011_g003",
+      "filePath": "local_test_s011_g003.json",
+      "nodes": 21,
+      "edges": 21,
+      "cliques": [
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 21
+    },
+    {
+      "id": "local_test_s011_g004",
+      "filePath": "local_test_s011_g004.json",
+      "nodes": 21,
+      "edges": 25,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 21
+    },
+    {
+      "id": "local_test_s011_g005",
+      "filePath": "local_test_s011_g005.json",
+      "nodes": 21,
+      "edges": 26,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 21
+    },
+    {
+      "id": "local_test_s011_g006",
+      "filePath": "local_test_s011_g006.json",
+      "nodes": 21,
+      "edges": 24,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 21
+    },
+    {
+      "id": "local_test_s011_g007",
+      "filePath": "local_test_s011_g007.json",
+      "nodes": 21,
+      "edges": 25,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 21
+    },
+    {
+      "id": "local_test_s011_g008",
+      "filePath": "local_test_s011_g008.json",
+      "nodes": 21,
+      "edges": 25,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 21
+    },
+    {
+      "id": "local_test_s011_g009",
+      "filePath": "local_test_s011_g009.json",
+      "nodes": 21,
+      "edges": 21,
+      "cliques": [
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 21
+    },
+    {
+      "id": "local_test_s011_g010",
+      "filePath": "local_test_s011_g010.json",
+      "nodes": 21,
+      "edges": 21,
+      "cliques": [
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 21
+    },
+    {
+      "id": "local_test_s012_g001",
+      "filePath": "local_test_s012_g001.json",
+      "nodes": 22,
+      "edges": 24,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 22
+    },
+    {
+      "id": "local_test_s012_g002",
+      "filePath": "local_test_s012_g002.json",
+      "nodes": 22,
+      "edges": 22,
+      "cliques": [
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 22
+    },
+    {
+      "id": "local_test_s012_g003",
+      "filePath": "local_test_s012_g003.json",
+      "nodes": 22,
+      "edges": 24,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 22
+    },
+    {
+      "id": "local_test_s012_g004",
+      "filePath": "local_test_s012_g004.json",
+      "nodes": 22,
+      "edges": 22,
+      "cliques": [
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 22
+    },
+    {
+      "id": "local_test_s012_g005",
+      "filePath": "local_test_s012_g005.json",
+      "nodes": 22,
+      "edges": 23,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 22
+    },
+    {
+      "id": "local_test_s012_g006",
+      "filePath": "local_test_s012_g006.json",
+      "nodes": 22,
+      "edges": 26,
+      "cliques": [
+        4
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 22
+    },
+    {
+      "id": "local_test_s012_g007",
+      "filePath": "local_test_s012_g007.json",
+      "nodes": 22,
+      "edges": 24,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 22
+    },
+    {
+      "id": "local_test_s012_g008",
+      "filePath": "local_test_s012_g008.json",
+      "nodes": 22,
+      "edges": 28,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 22
+    },
+    {
+      "id": "local_test_s012_g009",
+      "filePath": "local_test_s012_g009.json",
+      "nodes": 22,
+      "edges": 24,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 22
+    },
+    {
+      "id": "local_test_s012_g010",
+      "filePath": "local_test_s012_g010.json",
+      "nodes": 22,
+      "edges": 22,
+      "cliques": [
+        3
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 22
+    },
+    {
+      "id": "local_test_s013_g001",
+      "filePath": "local_test_s013_g001.json",
+      "nodes": 23,
+      "edges": 24,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 23
+    },
+    {
+      "id": "local_test_s013_g002",
+      "filePath": "local_test_s013_g002.json",
+      "nodes": 23,
+      "edges": 25,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 23
+    },
+    {
+      "id": "local_test_s013_g003",
+      "filePath": "local_test_s013_g003.json",
+      "nodes": 23,
+      "edges": 24,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 23
+    },
+    {
+      "id": "local_test_s013_g004",
+      "filePath": "local_test_s013_g004.json",
+      "nodes": 23,
+      "edges": 28,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 23
+    },
+    {
+      "id": "local_test_s013_g005",
+      "filePath": "local_test_s013_g005.json",
+      "nodes": 23,
+      "edges": 31,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 23
+    },
+    {
+      "id": "local_test_s013_g006",
+      "filePath": "local_test_s013_g006.json",
+      "nodes": 23,
+      "edges": 25,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 23
+    },
+    {
+      "id": "local_test_s013_g007",
+      "filePath": "local_test_s013_g007.json",
+      "nodes": 23,
+      "edges": 24,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 23
+    },
+    {
+      "id": "local_test_s013_g008",
+      "filePath": "local_test_s013_g008.json",
+      "nodes": 23,
+      "edges": 24,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 23
+    },
+    {
+      "id": "local_test_s013_g009",
+      "filePath": "local_test_s013_g009.json",
+      "nodes": 23,
+      "edges": 27,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 23
+    },
+    {
+      "id": "local_test_s013_g010",
+      "filePath": "local_test_s013_g010.json",
+      "nodes": 23,
+      "edges": 26,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 23
+    },
+    {
+      "id": "local_test_s014_g001",
+      "filePath": "local_test_s014_g001.json",
+      "nodes": 24,
+      "edges": 25,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "local_test_s014_g002",
+      "filePath": "local_test_s014_g002.json",
+      "nodes": 24,
+      "edges": 26,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "local_test_s014_g003",
+      "filePath": "local_test_s014_g003.json",
+      "nodes": 24,
+      "edges": 27,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "local_test_s014_g004",
+      "filePath": "local_test_s014_g004.json",
+      "nodes": 24,
+      "edges": 31,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "local_test_s014_g005",
+      "filePath": "local_test_s014_g005.json",
+      "nodes": 24,
+      "edges": 24,
+      "cliques": [
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "local_test_s014_g006",
+      "filePath": "local_test_s014_g006.json",
+      "nodes": 24,
+      "edges": 28,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "local_test_s014_g007",
+      "filePath": "local_test_s014_g007.json",
+      "nodes": 24,
+      "edges": 30,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "local_test_s014_g008",
+      "filePath": "local_test_s014_g008.json",
+      "nodes": 24,
+      "edges": 24,
+      "cliques": [
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "local_test_s014_g009",
+      "filePath": "local_test_s014_g009.json",
+      "nodes": 24,
+      "edges": 24,
+      "cliques": [
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "local_test_s014_g010",
+      "filePath": "local_test_s014_g010.json",
+      "nodes": 24,
+      "edges": 28,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "local_test_s015_g001",
+      "filePath": "local_test_s015_g001.json",
+      "nodes": 25,
+      "edges": 33,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 25
+    },
+    {
+      "id": "local_test_s015_g002",
+      "filePath": "local_test_s015_g002.json",
+      "nodes": 25,
+      "edges": 30,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 25
+    },
+    {
+      "id": "local_test_s015_g003",
+      "filePath": "local_test_s015_g003.json",
+      "nodes": 25,
+      "edges": 29,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 25
+    },
+    {
+      "id": "local_test_s015_g004",
+      "filePath": "local_test_s015_g004.json",
+      "nodes": 25,
+      "edges": 26,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 25
+    },
+    {
+      "id": "local_test_s015_g005",
+      "filePath": "local_test_s015_g005.json",
+      "nodes": 25,
+      "edges": 34,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 25
+    },
+    {
+      "id": "local_test_s015_g006",
+      "filePath": "local_test_s015_g006.json",
+      "nodes": 25,
+      "edges": 29,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 25
+    },
+    {
+      "id": "local_test_s015_g007",
+      "filePath": "local_test_s015_g007.json",
+      "nodes": 25,
+      "edges": 29,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 25
+    },
+    {
+      "id": "local_test_s015_g008",
+      "filePath": "local_test_s015_g008.json",
+      "nodes": 25,
+      "edges": 31,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 25
+    },
+    {
+      "id": "local_test_s015_g009",
+      "filePath": "local_test_s015_g009.json",
+      "nodes": 25,
+      "edges": 25,
+      "cliques": [
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 25
+    },
+    {
+      "id": "local_test_s015_g010",
+      "filePath": "local_test_s015_g010.json",
+      "nodes": 25,
+      "edges": 25,
+      "cliques": [
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 25
+    },
+    {
+      "id": "local_test_s016_g001",
+      "filePath": "local_test_s016_g001.json",
+      "nodes": 26,
+      "edges": 31,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 26
+    },
+    {
+      "id": "local_test_s016_g002",
+      "filePath": "local_test_s016_g002.json",
+      "nodes": 26,
+      "edges": 26,
+      "cliques": [
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 26
+    },
+    {
+      "id": "local_test_s016_g003",
+      "filePath": "local_test_s016_g003.json",
+      "nodes": 26,
+      "edges": 29,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 26
+    },
+    {
+      "id": "local_test_s016_g004",
+      "filePath": "local_test_s016_g004.json",
+      "nodes": 26,
+      "edges": 27,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 26
+    },
+    {
+      "id": "local_test_s016_g005",
+      "filePath": "local_test_s016_g005.json",
+      "nodes": 26,
+      "edges": 31,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 26
+    },
+    {
+      "id": "local_test_s016_g006",
+      "filePath": "local_test_s016_g006.json",
+      "nodes": 26,
+      "edges": 30,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 26
+    },
+    {
+      "id": "local_test_s016_g007",
+      "filePath": "local_test_s016_g007.json",
+      "nodes": 26,
+      "edges": 29,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 26
+    },
+    {
+      "id": "local_test_s016_g008",
+      "filePath": "local_test_s016_g008.json",
+      "nodes": 26,
+      "edges": 26,
+      "cliques": [
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 26
+    },
+    {
+      "id": "local_test_s016_g009",
+      "filePath": "local_test_s016_g009.json",
+      "nodes": 26,
+      "edges": 28,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 26
+    },
+    {
+      "id": "local_test_s016_g010",
+      "filePath": "local_test_s016_g010.json",
+      "nodes": 26,
+      "edges": 28,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 26
+    },
+    {
+      "id": "local_test_s017_g001",
+      "filePath": "local_test_s017_g001.json",
+      "nodes": 27,
+      "edges": 29,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 27
+    },
+    {
+      "id": "local_test_s017_g002",
+      "filePath": "local_test_s017_g002.json",
+      "nodes": 27,
+      "edges": 28,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 27
+    },
+    {
+      "id": "local_test_s017_g003",
+      "filePath": "local_test_s017_g003.json",
+      "nodes": 27,
+      "edges": 33,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 27
+    },
+    {
+      "id": "local_test_s017_g004",
+      "filePath": "local_test_s017_g004.json",
+      "nodes": 27,
+      "edges": 30,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 27
+    },
+    {
+      "id": "local_test_s017_g005",
+      "filePath": "local_test_s017_g005.json",
+      "nodes": 27,
+      "edges": 35,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 27
+    },
+    {
+      "id": "local_test_s017_g006",
+      "filePath": "local_test_s017_g006.json",
+      "nodes": 27,
+      "edges": 27,
+      "cliques": [
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 27
+    },
+    {
+      "id": "local_test_s017_g007",
+      "filePath": "local_test_s017_g007.json",
+      "nodes": 27,
+      "edges": 30,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 27
+    },
+    {
+      "id": "local_test_s017_g008",
+      "filePath": "local_test_s017_g008.json",
+      "nodes": 27,
+      "edges": 29,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 27
+    },
+    {
+      "id": "local_test_s017_g009",
+      "filePath": "local_test_s017_g009.json",
+      "nodes": 27,
+      "edges": 29,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 27
+    },
+    {
+      "id": "local_test_s017_g010",
+      "filePath": "local_test_s017_g010.json",
+      "nodes": 27,
+      "edges": 33,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 27
+    },
+    {
+      "id": "local_test_s018_g001",
+      "filePath": "local_test_s018_g001.json",
+      "nodes": 28,
+      "edges": 35,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 28
+    },
+    {
+      "id": "local_test_s018_g002",
+      "filePath": "local_test_s018_g002.json",
+      "nodes": 28,
+      "edges": 36,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 28
+    },
+    {
+      "id": "local_test_s018_g003",
+      "filePath": "local_test_s018_g003.json",
+      "nodes": 28,
+      "edges": 28,
+      "cliques": [
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 28
+    },
+    {
+      "id": "local_test_s018_g004",
+      "filePath": "local_test_s018_g004.json",
+      "nodes": 28,
+      "edges": 29,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 28
+    },
+    {
+      "id": "local_test_s018_g005",
+      "filePath": "local_test_s018_g005.json",
+      "nodes": 28,
+      "edges": 30,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 28
+    },
+    {
+      "id": "local_test_s018_g006",
+      "filePath": "local_test_s018_g006.json",
+      "nodes": 28,
+      "edges": 34,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 28
+    },
+    {
+      "id": "local_test_s018_g007",
+      "filePath": "local_test_s018_g007.json",
+      "nodes": 28,
+      "edges": 30,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 28
+    },
+    {
+      "id": "local_test_s018_g008",
+      "filePath": "local_test_s018_g008.json",
+      "nodes": 28,
+      "edges": 33,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 28
+    },
+    {
+      "id": "local_test_s018_g009",
+      "filePath": "local_test_s018_g009.json",
+      "nodes": 28,
+      "edges": 29,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 28
+    },
+    {
+      "id": "local_test_s018_g010",
+      "filePath": "local_test_s018_g010.json",
+      "nodes": 28,
+      "edges": 36,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 28
+    },
+    {
+      "id": "local_test_s019_g001",
+      "filePath": "local_test_s019_g001.json",
+      "nodes": 29,
+      "edges": 32,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 29
+    },
+    {
+      "id": "local_test_s019_g002",
+      "filePath": "local_test_s019_g002.json",
+      "nodes": 29,
+      "edges": 31,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 29
+    },
+    {
+      "id": "local_test_s019_g003",
+      "filePath": "local_test_s019_g003.json",
+      "nodes": 29,
+      "edges": 32,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 29
+    },
+    {
+      "id": "local_test_s019_g004",
+      "filePath": "local_test_s019_g004.json",
+      "nodes": 29,
+      "edges": 31,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 29
+    },
+    {
+      "id": "local_test_s019_g005",
+      "filePath": "local_test_s019_g005.json",
+      "nodes": 29,
+      "edges": 32,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 29
+    },
+    {
+      "id": "local_test_s019_g006",
+      "filePath": "local_test_s019_g006.json",
+      "nodes": 29,
+      "edges": 30,
+      "cliques": [
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 29
+    },
+    {
+      "id": "local_test_s019_g007",
+      "filePath": "local_test_s019_g007.json",
+      "nodes": 29,
+      "edges": 30,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 29
+    },
+    {
+      "id": "local_test_s019_g008",
+      "filePath": "local_test_s019_g008.json",
+      "nodes": 29,
+      "edges": 30,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 29
+    },
+    {
+      "id": "local_test_s019_g009",
+      "filePath": "local_test_s019_g009.json",
+      "nodes": 29,
+      "edges": 35,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 29
+    },
+    {
+      "id": "local_test_s019_g010",
+      "filePath": "local_test_s019_g010.json",
+      "nodes": 29,
+      "edges": 33,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 29
+    },
+    {
+      "id": "local_test_s020_g001",
+      "filePath": "local_test_s020_g001.json",
+      "nodes": 30,
+      "edges": 39,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 30
+    },
+    {
+      "id": "local_test_s020_g002",
+      "filePath": "local_test_s020_g002.json",
+      "nodes": 30,
+      "edges": 36,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 30
+    },
+    {
+      "id": "local_test_s020_g003",
+      "filePath": "local_test_s020_g003.json",
+      "nodes": 30,
+      "edges": 32,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 30
+    },
+    {
+      "id": "local_test_s020_g004",
+      "filePath": "local_test_s020_g004.json",
+      "nodes": 30,
+      "edges": 31,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 30
+    },
+    {
+      "id": "local_test_s020_g005",
+      "filePath": "local_test_s020_g005.json",
+      "nodes": 30,
+      "edges": 30,
+      "cliques": [
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 30
+    },
+    {
+      "id": "local_test_s020_g006",
+      "filePath": "local_test_s020_g006.json",
+      "nodes": 30,
+      "edges": 30,
+      "cliques": [
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 30
+    },
+    {
+      "id": "local_test_s020_g007",
+      "filePath": "local_test_s020_g007.json",
+      "nodes": 30,
+      "edges": 33,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 30
+    },
+    {
+      "id": "local_test_s020_g008",
+      "filePath": "local_test_s020_g008.json",
+      "nodes": 30,
+      "edges": 34,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 30
+    },
+    {
+      "id": "local_test_s020_g009",
+      "filePath": "local_test_s020_g009.json",
+      "nodes": 30,
+      "edges": 36,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 30
+    },
+    {
+      "id": "local_test_s020_g010",
+      "filePath": "local_test_s020_g010.json",
+      "nodes": 30,
+      "edges": 30,
+      "cliques": [
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 30
+    },
+    {
+      "id": "local_test_s021_g001",
+      "filePath": "local_test_s021_g001.json",
+      "nodes": 31,
+      "edges": 38,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 31
+    },
+    {
+      "id": "local_test_s021_g002",
+      "filePath": "local_test_s021_g002.json",
+      "nodes": 31,
+      "edges": 34,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 31
+    },
+    {
+      "id": "local_test_s021_g003",
+      "filePath": "local_test_s021_g003.json",
+      "nodes": 31,
+      "edges": 33,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 31
+    },
+    {
+      "id": "local_test_s021_g004",
+      "filePath": "local_test_s021_g004.json",
+      "nodes": 31,
+      "edges": 33,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 31
+    },
+    {
+      "id": "local_test_s021_g005",
+      "filePath": "local_test_s021_g005.json",
+      "nodes": 31,
+      "edges": 38,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 31
+    },
+    {
+      "id": "local_test_s021_g006",
+      "filePath": "local_test_s021_g006.json",
+      "nodes": 31,
+      "edges": 37,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 31
+    },
+    {
+      "id": "local_test_s021_g007",
+      "filePath": "local_test_s021_g007.json",
+      "nodes": 31,
+      "edges": 35,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 31
+    },
+    {
+      "id": "local_test_s021_g008",
+      "filePath": "local_test_s021_g008.json",
+      "nodes": 31,
+      "edges": 34,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 31
+    },
+    {
+      "id": "local_test_s021_g009",
+      "filePath": "local_test_s021_g009.json",
+      "nodes": 31,
+      "edges": 33,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 31
+    },
+    {
+      "id": "local_test_s021_g010",
+      "filePath": "local_test_s021_g010.json",
+      "nodes": 31,
+      "edges": 31,
+      "cliques": [
+        3
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 31
+    },
+    {
+      "id": "local_test_s022_g001",
+      "filePath": "local_test_s022_g001.json",
+      "nodes": 32,
+      "edges": 35,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 32
+    },
+    {
+      "id": "local_test_s022_g002",
+      "filePath": "local_test_s022_g002.json",
+      "nodes": 32,
+      "edges": 37,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 32
+    },
+    {
+      "id": "local_test_s022_g003",
+      "filePath": "local_test_s022_g003.json",
+      "nodes": 32,
+      "edges": 39,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 32
+    },
+    {
+      "id": "local_test_s022_g004",
+      "filePath": "local_test_s022_g004.json",
+      "nodes": 32,
+      "edges": 36,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 32
+    },
+    {
+      "id": "local_test_s022_g005",
+      "filePath": "local_test_s022_g005.json",
+      "nodes": 32,
+      "edges": 36,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 32
+    },
+    {
+      "id": "local_test_s022_g006",
+      "filePath": "local_test_s022_g006.json",
+      "nodes": 32,
+      "edges": 35,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 32
+    },
+    {
+      "id": "local_test_s022_g007",
+      "filePath": "local_test_s022_g007.json",
+      "nodes": 32,
+      "edges": 32,
+      "cliques": [
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 32
+    },
+    {
+      "id": "local_test_s022_g008",
+      "filePath": "local_test_s022_g008.json",
+      "nodes": 32,
+      "edges": 40,
+      "cliques": [
+        3,
+        3,
+        3,
+        4,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 32
+    },
+    {
+      "id": "local_test_s022_g009",
+      "filePath": "local_test_s022_g009.json",
+      "nodes": 32,
+      "edges": 40,
+      "cliques": [
+        3,
+        4,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 32
+    },
+    {
+      "id": "local_test_s022_g010",
+      "filePath": "local_test_s022_g010.json",
+      "nodes": 32,
+      "edges": 36,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 32
+    },
+    {
+      "id": "local_test_s023_g001",
+      "filePath": "local_test_s023_g001.json",
+      "nodes": 33,
+      "edges": 37,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 33
+    },
+    {
+      "id": "local_test_s023_g002",
+      "filePath": "local_test_s023_g002.json",
+      "nodes": 33,
+      "edges": 39,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 33
+    },
+    {
+      "id": "local_test_s023_g003",
+      "filePath": "local_test_s023_g003.json",
+      "nodes": 33,
+      "edges": 36,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 33
+    },
+    {
+      "id": "local_test_s023_g004",
+      "filePath": "local_test_s023_g004.json",
+      "nodes": 33,
+      "edges": 33,
+      "cliques": [
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 33
+    },
+    {
+      "id": "local_test_s023_g005",
+      "filePath": "local_test_s023_g005.json",
+      "nodes": 33,
+      "edges": 37,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 33
+    },
+    {
+      "id": "local_test_s023_g006",
+      "filePath": "local_test_s023_g006.json",
+      "nodes": 33,
+      "edges": 35,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 33
+    },
+    {
+      "id": "local_test_s023_g007",
+      "filePath": "local_test_s023_g007.json",
+      "nodes": 33,
+      "edges": 34,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 33
+    },
+    {
+      "id": "local_test_s023_g008",
+      "filePath": "local_test_s023_g008.json",
+      "nodes": 33,
+      "edges": 37,
+      "cliques": [
+        4,
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 33
+    },
+    {
+      "id": "local_test_s023_g009",
+      "filePath": "local_test_s023_g009.json",
+      "nodes": 33,
+      "edges": 41,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 33
+    },
+    {
+      "id": "local_test_s023_g010",
+      "filePath": "local_test_s023_g010.json",
+      "nodes": 33,
+      "edges": 37,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 33
+    },
+    {
+      "id": "local_test_s024_g001",
+      "filePath": "local_test_s024_g001.json",
+      "nodes": 34,
+      "edges": 40,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 34
+    },
+    {
+      "id": "local_test_s024_g002",
+      "filePath": "local_test_s024_g002.json",
+      "nodes": 34,
+      "edges": 35,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 34
+    },
+    {
+      "id": "local_test_s024_g003",
+      "filePath": "local_test_s024_g003.json",
+      "nodes": 34,
+      "edges": 38,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 34
+    },
+    {
+      "id": "local_test_s024_g004",
+      "filePath": "local_test_s024_g004.json",
+      "nodes": 34,
+      "edges": 39,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 34
+    },
+    {
+      "id": "local_test_s024_g005",
+      "filePath": "local_test_s024_g005.json",
+      "nodes": 34,
+      "edges": 38,
+      "cliques": [
+        3,
+        3,
+        4
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 34
+    },
+    {
+      "id": "local_test_s024_g006",
+      "filePath": "local_test_s024_g006.json",
+      "nodes": 34,
+      "edges": 34,
+      "cliques": [
+        3
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 34
+    },
+    {
+      "id": "local_test_s024_g007",
+      "filePath": "local_test_s024_g007.json",
+      "nodes": 34,
+      "edges": 38,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 34
+    },
+    {
+      "id": "local_test_s024_g008",
+      "filePath": "local_test_s024_g008.json",
+      "nodes": 34,
+      "edges": 41,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 34
+    },
+    {
+      "id": "local_test_s024_g009",
+      "filePath": "local_test_s024_g009.json",
+      "nodes": 34,
+      "edges": 37,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 34
+    },
+    {
+      "id": "local_test_s024_g010",
+      "filePath": "local_test_s024_g010.json",
+      "nodes": 34,
+      "edges": 36,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 34
+    },
+    {
+      "id": "local_test_s025_g001",
+      "filePath": "local_test_s025_g001.json",
+      "nodes": 35,
+      "edges": 37,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 35
+    },
+    {
+      "id": "local_test_s025_g002",
+      "filePath": "local_test_s025_g002.json",
+      "nodes": 35,
+      "edges": 39,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 35
+    },
+    {
+      "id": "local_test_s025_g003",
+      "filePath": "local_test_s025_g003.json",
+      "nodes": 35,
+      "edges": 39,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 35
+    },
+    {
+      "id": "local_test_s025_g004",
+      "filePath": "local_test_s025_g004.json",
+      "nodes": 35,
+      "edges": 41,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 35
+    },
+    {
+      "id": "local_test_s025_g005",
+      "filePath": "local_test_s025_g005.json",
+      "nodes": 35,
+      "edges": 37,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 35
+    },
+    {
+      "id": "local_test_s025_g006",
+      "filePath": "local_test_s025_g006.json",
+      "nodes": 35,
+      "edges": 35,
+      "cliques": [
+        3
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 35
+    },
+    {
+      "id": "local_test_s025_g007",
+      "filePath": "local_test_s025_g007.json",
+      "nodes": 35,
+      "edges": 36,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 35
+    },
+    {
+      "id": "local_test_s025_g008",
+      "filePath": "local_test_s025_g008.json",
+      "nodes": 35,
+      "edges": 38,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 35
+    },
+    {
+      "id": "local_test_s025_g009",
+      "filePath": "local_test_s025_g009.json",
+      "nodes": 35,
+      "edges": 39,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 35
+    },
+    {
+      "id": "local_test_s025_g010",
+      "filePath": "local_test_s025_g010.json",
+      "nodes": 35,
+      "edges": 37,
+      "cliques": [
+        3
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 35
+    },
+    {
+      "id": "local_test_s026_g001",
+      "filePath": "local_test_s026_g001.json",
+      "nodes": 36,
+      "edges": 36,
+      "cliques": [
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 36
+    },
+    {
+      "id": "local_test_s026_g002",
+      "filePath": "local_test_s026_g002.json",
+      "nodes": 36,
+      "edges": 37,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 36
+    },
+    {
+      "id": "local_test_s026_g003",
+      "filePath": "local_test_s026_g003.json",
+      "nodes": 36,
+      "edges": 38,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 36
+    },
+    {
+      "id": "local_test_s026_g004",
+      "filePath": "local_test_s026_g004.json",
+      "nodes": 36,
+      "edges": 38,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 36
+    },
+    {
+      "id": "local_test_s026_g005",
+      "filePath": "local_test_s026_g005.json",
+      "nodes": 36,
+      "edges": 41,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 36
+    },
+    {
+      "id": "local_test_s026_g006",
+      "filePath": "local_test_s026_g006.json",
+      "nodes": 36,
+      "edges": 43,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 36
+    },
+    {
+      "id": "local_test_s026_g007",
+      "filePath": "local_test_s026_g007.json",
+      "nodes": 36,
+      "edges": 44,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 36
+    },
+    {
+      "id": "local_test_s026_g008",
+      "filePath": "local_test_s026_g008.json",
+      "nodes": 36,
+      "edges": 38,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 36
+    },
+    {
+      "id": "local_test_s026_g009",
+      "filePath": "local_test_s026_g009.json",
+      "nodes": 36,
+      "edges": 39,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 36
+    },
+    {
+      "id": "local_test_s026_g010",
+      "filePath": "local_test_s026_g010.json",
+      "nodes": 36,
+      "edges": 37,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 36
+    },
+    {
+      "id": "local_test_s027_g001",
+      "filePath": "local_test_s027_g001.json",
+      "nodes": 37,
+      "edges": 42,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 37
+    },
+    {
+      "id": "local_test_s027_g002",
+      "filePath": "local_test_s027_g002.json",
+      "nodes": 37,
+      "edges": 40,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 37
+    },
+    {
+      "id": "local_test_s027_g003",
+      "filePath": "local_test_s027_g003.json",
+      "nodes": 37,
+      "edges": 39,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 37
+    },
+    {
+      "id": "local_test_s027_g004",
+      "filePath": "local_test_s027_g004.json",
+      "nodes": 37,
+      "edges": 45,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 37
+    },
+    {
+      "id": "local_test_s027_g005",
+      "filePath": "local_test_s027_g005.json",
+      "nodes": 37,
+      "edges": 39,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 37
+    },
+    {
+      "id": "local_test_s027_g006",
+      "filePath": "local_test_s027_g006.json",
+      "nodes": 37,
+      "edges": 38,
+      "cliques": [
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 37
+    },
+    {
+      "id": "local_test_s027_g007",
+      "filePath": "local_test_s027_g007.json",
+      "nodes": 37,
+      "edges": 37,
+      "cliques": [
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 37
+    },
+    {
+      "id": "local_test_s027_g008",
+      "filePath": "local_test_s027_g008.json",
+      "nodes": 37,
+      "edges": 38,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 37
+    },
+    {
+      "id": "local_test_s027_g009",
+      "filePath": "local_test_s027_g009.json",
+      "nodes": 37,
+      "edges": 38,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 37
+    },
+    {
+      "id": "local_test_s027_g010",
+      "filePath": "local_test_s027_g010.json",
+      "nodes": 37,
+      "edges": 38,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 37
+    },
+    {
+      "id": "local_test_s028_g001",
+      "filePath": "local_test_s028_g001.json",
+      "nodes": 38,
+      "edges": 45,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 38
+    },
+    {
+      "id": "local_test_s028_g002",
+      "filePath": "local_test_s028_g002.json",
+      "nodes": 38,
+      "edges": 39,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 38
+    },
+    {
+      "id": "local_test_s028_g003",
+      "filePath": "local_test_s028_g003.json",
+      "nodes": 38,
+      "edges": 40,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 38
+    },
+    {
+      "id": "local_test_s028_g004",
+      "filePath": "local_test_s028_g004.json",
+      "nodes": 38,
+      "edges": 41,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 38
+    },
+    {
+      "id": "local_test_s028_g005",
+      "filePath": "local_test_s028_g005.json",
+      "nodes": 38,
+      "edges": 42,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 38
+    },
+    {
+      "id": "local_test_s028_g006",
+      "filePath": "local_test_s028_g006.json",
+      "nodes": 38,
+      "edges": 41,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 38
+    },
+    {
+      "id": "local_test_s028_g007",
+      "filePath": "local_test_s028_g007.json",
+      "nodes": 38,
+      "edges": 40,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 38
+    },
+    {
+      "id": "local_test_s028_g008",
+      "filePath": "local_test_s028_g008.json",
+      "nodes": 38,
+      "edges": 41,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 38
+    },
+    {
+      "id": "local_test_s028_g009",
+      "filePath": "local_test_s028_g009.json",
+      "nodes": 38,
+      "edges": 38,
+      "cliques": [
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 38
+    },
+    {
+      "id": "local_test_s028_g010",
+      "filePath": "local_test_s028_g010.json",
+      "nodes": 38,
+      "edges": 38,
+      "cliques": [
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 38
+    },
+    {
+      "id": "local_test_s029_g001",
+      "filePath": "local_test_s029_g001.json",
+      "nodes": 39,
+      "edges": 40,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 39
+    },
+    {
+      "id": "local_test_s029_g002",
+      "filePath": "local_test_s029_g002.json",
+      "nodes": 39,
+      "edges": 39,
+      "cliques": [
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 39
+    },
+    {
+      "id": "local_test_s029_g003",
+      "filePath": "local_test_s029_g003.json",
+      "nodes": 39,
+      "edges": 42,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 39
+    },
+    {
+      "id": "local_test_s029_g004",
+      "filePath": "local_test_s029_g004.json",
+      "nodes": 39,
+      "edges": 42,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 39
+    },
+    {
+      "id": "local_test_s029_g005",
+      "filePath": "local_test_s029_g005.json",
+      "nodes": 39,
+      "edges": 46,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 39
+    },
+    {
+      "id": "local_test_s029_g006",
+      "filePath": "local_test_s029_g006.json",
+      "nodes": 39,
+      "edges": 44,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 39
+    },
+    {
+      "id": "local_test_s029_g007",
+      "filePath": "local_test_s029_g007.json",
+      "nodes": 39,
+      "edges": 44,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 39
+    },
+    {
+      "id": "local_test_s029_g008",
+      "filePath": "local_test_s029_g008.json",
+      "nodes": 39,
+      "edges": 43,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 39
+    },
+    {
+      "id": "local_test_s029_g009",
+      "filePath": "local_test_s029_g009.json",
+      "nodes": 39,
+      "edges": 39,
+      "cliques": [
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 39
+    },
+    {
+      "id": "local_test_s029_g010",
+      "filePath": "local_test_s029_g010.json",
+      "nodes": 39,
+      "edges": 46,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 39
+    },
+    {
+      "id": "local_test_s030_g001",
+      "filePath": "local_test_s030_g001.json",
+      "nodes": 40,
+      "edges": 40,
+      "cliques": [
+        3
+      ],
+      "step": 30,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 40
+    },
+    {
+      "id": "local_test_s030_g002",
+      "filePath": "local_test_s030_g002.json",
+      "nodes": 40,
+      "edges": 40,
+      "cliques": [
+        3
+      ],
+      "step": 30,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 40
+    },
+    {
+      "id": "local_test_s030_g003",
+      "filePath": "local_test_s030_g003.json",
+      "nodes": 40,
+      "edges": 43,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 30,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 40
+    },
+    {
+      "id": "local_test_s030_g004",
+      "filePath": "local_test_s030_g004.json",
+      "nodes": 40,
+      "edges": 45,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 30,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 40
+    },
+    {
+      "id": "local_test_s030_g005",
+      "filePath": "local_test_s030_g005.json",
+      "nodes": 40,
+      "edges": 40,
+      "cliques": [
+        3
+      ],
+      "step": 30,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 40
+    },
+    {
+      "id": "local_test_s030_g006",
+      "filePath": "local_test_s030_g006.json",
+      "nodes": 40,
+      "edges": 42,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 30,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 40
+    },
+    {
+      "id": "local_test_s030_g007",
+      "filePath": "local_test_s030_g007.json",
+      "nodes": 40,
+      "edges": 42,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 30,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 40
+    },
+    {
+      "id": "local_test_s030_g008",
+      "filePath": "local_test_s030_g008.json",
+      "nodes": 40,
+      "edges": 43,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 30,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 40
+    },
+    {
+      "id": "local_test_s030_g009",
+      "filePath": "local_test_s030_g009.json",
+      "nodes": 40,
+      "edges": 41,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 30,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 40
+    },
+    {
+      "id": "local_test_s030_g010",
+      "filePath": "local_test_s030_g010.json",
+      "nodes": 40,
+      "edges": 43,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 30,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 40
+    },
+    {
+      "id": "local_test_s031_g001",
+      "filePath": "local_test_s031_g001.json",
+      "nodes": 41,
+      "edges": 47,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 31,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 41
+    },
+    {
+      "id": "local_test_s031_g002",
+      "filePath": "local_test_s031_g002.json",
+      "nodes": 41,
+      "edges": 45,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 31,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 41
+    },
+    {
+      "id": "local_test_s031_g003",
+      "filePath": "local_test_s031_g003.json",
+      "nodes": 41,
+      "edges": 42,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 31,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 41
+    },
+    {
+      "id": "local_test_s031_g004",
+      "filePath": "local_test_s031_g004.json",
+      "nodes": 41,
+      "edges": 44,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 31,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 41
+    },
+    {
+      "id": "local_test_s031_g005",
+      "filePath": "local_test_s031_g005.json",
+      "nodes": 41,
+      "edges": 46,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 31,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 41
+    },
+    {
+      "id": "local_test_s031_g006",
+      "filePath": "local_test_s031_g006.json",
+      "nodes": 41,
+      "edges": 45,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 31,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 41
+    },
+    {
+      "id": "local_test_s031_g007",
+      "filePath": "local_test_s031_g007.json",
+      "nodes": 41,
+      "edges": 45,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 31,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 41
+    },
+    {
+      "id": "local_test_s031_g008",
+      "filePath": "local_test_s031_g008.json",
+      "nodes": 41,
+      "edges": 44,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 31,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 41
+    },
+    {
+      "id": "local_test_s031_g009",
+      "filePath": "local_test_s031_g009.json",
+      "nodes": 41,
+      "edges": 42,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 31,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 41
+    },
+    {
+      "id": "local_test_s031_g010",
+      "filePath": "local_test_s031_g010.json",
+      "nodes": 41,
+      "edges": 41,
+      "cliques": [
+        3
+      ],
+      "step": 31,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 41
+    },
+    {
+      "id": "local_test_s032_g001",
+      "filePath": "local_test_s032_g001.json",
+      "nodes": 42,
+      "edges": 42,
+      "cliques": [
+        3
+      ],
+      "step": 32,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 42
+    },
+    {
+      "id": "local_test_s032_g002",
+      "filePath": "local_test_s032_g002.json",
+      "nodes": 42,
+      "edges": 47,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 32,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 42
+    },
+    {
+      "id": "local_test_s032_g003",
+      "filePath": "local_test_s032_g003.json",
+      "nodes": 42,
+      "edges": 45,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 32,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 42
+    },
+    {
+      "id": "local_test_s032_g004",
+      "filePath": "local_test_s032_g004.json",
+      "nodes": 42,
+      "edges": 44,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 32,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 42
+    },
+    {
+      "id": "local_test_s032_g005",
+      "filePath": "local_test_s032_g005.json",
+      "nodes": 42,
+      "edges": 49,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 32,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 42
+    },
+    {
+      "id": "local_test_s032_g006",
+      "filePath": "local_test_s032_g006.json",
+      "nodes": 42,
+      "edges": 48,
+      "cliques": [
+        4,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 32,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 42
+    },
+    {
+      "id": "local_test_s032_g007",
+      "filePath": "local_test_s032_g007.json",
+      "nodes": 42,
+      "edges": 49,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 32,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 42
+    },
+    {
+      "id": "local_test_s032_g008",
+      "filePath": "local_test_s032_g008.json",
+      "nodes": 42,
+      "edges": 43,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 32,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 42
+    },
+    {
+      "id": "local_test_s032_g009",
+      "filePath": "local_test_s032_g009.json",
+      "nodes": 42,
+      "edges": 45,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 32,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 42
+    },
+    {
+      "id": "local_test_s032_g010",
+      "filePath": "local_test_s032_g010.json",
+      "nodes": 42,
+      "edges": 43,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 32,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 42
+    },
+    {
+      "id": "local_test_s033_g001",
+      "filePath": "local_test_s033_g001.json",
+      "nodes": 43,
+      "edges": 46,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 33,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 43
+    },
+    {
+      "id": "local_test_s033_g002",
+      "filePath": "local_test_s033_g002.json",
+      "nodes": 43,
+      "edges": 44,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 33,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 43
+    },
+    {
+      "id": "local_test_s033_g003",
+      "filePath": "local_test_s033_g003.json",
+      "nodes": 43,
+      "edges": 49,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 33,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 43
+    },
+    {
+      "id": "local_test_s033_g004",
+      "filePath": "local_test_s033_g004.json",
+      "nodes": 43,
+      "edges": 45,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 33,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 43
+    },
+    {
+      "id": "local_test_s033_g005",
+      "filePath": "local_test_s033_g005.json",
+      "nodes": 43,
+      "edges": 43,
+      "cliques": [
+        3
+      ],
+      "step": 33,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 43
+    },
+    {
+      "id": "local_test_s033_g006",
+      "filePath": "local_test_s033_g006.json",
+      "nodes": 43,
+      "edges": 47,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 33,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 43
+    },
+    {
+      "id": "local_test_s033_g007",
+      "filePath": "local_test_s033_g007.json",
+      "nodes": 43,
+      "edges": 45,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 33,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 43
+    },
+    {
+      "id": "local_test_s033_g008",
+      "filePath": "local_test_s033_g008.json",
+      "nodes": 43,
+      "edges": 43,
+      "cliques": [
+        3
+      ],
+      "step": 33,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 43
+    },
+    {
+      "id": "local_test_s033_g009",
+      "filePath": "local_test_s033_g009.json",
+      "nodes": 43,
+      "edges": 45,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 33,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 43
+    },
+    {
+      "id": "local_test_s033_g010",
+      "filePath": "local_test_s033_g010.json",
+      "nodes": 43,
+      "edges": 45,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 33,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 43
+    },
+    {
+      "id": "local_test_s034_g001",
+      "filePath": "local_test_s034_g001.json",
+      "nodes": 44,
+      "edges": 44,
+      "cliques": [
+        3
+      ],
+      "step": 34,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 44
+    },
+    {
+      "id": "local_test_s034_g002",
+      "filePath": "local_test_s034_g002.json",
+      "nodes": 44,
+      "edges": 53,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 34,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 44
+    },
+    {
+      "id": "local_test_s034_g003",
+      "filePath": "local_test_s034_g003.json",
+      "nodes": 44,
+      "edges": 46,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 34,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 44
+    },
+    {
+      "id": "local_test_s034_g004",
+      "filePath": "local_test_s034_g004.json",
+      "nodes": 44,
+      "edges": 44,
+      "cliques": [
+        3
+      ],
+      "step": 34,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 44
+    },
+    {
+      "id": "local_test_s034_g005",
+      "filePath": "local_test_s034_g005.json",
+      "nodes": 44,
+      "edges": 48,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 34,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 44
+    },
+    {
+      "id": "local_test_s034_g006",
+      "filePath": "local_test_s034_g006.json",
+      "nodes": 44,
+      "edges": 46,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 34,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 44
+    },
+    {
+      "id": "local_test_s034_g007",
+      "filePath": "local_test_s034_g007.json",
+      "nodes": 44,
+      "edges": 44,
+      "cliques": [
+        3
+      ],
+      "step": 34,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 44
+    },
+    {
+      "id": "local_test_s034_g008",
+      "filePath": "local_test_s034_g008.json",
+      "nodes": 44,
+      "edges": 46,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 34,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 44
+    },
+    {
+      "id": "local_test_s034_g009",
+      "filePath": "local_test_s034_g009.json",
+      "nodes": 44,
+      "edges": 48,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 34,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 44
+    },
+    {
+      "id": "local_test_s034_g010",
+      "filePath": "local_test_s034_g010.json",
+      "nodes": 44,
+      "edges": 53,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        3
+      ],
+      "step": 34,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 44
+    },
+    {
+      "id": "local_test_s035_g001",
+      "filePath": "local_test_s035_g001.json",
+      "nodes": 45,
+      "edges": 53,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 35,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 45
+    },
+    {
+      "id": "local_test_s035_g002",
+      "filePath": "local_test_s035_g002.json",
+      "nodes": 45,
+      "edges": 45,
+      "cliques": [
+        3
+      ],
+      "step": 35,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 45
+    },
+    {
+      "id": "local_test_s035_g003",
+      "filePath": "local_test_s035_g003.json",
+      "nodes": 45,
+      "edges": 52,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 35,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 45
+    },
+    {
+      "id": "local_test_s035_g004",
+      "filePath": "local_test_s035_g004.json",
+      "nodes": 45,
+      "edges": 48,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 35,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 45
+    },
+    {
+      "id": "local_test_s035_g005",
+      "filePath": "local_test_s035_g005.json",
+      "nodes": 45,
+      "edges": 45,
+      "cliques": [
+        3
+      ],
+      "step": 35,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 45
+    },
+    {
+      "id": "local_test_s035_g006",
+      "filePath": "local_test_s035_g006.json",
+      "nodes": 45,
+      "edges": 45,
+      "cliques": [
+        3
+      ],
+      "step": 35,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 45
+    },
+    {
+      "id": "local_test_s035_g007",
+      "filePath": "local_test_s035_g007.json",
+      "nodes": 45,
+      "edges": 47,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 35,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 45
+    },
+    {
+      "id": "local_test_s035_g008",
+      "filePath": "local_test_s035_g008.json",
+      "nodes": 45,
+      "edges": 50,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 35,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 45
+    },
+    {
+      "id": "local_test_s035_g009",
+      "filePath": "local_test_s035_g009.json",
+      "nodes": 45,
+      "edges": 47,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 35,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 45
+    },
+    {
+      "id": "local_test_s035_g010",
+      "filePath": "local_test_s035_g010.json",
+      "nodes": 45,
+      "edges": 47,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 35,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 45
+    },
+    {
+      "id": "local_test_s036_g001",
+      "filePath": "local_test_s036_g001.json",
+      "nodes": 46,
+      "edges": 48,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 36,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 46
+    },
+    {
+      "id": "local_test_s036_g002",
+      "filePath": "local_test_s036_g002.json",
+      "nodes": 46,
+      "edges": 47,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 36,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 46
+    },
+    {
+      "id": "local_test_s036_g003",
+      "filePath": "local_test_s036_g003.json",
+      "nodes": 46,
+      "edges": 48,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 36,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 46
+    },
+    {
+      "id": "local_test_s036_g004",
+      "filePath": "local_test_s036_g004.json",
+      "nodes": 46,
+      "edges": 48,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 36,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 46
+    },
+    {
+      "id": "local_test_s036_g005",
+      "filePath": "local_test_s036_g005.json",
+      "nodes": 46,
+      "edges": 51,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 36,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 46
+    },
+    {
+      "id": "local_test_s036_g006",
+      "filePath": "local_test_s036_g006.json",
+      "nodes": 46,
+      "edges": 47,
+      "cliques": [
+        3
+      ],
+      "step": 36,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 46
+    },
+    {
+      "id": "local_test_s036_g007",
+      "filePath": "local_test_s036_g007.json",
+      "nodes": 46,
+      "edges": 49,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 36,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 46
+    },
+    {
+      "id": "local_test_s036_g008",
+      "filePath": "local_test_s036_g008.json",
+      "nodes": 46,
+      "edges": 52,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 36,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 46
+    },
+    {
+      "id": "local_test_s036_g009",
+      "filePath": "local_test_s036_g009.json",
+      "nodes": 46,
+      "edges": 51,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 36,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 46
+    },
+    {
+      "id": "local_test_s036_g010",
+      "filePath": "local_test_s036_g010.json",
+      "nodes": 46,
+      "edges": 52,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 36,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 46
+    },
+    {
+      "id": "local_test_s037_g001",
+      "filePath": "local_test_s037_g001.json",
+      "nodes": 47,
+      "edges": 51,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 37,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 47
+    },
+    {
+      "id": "local_test_s037_g002",
+      "filePath": "local_test_s037_g002.json",
+      "nodes": 47,
+      "edges": 50,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 37,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 47
+    },
+    {
+      "id": "local_test_s037_g003",
+      "filePath": "local_test_s037_g003.json",
+      "nodes": 47,
+      "edges": 51,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 37,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 47
+    },
+    {
+      "id": "local_test_s037_g004",
+      "filePath": "local_test_s037_g004.json",
+      "nodes": 47,
+      "edges": 50,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 37,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 47
+    },
+    {
+      "id": "local_test_s037_g005",
+      "filePath": "local_test_s037_g005.json",
+      "nodes": 47,
+      "edges": 50,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 37,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 47
+    },
+    {
+      "id": "local_test_s037_g006",
+      "filePath": "local_test_s037_g006.json",
+      "nodes": 47,
+      "edges": 49,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 37,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 47
+    },
+    {
+      "id": "local_test_s037_g007",
+      "filePath": "local_test_s037_g007.json",
+      "nodes": 47,
+      "edges": 53,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 37,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 47
+    },
+    {
+      "id": "local_test_s037_g008",
+      "filePath": "local_test_s037_g008.json",
+      "nodes": 47,
+      "edges": 49,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 37,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 47
+    },
+    {
+      "id": "local_test_s037_g009",
+      "filePath": "local_test_s037_g009.json",
+      "nodes": 47,
+      "edges": 53,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 37,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 47
+    },
+    {
+      "id": "local_test_s037_g010",
+      "filePath": "local_test_s037_g010.json",
+      "nodes": 47,
+      "edges": 49,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 37,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 47
+    },
+    {
+      "id": "local_test_s038_g001",
+      "filePath": "local_test_s038_g001.json",
+      "nodes": 48,
+      "edges": 48,
+      "cliques": [
+        3
+      ],
+      "step": 38,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 48
+    },
+    {
+      "id": "local_test_s038_g002",
+      "filePath": "local_test_s038_g002.json",
+      "nodes": 48,
+      "edges": 51,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 38,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 48
+    },
+    {
+      "id": "local_test_s038_g003",
+      "filePath": "local_test_s038_g003.json",
+      "nodes": 48,
+      "edges": 49,
+      "cliques": [
+        3
+      ],
+      "step": 38,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 48
+    },
+    {
+      "id": "local_test_s038_g004",
+      "filePath": "local_test_s038_g004.json",
+      "nodes": 48,
+      "edges": 54,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 38,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 48
+    },
+    {
+      "id": "local_test_s038_g005",
+      "filePath": "local_test_s038_g005.json",
+      "nodes": 48,
+      "edges": 51,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 38,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 48
+    },
+    {
+      "id": "local_test_s038_g006",
+      "filePath": "local_test_s038_g006.json",
+      "nodes": 48,
+      "edges": 51,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 38,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 48
+    },
+    {
+      "id": "local_test_s038_g007",
+      "filePath": "local_test_s038_g007.json",
+      "nodes": 48,
+      "edges": 51,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 38,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 48
+    },
+    {
+      "id": "local_test_s038_g008",
+      "filePath": "local_test_s038_g008.json",
+      "nodes": 48,
+      "edges": 52,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 38,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 48
+    },
+    {
+      "id": "local_test_s038_g009",
+      "filePath": "local_test_s038_g009.json",
+      "nodes": 48,
+      "edges": 50,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 38,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 48
+    },
+    {
+      "id": "local_test_s038_g010",
+      "filePath": "local_test_s038_g010.json",
+      "nodes": 48,
+      "edges": 51,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 38,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 48
+    },
+    {
+      "id": "local_test_s039_g001",
+      "filePath": "local_test_s039_g001.json",
+      "nodes": 49,
+      "edges": 54,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 39,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 49
+    },
+    {
+      "id": "local_test_s039_g002",
+      "filePath": "local_test_s039_g002.json",
+      "nodes": 49,
+      "edges": 56,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 39,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 49
+    },
+    {
+      "id": "local_test_s039_g003",
+      "filePath": "local_test_s039_g003.json",
+      "nodes": 49,
+      "edges": 57,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 39,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 49
+    },
+    {
+      "id": "local_test_s039_g004",
+      "filePath": "local_test_s039_g004.json",
+      "nodes": 49,
+      "edges": 55,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 39,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 49
+    },
+    {
+      "id": "local_test_s039_g005",
+      "filePath": "local_test_s039_g005.json",
+      "nodes": 49,
+      "edges": 52,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 39,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 49
+    },
+    {
+      "id": "local_test_s039_g006",
+      "filePath": "local_test_s039_g006.json",
+      "nodes": 49,
+      "edges": 52,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 39,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 49
+    },
+    {
+      "id": "local_test_s039_g007",
+      "filePath": "local_test_s039_g007.json",
+      "nodes": 49,
+      "edges": 50,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 39,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 49
+    },
+    {
+      "id": "local_test_s039_g008",
+      "filePath": "local_test_s039_g008.json",
+      "nodes": 49,
+      "edges": 54,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 39,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 49
+    },
+    {
+      "id": "local_test_s039_g009",
+      "filePath": "local_test_s039_g009.json",
+      "nodes": 49,
+      "edges": 50,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 39,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 49
+    },
+    {
+      "id": "local_test_s039_g010",
+      "filePath": "local_test_s039_g010.json",
+      "nodes": 49,
+      "edges": 51,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 39,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 49
+    },
+    {
+      "id": "local_test_s040_g001",
+      "filePath": "local_test_s040_g001.json",
+      "nodes": 50,
+      "edges": 55,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 40,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 50
+    },
+    {
+      "id": "local_test_s040_g002",
+      "filePath": "local_test_s040_g002.json",
+      "nodes": 50,
+      "edges": 50,
+      "cliques": [
+        3
+      ],
+      "step": 40,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 50
+    },
+    {
+      "id": "local_test_s040_g003",
+      "filePath": "local_test_s040_g003.json",
+      "nodes": 50,
+      "edges": 51,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 40,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 50
+    },
+    {
+      "id": "local_test_s040_g004",
+      "filePath": "local_test_s040_g004.json",
+      "nodes": 50,
+      "edges": 56,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 40,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 50
+    },
+    {
+      "id": "local_test_s040_g005",
+      "filePath": "local_test_s040_g005.json",
+      "nodes": 50,
+      "edges": 53,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 40,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 50
+    },
+    {
+      "id": "local_test_s040_g006",
+      "filePath": "local_test_s040_g006.json",
+      "nodes": 50,
+      "edges": 57,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 40,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 50
+    },
+    {
+      "id": "local_test_s040_g007",
+      "filePath": "local_test_s040_g007.json",
+      "nodes": 50,
+      "edges": 57,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 40,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 50
+    },
+    {
+      "id": "local_test_s040_g008",
+      "filePath": "local_test_s040_g008.json",
+      "nodes": 50,
+      "edges": 58,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 40,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 50
+    },
+    {
+      "id": "local_test_s040_g009",
+      "filePath": "local_test_s040_g009.json",
+      "nodes": 50,
+      "edges": 51,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 40,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 50
+    },
+    {
+      "id": "local_test_s040_g010",
+      "filePath": "local_test_s040_g010.json",
+      "nodes": 50,
+      "edges": 53,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 40,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 50
+    },
+    {
+      "id": "local_test_s041_g001",
+      "filePath": "local_test_s041_g001.json",
+      "nodes": 26,
+      "edges": 26,
+      "cliques": [
+        3
+      ],
+      "step": 41,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 1
+    },
+    {
+      "id": "local_test_s041_g002",
+      "filePath": "local_test_s041_g002.json",
+      "nodes": 24,
+      "edges": 26,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 41,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 1
+    },
+    {
+      "id": "local_test_s041_g003",
+      "filePath": "local_test_s041_g003.json",
+      "nodes": 25,
+      "edges": 28,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 41,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 1
+    },
+    {
+      "id": "local_test_s042_g001",
+      "filePath": "local_test_s042_g001.json",
+      "nodes": 37,
+      "edges": 38,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 42,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 2
+    },
+    {
+      "id": "local_test_s042_g002",
+      "filePath": "local_test_s042_g002.json",
+      "nodes": 30,
+      "edges": 31,
+      "cliques": [
+        3,
+        3
+      ],
+      "step": 42,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 2
+    },
+    {
+      "id": "local_test_s042_g003",
+      "filePath": "local_test_s042_g003.json",
+      "nodes": 11,
+      "edges": 14,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 42,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 2
+    },
+    {
+      "id": "local_test_s043_g001",
+      "filePath": "local_test_s043_g001.json",
+      "nodes": 16,
+      "edges": 19,
+      "cliques": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 43,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 3
+    },
+    {
+      "id": "local_test_s043_g002",
+      "filePath": "local_test_s043_g002.json",
+      "nodes": 10,
+      "edges": 12,
+      "cliques": [
+        3,
+        3,
+        3
+      ],
+      "step": 43,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 3
+    },
+    {
+      "id": "local_test_s043_g003",
+      "filePath": "local_test_s043_g003.json",
+      "nodes": 11,
+      "edges": 14,
+      "cliques": [
+        3,
+        4
+      ],
+      "step": 43,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 3
+    },
+    {
+      "id": "local_test_s044_g001",
+      "filePath": "local_test_s044_g001.json",
+      "nodes": 13,
+      "edges": 18,
+      "cliques": [
+        3,
+        3,
+        4,
+        3
+      ],
+      "step": 44,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 4
+    },
+    {
+      "id": "local_test_s044_g002",
+      "filePath": "local_test_s044_g002.json",
+      "nodes": 49,
+      "edges": 55,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 44,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 4
+    },
+    {
+      "id": "local_test_s044_g003",
+      "filePath": "local_test_s044_g003.json",
+      "nodes": 19,
+      "edges": 27,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 44,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 4
+    },
+    {
+      "id": "local_test_s045_g001",
+      "filePath": "local_test_s045_g001.json",
+      "nodes": 45,
+      "edges": 50,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 45,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 5
+    },
+    {
+      "id": "local_test_s045_g002",
+      "filePath": "local_test_s045_g002.json",
+      "nodes": 39,
+      "edges": 44,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 45,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 5
+    },
+    {
+      "id": "local_test_s045_g003",
+      "filePath": "local_test_s045_g003.json",
+      "nodes": 17,
+      "edges": 22,
+      "cliques": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "step": 45,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 5
+    }
+  ],
+  "failures": []
+}

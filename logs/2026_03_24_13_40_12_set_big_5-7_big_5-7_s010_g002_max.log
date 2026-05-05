@@ -1,0 +1,104 @@
+[2026-03-24T13:40:12.184Z] Pipeline "set_big_5-7_big_5-7_s010_g002" → 2026_03_24_13_40_12_set_big_5-7_big_5-7_s010_g002_max.sol
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2792458
+Set parameter LogFile to value "gurobi.log"
+Using license file /root/gurobi.lic
+Academic license 2792458 - for non-commercial use only - registered to an___@studenti.unipg.it
+
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64 - "Ubuntu 24.04.4 LTS")
+Copyright (c) 2026, Gurobi Optimization, LLC
+
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Further warnings of this type will be omitted.
+Read LP format model from file /root/bgw/data/uploads/2026_03_24_13_40_12_set_big_5-7_big_5-7_s010_g002_max.lp
+Reading time = 0.03 seconds
+: 20363 rows, 943 columns, 62191 nonzeros
+
+Using Gurobi shared library /opt/gurobi1301/linux64/lib/libgurobi.so.13.0.1
+
+CPU model: AMD EPYC-Genoa Processor, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 16 physical cores, 16 logical processors, using up to 16 threads
+
+Academic license 2792458 - for non-commercial use only - registered to an___@studenti.unipg.it
+Optimize a model with 20363 rows, 943 columns and 62191 nonzeros (Max)
+Model fingerprint: 0x34f0ce3b
+Model has 43 linear objective coefficients
+Variable types: 83 continuous, 860 integer (860 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 4e+01]
+
+Found heuristic solution: objective 43.0000000
+Presolve removed 562 rows and 139 columns
+Presolve time: 0.06s
+Presolved: 19801 rows, 804 columns, 59662 nonzeros
+Variable types: 0 continuous, 804 integer (797 binary)
+
+Root relaxation: objective 2.710000e+02, 581 iterations, 0.06 seconds (0.08 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  271.00000    0   33   43.00000  271.00000   530%     -    0s
+H    0     0                      88.0000000  271.00000   208%     -    0s
+H    0     0                     119.0000000  271.00000   128%     -    0s
+H    0     0                     120.0000000  271.00000   126%     -    0s
+     0     0  271.00000    0   33  120.00000  271.00000   126%     -    0s
+     0     0  271.00000    0   32  120.00000  271.00000   126%     -    0s
+     0     0  271.00000    0   30  120.00000  271.00000   126%     -    0s
+     0     0  271.00000    0   25  120.00000  271.00000   126%     -    0s
+     0     0  270.00000    0   26  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   25  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   27  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   25  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   25  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   23  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   23  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   25  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   25  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   25  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   30  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   30  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   25  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   25  120.00000  270.00000   125%     -    1s
+     0     0  270.00000    0   25  120.00000  270.00000   125%     -    1s
+     0     2  270.00000    0   25  120.00000  270.00000   125%     -    1s
+   764   353  237.91014    9  192  120.00000  268.39474   124%   179    5s
+  1814   694 infeasible   17       120.00000  246.25385   105%   231   10s
+  3147   978  207.22144   11  136  120.00000  225.56939  88.0%   248   15s
+  4223  1175  134.55263   17    2  120.00000  222.48026  85.4%   264   20s
+  5683  1333  175.27733   16  159  120.00000  209.42982  74.5%   280   25s
+  7295  1473  150.04474   17   25  120.00000  195.21053  62.7%   295   30s
+  7666  1562  165.07895   28   35  120.00000  195.21053  62.7%   294   35s
+  8370  1433  135.00000   28  116  120.00000  195.21053  62.7%   292   40s
+  9241  1319 infeasible   28       120.00000  195.21053  62.7%   287   45s
+ 10408  1122  134.21053   28   13  120.00000  195.21053  62.7%   285   50s
+ 12275   817  150.20783   28  173  120.00000  190.03947  58.4%   282   55s
+ 13870   733  148.52467   26  182  120.00000  178.78947  49.0%   277   60s
+ 16352   442 infeasible   27       120.00000  164.21053  36.8%   272   65s
+
+Cutting planes:
+  Inf proof: 12
+
+Explored 18369 nodes (5023082 simplex iterations) in 69.72 seconds (161.17 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 7: 120 120 120 ... 43
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.200000000000e+02, best bound 1.200000000000e+02, gap 0.0000%
+
+Wrote result file '/root/bgw/data/results/2026_03_24_13_40_12_set_big_5-7_big_5-7_s010_g002_max.sol'
+

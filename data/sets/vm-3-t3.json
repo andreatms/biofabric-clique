@@ -1,0 +1,1019 @@
+{
+  "setName": "vm-3-t3",
+  "createdAt": "2026-03-24T13:38:07.408Z",
+  "parameters": {
+    "mode": "set",
+    "setName": "vm-3-t3",
+    "minNodes": 10,
+    "maxNodes": 40,
+    "nodeStep": 1,
+    "graphsPerNodeStep": 2,
+    "minCliqueSize": 6,
+    "maxCliqueSize": 7,
+    "avgCliqueSize": 6.5,
+    "minCliques": 1,
+    "maxCliques": 2,
+    "cliqueStep": 1,
+    "graphsPerCliqueStep": 2
+  },
+  "graphs": [
+    {
+      "id": "vm-3-t3_s000_g001",
+      "filePath": "vm-3-t3_s000_g001.json",
+      "nodes": 10,
+      "edges": 28,
+      "cliques": [
+        7,
+        6
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "vm-3-t3_s000_g002",
+      "filePath": "vm-3-t3_s000_g002.json",
+      "nodes": 10,
+      "edges": 37,
+      "cliques": [
+        7,
+        6,
+        7
+      ],
+      "step": 0,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 10
+    },
+    {
+      "id": "vm-3-t3_s001_g001",
+      "filePath": "vm-3-t3_s001_g001.json",
+      "nodes": 11,
+      "edges": 20,
+      "cliques": [
+        6
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "vm-3-t3_s001_g002",
+      "filePath": "vm-3-t3_s001_g002.json",
+      "nodes": 11,
+      "edges": 34,
+      "cliques": [
+        7,
+        7
+      ],
+      "step": 1,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 11
+    },
+    {
+      "id": "vm-3-t3_s002_g001",
+      "filePath": "vm-3-t3_s002_g001.json",
+      "nodes": 12,
+      "edges": 26,
+      "cliques": [
+        7
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "vm-3-t3_s002_g002",
+      "filePath": "vm-3-t3_s002_g002.json",
+      "nodes": 12,
+      "edges": 21,
+      "cliques": [
+        6
+      ],
+      "step": 2,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 12
+    },
+    {
+      "id": "vm-3-t3_s003_g001",
+      "filePath": "vm-3-t3_s003_g001.json",
+      "nodes": 13,
+      "edges": 22,
+      "cliques": [
+        6
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "vm-3-t3_s003_g002",
+      "filePath": "vm-3-t3_s003_g002.json",
+      "nodes": 13,
+      "edges": 27,
+      "cliques": [
+        7
+      ],
+      "step": 3,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 13
+    },
+    {
+      "id": "vm-3-t3_s004_g001",
+      "filePath": "vm-3-t3_s004_g001.json",
+      "nodes": 14,
+      "edges": 33,
+      "cliques": [
+        6,
+        6,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "vm-3-t3_s004_g002",
+      "filePath": "vm-3-t3_s004_g002.json",
+      "nodes": 14,
+      "edges": 33,
+      "cliques": [
+        6,
+        6,
+        3
+      ],
+      "step": 4,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 14
+    },
+    {
+      "id": "vm-3-t3_s005_g001",
+      "filePath": "vm-3-t3_s005_g001.json",
+      "nodes": 15,
+      "edges": 29,
+      "cliques": [
+        7
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "vm-3-t3_s005_g002",
+      "filePath": "vm-3-t3_s005_g002.json",
+      "nodes": 15,
+      "edges": 29,
+      "cliques": [
+        7
+      ],
+      "step": 5,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 15
+    },
+    {
+      "id": "vm-3-t3_s006_g001",
+      "filePath": "vm-3-t3_s006_g001.json",
+      "nodes": 16,
+      "edges": 28,
+      "cliques": [
+        6
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "vm-3-t3_s006_g002",
+      "filePath": "vm-3-t3_s006_g002.json",
+      "nodes": 16,
+      "edges": 26,
+      "cliques": [
+        6,
+        3
+      ],
+      "step": 6,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 16
+    },
+    {
+      "id": "vm-3-t3_s007_g001",
+      "filePath": "vm-3-t3_s007_g001.json",
+      "nodes": 17,
+      "edges": 44,
+      "cliques": [
+        7,
+        4,
+        4,
+        6,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 17
+    },
+    {
+      "id": "vm-3-t3_s007_g002",
+      "filePath": "vm-3-t3_s007_g002.json",
+      "nodes": 17,
+      "edges": 27,
+      "cliques": [
+        6,
+        3
+      ],
+      "step": 7,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 17
+    },
+    {
+      "id": "vm-3-t3_s008_g001",
+      "filePath": "vm-3-t3_s008_g001.json",
+      "nodes": 18,
+      "edges": 44,
+      "cliques": [
+        6,
+        4,
+        4,
+        7
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 18
+    },
+    {
+      "id": "vm-3-t3_s008_g002",
+      "filePath": "vm-3-t3_s008_g002.json",
+      "nodes": 18,
+      "edges": 34,
+      "cliques": [
+        7,
+        4
+      ],
+      "step": 8,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 18
+    },
+    {
+      "id": "vm-3-t3_s009_g001",
+      "filePath": "vm-3-t3_s009_g001.json",
+      "nodes": 19,
+      "edges": 40,
+      "cliques": [
+        7,
+        6
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 19
+    },
+    {
+      "id": "vm-3-t3_s009_g002",
+      "filePath": "vm-3-t3_s009_g002.json",
+      "nodes": 19,
+      "edges": 43,
+      "cliques": [
+        7,
+        6,
+        3
+      ],
+      "step": 9,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 19
+    },
+    {
+      "id": "vm-3-t3_s010_g001",
+      "filePath": "vm-3-t3_s010_g001.json",
+      "nodes": 20,
+      "edges": 49,
+      "cliques": [
+        3,
+        7,
+        5,
+        6
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "vm-3-t3_s010_g002",
+      "filePath": "vm-3-t3_s010_g002.json",
+      "nodes": 20,
+      "edges": 45,
+      "cliques": [
+        3,
+        6,
+        7,
+        3
+      ],
+      "step": 10,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 20
+    },
+    {
+      "id": "vm-3-t3_s011_g001",
+      "filePath": "vm-3-t3_s011_g001.json",
+      "nodes": 21,
+      "edges": 42,
+      "cliques": [
+        3,
+        6,
+        6,
+        3
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 21
+    },
+    {
+      "id": "vm-3-t3_s011_g002",
+      "filePath": "vm-3-t3_s011_g002.json",
+      "nodes": 21,
+      "edges": 31,
+      "cliques": [
+        3,
+        6
+      ],
+      "step": 11,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 21
+    },
+    {
+      "id": "vm-3-t3_s012_g001",
+      "filePath": "vm-3-t3_s012_g001.json",
+      "nodes": 22,
+      "edges": 47,
+      "cliques": [
+        6,
+        7
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 22
+    },
+    {
+      "id": "vm-3-t3_s012_g002",
+      "filePath": "vm-3-t3_s012_g002.json",
+      "nodes": 22,
+      "edges": 37,
+      "cliques": [
+        3,
+        7
+      ],
+      "step": 12,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 22
+    },
+    {
+      "id": "vm-3-t3_s013_g001",
+      "filePath": "vm-3-t3_s013_g001.json",
+      "nodes": 23,
+      "edges": 32,
+      "cliques": [
+        6
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 23
+    },
+    {
+      "id": "vm-3-t3_s013_g002",
+      "filePath": "vm-3-t3_s013_g002.json",
+      "nodes": 23,
+      "edges": 42,
+      "cliques": [
+        6,
+        5,
+        6
+      ],
+      "step": 13,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 23
+    },
+    {
+      "id": "vm-3-t3_s014_g001",
+      "filePath": "vm-3-t3_s014_g001.json",
+      "nodes": 24,
+      "edges": 33,
+      "cliques": [
+        6
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "vm-3-t3_s014_g002",
+      "filePath": "vm-3-t3_s014_g002.json",
+      "nodes": 24,
+      "edges": 47,
+      "cliques": [
+        7,
+        7
+      ],
+      "step": 14,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 24
+    },
+    {
+      "id": "vm-3-t3_s015_g001",
+      "filePath": "vm-3-t3_s015_g001.json",
+      "nodes": 25,
+      "edges": 36,
+      "cliques": [
+        3,
+        6,
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 25
+    },
+    {
+      "id": "vm-3-t3_s015_g002",
+      "filePath": "vm-3-t3_s015_g002.json",
+      "nodes": 25,
+      "edges": 42,
+      "cliques": [
+        3,
+        7,
+        3
+      ],
+      "step": 15,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 25
+    },
+    {
+      "id": "vm-3-t3_s016_g001",
+      "filePath": "vm-3-t3_s016_g001.json",
+      "nodes": 26,
+      "edges": 48,
+      "cliques": [
+        4,
+        6,
+        6,
+        3
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 26
+    },
+    {
+      "id": "vm-3-t3_s016_g002",
+      "filePath": "vm-3-t3_s016_g002.json",
+      "nodes": 26,
+      "edges": 40,
+      "cliques": [
+        7
+      ],
+      "step": 16,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 26
+    },
+    {
+      "id": "vm-3-t3_s017_g001",
+      "filePath": "vm-3-t3_s017_g001.json",
+      "nodes": 27,
+      "edges": 36,
+      "cliques": [
+        6
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 27
+    },
+    {
+      "id": "vm-3-t3_s017_g002",
+      "filePath": "vm-3-t3_s017_g002.json",
+      "nodes": 27,
+      "edges": 50,
+      "cliques": [
+        7,
+        6
+      ],
+      "step": 17,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 27
+    },
+    {
+      "id": "vm-3-t3_s018_g001",
+      "filePath": "vm-3-t3_s018_g001.json",
+      "nodes": 28,
+      "edges": 53,
+      "cliques": [
+        6,
+        7,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 28
+    },
+    {
+      "id": "vm-3-t3_s018_g002",
+      "filePath": "vm-3-t3_s018_g002.json",
+      "nodes": 28,
+      "edges": 59,
+      "cliques": [
+        3,
+        7,
+        7,
+        3
+      ],
+      "step": 18,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 28
+    },
+    {
+      "id": "vm-3-t3_s019_g001",
+      "filePath": "vm-3-t3_s019_g001.json",
+      "nodes": 29,
+      "edges": 58,
+      "cliques": [
+        7,
+        7
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 29
+    },
+    {
+      "id": "vm-3-t3_s019_g002",
+      "filePath": "vm-3-t3_s019_g002.json",
+      "nodes": 29,
+      "edges": 38,
+      "cliques": [
+        6
+      ],
+      "step": 19,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 29
+    },
+    {
+      "id": "vm-3-t3_s020_g001",
+      "filePath": "vm-3-t3_s020_g001.json",
+      "nodes": 30,
+      "edges": 44,
+      "cliques": [
+        7
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 30
+    },
+    {
+      "id": "vm-3-t3_s020_g002",
+      "filePath": "vm-3-t3_s020_g002.json",
+      "nodes": 30,
+      "edges": 57,
+      "cliques": [
+        3,
+        3,
+        7,
+        6,
+        3
+      ],
+      "step": 20,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 30
+    },
+    {
+      "id": "vm-3-t3_s021_g001",
+      "filePath": "vm-3-t3_s021_g001.json",
+      "nodes": 31,
+      "edges": 40,
+      "cliques": [
+        6
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 31
+    },
+    {
+      "id": "vm-3-t3_s021_g002",
+      "filePath": "vm-3-t3_s021_g002.json",
+      "nodes": 31,
+      "edges": 52,
+      "cliques": [
+        3,
+        3,
+        6,
+        6
+      ],
+      "step": 21,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 31
+    },
+    {
+      "id": "vm-3-t3_s022_g001",
+      "filePath": "vm-3-t3_s022_g001.json",
+      "nodes": 32,
+      "edges": 41,
+      "cliques": [
+        6
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 32
+    },
+    {
+      "id": "vm-3-t3_s022_g002",
+      "filePath": "vm-3-t3_s022_g002.json",
+      "nodes": 32,
+      "edges": 56,
+      "cliques": [
+        6,
+        7
+      ],
+      "step": 22,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 32
+    },
+    {
+      "id": "vm-3-t3_s023_g001",
+      "filePath": "vm-3-t3_s023_g001.json",
+      "nodes": 33,
+      "edges": 48,
+      "cliques": [
+        7,
+        3
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 33
+    },
+    {
+      "id": "vm-3-t3_s023_g002",
+      "filePath": "vm-3-t3_s023_g002.json",
+      "nodes": 33,
+      "edges": 61,
+      "cliques": [
+        7,
+        7
+      ],
+      "step": 23,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 33
+    },
+    {
+      "id": "vm-3-t3_s024_g001",
+      "filePath": "vm-3-t3_s024_g001.json",
+      "nodes": 34,
+      "edges": 43,
+      "cliques": [
+        6
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 34
+    },
+    {
+      "id": "vm-3-t3_s024_g002",
+      "filePath": "vm-3-t3_s024_g002.json",
+      "nodes": 34,
+      "edges": 50,
+      "cliques": [
+        7
+      ],
+      "step": 24,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 34
+    },
+    {
+      "id": "vm-3-t3_s025_g001",
+      "filePath": "vm-3-t3_s025_g001.json",
+      "nodes": 35,
+      "edges": 65,
+      "cliques": [
+        7,
+        7,
+        3
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 35
+    },
+    {
+      "id": "vm-3-t3_s025_g002",
+      "filePath": "vm-3-t3_s025_g002.json",
+      "nodes": 35,
+      "edges": 55,
+      "cliques": [
+        6,
+        6
+      ],
+      "step": 25,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 35
+    },
+    {
+      "id": "vm-3-t3_s026_g001",
+      "filePath": "vm-3-t3_s026_g001.json",
+      "nodes": 36,
+      "edges": 46,
+      "cliques": [
+        6
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 36
+    },
+    {
+      "id": "vm-3-t3_s026_g002",
+      "filePath": "vm-3-t3_s026_g002.json",
+      "nodes": 36,
+      "edges": 45,
+      "cliques": [
+        6
+      ],
+      "step": 26,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 36
+    },
+    {
+      "id": "vm-3-t3_s027_g001",
+      "filePath": "vm-3-t3_s027_g001.json",
+      "nodes": 37,
+      "edges": 46,
+      "cliques": [
+        6
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 37
+    },
+    {
+      "id": "vm-3-t3_s027_g002",
+      "filePath": "vm-3-t3_s027_g002.json",
+      "nodes": 37,
+      "edges": 52,
+      "cliques": [
+        7,
+        3
+      ],
+      "step": 27,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 37
+    },
+    {
+      "id": "vm-3-t3_s028_g001",
+      "filePath": "vm-3-t3_s028_g001.json",
+      "nodes": 38,
+      "edges": 64,
+      "cliques": [
+        6,
+        4,
+        7,
+        3
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 38
+    },
+    {
+      "id": "vm-3-t3_s028_g002",
+      "filePath": "vm-3-t3_s028_g002.json",
+      "nodes": 38,
+      "edges": 56,
+      "cliques": [
+        3,
+        7
+      ],
+      "step": 28,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 38
+    },
+    {
+      "id": "vm-3-t3_s029_g001",
+      "filePath": "vm-3-t3_s029_g001.json",
+      "nodes": 39,
+      "edges": 49,
+      "cliques": [
+        6
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 39
+    },
+    {
+      "id": "vm-3-t3_s029_g002",
+      "filePath": "vm-3-t3_s029_g002.json",
+      "nodes": 39,
+      "edges": 54,
+      "cliques": [
+        7
+      ],
+      "step": 29,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 39
+    },
+    {
+      "id": "vm-3-t3_s030_g001",
+      "filePath": "vm-3-t3_s030_g001.json",
+      "nodes": 40,
+      "edges": 49,
+      "cliques": [
+        6
+      ],
+      "step": 30,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 40
+    },
+    {
+      "id": "vm-3-t3_s030_g002",
+      "filePath": "vm-3-t3_s030_g002.json",
+      "nodes": 40,
+      "edges": 49,
+      "cliques": [
+        6
+      ],
+      "step": 30,
+      "status": "ok",
+      "error": null,
+      "axis": "nodes",
+      "axisValue": 40
+    },
+    {
+      "id": "vm-3-t3_s031_g001",
+      "filePath": "vm-3-t3_s031_g001.json",
+      "nodes": 27,
+      "edges": 37,
+      "cliques": [
+        6
+      ],
+      "step": 31,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 1
+    },
+    {
+      "id": "vm-3-t3_s031_g002",
+      "filePath": "vm-3-t3_s031_g002.json",
+      "nodes": 37,
+      "edges": 55,
+      "cliques": [
+        7,
+        3,
+        3
+      ],
+      "step": 31,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 1
+    },
+    {
+      "id": "vm-3-t3_s032_g001",
+      "filePath": "vm-3-t3_s032_g001.json",
+      "nodes": 40,
+      "edges": 65,
+      "cliques": [
+        6,
+        7,
+        3
+      ],
+      "step": 32,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 2
+    },
+    {
+      "id": "vm-3-t3_s032_g002",
+      "filePath": "vm-3-t3_s032_g002.json",
+      "nodes": 17,
+      "edges": 40,
+      "cliques": [
+        7,
+        7
+      ],
+      "step": 32,
+      "status": "ok",
+      "error": null,
+      "axis": "cliques",
+      "axisValue": 2
+    }
+  ],
+  "failures": []
+}

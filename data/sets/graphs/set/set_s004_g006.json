@@ -1,0 +1,165 @@
+{
+  "name": "set_s004_g006",
+  "nodes": [
+    {
+      "id": 0
+    },
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "source": 3,
+      "target": 8
+    },
+    {
+      "id": 2,
+      "source": 0,
+      "target": 8
+    },
+    {
+      "id": 3,
+      "source": 0,
+      "target": 3
+    },
+    {
+      "id": 4,
+      "source": 6,
+      "target": 8
+    },
+    {
+      "id": 5,
+      "source": 7,
+      "target": 8
+    },
+    {
+      "id": 6,
+      "source": 6,
+      "target": 7
+    },
+    {
+      "id": 7,
+      "source": 0,
+      "target": 5
+    },
+    {
+      "id": 8,
+      "source": 3,
+      "target": 5
+    },
+    {
+      "id": 9,
+      "source": 1,
+      "target": 8
+    },
+    {
+      "id": 10,
+      "source": 0,
+      "target": 1
+    },
+    {
+      "id": 11,
+      "source": 2,
+      "target": 6
+    },
+    {
+      "id": 12,
+      "source": 1,
+      "target": 6
+    },
+    {
+      "id": 13,
+      "source": 1,
+      "target": 2
+    },
+    {
+      "id": 14,
+      "source": 2,
+      "target": 8
+    },
+    {
+      "id": 15,
+      "source": 2,
+      "target": 4
+    },
+    {
+      "id": 16,
+      "source": 4,
+      "target": 8
+    }
+  ],
+  "cliques": [
+    {
+      "id": 1,
+      "nodes": [
+        0,
+        3,
+        5
+      ]
+    },
+    {
+      "id": 2,
+      "nodes": [
+        0,
+        1,
+        8
+      ]
+    },
+    {
+      "id": 3,
+      "nodes": [
+        1,
+        2,
+        6,
+        8
+      ]
+    },
+    {
+      "id": 4,
+      "nodes": [
+        0,
+        3,
+        8
+      ]
+    },
+    {
+      "id": 5,
+      "nodes": [
+        2,
+        4,
+        8
+      ]
+    },
+    {
+      "id": 6,
+      "nodes": [
+        6,
+        7,
+        8
+      ]
+    }
+  ]
+}

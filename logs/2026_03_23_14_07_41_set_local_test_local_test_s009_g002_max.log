@@ -1,0 +1,79 @@
+[2026-03-23T14:07:41.769Z] Pipeline "set_local_test_local_test_s009_g002" → 2026_03_23_14_07_41_set_local_test_local_test_s009_g002_max.sol
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2792458
+Set parameter LogFile to value "gurobi.log"
+Using license file /root/gurobi.lic
+Academic license 2792458 - for non-commercial use only - registered to an___@studenti.unipg.it
+
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64 - "Ubuntu 24.04.4 LTS")
+Copyright (c) 2026, Gurobi Optimization, LLC
+
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Further warnings of this type will be omitted.
+Read LP format model from file /root/bgw/data/uploads/2026_03_23_14_07_41_set_local_test_local_test_s009_g002_max.lp
+Reading time = 0.00 seconds
+: 2107 rows, 229 columns, 6479 nonzeros
+
+Using Gurobi shared library /opt/gurobi1301/linux64/lib/libgurobi.so.13.0.1
+
+CPU model: AMD EPYC-Genoa Processor, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 16 physical cores, 16 logical processors, using up to 16 threads
+
+Academic license 2792458 - for non-commercial use only - registered to an___@studenti.unipg.it
+Optimize a model with 2107 rows, 229 columns and 6479 nonzeros (Max)
+Model fingerprint: 0x4badd868
+Model has 2 linear objective coefficients
+Variable types: 21 continuous, 208 integer (208 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+
+Found heuristic solution: objective 2.0000000
+Presolve removed 152 rows and 47 columns
+Presolve time: 0.01s
+Presolved: 1955 rows, 182 columns, 5945 nonzeros
+Variable types: 0 continuous, 182 integer (177 binary)
+Found heuristic solution: objective 3.0000000
+
+Root relaxation: objective 8.000000e+00, 80 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    8.00000    0   11    3.00000    8.00000   167%     -    0s
+H    0     0                       5.0000000    8.00000  60.0%     -    0s
+H    0     0                       6.0000000    8.00000  33.3%     -    0s
+     0     0    8.00000    0   14    6.00000    8.00000  33.3%     -    0s
+     0     0    8.00000    0   17    6.00000    8.00000  33.3%     -    0s
+     0     0    8.00000    0    7    6.00000    8.00000  33.3%     -    0s
+     0     0    8.00000    0   14    6.00000    8.00000  33.3%     -    0s
+     0     0    8.00000    0    7    6.00000    8.00000  33.3%     -    0s
+     0     0    7.00000    0    9    6.00000    7.00000  16.7%     -    0s
+
+Cutting planes:
+  MIR: 2
+  Zero half: 2
+  Mod-K: 4
+
+Explored 1 nodes (1078 simplex iterations) in 0.13 seconds (0.09 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 4: 6 5 3 2 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.000000000000e+00, best bound 6.000000000000e+00, gap 0.0000%
+
+Wrote result file '/root/bgw/data/results/2026_03_23_14_07_41_set_local_test_local_test_s009_g002_max.sol'
+

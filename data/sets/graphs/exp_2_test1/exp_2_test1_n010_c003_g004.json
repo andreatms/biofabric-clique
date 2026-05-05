@@ -1,0 +1,133 @@
+{
+  "name": "exp_2_test1_n010_c003_g004",
+  "nodes": [
+    {
+      "id": 0
+    },
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "source": 3,
+      "target": 4
+    },
+    {
+      "id": 2,
+      "source": 2,
+      "target": 3
+    },
+    {
+      "id": 3,
+      "source": 2,
+      "target": 9
+    },
+    {
+      "id": 4,
+      "source": 8,
+      "target": 9
+    },
+    {
+      "id": 5,
+      "source": 1,
+      "target": 8
+    },
+    {
+      "id": 6,
+      "source": 0,
+      "target": 1
+    },
+    {
+      "id": 7,
+      "source": 0,
+      "target": 6
+    },
+    {
+      "id": 8,
+      "source": 5,
+      "target": 6
+    },
+    {
+      "id": 9,
+      "source": 5,
+      "target": 7
+    },
+    {
+      "id": 10,
+      "source": 1,
+      "target": 5
+    },
+    {
+      "id": 11,
+      "source": 2,
+      "target": 8
+    },
+    {
+      "id": 12,
+      "source": 5,
+      "target": 9
+    },
+    {
+      "id": 13,
+      "source": 2,
+      "target": 5
+    },
+    {
+      "id": 14,
+      "source": 1,
+      "target": 7
+    }
+  ],
+  "cliques": [
+    {
+      "id": 1,
+      "nodes": [
+        1,
+        5,
+        7
+      ]
+    },
+    {
+      "id": 2,
+      "nodes": [
+        2,
+        5,
+        9
+      ]
+    },
+    {
+      "id": 3,
+      "nodes": [
+        2,
+        8,
+        9
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "name": "exp_3_n009_c003_g001",
+  "nodes": [
+    {
+      "id": 0
+    },
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "source": 5,
+      "target": 6
+    },
+    {
+      "id": 2,
+      "source": 2,
+      "target": 5
+    },
+    {
+      "id": 3,
+      "source": 0,
+      "target": 2
+    },
+    {
+      "id": 4,
+      "source": 0,
+      "target": 4
+    },
+    {
+      "id": 5,
+      "source": 3,
+      "target": 4
+    },
+    {
+      "id": 6,
+      "source": 3,
+      "target": 7
+    },
+    {
+      "id": 7,
+      "source": 1,
+      "target": 8
+    },
+    {
+      "id": 8,
+      "source": 0,
+      "target": 5
+    },
+    {
+      "id": 9,
+      "source": 2,
+      "target": 3
+    },
+    {
+      "id": 10,
+      "source": 4,
+      "target": 8
+    },
+    {
+      "id": 11,
+      "source": 6,
+      "target": 8
+    },
+    {
+      "id": 12,
+      "source": 4,
+      "target": 6
+    },
+    {
+      "id": 13,
+      "source": 1,
+      "target": 5
+    },
+    {
+      "id": 14,
+      "source": 2,
+      "target": 7
+    }
+  ],
+  "cliques": [
+    {
+      "id": 1,
+      "nodes": [
+        0,
+        2,
+        5
+      ]
+    },
+    {
+      "id": 2,
+      "nodes": [
+        2,
+        3,
+        7
+      ]
+    },
+    {
+      "id": 3,
+      "nodes": [
+        4,
+        6,
+        8
+      ]
+    }
+  ]
+}

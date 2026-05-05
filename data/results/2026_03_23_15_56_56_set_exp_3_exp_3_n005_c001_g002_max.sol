@@ -1,0 +1,24 @@
+# Objective value = 3
+c_n0n1n2 3
+y_n0n1 0
+y_n1n2 0
+y_n0n2 0
+y_n1n3 0
+y_n0n3 0
+y_n1n4 0
+y_n0n4 0
+y_n2n3 0
+y_n2n4 0
+y_n3n4 0
+pos_n0 4
+pos_n1 3
+pos_n2 2
+pos_n3 1
+pos_n4 0
+z_n2n3 0
+z_n1n2 1
+z_n1n3 0
+z_n2n4 0
+z_n0n4 0
+z_n0n2 0
+z_n0n1 1

@@ -1,0 +1,174 @@
+{
+  "name": "set_s006_g007",
+  "nodes": [
+    {
+      "id": 0
+    },
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    }
+  ],
+  "links": [
+    {
+      "id": 1,
+      "source": 5,
+      "target": 6
+    },
+    {
+      "id": 2,
+      "source": 6,
+      "target": 8
+    },
+    {
+      "id": 3,
+      "source": 1,
+      "target": 6
+    },
+    {
+      "id": 4,
+      "source": 5,
+      "target": 8
+    },
+    {
+      "id": 5,
+      "source": 1,
+      "target": 5
+    },
+    {
+      "id": 6,
+      "source": 1,
+      "target": 8
+    },
+    {
+      "id": 7,
+      "source": 6,
+      "target": 7
+    },
+    {
+      "id": 8,
+      "source": 3,
+      "target": 7
+    },
+    {
+      "id": 9,
+      "source": 3,
+      "target": 6
+    },
+    {
+      "id": 10,
+      "source": 7,
+      "target": 8
+    },
+    {
+      "id": 11,
+      "source": 8,
+      "target": 9
+    },
+    {
+      "id": 12,
+      "source": 7,
+      "target": 9
+    },
+    {
+      "id": 13,
+      "source": 0,
+      "target": 9
+    },
+    {
+      "id": 14,
+      "source": 1,
+      "target": 7
+    },
+    {
+      "id": 15,
+      "source": 2,
+      "target": 9
+    },
+    {
+      "id": 16,
+      "source": 3,
+      "target": 5
+    },
+    {
+      "id": 17,
+      "source": 5,
+      "target": 10
+    },
+    {
+      "id": 18,
+      "source": 2,
+      "target": 4
+    }
+  ],
+  "cliques": [
+    {
+      "id": 1,
+      "nodes": [
+        1,
+        5,
+        6,
+        8
+      ]
+    },
+    {
+      "id": 2,
+      "nodes": [
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "id": 3,
+      "nodes": [
+        1,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": 4,
+      "nodes": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "id": 5,
+      "nodes": [
+        7,
+        8,
+        9
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+[2026-03-23T16:01:51.314Z] Pipeline "set_exp_3_exp_3_n024_c002_g003" → 2026_03_23_16_01_51_set_exp_3_exp_3_n024_c002_g003_max.sol
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2792458
+Set parameter LogFile to value "gurobi.log"
+Using license file /root/gurobi.lic
+Academic license 2792458 - for non-commercial use only - registered to an___@studenti.unipg.it
+
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64 - "Ubuntu 24.04.4 LTS")
+Copyright (c) 2026, Gurobi Optimization, LLC
+
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Further warnings of this type will be omitted.
+Read LP format model from file /root/bgw/data/uploads/2026_03_23_16_01_51_set_exp_3_exp_3_n024_c002_g003_max.lp
+Reading time = 0.00 seconds
+: 4678 rows, 426 columns, 13936 nonzeros
+
+Using Gurobi shared library /opt/gurobi1301/linux64/lib/libgurobi.so.13.0.1
+
+CPU model: AMD EPYC-Genoa Processor, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 16 physical cores, 16 logical processors, using up to 16 threads
+
+Academic license 2792458 - for non-commercial use only - registered to an___@studenti.unipg.it
+Optimize a model with 4678 rows, 426 columns and 13936 nonzeros (Max)
+Model fingerprint: 0x5db0d6cb
+Model has 2 linear objective coefficients
+Variable types: 26 continuous, 400 integer (400 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+01]
+
+Found heuristic solution: objective 2.0000000
+Presolve removed 616 rows and 141 columns
+Presolve time: 0.02s
+Presolved: 4062 rows, 285 columns, 12270 nonzeros
+Variable types: 0 continuous, 285 integer (281 binary)
+
+Root relaxation: objective 8.000000e+00, 53 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    8.00000    0    8    2.00000    8.00000   300%     -    0s
+H    0     0                       5.0000000    8.00000  60.0%     -    0s
+H    0     0                       6.0000000    8.00000  33.3%     -    0s
+     0     0    8.00000    0   11    6.00000    8.00000  33.3%     -    0s
+     0     0    8.00000    0   10    6.00000    8.00000  33.3%     -    0s
+     0     0    8.00000    0    5    6.00000    8.00000  33.3%     -    0s
+     0     0    7.00000    0    7    6.00000    7.00000  16.7%     -    0s
+     0     0    7.00000    0    5    6.00000    7.00000  16.7%     -    0s
+     0     0    6.00000    0    9    6.00000    6.00000  0.00%     -    0s
+
+Cutting planes:
+  MIR: 2
+  Mod-K: 2
+
+Explored 1 nodes (176 simplex iterations) in 0.13 seconds (0.10 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: 6 5 2 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.000000000000e+00, best bound 6.000000000000e+00, gap 0.0000%
+
+Wrote result file '/root/bgw/data/results/2026_03_23_16_01_51_set_exp_3_exp_3_n024_c002_g003_max.sol'
+
