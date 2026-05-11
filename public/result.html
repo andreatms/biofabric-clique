@@ -113,6 +113,21 @@
   <div id="graph-wrap">
     <div class="graph-head">
       <h3>Graph</h3>
+      <label class="biofabric-axis-spacing-wrap" for="graph-node-label-select">
+        Node label
+        <select id="graph-node-label-select">
+          <option value="id" selected>ID</option>
+          <option value="n-id">n + id</option>
+          <option value="name">Name</option>
+          <option value="label">Label</option>
+          <option value="none">None</option>
+        </select>
+      </label>
+      <label class="biofabric-axis-spacing-wrap" for="graph-node-label-size">
+        Node label size
+        <input type="number" id="graph-node-label-size" min="8" max="36" step="0.5" value="12">
+        <span id="graph-node-label-size-value">12.0 px</span>
+      </label>
       <label class="biofabric-export-wrap" for="graph-export-format">
         Export figure
         <select id="graph-export-format">

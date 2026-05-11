@@ -163,6 +163,9 @@ const _biofabricMarkerStrokeWidthValue = document.getElementById('biofabric-mark
 const _biofabricLockNodeAxisSpacingCheckbox = document.getElementById('biofabric-lock-node-axis-spacing');
 const _biofabricExportFormatSelect = document.getElementById('biofabric-export-format');
 const _biofabricExportButton = document.getElementById('biofabric-export-button');
+const _graphNodeLabelSelect = document.getElementById('graph-node-label-select');
+const _graphNodeLabelSizeInput = document.getElementById('graph-node-label-size');
+const _graphNodeLabelSizeValue = document.getElementById('graph-node-label-size-value');
 const _graphExportFormatSelect = document.getElementById('graph-export-format');
 const _graphExportButton = document.getElementById('graph-export-button');
 
@@ -286,6 +289,41 @@ function getGraphExportFormat() {
   const format = String(_graphExportFormatSelect?.value || 'pdf').toLowerCase();
   if (format === 'svg' || format === 'png') return format;
   return 'pdf';
+}
+
+function getGraphNodeLabelMode() {
+  const raw = String(_graphNodeLabelSelect?.value || 'id').toLowerCase();
+  if (raw === 'name' || raw === 'label' || raw === 'n-id' || raw === 'none') return raw;
+  return 'id';
+}
+
+function getGraphNodeLabelSize() {
+  const raw = Number(_graphNodeLabelSizeInput?.value);
+  if (!Number.isFinite(raw)) return 12;
+  return Math.max(8, Math.min(36, raw));
+}
+
+function updateGraphNodeLabelSizeLabel() {
+  if (!_graphNodeLabelSizeValue) return;
+  _graphNodeLabelSizeValue.textContent = `${getGraphNodeLabelSize().toFixed(1)} px`;
+}
+
+function getGraphNodeLabelText(node) {
+  if (!node) return '';
+  const idText = node.id === undefined || node.id === null ? '' : String(node.id);
+  const mode = getGraphNodeLabelMode();
+  if (mode === 'none') return '';
+  if (mode === 'n-id') return idText ? `n${idText}` : '';
+  if (mode === 'name') return (node.name ?? node.label ?? idText) || '';
+  if (mode === 'label') return (node.label ?? node.name ?? idText) || '';
+  return idText;
+}
+
+function getGraphNodeTitleText(node) {
+  const label = getGraphNodeLabelText(node);
+  if (label) return label;
+  const idText = node && node.id !== undefined && node.id !== null ? String(node.id) : '';
+  return idText ? `n${idText}` : '';
 }
 
 function getSvgElementForContainer(containerSelector) {
@@ -569,6 +607,20 @@ function updateGapChip(gap) {
     updateBiofabricMarkerStrokeWidthLabel();
     _biofabricMarkerStrokeWidthInput.addEventListener('input', () => {
       updateBiofabricMarkerStrokeWidthLabel();
+      if (_lastGraphData && _lastSolData) drawAll(_lastGraphData, _lastSolData);
+    });
+  }
+
+  if (_graphNodeLabelSelect) {
+    _graphNodeLabelSelect.addEventListener('change', () => {
+      if (_lastGraphData && _lastSolData) drawAll(_lastGraphData, _lastSolData);
+    });
+  }
+
+  if (_graphNodeLabelSizeInput) {
+    updateGraphNodeLabelSizeLabel();
+    _graphNodeLabelSizeInput.addEventListener('input', () => {
+      updateGraphNodeLabelSizeLabel();
       if (_lastGraphData && _lastSolData) drawAll(_lastGraphData, _lastSolData);
     });
   }
@@ -2576,6 +2628,16 @@ function renderGraph(graphData, coloredLinks, containerId) {
     .force('charge', d3.forceManyBody().strength(-180))
     .force('center', d3.forceCenter(width / 2, height / 2));
 
+  // Build neighbor index (ids) for label placement logic
+  const nodeNeighborsIds = new Map(nodesCopy.map(n => [n.id, []]));
+  simLinks.forEach(l => {
+    const sId = (typeof l.source === 'object') ? l.source.id : l.source;
+    const tId = (typeof l.target === 'object') ? l.target.id : l.target;
+    if (sId !== undefined && nodeNeighborsIds.has(sId) && tId !== undefined) nodeNeighborsIds.get(sId).push(tId);
+    if (tId !== undefined && nodeNeighborsIds.has(tId) && sId !== undefined) nodeNeighborsIds.get(tId).push(sId);
+  });
+  const nodeById = new Map(nodesCopy.map(n => [n.id, n]));
+
   const stripeLines = graphRoot.append('g').selectAll('line').data(stripeData).enter().append('line')
     .attr('stroke-width', d => d.total > 1 ? stripeW : edgeStrokeWidth)
     .attr('stroke', d => d.cid > 0 ? d3.schemeCategory10[d.cid % 10] : '#999')
@@ -2603,11 +2665,14 @@ function renderGraph(graphData, coloredLinks, containerId) {
       .on('drag', (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
       .on('end', (ev, d) => { if (!ev.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; }));
 
+  const nodeLabelSize = getGraphNodeLabelSize();
+  const nodeLabelDy = -Math.max(10, nodeLabelSize + 2);
   const nodeLabels = graphRoot.append('g').selectAll('text').data(nodesCopy).enter().append('text')
-    .attr('font-size', 12).attr('fill', '#222').attr('text-anchor', 'middle').attr('dy', -14)
-    .text(d => d.id);
+    .attr('font-size', nodeLabelSize).attr('fill', '#222').attr('text-anchor', 'middle').attr('dy', nodeLabelDy)
+    .text(d => getGraphNodeLabelText(d))
+    .style('opacity', d => getGraphNodeLabelText(d) ? 1 : 0);
 
-  nodeCircles.append('title').text(d => 'n' + d.id);
+  nodeCircles.append('title').text(d => getGraphNodeTitleText(d));
 
   function fitGraphToViewport(animated = true) {
     let bounds = null;
@@ -2661,7 +2726,69 @@ function renderGraph(graphData, coloredLinks, containerId) {
       .attr('y2', d => { const l = linkMap[d.link.id]; const s = l.source, t = l.target; const ln = Math.sqrt((t.x - s.x) ** 2 + (t.y - s.y) ** 2) || 1; const ny = (t.x - s.x) / ln; return t.y + ny * (d.i - (d.total - 1) / 2) * stripeW; });
 
     nodeCircles.attr('cx', d => d.x).attr('cy', d => d.y);
-    nodeLabels.attr('x', d => d.x).attr('y', d => d.y);
+
+    // Position node labels away from incident edges: compute average neighbor direction
+    nodeLabels
+      .attr('x', (d) => {
+        const neighbors = nodeNeighborsIds.get(d.id) || [];
+        let dx = 0, dy = 0;
+        for (const nid of neighbors) {
+          const n = nodeById.get(nid);
+          if (!n || !Number.isFinite(n.x) || !Number.isFinite(n.y)) continue;
+          dx += (n.x - d.x);
+          dy += (n.y - d.y);
+        }
+        if (neighbors.length > 0) { dx /= neighbors.length; dy /= neighbors.length; }
+        else { dx = 0; dy = -1; }
+        let len = Math.sqrt(dx * dx + dy * dy) || 1;
+        if (len < 1e-6) { dx = 0; dy = -1; len = 1; }
+        const ndx = dx / len, ndy = dy / len;
+        const ox = -ndx, oy = -ndy;
+        const labelSize = getGraphNodeLabelSize();
+        const offset = 9 + 6 + labelSize * 0.3; // node radius + padding + small proportional to label
+        return d.x + ox * offset;
+      })
+      .attr('y', (d) => {
+        const neighbors = nodeNeighborsIds.get(d.id) || [];
+        let dx = 0, dy = 0;
+        for (const nid of neighbors) {
+          const n = nodeById.get(nid);
+          if (!n || !Number.isFinite(n.x) || !Number.isFinite(n.y)) continue;
+          dx += (n.x - d.x);
+          dy += (n.y - d.y);
+        }
+        if (neighbors.length > 0) { dx /= neighbors.length; dy /= neighbors.length; }
+        else { dx = 0; dy = -1; }
+        let len = Math.sqrt(dx * dx + dy * dy) || 1;
+        if (len < 1e-6) { dx = 0; dy = -1; len = 1; }
+        const ndx = dx / len, ndy = dy / len;
+        const ox = -ndx, oy = -ndy;
+        const labelSize = getGraphNodeLabelSize();
+        const offset = 9 + 6 + labelSize * 0.3;
+        return d.y + oy * offset;
+      })
+      .attr('text-anchor', (d) => {
+        // prefer left/right anchor depending on label offset direction
+        const neighbors = nodeNeighborsIds.get(d.id) || [];
+        let dx = 0, dy = 0;
+        for (const nid of neighbors) {
+          const n = nodeById.get(nid);
+          if (!n || !Number.isFinite(n.x) || !Number.isFinite(n.y)) continue;
+          dx += (n.x - d.x);
+          dy += (n.y - d.y);
+        }
+        if (neighbors.length > 0) { dx /= neighbors.length; dy /= neighbors.length; }
+        else { dx = 0; dy = -1; }
+        let len = Math.sqrt(dx * dx + dy * dy) || 1;
+        if (len < 1e-6) return 'middle';
+        const ndx = dx / len;
+        const ox = -ndx;
+        if (ox > 0.35) return 'start';
+        if (ox < -0.35) return 'end';
+        return 'middle';
+      })
+      .attr('dy', 0)
+      .attr('dominant-baseline', 'middle');
 
     edgeLabels
       .attr('x', d => { const l = linkMap[d.id]; if (!l) return 0; return (l.source.x + l.target.x) / 2; })

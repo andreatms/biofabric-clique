@@ -1,0 +1,85 @@
+[2026-05-11T09:50:13.619Z] Pipeline "clique_v2" → 2026_05_11_11_50_13_clique_v2_max.sol
+Set parameter Username
+Set parameter LicenseID to value 2738840
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\andre\gurobi.lic
+Academic license - for non-commercial use only - expires 2026-11-14
+
+Gurobi Optimizer version 13.0.0 build v13.0.0rc1 (win64 - Windows 10.0 (19045.2))
+Copyright (c) 2025, Gurobi Optimization, LLC
+
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Further warnings of this type will be omitted.
+Read LP format model from file C:\Users\andre\Desktop\bgw-v4\data\uploads\2026_05_11_11_50_13_clique_v2_max.lp
+Reading time = 0.02 seconds
+: 318 rows, 78 columns, 877 nonzeros
+
+Using Gurobi shared library C:\gurobi1300\win64\bin\gurobi130.dll
+
+CPU model: Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 4 physical cores, 4 logical processors, using up to 4 threads
+
+Optimize a model with 318 rows, 78 columns and 877 nonzeros (Max)
+Model fingerprint: 0x2496f47d
+Model has 5 linear objective coefficients
+Variable types: 14 continuous, 64 integer (64 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+01]
+Found heuristic solution: objective 5.0000000
+Presolve removed 115 rows and 20 columns
+Presolve time: 0.03s
+Presolved: 203 rows, 58 columns, 663 nonzeros
+Variable types: 0 continuous, 58 integer (49 binary)
+Found heuristic solution: objective 13.0000000
+
+Root relaxation: objective 2.000000e+01, 63 iterations, 0.01 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   20.00000    0   37   13.00000   20.00000  53.8%     -    0s
+     0     0   20.00000    0   37   13.00000   20.00000  53.8%     -    0s
+     0     0   20.00000    0   43   13.00000   20.00000  53.8%     -    0s
+     0     0   20.00000    0   38   13.00000   20.00000  53.8%     -    0s
+H    0     0                      14.0000000   20.00000  42.9%     -    0s
+     0     0   20.00000    0   39   14.00000   20.00000  42.9%     -    0s
+     0     0   20.00000    0   29   14.00000   20.00000  42.9%     -    0s
+     0     0   20.00000    0   42   14.00000   20.00000  42.9%     -    0s
+     0     0   20.00000    0   40   14.00000   20.00000  42.9%     -    0s
+     0     0   20.00000    0   43   14.00000   20.00000  42.9%     -    0s
+     0     0   20.00000    0   42   14.00000   20.00000  42.9%     -    0s
+     0     0   20.00000    0   32   14.00000   20.00000  42.9%     -    0s
+     0     0   20.00000    0   37   14.00000   20.00000  42.9%     -    0s
+     0     0   20.00000    0   37   14.00000   20.00000  42.9%     -    0s
+     0     0   20.00000    0   37   14.00000   20.00000  42.9%     -    0s
+     0     0   20.00000    0   37   14.00000   20.00000  42.9%     -    0s
+     0     2   20.00000    0   37   14.00000   20.00000  42.9%     -    0s
+
+Cutting planes:
+  Gomory: 1
+  Cover: 15
+  Inf proof: 15
+  Zero half: 3
+
+Explored 1752 nodes (23882 simplex iterations) in 0.43 seconds (0.22 work units)
+Thread count was 4 (of 4 available processors)
+
+Solution count 3: 14 13 5 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.400000000000e+01, best bound 1.400000000000e+01, gap 0.0000%
+
+Wrote result file 'C:\Users\andre\Desktop\bgw-v4\data\results\2026_05_11_11_50_13_clique_v2_max.sol'
+

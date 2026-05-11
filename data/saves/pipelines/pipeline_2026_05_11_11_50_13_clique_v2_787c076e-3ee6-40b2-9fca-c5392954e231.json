@@ -1,0 +1,19 @@
+{
+  "id": "787c076e-3ee6-40b2-9fca-c5392954e231",
+  "name": "clique_v2",
+  "mode": "dataset",
+  "optType": "max",
+  "status": "completed",
+  "queueId": null,
+  "startTime": "2026-05-11T09:50:13.606Z",
+  "endTime": "2026-05-11T09:50:14.316Z",
+  "gap": 0,
+  "error": null,
+  "saveFileName": "pipeline_2026_05_11_11_50_13_clique_v2_787c076e-3ee6-40b2-9fca-c5392954e231.json",
+  "files": {
+    "graphJson": "data/jsonFiles/2026_05_11_11_49_54_test_clique_v2.json",
+    "lp": "data/uploads/2026_05_11_11_50_13_clique_v2_max.lp",
+    "sol": "data/results/2026_05_11_11_50_13_clique_v2_max.sol",
+    "log": "logs/2026_05_11_11_50_13_clique_v2_max.log"
+  }
+}

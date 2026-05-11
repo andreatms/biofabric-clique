@@ -1,0 +1,19 @@
+{
+  "id": "4bafaf2d-bf1b-4ed8-8e97-9a9b7308debf",
+  "name": "cn_2",
+  "mode": "dataset",
+  "optType": "max",
+  "status": "completed",
+  "queueId": null,
+  "startTime": "2026-05-11T13:43:33.845Z",
+  "endTime": "2026-05-11T13:48:07.906Z",
+  "gap": 0,
+  "error": null,
+  "saveFileName": "pipeline_2026_05_11_15_43_33_cn_2_4bafaf2d-bf1b-4ed8-8e97-9a9b7308debf.json",
+  "files": {
+    "graphJson": "data/jsonFiles/2026_05_11_15_24_12_community_new.json",
+    "lp": "data/uploads/2026_05_11_15_43_33_cn_2_max.lp",
+    "sol": "data/results/2026_05_11_15_43_33_cn_2_max.sol",
+    "log": "logs/2026_05_11_15_43_33_cn_2_max.log"
+  }
+}

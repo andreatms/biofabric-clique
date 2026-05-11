@@ -1,0 +1,80 @@
+{
+  "pipelines": [
+    {
+      "id": "787c076e-3ee6-40b2-9fca-c5392954e231",
+      "name": "clique_v2",
+      "optType": "max",
+      "mode": "dataset",
+      "ownsGraph": false,
+      "status": "completed",
+      "gap": 0,
+      "graphInfo": {
+        "nodes": 9,
+        "edges": 14
+      },
+      "graphId": "2026_05_11_11_49_54_test_clique_v2.json",
+      "lpFileId": "2026_05_11_11_50_13_clique_v2_max.lp",
+      "jobId": "ee607cf9-c8d7-4a7d-acc6-b3df07b066a5",
+      "solFileName": "2026_05_11_11_50_13_clique_v2_max.sol",
+      "startTime": "2026-05-11T09:50:13.606Z",
+      "endTime": "2026-05-11T09:50:14.316Z",
+      "error": null,
+      "queueId": null,
+      "graphSetRef": null,
+      "saveFileName": "pipeline_2026_05_11_11_50_13_clique_v2_787c076e-3ee6-40b2-9fca-c5392954e231.json",
+      "saveFilePath": "C:\\Users\\andre\\Desktop\\bgw-v4\\data\\saves\\pipelines\\pipeline_2026_05_11_11_50_13_clique_v2_787c076e-3ee6-40b2-9fca-c5392954e231.json",
+      "logFileName": "2026_05_11_11_50_13_clique_v2_max.log"
+    },
+    {
+      "id": "849e0200-3ff9-4fb8-850b-5ea2871049fe",
+      "name": "community_v9",
+      "optType": "max",
+      "mode": "dataset",
+      "ownsGraph": false,
+      "status": "completed",
+      "gap": 0,
+      "graphInfo": {
+        "nodes": 9,
+        "edges": 15
+      },
+      "graphId": "2026_05_11_12_10_11_test_com_v9.json",
+      "lpFileId": "2026_05_11_12_10_23_community_v9_max.lp",
+      "jobId": "42b11d7b-1b67-4706-a91a-7a1d2a339110",
+      "solFileName": "2026_05_11_12_10_23_community_v9_max.sol",
+      "startTime": "2026-05-11T10:10:23.306Z",
+      "endTime": "2026-05-11T10:10:24.102Z",
+      "error": null,
+      "queueId": null,
+      "graphSetRef": null,
+      "saveFileName": "pipeline_2026_05_11_12_10_23_community_v9_849e0200-3ff9-4fb8-850b-5ea2871049fe.json",
+      "saveFilePath": "C:\\Users\\andre\\Desktop\\bgw-v4\\data\\saves\\pipelines\\pipeline_2026_05_11_12_10_23_community_v9_849e0200-3ff9-4fb8-850b-5ea2871049fe.json",
+      "logFileName": "2026_05_11_12_10_23_community_v9_max.log"
+    },
+    {
+      "id": "4bafaf2d-bf1b-4ed8-8e97-9a9b7308debf",
+      "name": "cn_2",
+      "optType": "max",
+      "mode": "dataset",
+      "ownsGraph": false,
+      "status": "completed",
+      "gap": 0,
+      "graphInfo": {
+        "nodes": 19,
+        "edges": 40
+      },
+      "graphId": "2026_05_11_15_24_12_community_new.json",
+      "lpFileId": "2026_05_11_15_43_33_cn_2_max.lp",
+      "jobId": "377c8d3b-f8d8-4ae1-9f59-52d671029eb7",
+      "solFileName": "2026_05_11_15_43_33_cn_2_max.sol",
+      "startTime": "2026-05-11T13:43:33.845Z",
+      "endTime": "2026-05-11T13:48:07.906Z",
+      "error": null,
+      "queueId": null,
+      "graphSetRef": null,
+      "saveFileName": "pipeline_2026_05_11_15_43_33_cn_2_4bafaf2d-bf1b-4ed8-8e97-9a9b7308debf.json",
+      "saveFilePath": "C:\\Users\\andre\\Desktop\\bgw-v4\\data\\saves\\pipelines\\pipeline_2026_05_11_15_43_33_cn_2_4bafaf2d-bf1b-4ed8-8e97-9a9b7308debf.json",
+      "logFileName": "2026_05_11_15_43_33_cn_2_max.log"
+    }
+  ],
+  "updatedAt": "2026-05-11T13:48:07.907Z"
+}

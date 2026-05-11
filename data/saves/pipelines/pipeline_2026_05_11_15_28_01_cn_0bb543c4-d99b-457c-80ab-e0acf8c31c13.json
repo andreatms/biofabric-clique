@@ -1,0 +1,19 @@
+{
+  "id": "0bb543c4-d99b-457c-80ab-e0acf8c31c13",
+  "name": "cn",
+  "mode": "dataset",
+  "optType": "max",
+  "status": "completed",
+  "queueId": null,
+  "startTime": "2026-05-11T13:28:01.061Z",
+  "endTime": "2026-05-11T13:32:37.567Z",
+  "gap": 0,
+  "error": null,
+  "saveFileName": "pipeline_2026_05_11_15_28_01_cn_0bb543c4-d99b-457c-80ab-e0acf8c31c13.json",
+  "files": {
+    "graphJson": "data/jsonFiles/2026_05_11_15_24_12_community_new.json",
+    "lp": "data/uploads/2026_05_11_15_28_01_cn_max.lp",
+    "sol": "data/results/2026_05_11_15_28_01_cn_max.sol",
+    "log": "logs/2026_05_11_15_28_01_cn_max.log"
+  }
+}

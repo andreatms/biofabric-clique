@@ -91,6 +91,44 @@ function getGraphExportFormat() {
   return 'pdf';
 }
 
+function getCliqueColor(cliqueId) {
+  const palette = d3?.schemeCategory10 || [];
+  if (!palette.length) return '#111';
+  const raw = Number(cliqueId);
+  const idx = Number.isFinite(raw) ? Math.abs(raw) % palette.length : 0;
+  return palette[idx];
+}
+
+function buildEdgeCliquesById(edges, cliques) {
+  if (!Array.isArray(cliques) || cliques.length === 0) return new Map();
+  const cliqueNodeSets = cliques.map((clique) => ({
+    id: Number(clique.id),
+    nodeSet: new Set(
+      (clique.nodes || [])
+        .map((nodeId) => Number(nodeId))
+        .filter((nodeId) => Number.isFinite(nodeId)),
+    ),
+  }));
+
+  const edgeCliquesById = new Map();
+  for (const edge of edges) {
+    const source = Number(edge.source);
+    const target = Number(edge.target);
+    if (!Number.isFinite(source) || !Number.isFinite(target)) continue;
+
+    const inCliques = [];
+    for (const clique of cliqueNodeSets) {
+      if (clique.nodeSet.has(source) && clique.nodeSet.has(target)) {
+        inCliques.push(clique.id);
+      }
+    }
+
+    if (inCliques.length) edgeCliquesById.set(edge.id, inCliques);
+  }
+
+  return edgeCliquesById;
+}
+
 function getSvgElementForContainer(containerSelector) {
   return document.querySelector(`${containerSelector} svg`);
 }
@@ -550,6 +588,8 @@ function drawAll() {
 function drawBiofabricStaircase(graphData, solParsed, containerId, options = {}) {
   const nodes = graphData.nodes || [];
   const edges = graphData.links || graphData.edges || [];
+  const cliques = Array.isArray(graphData.cliques) ? graphData.cliques : [];
+  const edgeCliquesById = buildEdgeCliquesById(edges, cliques);
 
   const { orderedNodes, methodLabel: nodeOrderMethod } = deriveNodeOrder(nodes, solParsed.vars);
   const { orderedEdges, methodLabel: edgeOrderMethod } = deriveEdgeOrder(edges, solParsed.vars);
@@ -617,6 +657,7 @@ function drawBiofabricStaircase(graphData, solParsed, containerId, options = {})
         name: 'e' + edge.id,
         source,
         target,
+        cliques: edgeCliquesById.get(edge.id) || [],
         x: padding.left + (idx + 0.5) * edgeSpacing,
       };
     })
@@ -667,6 +708,7 @@ function drawBiofabricStaircase(graphData, solParsed, containerId, options = {})
   }
 
   const edgeGroup = svg.append('g').attr('class', 'biofabric-edges');
+  const stripeWidth = Math.max(1, Math.min(6, edgeStrokeWidth));
 
   for (const edge of renderedEdges) {
     const yA = padding.top + edge.source.y;
@@ -674,21 +716,37 @@ function drawBiofabricStaircase(graphData, solParsed, containerId, options = {})
     const yTop = Math.min(yA, yB);
     const yBottom = Math.max(yA, yB);
 
-    edgeGroup.append('line')
-      .attr('x1', edge.x)
-      .attr('x2', edge.x)
-      .attr('y1', yTop)
-      .attr('y2', yBottom)
-      .attr('stroke', '#111')
-      .attr('stroke-width', edgeStrokeWidth)
-      .attr('opacity', 1);
+    const edgeCliques = edge.cliques || [];
+    if (edgeCliques.length <= 1) {
+      const stroke = edgeCliques.length ? getCliqueColor(edgeCliques[0]) : '#111';
+      edgeGroup.append('line')
+        .attr('x1', edge.x)
+        .attr('x2', edge.x)
+        .attr('y1', yTop)
+        .attr('y2', yBottom)
+        .attr('stroke', stroke)
+        .attr('stroke-width', edgeStrokeWidth)
+        .attr('opacity', 1);
+    } else {
+      edgeCliques.forEach((cid, i) => {
+        const offset = (i - (edgeCliques.length - 1) / 2) * stripeWidth;
+        edgeGroup.append('line')
+          .attr('x1', edge.x + offset)
+          .attr('x2', edge.x + offset)
+          .attr('y1', yTop)
+          .attr('y2', yBottom)
+          .attr('stroke', getCliqueColor(cid))
+          .attr('stroke-width', stripeWidth)
+          .attr('opacity', 1);
+      });
+    }
   }
 
   const coloredLinks = renderedEdges.map((edge) => ({
     id: edge.id,
     source: edge.source.id,
     target: edge.target.id,
-    cliques: [],
+    cliques: edge.cliques || [],
     staircaseUsage: staircaseEdgeUsage.get(edge.id) || 0,
   }));
 
@@ -731,19 +789,26 @@ function renderGraph(graphData, coloredLinks, containerId) {
 
   const nodesCopy = graphData.nodes.map((node) => ({ ...node }));
   const simLinks = coloredLinks.map((link) => ({ ...link }));
+  const edgeStrokeWidth = 1.8;
+  const stripeWidth = Math.max(0.8, edgeStrokeWidth);
+  const stripeData = [];
+  coloredLinks.forEach((link) => {
+    const cliques = Array.isArray(link.cliques) && link.cliques.length ? link.cliques : [0];
+    cliques.forEach((cid, i) => stripeData.push({ link, cid, i, total: cliques.length }));
+  });
 
   const simulation = d3.forceSimulation(nodesCopy)
     .force('link', d3.forceLink(simLinks).id((d) => d.id).distance(110))
     .force('charge', d3.forceManyBody().strength(-180))
     .force('center', d3.forceCenter(width / 2, height / 2));
 
-  const linkLines = graphRoot.append('g')
+  const stripeLines = graphRoot.append('g')
     .selectAll('line')
-    .data(simLinks)
+    .data(stripeData)
     .enter()
     .append('line')
-    .attr('stroke-width', 1.8)
-    .attr('stroke', '#111')
+    .attr('stroke-width', (d) => (d.total > 1 ? stripeWidth : edgeStrokeWidth))
+    .attr('stroke', (d) => (d.cid > 0 ? getCliqueColor(d.cid) : '#111'))
     .attr('opacity', 0.9)
     .style('cursor', 'pointer');
 
@@ -759,12 +824,12 @@ function renderGraph(graphData, coloredLinks, containerId) {
     .style('pointer-events', 'none')
     .text((d) => 'e' + d.id);
 
-  linkLines
+  stripeLines
     .on('mouseenter', (event, d) => {
-      edgeLabels.filter((edge) => edge.id === d.id).style('opacity', 1);
+      edgeLabels.filter((edge) => edge.id === d.link.id).style('opacity', 1);
     })
     .on('mouseleave', (event, d) => {
-      edgeLabels.filter((edge) => edge.id === d.id).style('opacity', 0);
+      edgeLabels.filter((edge) => edge.id === d.link.id).style('opacity', 0);
     });
 
   const nodeCircles = graphRoot.append('g')
@@ -832,15 +897,118 @@ function renderGraph(graphData, coloredLinks, containerId) {
     }
   }
 
+  const linkById = new Map(simLinks.map((link) => [link.id, link]));
+
+  // Build neighbor index (ids) for label placement logic
+  const nodeNeighborsIds = new Map(nodesCopy.map(n => [n.id, []]));
+  simLinks.forEach(l => {
+    const sId = (typeof l.source === 'object') ? l.source.id : l.source;
+    const tId = (typeof l.target === 'object') ? l.target.id : l.target;
+    if (sId !== undefined && nodeNeighborsIds.has(sId) && tId !== undefined) nodeNeighborsIds.get(sId).push(tId);
+    if (tId !== undefined && nodeNeighborsIds.has(tId) && sId !== undefined) nodeNeighborsIds.get(tId).push(sId);
+  });
+  const nodeById = new Map(nodesCopy.map(n => [n.id, n]));
+
   simulation.on('tick', () => {
-    linkLines
-      .attr('x1', (d) => d.source.x)
-      .attr('y1', (d) => d.source.y)
-      .attr('x2', (d) => d.target.x)
-      .attr('y2', (d) => d.target.y);
+    stripeLines
+      .attr('x1', (d) => {
+        const link = linkById.get(d.link.id);
+        const s = link.source;
+        const t = link.target;
+        const ln = Math.sqrt((t.x - s.x) ** 2 + (t.y - s.y) ** 2) || 1;
+        const nx = -(t.y - s.y) / ln;
+        return s.x + nx * (d.i - (d.total - 1) / 2) * stripeWidth;
+      })
+      .attr('y1', (d) => {
+        const link = linkById.get(d.link.id);
+        const s = link.source;
+        const t = link.target;
+        const ln = Math.sqrt((t.x - s.x) ** 2 + (t.y - s.y) ** 2) || 1;
+        const ny = (t.x - s.x) / ln;
+        return s.y + ny * (d.i - (d.total - 1) / 2) * stripeWidth;
+      })
+      .attr('x2', (d) => {
+        const link = linkById.get(d.link.id);
+        const s = link.source;
+        const t = link.target;
+        const ln = Math.sqrt((t.x - s.x) ** 2 + (t.y - s.y) ** 2) || 1;
+        const nx = -(t.y - s.y) / ln;
+        return t.x + nx * (d.i - (d.total - 1) / 2) * stripeWidth;
+      })
+      .attr('y2', (d) => {
+        const link = linkById.get(d.link.id);
+        const s = link.source;
+        const t = link.target;
+        const ln = Math.sqrt((t.x - s.x) ** 2 + (t.y - s.y) ** 2) || 1;
+        const ny = (t.x - s.x) / ln;
+        return t.y + ny * (d.i - (d.total - 1) / 2) * stripeWidth;
+      });
 
     nodeCircles.attr('cx', (d) => d.x).attr('cy', (d) => d.y);
-    nodeLabels.attr('x', (d) => d.x).attr('y', (d) => d.y);
+
+    // Position node labels away from incident edges
+    nodeLabels
+      .attr('x', (d) => {
+        const neighbors = nodeNeighborsIds.get(d.id) || [];
+        let dx = 0, dy = 0;
+        for (const nid of neighbors) {
+          const n = nodeById.get(nid);
+          if (!n || !Number.isFinite(n.x) || !Number.isFinite(n.y)) continue;
+          dx += (n.x - d.x);
+          dy += (n.y - d.y);
+        }
+        if (neighbors.length > 0) { dx /= neighbors.length; dy /= neighbors.length; }
+        else { dx = 0; dy = -1; }
+        let len = Math.sqrt(dx * dx + dy * dy) || 1;
+        if (len < 1e-6) { dx = 0; dy = -1; len = 1; }
+        const ndx = dx / len;
+        const ox = -ndx;
+        const ndy = dy / len;
+        const oy = -ndy;
+        const labelSize = 12;
+        const offset = 9 + 6 + labelSize * 0.3;
+        return d.x + ox * offset;
+      })
+      .attr('y', (d) => {
+        const neighbors = nodeNeighborsIds.get(d.id) || [];
+        let dx = 0, dy = 0;
+        for (const nid of neighbors) {
+          const n = nodeById.get(nid);
+          if (!n || !Number.isFinite(n.x) || !Number.isFinite(n.y)) continue;
+          dx += (n.x - d.x);
+          dy += (n.y - d.y);
+        }
+        if (neighbors.length > 0) { dx /= neighbors.length; dy /= neighbors.length; }
+        else { dx = 0; dy = -1; }
+        let len = Math.sqrt(dx * dx + dy * dy) || 1;
+        if (len < 1e-6) { dx = 0; dy = -1; len = 1; }
+        const ndx = dx / len, ndy = dy / len;
+        const ox = -ndx, oy = -ndy;
+        const labelSize = 12;
+        const offset = 9 + 6 + labelSize * 0.3;
+        return d.y + oy * offset;
+      })
+      .attr('text-anchor', (d) => {
+        const neighbors = nodeNeighborsIds.get(d.id) || [];
+        let dx = 0, dy = 0;
+        for (const nid of neighbors) {
+          const n = nodeById.get(nid);
+          if (!n || !Number.isFinite(n.x) || !Number.isFinite(n.y)) continue;
+          dx += (n.x - d.x);
+          dy += (n.y - d.y);
+        }
+        if (neighbors.length > 0) { dx /= neighbors.length; dy /= neighbors.length; }
+        else { dx = 0; dy = -1; }
+        let len = Math.sqrt(dx * dx + dy * dy) || 1;
+        if (len < 1e-6) return 'middle';
+        const ndx = dx / len;
+        const ox = -ndx;
+        if (ox > 0.35) return 'start';
+        if (ox < -0.35) return 'end';
+        return 'middle';
+      })
+      .attr('dy', 0)
+      .attr('dominant-baseline', 'middle');
 
     edgeLabels
       .attr('x', (d) => (d.source.x + d.target.x) / 2)

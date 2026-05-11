@@ -210,7 +210,8 @@ body {
 #biofabric-edge-stroke-width,
 #biofabric-node-label-size,
 #biofabric-clique-border-width,
-#biofabric-marker-stroke-width {
+#biofabric-marker-stroke-width,
+#graph-node-label-size {
   width: 84px;
   border: 1px solid #ccdbf2;
   border-radius: 8px;
@@ -224,13 +225,21 @@ body {
 #biofabric-edge-stroke-width:focus,
 #biofabric-node-label-size:focus,
 #biofabric-clique-border-width:focus,
-#biofabric-marker-stroke-width:focus {
+#biofabric-marker-stroke-width:focus,
+#graph-node-label-size:focus {
   outline: 2px solid rgba(58, 123, 213, 0.24);
   outline-offset: 1px;
 }
 
 #biofabric-node-axis-spacing-value {
   min-width: 88px;
+  text-align: right;
+  color: #40546a;
+  font-family: 'Consolas', monospace;
+}
+
+#graph-node-label-size-value {
+  min-width: 72px;
   text-align: right;
   color: #40546a;
   font-family: 'Consolas', monospace;
@@ -252,7 +261,9 @@ body {
 }
 
 #biofabric-mode-select,
-#biofabric-export-format {
+#biofabric-export-format,
+#graph-node-label-select,
+#graph-export-format {
   border: 1px solid #ccdbf2;
   border-radius: 8px;
   padding: 5px 8px;
@@ -262,7 +273,9 @@ body {
 }
 
 #biofabric-mode-select:focus,
-#biofabric-export-format:focus {
+#biofabric-export-format:focus,
+#graph-node-label-select:focus,
+#graph-export-format:focus {
   outline: 2px solid rgba(58, 123, 213, 0.24);
   outline-offset: 1px;
 }

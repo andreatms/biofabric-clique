@@ -1,0 +1,19 @@
+{
+  "id": "849e0200-3ff9-4fb8-850b-5ea2871049fe",
+  "name": "community_v9",
+  "mode": "dataset",
+  "optType": "max",
+  "status": "completed",
+  "queueId": null,
+  "startTime": "2026-05-11T10:10:23.306Z",
+  "endTime": "2026-05-11T10:10:24.102Z",
+  "gap": 0,
+  "error": null,
+  "saveFileName": "pipeline_2026_05_11_12_10_23_community_v9_849e0200-3ff9-4fb8-850b-5ea2871049fe.json",
+  "files": {
+    "graphJson": "data/jsonFiles/2026_05_11_12_10_11_test_com_v9.json",
+    "lp": "data/uploads/2026_05_11_12_10_23_community_v9_max.lp",
+    "sol": "data/results/2026_05_11_12_10_23_community_v9_max.sol",
+    "log": "logs/2026_05_11_12_10_23_community_v9_max.log"
+  }
+}
