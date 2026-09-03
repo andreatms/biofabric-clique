@@ -425,6 +425,15 @@ app.get('/jsonFiles/:fileId', (req, res) => {
     });
 });
 
+app.get('/jsonFiles/:fileId/download', (req, res) => {
+    const fileEntry = uploadedJsonFiles[req.params.fileId];
+    if (!fileEntry || !fileExists(fileEntry.path)) {
+        return res.status(404).json({ error: 'JSON file not found.' });
+    }
+
+    return res.download(fileEntry.path, path.basename(fileEntry.originalname || req.params.fileId));
+});
+
 app.get('/results/:fileId', (req, res) => {
     const fileId = req.params.fileId;
     const safeName = path.basename(fileId);
@@ -2309,6 +2318,20 @@ app.get('/graph-sets/:setName/graphs/:graphId', (req, res) => {
             res.status(400).json({ error: `JSON non valido: ${e.message}` });
         }
     });
+});
+
+app.get('/graph-sets/:setName/graphs/:graphId/download', (req, res) => {
+    const setName = String(req.params.setName || '').replace(/[^a-zA-Z0-9._-]/g, '_');
+    const graphId = String(req.params.graphId || '').replace(/[^a-zA-Z0-9._-]/g, '_');
+    const meta = readGraphSetMetadata(setName);
+    if (!meta) return res.status(404).json({ error: `Set non trovato: ${setName}` });
+
+    const entry = (meta.graphs || []).find((g) => `${g.id}` === graphId);
+    if (!entry) return res.status(404).json({ error: `Grafo set non trovato: ${graphId}` });
+
+    const graphPath = path.join(SETS_GRAPH_DIR, setName, entry.filePath || `${graphId}.json`);
+    if (!fileExists(graphPath)) return res.status(404).json({ error: `File grafo non trovato: ${entry.filePath}` });
+    return res.download(graphPath, path.basename(entry.filePath || `${graphId}.json`));
 });
 
 app.post('/graph-sets/:setName/run-queue', express.json(), (req, res) => {

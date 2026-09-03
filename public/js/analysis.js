@@ -1124,6 +1124,13 @@ function renderTable(results) {
           ? `<a href="/result.html?graph=${encodeURIComponent(r.graphJsonId)}&sol=${encodeURIComponent(r.solFileName)}" target="_blank">Apri</a>`
           : '-'))
       : '-';
+
+      const jsonLink = isSetGraph
+        ? `<a href="/graph-sets/${encodeURIComponent(r.graphSetName)}/graphs/${encodeURIComponent(r.graphSetGraphId)}/download" download>Scarica</a>`
+        : (r.graphJsonId
+          ? `<a href="/jsonFiles/${encodeURIComponent(r.graphJsonId)}/download" download>Scarica</a>`
+          : '-');
+
     return `<tr>
       <td>${esc(r.pipelineSaveFile)}</td>
       <td>${esc(m.instance || '-')}</td>
@@ -1137,6 +1144,7 @@ function renderTable(results) {
       <td>${esc(m.executionTime || '-')}</td>
       <td>${graphLink}</td>
       <td>${biofabricLink}</td>
+      <td>${jsonLink || 'NULL'}</td>
     </tr>`;
   }).join('');
 }
