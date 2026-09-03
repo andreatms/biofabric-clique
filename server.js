@@ -1915,7 +1915,7 @@ app.post('/pipeline-queues/start', express.json(), (req, res) => {
     for (const j of queueJobs) {
         const mode = String(j.mode || 'dataset').toLowerCase();
         const optType = String(j.optType || 'max').toLowerCase();
-        if (!['max', 'min'].includes(optType)) {
+        if (!['max', 'min', 'max_v2'].includes(optType)) {
             return res.status(400).json({ error: `optType non valido per job "${j.name || ''}"` });
         }
         if (mode === 'dataset-set') {

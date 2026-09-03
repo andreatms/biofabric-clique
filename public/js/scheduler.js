@@ -297,6 +297,7 @@ function renderDraftJobs() {
           <select onchange="onDraftChange(${i}, 'optType', this.value)">
             <option value="max" ${j.optType === 'max' ? 'selected' : ''}>max</option>
             <option value="min" ${j.optType === 'min' ? 'selected' : ''}>min</option>
+            <option value="max_v2" ${j.optType === 'max_v2' ? 'selected' : ''}>max-2</option>
           </select>
         </td>
         <td><input type="number" min="1" value="${esc(j.timeLimit)}" onchange="onDraftChange(${i}, 'timeLimit', this.value)"></td>
@@ -317,7 +318,7 @@ function validateQueue() {
     const p = `Job ${i + 1}: `;
     if (!j.name || !j.name.trim()) errors.push(p + 'nome obbligatorio.');
     if (!j.jsonFileId) errors.push(p + 'dataset JSON obbligatorio.');
-    if (!['max', 'min'].includes(String(j.optType))) errors.push(p + 'optType non valido.');
+    if (!['max', 'min', 'max_v2'].includes(String(j.optType))) errors.push(p + 'optType non valido.');
   });
 
   return errors;

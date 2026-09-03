@@ -1,4 +1,59 @@
 {
-  "queues": [],
-  "updatedAt": "2026-05-11T13:48:07.908Z"
+  "queues": [
+    {
+      "id": "c2ea2232-e2a1-42d7-8530-c0b7f92b5987",
+      "name": "queue_2026-09-03T10:46:46.182Z",
+      "status": "completed",
+      "currentIndex": 0,
+      "currentItemId": null,
+      "items": [
+        {
+          "id": "b76060ce-7896-4e27-bef5-e5bccdaca4c5",
+          "mode": "dataset",
+          "name": "job_2026_09_03_12_46_20_2026_09_03_12_38_34_big_5_8_s005_g004_max_v2",
+          "jsonFileId": "2026_09_03_12_38_34_big_5_8_s005_g004.json",
+          "optType": "max_v2",
+          "solverParams": {},
+          "status": "completed",
+          "pipelineId": "194ff915-0e84-4483-ba89-4238fb57b7cc",
+          "startTime": "2026-09-03T10:46:46.200Z",
+          "endTime": "2026-09-03T11:13:02.112Z",
+          "error": null,
+          "pipelineSaveFileName": "pipeline_2026_09_03_12_46_46_job_2026_09_03_12_46_20_2026_09_03_12_38_34_big_5_8_s005_g004_max_v2_194ff915-0e84-4483-ba89-4238fb57b7cc.json"
+        }
+      ],
+      "startTime": "2026-09-03T10:46:46.182Z",
+      "endTime": "2026-09-03T11:13:02.118Z",
+      "saveFileName": "queue_2026_09_03_12_46_46_queue_2026-09-03T10_46_46.182Z_c2ea2232-e2a1-42d7-8530-c0b7f92b5987.json",
+      "saveFilePath": "C:\\Users\\andre\\Desktop\\bgw-v4\\data\\saves\\queues\\queue_2026_09_03_12_46_46_queue_2026-09-03T10_46_46.182Z_c2ea2232-e2a1-42d7-8530-c0b7f92b5987.json"
+    },
+    {
+      "id": "7eaad536-c58e-4316-967f-1b86dc53196b",
+      "name": "queue_2026-09-03T11:21:50.999Z",
+      "status": "completed",
+      "currentIndex": 0,
+      "currentItemId": null,
+      "items": [
+        {
+          "id": "63443c36-2881-48bc-a33d-215a7cd9c103",
+          "mode": "dataset",
+          "name": "job_2026_09_03_12_46_20_2026_09_03_12_38_34_big_5_8_s005_g004_max",
+          "jsonFileId": "2026_09_03_12_38_34_big_5_8_s005_g004.json",
+          "optType": "max",
+          "solverParams": {},
+          "status": "completed",
+          "pipelineId": "e1e09486-90fc-45f2-abd4-27fa2208bae4",
+          "startTime": "2026-09-03T11:21:51.002Z",
+          "endTime": "2026-09-03T11:49:58.323Z",
+          "error": null,
+          "pipelineSaveFileName": "pipeline_2026_09_03_13_21_51_job_2026_09_03_12_46_20_2026_09_03_12_38_34_big_5_8_s005_g004_max_e1e09486-90fc-45f2-abd4-27fa2208bae4.json"
+        }
+      ],
+      "startTime": "2026-09-03T11:21:50.999Z",
+      "endTime": "2026-09-03T11:49:58.328Z",
+      "saveFileName": "queue_2026_09_03_13_21_50_queue_2026-09-03T11_21_50.999Z_7eaad536-c58e-4316-967f-1b86dc53196b.json",
+      "saveFilePath": "C:\\Users\\andre\\Desktop\\bgw-v4\\data\\saves\\queues\\queue_2026_09_03_13_21_50_queue_2026-09-03T11_21_50.999Z_7eaad536-c58e-4316-967f-1b86dc53196b.json"
+    }
+  ],
+  "updatedAt": "2026-09-03T11:49:58.329Z"
 }

@@ -10,6 +10,8 @@ function createCliqueModelFromGraph(graph, opt, prevSolution = null) {
     return createOrderingEdgeProblemMAX(graph, prevSolution);
   } else if (opt === "edge-min" && prevSolution !== null) {
     return createOrderingEdgeProblemMIN(graph, prevSolution);
+  } else if (opt === "max_v2"){
+    return createCliqueModelFromGraphMAX2(graph);
   }
 }
 
@@ -174,6 +176,214 @@ function createCliqueModelFromGraphMAX(graph) {
     }
 
     model.objective_function += c + " + ";
+
+    let z_list = [];
+
+    for (let i = 0; i < node_list.length - 1; i++) {
+      for (let j = i + 1; j < node_list.length; j++) {
+        let n1 = node_list[i];
+        let n2 = node_list[j];
+
+        let z_n1n2 = "z_n" + n1 + "n" + n2;
+        let z_n2n1 = "z_n" + n2 + "n" + n1;
+
+        if (added_zvars.includes(z_n1n2)) {
+          z_list.push(z_n1n2);
+        } else if (added_zvars.includes(z_n2n1)) {
+          z_list.push(z_n2n1);
+        } else {
+          console.warn(
+            "Variable for nodes " + n1 + " and " + n2 + " not found.",
+          );
+        }
+      }
+    }
+
+    let z_constraint = c;
+
+    for (let zvar of z_list) {
+      z_constraint += " - " + zvar;
+    }
+
+    z_constraint += " = 1 \n";
+
+    model.subjectTo += z_constraint;
+  }
+
+  model.objective_function =
+    model.objective_function.substring(0, model.objective_function.length - 2) +
+    "\n\n";
+
+  // Build LP model as a string
+  return model.objective_function + model.subjectTo + model.bounds + "\nEnd\n";
+}
+
+function createCliqueModelFromGraphMAX2(graph) {
+  let nodes = graph.nodes;
+  let edges = graph.links || graph.edges;
+  let cliques = graph.cliques || [];
+
+  const m = nodes.length + 1;
+
+  let model = {};
+
+  model.objective_function = "Maximize \n";
+  model.subjectTo = "Subject To \n";
+  model.bounds = "\nBounds \n";
+
+  let added_xvars = [];
+  let added_zvars = [];
+
+  // add definition of variables on y
+  for (let i = 0; i < nodes.length - 1; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      let a = "n" + nodes[i].id;
+      let b = "n" + nodes[j].id;
+      let y_ab = "y_" + a + b;
+      model.bounds += "binary " + y_ab + "\n";
+      added_xvars.push(y_ab);
+    }
+  }
+
+  // add transitivity constraints on y
+  for (let i = 0; i < nodes.length - 2; i++) {
+    for (let j = i + 1; j < nodes.length - 1; j++) {
+      for (let k = j + 1; k < nodes.length; k++) {
+        if (i == j || i == k || j == k) continue;
+
+        let y_ab = "y_n" + nodes[i].id + "n" + nodes[j].id;
+        let y_bc = "y_n" + nodes[j].id + "n" + nodes[k].id;
+        let y_ac = "y_n" + nodes[i].id + "n" + nodes[k].id;
+
+        // check that all these exist
+        if (!added_xvars.includes(y_ab)) console.warn(y_ab + " not found");
+        if (!added_xvars.includes(y_bc)) console.warn(y_bc + " not found");
+        if (!added_xvars.includes(y_ac)) console.warn(y_ac + " not found");
+
+        model.subjectTo += y_ab + " + " + y_bc + " - " + y_ac + " >= 0\n";
+        model.subjectTo +=
+          "- " + y_ab + " - " + y_bc + " + " + y_ac + " >= - 1\n";
+      }
+    }
+  }
+
+  // compute position of nodes
+  for (let n1 of nodes) {
+    let pos_n1 = "pos_n" + n1.id;
+    let tmp_accumulator = nodes.length - 1;
+
+    for (let n2 of nodes) {
+      if (n1 == n2) continue;
+      let y_n1n2 = "y_n" + n1.id + "n" + n2.id;
+
+      if (!added_xvars.includes(y_n1n2)) {
+        pos_n1 += " - " + "y_n" + n2.id + "n" + n1.id;
+        tmp_accumulator -= 1;
+      } else {
+        pos_n1 += " + " + y_n1n2;
+      }
+    }
+    model.subjectTo += pos_n1 + " = " + tmp_accumulator + "\n";
+  }
+
+  for (let i = 0; i < nodes.length; i++) {
+    let adjacent_nodes = [];
+
+    for (let j = 0; j < edges.length; j++) {
+      if (
+        edges[j].source == nodes[i].id &&
+        !adjacent_nodes.includes(edges[j].target)
+      ) {
+        adjacent_nodes.push(nodes.find((n) => n.id == edges[j].target));
+      } else if (
+        edges[j].target == nodes[i].id &&
+        !adjacent_nodes.includes(edges[j].source)
+      ) {
+        adjacent_nodes.push(nodes.find((n) => n.id == edges[j].source));
+      }
+    }
+
+    for (let j = 0; j < adjacent_nodes.length; j++) {
+      for (let k = j + 1; k < adjacent_nodes.length; k++) {
+        if (j == k) continue;
+
+        let node1 = adjacent_nodes[j];
+        let node2 = adjacent_nodes[k];
+
+        let sorted_node_ids = [node1.id, node2.id].sort((a, b) => a - b);
+
+        let z1 = "z_n" + sorted_node_ids[0] + "n" + sorted_node_ids[1];
+        added_zvars.push(z1);
+
+        model.subjectTo +=
+          "pos_n" +
+          node2.id +
+          " - pos_n" +
+          node1.id +
+          " + " +
+          m +
+          " " +
+          z1 +
+          " <= " +
+          (1 + m + 0.01) +
+          "\n";
+        model.subjectTo +=
+          "pos_n" +
+          node2.id +
+          " - pos_n" +
+          node1.id +
+          " - " +
+          m +
+          " " +
+          z1 +
+          " >= " +
+          (-1 - m - 0.01) +
+          "\n";
+
+        model.bounds += "binary " + z1 + "\n";
+
+        model.subjectTo += "pos_n" + node1.id + " <= " + nodes.length + "\n";
+        model.subjectTo += "pos_n" + node2.id + " <= " + nodes.length + "\n";
+      }
+    }
+  }
+
+  let cliquesExtended = cliques;
+
+  /*
+  for (let clique of cliques) {
+    if (clique.nodes.length > 3) {
+      for (let node of clique.nodes) {
+        let new_clique = {
+          nodes: clique.nodes.filter((n) => n != node),
+        };
+
+        if (
+          cliquesExtended.some(
+            (c) =>
+              c.nodes.length == new_clique.nodes.length &&
+              c.nodes.every((n) => new_clique.nodes.includes(n)),
+          )
+        )
+          continue;
+        cliquesExtended.push(new_clique);
+      }
+    }
+  }
+  */
+
+  for (let clique of cliquesExtended) {
+    let node_list = clique.nodes;
+    let c = "c_";
+
+    for (node of node_list) {
+      c += "n" + node;
+    }
+
+    // Weight based on the size of the clique
+    let w = 2 ** node_list.length; 
+
+    model.objective_function += w + " " + c + " + ";
 
     let z_list = [];
 
