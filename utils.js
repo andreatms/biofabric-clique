@@ -218,6 +218,7 @@ function createCliqueModelFromGraphMAX(graph) {
   return model.objective_function + model.subjectTo + model.bounds + "\nEnd\n";
 }
 
+
 function createCliqueModelFromGraphMAX2(graph) {
   let nodes = graph.nodes;
   let edges = graph.links || graph.edges;
@@ -371,19 +372,28 @@ function createCliqueModelFromGraphMAX2(graph) {
     }
   }
   */
+  
+  let added_kvars = [];
+  let added_bvars = [];
 
   for (let clique of cliquesExtended) {
     let node_list = clique.nodes;
     let c = "c_";
 
+    //max-2.2
+    let k = "k_";
+    let b_prefix = "b_"
+
     for (node of node_list) {
       c += "n" + node;
+
+      //max-2.2
+      k += "n" + node;
+      b_prefix += "n" + node;
     }
 
-    // Weight based on the size of the clique
-    let w = 2 ** node_list.length; 
 
-    model.objective_function += w + " " + c + " + ";
+    model.objective_function += c + " + ";
 
     let z_list = [];
 
@@ -407,7 +417,10 @@ function createCliqueModelFromGraphMAX2(graph) {
       }
     }
 
-    let z_constraint = c;
+    //max-2.2
+    let z_constraint = k;
+    
+    //let z_constraint = c;
 
     for (let zvar of z_list) {
       z_constraint += " - " + zvar;
@@ -416,6 +429,35 @@ function createCliqueModelFromGraphMAX2(graph) {
     z_constraint += " = 1 \n";
 
     model.subjectTo += z_constraint;
+
+    //max-2.2
+    let k_constraint = k;
+    let b_constraint = "";
+
+    let c_inf = c + " >= 1\n";
+    let c_sup = c;
+
+    //new b vars and b, k, c constraints
+    for (let i = 0; i < node_list.length; i++) {
+      let b = b_prefix + "_" + i;
+
+      k_constraint += " - " + (i+1) + " " + b;
+      b_constraint += b + " + ";
+      c_sup += " - " + 2**i + " " + b;
+
+      model.bounds += "binary " + b + "\n";
+    }
+
+    k_constraint += " = 0 \n";
+    b_constraint = b_constraint.substring(0, b_constraint.length - 2) + " = 1 \n";
+    c_sup += " <= 0 \n";
+    
+
+    model.subjectTo += k_constraint;
+    model.subjectTo += b_constraint;
+
+    model.subjectTo += c_inf;
+    model.subjectTo += c_sup;
   }
 
   model.objective_function =
@@ -425,6 +467,7 @@ function createCliqueModelFromGraphMAX2(graph) {
   // Build LP model as a string
   return model.objective_function + model.subjectTo + model.bounds + "\nEnd\n";
 }
+
 
 function createCliqueModelFromGraphMIN(graph) {
   let nodes = graph.nodes;
