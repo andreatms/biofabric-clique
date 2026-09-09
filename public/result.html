@@ -110,6 +110,36 @@
     </div>
     <div id="result-biofabric"><div class="placeholder">Waiting for data...</div></div>
   </div>
+  <div id="matrix-wrap">
+    <div class="matrix-head">
+      <h3>Adjacency matrix</h3>
+      <label class="matrix-mode-wrap" for="matrix-glyph-checkbox">
+        <input type="checkbox" id="matrix-glyph-checkbox">
+        Glyph
+      </label>
+      <label class="matrix-control-wrap" for="matrix-label-size-slider">
+        Label size
+        <input type="range" id="matrix-label-size-slider" min="8" max="28" step="0.5" value="12">
+        <span id="matrix-label-size-value">12.0 px</span>
+      </label>
+      <label class="matrix-control-wrap" for="matrix-horizontal-marker-distance-slider">
+        Horizontal marker distance
+        <input type="range" id="matrix-horizontal-marker-distance-slider" min="0" max="40" step="1" value="7">
+        <span id="matrix-horizontal-marker-distance-value">7 px</span>
+      </label>
+      <label class="matrix-control-wrap" for="matrix-vertical-marker-distance-slider">
+        Vertical marker distance
+        <input type="range" id="matrix-vertical-marker-distance-slider" min="0" max="40" step="1" value="16">
+        <span id="matrix-vertical-marker-distance-value">16 px</span>
+      </label>
+      <label class="matrix-control-wrap" for="matrix-clique-opacity-slider">
+        Cluster opacity
+        <input type="range" id="matrix-clique-opacity-slider" min="0.05" max="1" step="0.01" value="0.82">
+        <span id="matrix-clique-opacity-value">82%</span>
+      </label>
+    </div>
+    <div id="result-matrix"><div class="placeholder">Waiting for data...</div></div>
+  </div>
   <div id="graph-wrap">
     <div class="graph-head">
       <h3>Graph</h3>
@@ -146,5 +176,4 @@
 <script src="js/result.js"></script>
 </body>
 </html>
-
 

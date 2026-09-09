@@ -1,28 +1,4 @@
-﻿
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function orderEdgesForBiofabricV1(graph, cliques) {
+﻿function orderEdgesForBiofabricV1(graph, cliques) {
   const edges = graph.links || graph.edges || [];
 
   
@@ -168,6 +144,15 @@ const _graphNodeLabelSizeInput = document.getElementById('graph-node-label-size'
 const _graphNodeLabelSizeValue = document.getElementById('graph-node-label-size-value');
 const _graphExportFormatSelect = document.getElementById('graph-export-format');
 const _graphExportButton = document.getElementById('graph-export-button');
+const _matrixGlyphCheckbox = document.getElementById('matrix-glyph-checkbox');
+const _matrixLabelSizeSlider = document.getElementById('matrix-label-size-slider');
+const _matrixLabelSizeValue = document.getElementById('matrix-label-size-value');
+const _matrixHorizontalMarkerDistanceSlider = document.getElementById('matrix-horizontal-marker-distance-slider');
+const _matrixHorizontalMarkerDistanceValue = document.getElementById('matrix-horizontal-marker-distance-value');
+const _matrixVerticalMarkerDistanceSlider = document.getElementById('matrix-vertical-marker-distance-slider');
+const _matrixVerticalMarkerDistanceValue = document.getElementById('matrix-vertical-marker-distance-value');
+const _matrixCliqueOpacitySlider = document.getElementById('matrix-clique-opacity-slider');
+const _matrixCliqueOpacityValue = document.getElementById('matrix-clique-opacity-value');
 
 
 let _pollTimer = null;
@@ -192,6 +177,40 @@ function getHideSyntheticEdgesMode() {
 
 function getShowAllCliqueMarkersMode() {
   return !!_biofabricShowAllCliqueMarkersCheckbox?.checked;
+}
+
+function getMatrixGlyphMode() {
+  return !!_matrixGlyphCheckbox?.checked;
+}
+
+function getMatrixLabelSize() {
+  const raw = Number(_matrixLabelSizeSlider?.value);
+  if (!Number.isFinite(raw)) return 12;
+  return Math.max(8, Math.min(28, raw));
+}
+
+function updateMatrixLabelSizeValue() {
+  if (_matrixLabelSizeValue) _matrixLabelSizeValue.textContent = `${getMatrixLabelSize().toFixed(1)} px`;
+}
+
+function getMatrixMarkerDistance(slider) {
+  const raw = Number(slider?.value);
+  if (!Number.isFinite(raw)) return 10;
+  return Math.max(0, Math.min(40, raw));
+}
+
+function updateMatrixMarkerDistanceValue(slider, value) {
+  if (value) value.textContent = `${getMatrixMarkerDistance(slider).toFixed(0)} px`;
+}
+
+function getMatrixCliqueOpacity() {
+  const raw = Number(_matrixCliqueOpacitySlider?.value);
+  if (!Number.isFinite(raw)) return 0.82;
+  return Math.max(0.05, Math.min(1, raw));
+}
+
+function updateMatrixCliqueOpacityValue() {
+  if (_matrixCliqueOpacityValue) _matrixCliqueOpacityValue.textContent = `${Math.round(getMatrixCliqueOpacity() * 100)}%`;
 }
 
 function getBiofabricCliqueFillOpacity() {
@@ -547,6 +566,40 @@ function updateGapChip(gap) {
     });
   }
 
+  if (_matrixGlyphCheckbox) {
+    _matrixGlyphCheckbox.addEventListener('change', () => {
+      if (_lastGraphData && _lastSolData) drawAll(_lastGraphData, _lastSolData);
+    });
+  }
+
+  if (_matrixLabelSizeSlider) {
+    updateMatrixLabelSizeValue();
+    _matrixLabelSizeSlider.addEventListener('input', () => {
+      updateMatrixLabelSizeValue();
+      if (_lastGraphData && _lastSolData) drawAll(_lastGraphData, _lastSolData);
+    });
+  }
+
+  for (const [slider, value] of [
+    [_matrixHorizontalMarkerDistanceSlider, _matrixHorizontalMarkerDistanceValue],
+    [_matrixVerticalMarkerDistanceSlider, _matrixVerticalMarkerDistanceValue],
+  ]) {
+    if (!slider) continue;
+    updateMatrixMarkerDistanceValue(slider, value);
+    slider.addEventListener('input', () => {
+      updateMatrixMarkerDistanceValue(slider, value);
+      if (_lastGraphData && _lastSolData) drawAll(_lastGraphData, _lastSolData);
+    });
+  }
+
+  if (_matrixCliqueOpacitySlider) {
+    updateMatrixCliqueOpacityValue();
+    _matrixCliqueOpacitySlider.addEventListener('input', () => {
+      updateMatrixCliqueOpacityValue();
+      if (_lastGraphData && _lastSolData) drawAll(_lastGraphData, _lastSolData);
+    });
+  }
+
   if (_biofabricCliqueOpacitySlider) {
     updateBiofabricOpacityLabel();
     _biofabricCliqueOpacitySlider.addEventListener('input', () => {
@@ -806,7 +859,362 @@ function drawAll(graphData, solData) {
     markerStrokeWidth: getBiofabricMarkerStrokeWidth(),
     lockNodeAxisSpacing: isBiofabricNodeAxisSpacingLocked(),
   });
-  if (coloredLinks) renderGraph(graphData, coloredLinks, 'result-graph');
+  if (coloredLinks) {
+    const orderedNodes = getSolutionNodeOrder(graphData, solData);
+    const matrixCliques = getContiguousOnlyMode()
+      ? getContiguousCliques(graphData.cliques || [], orderedNodes)
+      : (graphData.cliques || []);
+    renderAdjacencyMatrix(graphData, orderedNodes, coloredLinks, matrixCliques, 'result-matrix', {
+      labelSize: getMatrixLabelSize(),
+      horizontalMarkerDistance: getMatrixMarkerDistance(_matrixHorizontalMarkerDistanceSlider),
+      verticalMarkerDistance: getMatrixMarkerDistance(_matrixVerticalMarkerDistanceSlider),
+      cliqueOpacity: getMatrixCliqueOpacity(),
+    });
+    renderGraph(graphData, coloredLinks, 'result-graph');
+  }
+}
+
+function getSolutionNodeOrder(graphData, solData) {
+  const positions = new Map();
+  for (const line of String(solData || '').split('\n')) {
+    const parts = line.trim().split(/\s+/);
+    if (parts.length < 2 || !parts[0].startsWith('pos_n')) continue;
+    const id = Number(parts[0].substring(5));
+    const pos = Number(parts[1]);
+    if (Number.isFinite(id) && Number.isFinite(pos)) positions.set(id, pos);
+  }
+
+  const nodeById = new Map((graphData.nodes || []).map((node) => [Number(node.id), node]));
+  return [...positions.entries()]
+    .sort((a, b) => a[1] - b[1])
+    .map(([id]) => nodeById.get(id))
+    .filter(Boolean);
+}
+
+function renderAdjacencyMatrix(graphData, orderedNodes, coloredLinks, cliques, containerId, options = {}) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = '';
+
+  if (!orderedNodes.length) {
+    container.innerHTML = '<div class="placeholder">No node position data found in the solution.</div>';
+    return;
+  }
+
+  const nodeKey = (id) => String(normalizeEdgeEndpointId(id));
+  const nodeIndex = new Map(orderedNodes.map((node, index) => [nodeKey(node.id), index]));
+  const pairCliques = new Map();
+  for (const link of coloredLinks || []) {
+    const source = nodeIndex.get(nodeKey(link.source));
+    const target = nodeIndex.get(nodeKey(link.target));
+    if (source === undefined || target === undefined) continue;
+    const pair = source <= target ? `${source}|${target}` : `${target}|${source}`;
+    if (!pairCliques.has(pair)) pairCliques.set(pair, new Set());
+    for (const cliqueId of link.cliques || []) {
+      const normalizedCliqueId = Number(cliqueId);
+      if (Number.isFinite(normalizedCliqueId) && normalizedCliqueId > 0) {
+        pairCliques.get(pair).add(normalizedCliqueId);
+      }
+    }
+    if (!(link.cliques || []).some((cliqueId) => cliqueId > 0)) pairCliques.get(pair).add(0);
+  }
+
+  // Keep self-loops as present cells and assign them to every clique containing their node.
+  for (const edge of graphData.links || graphData.edges || []) {
+    const sourceId = normalizeEdgeEndpointId(edge.source);
+    const targetId = normalizeEdgeEndpointId(edge.target);
+    if (nodeKey(sourceId) !== nodeKey(targetId)) continue;
+    const index = nodeIndex.get(nodeKey(sourceId));
+    if (index === undefined) continue;
+    const pair = `${index}|${index}`;
+    if (!pairCliques.has(pair)) pairCliques.set(pair, new Set());
+    let belongsToClique = false;
+    for (const clique of cliques || []) {
+      if ((clique.nodes || []).some((nodeId) => nodeKey(nodeId) === nodeKey(sourceId))) {
+        const normalizedCliqueId = Number(clique.id);
+        if (Number.isFinite(normalizedCliqueId) && normalizedCliqueId > 0) {
+          pairCliques.get(pair).add(normalizedCliqueId);
+        }
+        belongsToClique = true;
+      }
+    }
+    if (!belongsToClique) pairCliques.get(pair).add(0);
+  }
+
+  const size = orderedNodes.length;
+  const cellSize = Math.max(16, Math.min(30, 720 / size));
+  const labelSize = Math.max(8, Math.min(28, Number(options.labelSize) || 12));
+  const getMarkerDistance = (value) => Number.isFinite(Number(value))
+    ? Math.max(0, Math.min(40, Number(value)))
+    : 10;
+  const horizontalMarkerDistance = getMarkerDistance(options.horizontalMarkerDistance);
+  const verticalMarkerDistance = getMarkerDistance(options.verticalMarkerDistance);
+  const cliqueOpacity = Math.max(0.05, Math.min(1, Number(options.cliqueOpacity) || 0.82));
+  const labelSpace = Math.max(42, orderedNodes.reduce((max, node) => Math.max(max, String(node.id).length * labelSize * 0.62), 0) + 12);
+  const matrixSize = size * cellSize;
+  const width = labelSpace + matrixSize + 12;
+  const height = labelSpace + matrixSize + 12;
+  const svg = d3.select(container).append('svg')
+    .attr('class', 'adjacency-matrix')
+    .attr('width', width)
+    .attr('height', height)
+    .attr('viewBox', [0, 0, width, height]);
+  const colors = (cliques) => [...cliques].filter((id) => id > 0).map((id) => d3.schemeCategory10[id % 10]);
+  const defs = svg.append('defs');
+  let gradientCount = 0;
+
+  function cellFill(cliques) {
+    const cellColors = colors(cliques);
+    if (cellColors.length === 0) return cliques.has(0) ? '#9aa7b5' : '#f4f7fb';
+    if (cellColors.length === 1) return cellColors[0];
+    const gradientId = `matrix-gradient-${gradientCount++}`;
+    const gradient = defs.append('linearGradient')
+      .attr('id', gradientId)
+      .attr('x1', '0%')
+      .attr('y1', '0%')
+      .attr('x2', '100%')
+      .attr('y2', '100%');
+    cellColors.forEach((color, index) => {
+      gradient.append('stop')
+        .attr('offset', `${(index / cellColors.length) * 100}%`)
+        .attr('stop-color', color);
+      gradient.append('stop')
+        .attr('offset', `${((index + 1) / cellColors.length) * 100}%`)
+        .attr('stop-color', color);
+    });
+    return `url(#${gradientId})`;
+  }
+
+  const matrix = svg.append('g').attr('transform', `translate(${labelSpace},${labelSpace})`);
+  const labels = svg.append('g').attr('fill', '#263238').attr('font-size', labelSize).attr('font-family', 'inherit');
+  orderedNodes.forEach((node, index) => {
+    const label = `n${node.id}`;
+    const x = labelSpace + index * cellSize + cellSize / 2;
+    const y = labelSpace + index * cellSize + cellSize / 2;
+    labels.append('text').attr('x', x).attr('y', labelSpace - 8).attr('text-anchor', 'middle').text(label);
+    labels.append('text').attr('x', labelSpace - 8).attr('y', y).attr('text-anchor', 'end').attr('dominant-baseline', 'middle').text(label);
+  });
+
+  const cells = [];
+  for (let row = 0; row < size; row++) {
+    for (let column = 0; column < size; column++) {
+      const pair = row <= column ? `${row}|${column}` : `${column}|${row}`;
+      cells.push({ row, column, cliques: pairCliques.get(pair) || new Set() });
+    }
+  }
+  const cellSelection = matrix.selectAll('rect').data(cells).enter().append('rect')
+    .attr('x', (cell) => cell.column * cellSize + 0.5)
+    .attr('y', (cell) => cell.row * cellSize + 0.5)
+    .attr('width', Math.max(1, cellSize - 1))
+    .attr('height', Math.max(1, cellSize - 1))
+    .attr('fill', (cell) => cellFill(cell.cliques))
+    .attr('class', 'matrix-cell')
+    .attr('stroke', '#ffffff')
+    .attr('stroke-width', 1);
+  cellSelection.append('title').text((cell) => {
+    const source = orderedNodes[cell.row].id;
+    const target = orderedNodes[cell.column].id;
+    return `${source} - ${target}${cell.cliques.size ? ` | clique: ${[...cell.cliques].join(', ')}` : ' | no edge'}`;
+  });
+
+  const glyphLayer = matrix.append('g').attr('class', 'matrix-glyph-layer');
+  const matrixMarkerLayer = svg.append('g').attr('class', 'matrix-markers');
+  const matrixMarkerBars = matrixMarkerLayer.append('g');
+  const glyphs = [];
+  for (const clique of cliques || []) {
+    const indexes = [...new Set((clique.nodes || [])
+      .map((nodeId) => nodeIndex.get(nodeKey(nodeId)))
+      .filter((index) => index !== undefined))]
+      .sort((a, b) => a - b);
+    if (indexes.length < 2) continue;
+
+    const minIndex = indexes[0];
+    const maxIndex = indexes[indexes.length - 1];
+    const cliqueCells = [];
+    for (const row of indexes) {
+      for (const column of indexes) {
+        const pair = row <= column ? `${row}|${column}` : `${column}|${row}`;
+        const pairSet = pairCliques.get(pair) || new Set();
+        const cliqueId = Number(clique.id);
+        cliqueCells.push({
+          row,
+          column,
+          // In Glyph mode, every cluster self-loop is considered present.
+          missing: row !== column && !pairSet.has(cliqueId),
+        });
+      }
+    }
+    glyphs.push({
+      id: Number(clique.id),
+      color: d3.schemeCategory10[Number(clique.id) % 10],
+      minIndex,
+      maxIndex,
+      cells: cliqueCells,
+    });
+  }
+
+  const glyphSelection = glyphLayer.selectAll('rect.matrix-glyph')
+    .data(glyphs)
+    .enter()
+    .append('rect')
+    .attr('class', 'matrix-glyph')
+    .attr('x', (glyph) => glyph.minIndex * cellSize + 1)
+    .attr('y', (glyph) => glyph.minIndex * cellSize + 1)
+    .attr('width', (glyph) => (glyph.maxIndex - glyph.minIndex + 1) * cellSize - 2)
+    .attr('height', (glyph) => (glyph.maxIndex - glyph.minIndex + 1) * cellSize - 2)
+    .attr('fill', 'none')
+    .attr('stroke', (glyph) => glyph.color)
+    .attr('stroke-opacity', cliqueOpacity)
+    .attr('stroke-width', 1.5);
+
+  const glyphEdgeSelection = glyphLayer.selectAll('path.matrix-glyph-edge')
+    .data(glyphs.map((glyph) => ({
+      ...glyph,
+      cells: glyph.cells.filter((cell) => !cell.missing),
+    })).filter((glyph) => glyph.cells.length))
+    .enter()
+    .append('path')
+    .attr('class', 'matrix-glyph-edge')
+    .attr('d', (glyph) => glyph.cells.map((cell) => {
+      const x = cell.column * cellSize;
+      const y = cell.row * cellSize;
+      return `M${x},${y}h${cellSize}v${cellSize}h-${cellSize}Z`;
+    }).join(''))
+    .attr('fill', (glyph) => glyph.color)
+    .attr('fill-opacity', cliqueOpacity);
+
+  const glyphHoleSelection = glyphLayer.selectAll('rect.matrix-glyph-hole')
+    .data(glyphs.flatMap((glyph) => glyph.cells
+      .filter((cell) => cell.missing)
+      .map((cell) => ({ ...cell, cliqueId: glyph.id }))))
+    .enter()
+    .append('rect')
+    .attr('class', 'matrix-glyph-hole')
+    .attr('x', (cell) => cell.column * cellSize + 2)
+    .attr('y', (cell) => cell.row * cellSize + 2)
+    .attr('width', Math.max(1, cellSize - 4))
+    .attr('height', Math.max(1, cellSize - 4))
+    .attr('fill', 'transparent')
+    .attr('stroke', 'none');
+
+  const isInsideGlyph = (cell) => glyphs.some((glyph) => (
+    cell.row >= glyph.minIndex && cell.row <= glyph.maxIndex
+    && cell.column >= glyph.minIndex && cell.column <= glyph.maxIndex
+  ));
+  const standaloneGlyphSelection = glyphLayer.selectAll('rect.matrix-glyph-outside')
+    .data(cells.filter((cell) => (
+      ![...cell.cliques].some((cliqueId) => cliqueId > 0)
+      && !isInsideGlyph(cell)
+    )))
+    .enter()
+    .append('rect')
+    .attr('class', 'matrix-glyph-outside')
+    .attr('x', (cell) => cell.column * cellSize + 0.5)
+    .attr('y', (cell) => cell.row * cellSize + 0.5)
+    .attr('width', Math.max(1, cellSize - 1))
+    .attr('height', Math.max(1, cellSize - 1))
+    .attr('fill', (cell) => cellFill(cell.cliques))
+    .attr('stroke', '#ffffff')
+    .attr('stroke-width', 1);
+
+  const matrixElements = matrix.selectAll('.matrix-cell, .matrix-glyph, .matrix-glyph-edge, .matrix-glyph-hole, .matrix-glyph-outside');
+  const rowLabels = labels.selectAll('text').filter((_, index) => index % 2 === 1);
+  const columnLabels = labels.selectAll('text').filter((_, index) => index % 2 === 0);
+
+  function clearMatrixHover() {
+    matrixElements.style('opacity', 1);
+    matrixMarkerBars.selectAll('*').remove();
+    rowLabels.style('fill', '#263238').style('font-weight', '400');
+    columnLabels.style('fill', '#263238').style('font-weight', '400');
+  }
+
+  function showCliqueMarkers(glyph) {
+    matrixElements.style('opacity', 0.22);
+    glyphLayer.selectAll('.matrix-glyph, .matrix-glyph-edge, .matrix-glyph-hole').filter((candidate) => (
+      candidate.id === glyph.id || candidate.cliqueId === glyph.id
+    )).style('opacity', 1);
+    const indexes = [...new Set(glyph.cells.flatMap((cell) => [cell.row, cell.column]))];
+    matrixMarkerBars.selectAll('*').remove();
+    const sortedIndexes = [...indexes].sort((a, b) => a - b);
+    const markerRuns = [];
+    for (const index of sortedIndexes) {
+      const previous = markerRuns[markerRuns.length - 1];
+      if (previous && index === previous.end + 1) previous.end = index;
+      else markerRuns.push({ start: index, end: index });
+    }
+    matrixMarkerBars.selectAll('rect.matrix-row-marker')
+      .data(markerRuns)
+      .enter()
+      .append('rect')
+      .attr('class', 'matrix-row-marker')
+      .attr('x', labelSpace - 22 - verticalMarkerDistance)
+      .attr('y', (run) => labelSpace + run.start * cellSize + 3)
+      .attr('width', 5)
+      .attr('height', (run) => Math.max(2, (run.end - run.start + 1) * cellSize - 6))
+      .attr('fill', glyph.color)
+      .attr('rx', 2);
+    matrixMarkerBars.selectAll('rect.matrix-column-marker')
+      .data(markerRuns)
+      .enter()
+      .append('rect')
+      .attr('class', 'matrix-column-marker')
+      .attr('x', (run) => labelSpace + run.start * cellSize + 3)
+      .attr('y', labelSpace - 22 - horizontalMarkerDistance)
+      .attr('width', (run) => Math.max(2, (run.end - run.start + 1) * cellSize - 6))
+      .attr('height', 5)
+      .attr('fill', glyph.color)
+      .attr('rx', 2);
+    rowLabels
+      .style('fill', (_, index) => indexes.includes(Math.floor(index / 2)) ? glyph.color : '#263238')
+      .style('font-weight', (_, index) => indexes.includes(Math.floor(index / 2)) ? '700' : '400');
+    columnLabels
+      .style('fill', (_, index) => indexes.includes(Math.floor(index / 2)) ? glyph.color : '#263238')
+      .style('font-weight', (_, index) => indexes.includes(Math.floor(index / 2)) ? '700' : '400');
+  }
+
+  glyphLayer.style('display', getMatrixGlyphMode() ? null : 'none');
+  cellSelection.style('display', getMatrixGlyphMode() ? 'none' : null);
+
+  glyphSelection
+    .on('mouseenter', (event, glyph) => showCliqueMarkers(glyph))
+    .on('mouseleave', clearMatrixHover);
+
+  glyphEdgeSelection
+    .on('mouseenter', (event, glyph) => showCliqueMarkers(glyph))
+    .on('mouseleave', clearMatrixHover);
+
+  glyphHoleSelection
+    .on('mouseenter', (event, cell) => {
+      const glyph = glyphs.find((candidate) => candidate.id === cell.cliqueId);
+      if (glyph) showCliqueMarkers(glyph);
+    })
+    .on('mouseleave', clearMatrixHover);
+
+  standaloneGlyphSelection
+    .on('mouseenter', (event, item) => {
+      const row = item.row;
+      const column = item.column;
+      matrixElements.style('opacity', 0.16);
+      matrixElements.filter((candidate) => candidate.row === row || candidate.column === column).style('opacity', 1);
+      rowLabels.style('font-weight', (_, index) => index === row ? '700' : '400');
+      columnLabels.style('font-weight', (_, index) => index === column ? '700' : '400');
+    })
+    .on('mouseleave', clearMatrixHover);
+
+  cellSelection
+    .on('mouseenter', (event, item) => {
+      const row = item.row;
+      const column = item.column;
+      const highlighted = matrixElements
+        .filter((candidate) => {
+          return candidate.row === row || candidate.column === column;
+        });
+      matrixElements.style('opacity', 0.16);
+      highlighted.style('opacity', 1);
+      rowLabels.style('font-weight', (_, index) => index === row ? '700' : '400');
+      columnLabels.style('font-weight', (_, index) => index === column ? '700' : '400');
+    })
+    .on('mouseleave', clearMatrixHover);
 }
 
 function getContiguousCliques(cliques, orderedNodes) {
@@ -2802,4 +3210,3 @@ function renderGraph(graphData, coloredLinks, containerId) {
   // Fallback fit in case simulation keeps tiny residual movement for long time.
   setTimeout(() => fitGraphToViewport(false), 1100);
 }
-
