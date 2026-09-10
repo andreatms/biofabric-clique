@@ -1905,7 +1905,9 @@ function normalizeImportedExecutionPayload(raw) {
     };
 }
 
-app.post('/pipeline-queues/start', express.json(), (req, res) => {
+// A graph-set batch can contain hundreds of jobs.  The Express default JSON
+// limit is 100 kB, which is smaller than the request generated for exp_3.
+app.post('/pipeline-queues/start', express.json({ limit: '2mb' }), (req, res) => {
     const { name, jobs: queueJobs } = req.body || {};
     if (!Array.isArray(queueJobs) || queueJobs.length === 0) {
         return res.status(400).json({ error: 'jobs deve essere un array non vuoto' });
