@@ -153,6 +153,7 @@ const _matrixVerticalMarkerDistanceSlider = document.getElementById('matrix-vert
 const _matrixVerticalMarkerDistanceValue = document.getElementById('matrix-vertical-marker-distance-value');
 const _matrixCliqueOpacitySlider = document.getElementById('matrix-clique-opacity-slider');
 const _matrixCliqueOpacityValue = document.getElementById('matrix-clique-opacity-value');
+const _matrixComparisonLink = document.getElementById('matrix-comparison-link');
 
 
 let _pollTimer = null;
@@ -540,6 +541,11 @@ function updateGapChip(gap) {
   if (!_solId) {
     showError('Missing ?sol=<filename> parameter. Go back to the previous page.');
     return;
+  }
+
+  if (_matrixComparisonLink) {
+    // Preserve the exact graph/solution source currently shown in Results.
+    _matrixComparisonLink.href = `/matrix-comparison.html${window.location.search}`;
   }
 
   if (_biofabricModeSelect) {
