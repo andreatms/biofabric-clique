@@ -1,0 +1,54 @@
+:root {
+  --cmp-blue: #2f6eb2;
+  --cmp-border: #dce4f2;
+  --cmp-text: #1f2937;
+  --cmp-muted: #64748b;
+}
+
+body {
+  background: linear-gradient(180deg, #f4f8ff, #eef5ff);
+}
+
+.comparison-shell {
+  width: min(2200px, calc(100% - 24px));
+  margin: 22px auto 28px;
+}
+
+.comparison-header,
+.matrix-card {
+  border: 1px solid var(--cmp-border);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(47, 110, 178, .07);
+}
+
+.comparison-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+
+.back-link { color: var(--cmp-blue); font-size: 13px; font-weight: 700; text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+.comparison-header h1 { color: var(--cmp-blue); font-size: 22px; margin: 8px 0 4px; }
+.comparison-header p { color: var(--cmp-muted); font-size: 13px; margin: 0; }
+
+.method-control { color: var(--cmp-muted); font-size: 12px; font-weight: 700; }
+.method-control select { margin-left: 8px; padding: 7px 10px; border: 1px solid #ccdbf2; border-radius: 8px; background: #fff; color: var(--cmp-text); font: inherit; }
+
+#comparison-error { display: none; margin: 0 0 16px; padding: 14px 18px; color: #c62828; background: #ffebee; border: 1px solid #ffc7cf; border-radius: 10px; }
+.matrix-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.matrix-card { min-width: 0; padding: 14px; }
+.matrix-card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid #edf2fb; }
+.matrix-card h2 { color: var(--cmp-blue); font-size: 14px; margin: 0; }
+.matrix-card-head span { color: var(--cmp-muted); font: 12px Consolas, monospace; }
+.matrix-canvas { min-height: 540px; padding: 16px; overflow: auto; border: 1px solid #ecf1f8; border-radius: 10px; background: linear-gradient(180deg, #f6faff, #fff); }
+.matrix-canvas svg { display: block; background: #fff; border: 1px solid #edf2fb; border-radius: 6px; }
+.placeholder { color: #8a97ab; font-style: italic; text-align: center; padding: 40px 0; font-size: 14px; }
+
+@media (max-width: 1050px) { .matrix-grid { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .comparison-shell { width: calc(100% - 16px); margin-top: 14px; } .comparison-header, .matrix-card { padding: 12px; } .matrix-canvas { min-height: 320px; padding: 6px; } }

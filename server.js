@@ -15,6 +15,8 @@ try {
 
 const app = express();
 app.use(express.static('public'));
+// The matrix comparison page uses the bundled reorder.js browser build.
+app.use('/lib', express.static(path.join(__dirname, 'lib')));
 
 const DATA_DIR = path.join(__dirname, 'data');
 const JSON_DIR = path.join(DATA_DIR, 'jsonFiles');

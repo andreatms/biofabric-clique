@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrix comparison - Biofabric</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/matrix-comparison.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <nav>
+    <span class="nav-brand">BGW</span>
+    <a href="/">Home</a>
+    <a href="/graph.html">Graph</a>
+    <a href="/pipeline.html">Pipeline</a>
+    <a href="/dataset.html">Dataset</a>
+    <a href="/generator.html">Generator</a>
+    <a href="/scheduler.html">Scheduler</a>
+    <a href="/analysis.html">Analysis</a>
+  </nav>
+
+  <main class="comparison-shell">
+    <header class="comparison-header">
+      <div>
+        <a id="back-to-results" class="back-link" href="/result.html">← Results</a>
+        <h1>Adjacency matrix comparison</h1>
+        <p id="comparison-subtitle">Loading graph and ILP solution…</p>
+      </div>
+      <label class="method-control" for="reorder-method">
+        Ordering method
+        <select id="reorder-method" disabled>
+          <option value="reverse-cuthill-mckee">Reverse Cuthill–McKee</option>
+          <option value="cuthill-mckee">Cuthill–McKee</option>
+          <option value="spectral">Spectral ordering</option>
+          <option value="optimal-leaf">Optimal leaf ordering</option>
+          <option value="pca">PCA ordering</option>
+        </select>
+      </label>
+    </header>
+
+    <p id="comparison-error" role="alert"></p>
+    <section class="matrix-grid" aria-label="Matrix visualizations">
+      <article class="matrix-card">
+        <div class="matrix-card-head">
+          <h2>ILP solution</h2>
+          <span id="ilp-order-info">—</span>
+        </div>
+        <div id="ilp-matrix" class="matrix-canvas"><div class="placeholder">Loading…</div></div>
+      </article>
+      <article class="matrix-card">
+        <div class="matrix-card-head">
+          <h2 id="reorder-title">reorder.js</h2>
+          <span id="reorder-order-info">—</span>
+        </div>
+        <div id="reorder-matrix" class="matrix-canvas"><div class="placeholder">Loading…</div></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="/lib/reorder.js"></script>
+  <script src="js/matrix-comparison.js"></script>
+</body>
+</html>

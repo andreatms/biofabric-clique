@@ -370,6 +370,29 @@ body {
   overflow: auto;
 }
 
+.matrix-comparison-action {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 12px;
+}
+
+.matrix-comparison-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border: 1px solid #2f6eb2;
+  border-radius: 8px;
+  color: #2f6eb2;
+  background: #f7fbff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.matrix-comparison-btn:hover {
+  background: #eaf3ff;
+}
+
 #result-graph {
   padding: 16px;
 }
