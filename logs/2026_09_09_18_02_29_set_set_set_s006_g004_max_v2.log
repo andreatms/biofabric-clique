@@ -1,0 +1,74 @@
+[2026-09-09T18:02:29.309Z] Pipeline "set_set_set_s006_g004" → 2026_09_09_18_02_29_set_set_set_s006_g004_max_v2.sol
+Set parameter Username
+Set parameter LicenseID to value 2861988
+Set parameter LogFile to value "gurobi.log"
+Using license file /opt/gurobi/gurobi.lic
+Academic license - for non-commercial use only - expires 2027-09-09
+
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64 - "Ubuntu 26.04.1 LTS")
+Copyright (c) 2026, Gurobi Optimization, LLC
+
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Further warnings of this type will be omitted.
+Read LP format model from file /root/bgw/data/uploads/2026_09_09_18_02_29_set_set_set_s006_g004_max_v2.lp
+Reading time = 0.00 seconds
+: 560 rows, 118 columns, 1573 nonzeros
+
+Using Gurobi shared library /opt/gurobi1301/linux64/lib/libgurobi.so.13.0.1
+
+CPU model: AMD EPYC-Genoa Processor, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 16 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 560 rows, 118 columns and 1573 nonzeros (Max)
+Model fingerprint: 0x862800ff
+Model has 3 linear objective coefficients
+Variable types: 17 continuous, 101 integer (101 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+01]
+
+Presolve removed 198 rows and 40 columns
+Presolve time: 0.00s
+Presolved: 362 rows, 78 columns, 1142 nonzeros
+Variable types: 0 continuous, 78 integer (72 binary)
+Found heuristic solution: objective 3.0000000
+Found heuristic solution: objective 4.0000000
+Found heuristic solution: objective 6.0000000
+
+Root relaxation: objective 1.600000e+01, 17 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   16.00000    0    8    6.00000   16.00000   167%     -    0s
+H    0     0                       9.0000000   16.00000  77.8%     -    0s
+H    0     0                      10.0000000   16.00000  60.0%     -    0s
+     0     0   16.00000    0   17   10.00000   16.00000  60.0%     -    0s
+H    0     0                      11.0000000   16.00000  45.5%     -    0s
+H    0     0                      13.0000000   16.00000  23.1%     -    0s
+     0     0   16.00000    0   22   13.00000   16.00000  23.1%     -    0s
+     0     0   16.00000    0    3   13.00000   16.00000  23.1%     -    0s
+H    0     0                      16.0000000   16.00000  0.00%     -    0s
+     0     0   16.00000    0    3   16.00000   16.00000  0.00%     -    0s
+
+Explored 1 nodes (173 simplex iterations) in 0.03 seconds (0.01 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 8: 16 13 11 ... 3
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.600000000000e+01, best bound 1.600000000000e+01, gap 0.0000%
+
+Wrote result file '/root/bgw/data/results/2026_09_09_18_02_29_set_set_set_s006_g004_max_v2.sol'
+

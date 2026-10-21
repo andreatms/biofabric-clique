@@ -1,0 +1,81 @@
+[2026-09-09T18:26:12.563Z] Pipeline "set_exp_2_exp_2_n029_c007_g001" → 2026_09_09_18_26_12_set_exp_2_exp_2_n029_c007_g001_max_v2.sol
+Set parameter Username
+Set parameter LicenseID to value 2861988
+Set parameter LogFile to value "gurobi.log"
+Using license file /opt/gurobi/gurobi.lic
+Academic license - for non-commercial use only - expires 2027-09-09
+
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64 - "Ubuntu 26.04.1 LTS")
+Copyright (c) 2026, Gurobi Optimization, LLC
+
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Further warnings of this type will be omitted.
+Read LP format model from file /root/bgw/data/uploads/2026_09_09_18_26_12_set_exp_2_exp_2_n029_c007_g001_max_v2.lp
+Reading time = 0.01 seconds
+: 8540 rows, 689 columns, 25219 nonzeros
+
+Using Gurobi shared library /opt/gurobi1301/linux64/lib/libgurobi.so.13.0.1
+
+CPU model: AMD EPYC-Genoa Processor, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 16 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 8540 rows, 689 columns and 25219 nonzeros (Max)
+Model fingerprint: 0xd9f61f05
+Model has 7 linear objective coefficients
+Variable types: 43 continuous, 646 integer (646 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+01]
+
+Presolve removed 1161 rows and 232 columns
+Presolve time: 0.02s
+Presolved: 7379 rows, 457 columns, 22539 nonzeros
+Variable types: 0 continuous, 457 integer (442 binary)
+Found heuristic solution: objective 7.0000000
+Found heuristic solution: objective 8.0000000
+Found heuristic solution: objective 9.0000000
+
+Root relaxation: objective 3.200000e+01, 39 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   32.00000    0    6    9.00000   32.00000   256%     -    0s
+H    0     0                      20.0000000   32.00000  60.0%     -    0s
+H    0     0                      21.0000000   32.00000  52.4%     -    0s
+H    0     0                      22.0000000   32.00000  45.5%     -    0s
+H    0     0                      26.0000000   32.00000  23.1%     -    0s
+     0     0   32.00000    0   23   26.00000   32.00000  23.1%     -    0s
+     0     0   32.00000    0   23   26.00000   32.00000  23.1%     -    0s
+     0     0   32.00000    0   44   26.00000   32.00000  23.1%     -    0s
+H    0     0                      32.0000000   32.00000  0.00%     -    0s
+     0     0   32.00000    0    3   32.00000   32.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 11
+  Cover: 10
+  MIR: 15
+  Zero half: 3
+  RLT: 4
+
+Explored 1 nodes (906 simplex iterations) in 0.15 seconds (0.18 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 8: 32 26 22 ... 7
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.200000000000e+01, best bound 3.200000000000e+01, gap 0.0000%
+
+Wrote result file '/root/bgw/data/results/2026_09_09_18_26_12_set_exp_2_exp_2_n029_c007_g001_max_v2.sol'
+

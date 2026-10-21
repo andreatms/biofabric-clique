@@ -1,0 +1,68 @@
+[2026-09-14T20:02:36.686Z] Pipeline "set_ds_1_ds_1_s036_g005" → 2026_09_14_20_02_36_set_ds_1_ds_1_s036_g005_max_v2.sol
+Set parameter Username
+Set parameter LicenseID to value 2863886
+Set parameter LogFile to value "gurobi.log"
+Using license file /opt/gurobi/gurobi.lic
+Academic license - for non-commercial use only - expires 2027-09-14
+
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64 - "Ubuntu 26.04.1 LTS")
+Copyright (c) 2026, Gurobi Optimization, LLC
+
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Further warnings of this type will be omitted.
+Read LP format model from file /root/bgw/data/uploads/2026_09_14_20_02_36_set_ds_1_ds_1_s036_g005_max_v2.lp
+Reading time = 0.03 seconds
+: 30675 rows, 1147 columns, 93746 nonzeros
+
+Using Gurobi shared library /opt/gurobi1301/linux64/lib/libgurobi.so.13.0.1
+
+CPU model: AMD EPYC-Genoa Processor, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 16 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 30675 rows, 1147 columns and 93746 nonzeros (Max)
+Model fingerprint: 0xf9a8b3ba
+Model has 1 linear objective coefficients
+Variable types: 48 continuous, 1099 integer (1099 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 5e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+
+Found heuristic solution: objective 2.0000000
+Presolve removed 297 rows and 99 columns
+Presolve time: 0.09s
+Presolved: 30378 rows, 1048 columns, 91312 nonzeros
+Variable types: 0 continuous, 1048 integer (1044 binary)
+Root relaxation presolved: 15198 rows, 16227 columns, 60950 nonzeros
+
+
+Root relaxation: objective 8.000000e+00, 83 iterations, 0.06 seconds (0.09 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    8.00000    0    3    2.00000    8.00000   300%     -    0s
+H    0     0                       4.0000000    8.00000   100%     -    0s
+H    0     0                       8.0000000    8.00000  0.00%     -    0s
+     0     0    8.00000    0    3    8.00000    8.00000  0.00%     -    0s
+
+Explored 1 nodes (83 simplex iterations) in 0.22 seconds (0.33 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: 8 4 2 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.000000000000e+00, best bound 8.000000000000e+00, gap 0.0000%
+
+Wrote result file '/root/bgw/data/results/2026_09_14_20_02_36_set_ds_1_ds_1_s036_g005_max_v2.sol'
+

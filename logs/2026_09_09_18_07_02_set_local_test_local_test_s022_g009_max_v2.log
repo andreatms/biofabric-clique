@@ -1,0 +1,94 @@
+[2026-09-09T18:07:02.656Z] Pipeline "set_local_test_local_test_s022_g009" → 2026_09_09_18_07_02_set_local_test_local_test_s022_g009_max_v2.sol
+Set parameter Username
+Set parameter LicenseID to value 2861988
+Set parameter LogFile to value "gurobi.log"
+Using license file /opt/gurobi/gurobi.lic
+Academic license - for non-commercial use only - expires 2027-09-09
+
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64 - "Ubuntu 26.04.1 LTS")
+Copyright (c) 2026, Gurobi Optimization, LLC
+
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Further warnings of this type will be omitted.
+Read LP format model from file /root/bgw/data/uploads/2026_09_09_18_07_02_set_local_test_local_test_s022_g009_max_v2.lp
+Reading time = 0.02 seconds
+: 10334 rows, 632 columns, 31590 nonzeros
+
+Using Gurobi shared library /opt/gurobi1301/linux64/lib/libgurobi.so.13.0.1
+
+CPU model: AMD EPYC-Genoa Processor, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 16 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 10334 rows, 632 columns and 31590 nonzeros (Max)
+Model fingerprint: 0x674ec554
+Model has 6 linear objective coefficients
+Variable types: 44 continuous, 588 integer (588 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+01]
+
+Presolve removed 354 rows and 93 columns
+Presolve time: 0.03s
+Presolved: 9980 rows, 539 columns, 30299 nonzeros
+Variable types: 0 continuous, 539 integer (527 binary)
+Found heuristic solution: objective 6.0000000
+Found heuristic solution: objective 7.0000000
+Found heuristic solution: objective 8.0000000
+
+Root relaxation: objective 2.800000e+01, 353 iterations, 0.02 seconds (0.03 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   28.00000    0   10    8.00000   28.00000   250%     -    0s
+H    0     0                      26.0000000   28.00000  7.69%     -    0s
+     0     0   28.00000    0   29   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0   33   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0    4   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0    9   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0    9   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0   17   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0   17   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0   17   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0   28   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0    5   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0    5   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0   21   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0    4   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0   11   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0    2   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0    7   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0   17   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0    7   26.00000   28.00000  7.69%     -    0s
+     0     0   28.00000    0    7   26.00000   28.00000  7.69%     -    0s
+     0     2   28.00000    0    7   26.00000   28.00000  7.69%     -    0s
+
+Cutting planes:
+  Gomory: 3
+  Lift-and-project: 1
+  Cover: 12
+  MIR: 22
+  Inf proof: 15
+  RLT: 9
+
+Explored 628 nodes (109301 simplex iterations) in 2.11 seconds (3.68 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 4: 26 8 7 6 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
+
+Wrote result file '/root/bgw/data/results/2026_09_09_18_07_02_set_local_test_local_test_s022_g009_max_v2.sol'
+

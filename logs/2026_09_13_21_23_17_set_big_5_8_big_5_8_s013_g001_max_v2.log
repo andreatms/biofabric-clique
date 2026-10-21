@@ -1,0 +1,91 @@
+[2026-09-13T21:23:17.477Z] Pipeline "set_big_5_8_big_5_8_s013_g001" → 2026_09_13_21_23_17_set_big_5_8_big_5_8_s013_g001_max_v2.sol
+Set parameter Username
+Set parameter LicenseID to value 2863689
+Set parameter LogFile to value "gurobi.log"
+Using license file /opt/gurobi/gurobi.lic
+Academic license - for non-commercial use only - expires 2027-09-13
+
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (linux64 - "Ubuntu 26.04.1 LTS")
+Copyright (c) 2026, Gurobi Optimization, LLC
+
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Duplicate section found (read 'binary') - Is a variable name equal to an LP file format keyword?
+Warning: Further warnings of this type will be omitted.
+Read LP format model from file /root/bgw/data/uploads/2026_09_13_21_23_17_set_big_5_8_big_5_8_s013_g001_max_v2.lp
+Reading time = 0.00 seconds
+: 3756 rows, 386 columns, 10289 nonzeros
+
+Using Gurobi shared library /opt/gurobi1301/linux64/lib/libgurobi.so.13.0.1
+
+CPU model: AMD EPYC-Genoa Processor, instruction set [SSE2|AVX|AVX2|AVX512]
+Thread count: 16 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 3756 rows, 386 columns and 10289 nonzeros (Max)
+Model fingerprint: 0x17db1927
+Model has 8 linear objective coefficients
+Variable types: 36 continuous, 350 integer (350 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+01]
+
+Presolve removed 1350 rows and 105 columns
+Presolve time: 0.01s
+Presolved: 2406 rows, 281 columns, 7540 nonzeros
+Variable types: 0 continuous, 281 integer (267 binary)
+Found heuristic solution: objective 8.0000000
+Found heuristic solution: objective 9.0000000
+Found heuristic solution: objective 10.0000000
+
+Root relaxation: objective 1.400000e+02, 115 iterations, 0.00 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  140.00000    0   17   10.00000  140.00000  1300%     -    0s
+H    0     0                      12.0000000  140.00000  1067%     -    0s
+H    0     0                      18.0000000  140.00000   678%     -    0s
+     0     0  140.00000    0   53   18.00000  140.00000   678%     -    0s
+H    0     0                      23.0000000  140.00000   509%     -    0s
+H    0     0                      28.0000000  140.00000   400%     -    0s
+     0     0  140.00000    0   38   28.00000  140.00000   400%     -    0s
+H    0     0                      37.0000000  140.00000   278%     -    0s
+     0     0  140.00000    0   43   37.00000  140.00000   278%     -    0s
+     0     0  140.00000    0   26   37.00000  140.00000   278%     -    0s
+H    0     0                      40.0000000  140.00000   250%     -    0s
+     0     0  140.00000    0   24   40.00000  140.00000   250%     -    0s
+     0     0  140.00000    0   23   40.00000  140.00000   250%     -    0s
+     0     0  140.00000    0   20   40.00000  140.00000   250%     -    0s
+     0     0  140.00000    0   20   40.00000  140.00000   250%     -    0s
+H    0     0                      44.0000000  140.00000   218%     -    0s
+     0     0  140.00000    0   19   44.00000  140.00000   218%     -    0s
+     0     0  140.00000    0   19   44.00000  140.00000   218%     -    0s
+H    0     0                      46.0000000  140.00000   204%     -    0s
+     0     0  140.00000    0   22   46.00000  140.00000   204%     -    0s
+     0     0  140.00000    0   23   46.00000  140.00000   204%     -    0s
+     0     0  140.00000    0   21   46.00000  140.00000   204%     -    0s
+     0     0  140.00000    0   20   46.00000  140.00000   204%     -    0s
+     0     0  140.00000    0   27   46.00000  140.00000   204%     -    0s
+     0     0  140.00000    0   13   46.00000  140.00000   204%     -    0s
+H    0     0                      47.0000000  140.00000   198%     -    0s
+H    0     0                      48.0000000  140.00000   192%     -    0s
+H    0     0                      51.0000000  140.00000   175%     -    0s
+     0     0  140.00000    0   27   51.00000  140.00000   175%     -    0s
+     0     0  140.00000    0   27   51.00000  140.00000   175%     -    0s
+     0     0  140.00000    0   27   51.00000  140.00000   175%     -    0s
+     0     0  140.00000    0   27   51.00000  140.00000   175%     -    0s
+     0     2  140.00000    0   13   51.00000  140.00000   175%     -    0s
+H   32    48                      60.0000000  140.00000   133%  25.3    0s
+H   44    48                      61.0000000  140.00000   130%  21.0    0s
+H  453   461                      62.0000000  140.00000   126%  33.4    0s
+H  632   644                      70.0000000  140.00000   100%  54.9    0s
+H  681   806                      76.0000000  140.00000  84.2%  58.6    0s

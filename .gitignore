@@ -13,6 +13,14 @@ gurobi.log
 #/logs/workflow/queues.json
 #/data/sets/imported-results/*.json
 
+/data/*/2026_10_21_*.json
+/logs/2026_10_21_*.log
+/logs/workflow/pipelines.json
+/logs/workflow/queues.json
+/data/saves/pipelines/*.json
+/data/saves/queues/*.json
+/data/uploads/2026_10_21_*.lp
+
 /tmp
 #/logs/*.log
 *.code-workspace
