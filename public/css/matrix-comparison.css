@@ -39,6 +39,11 @@ body {
 
 .method-control { color: var(--cmp-muted); font-size: 12px; font-weight: 700; }
 .method-control select { margin-left: 8px; padding: 7px 10px; border: 1px solid #ccdbf2; border-radius: 8px; background: #fff; color: var(--cmp-text); font: inherit; }
+.glyph-control { display: inline-flex; align-items: center; gap: 7px; color: var(--cmp-muted); font-size: 12px; font-weight: 700; cursor: pointer; }
+.glyph-control input { width: 15px; height: 15px; cursor: pointer; }
+.range-control { display: inline-flex; align-items: center; gap: 7px; color: var(--cmp-muted); font-size: 12px; font-weight: 700; }
+.range-control input { width: 82px; }
+.range-control span { min-width: 42px; color: #40546a; font-family: Consolas, monospace; text-align: right; }
 
 #comparison-error { display: none; margin: 0 0 16px; padding: 14px 18px; color: #c62828; background: #ffebee; border: 1px solid #ffc7cf; border-radius: 10px; }
 .matrix-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
@@ -48,6 +53,9 @@ body {
 .matrix-card-head span { color: var(--cmp-muted); font: 12px Consolas, monospace; }
 .matrix-canvas { min-height: 540px; padding: 16px; overflow: auto; border: 1px solid #ecf1f8; border-radius: 10px; background: linear-gradient(180deg, #f6faff, #fff); }
 .matrix-canvas svg { display: block; background: #fff; border: 1px solid #edf2fb; border-radius: 6px; }
+.matrix-metric { display: flex; align-items: baseline; gap: 8px; margin-top: 12px; padding: 10px 12px; border: 1px solid #d9e7fa; border-radius: 8px; background: #f7fbff; color: var(--cmp-muted); font-size: 12px; }
+.matrix-metric strong { color: var(--cmp-blue); font: 700 16px Consolas, monospace; }
+.matrix-metric small { color: var(--cmp-muted); font-size: 12px; }
 .placeholder { color: #8a97ab; font-style: italic; text-align: center; padding: 40px 0; font-size: 14px; }
 
 @media (max-width: 1050px) { .matrix-grid { grid-template-columns: 1fr; } }

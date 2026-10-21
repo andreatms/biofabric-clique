@@ -37,6 +37,34 @@
           <option value="pca">PCA ordering</option>
         </select>
       </label>
+      <label class="glyph-control" for="glyph-mode">
+        <input id="glyph-mode" type="checkbox">
+        Glyph mode
+      </label>
+      <label class="glyph-control" for="show-clique-markers">
+        <input id="show-clique-markers" type="checkbox">
+        Show clique markers
+      </label>
+      <label class="range-control" for="matrix-label-size">
+        Label size
+        <input id="matrix-label-size" type="range" min="8" max="28" step="0.5" value="12">
+        <span id="matrix-label-size-value">12.0 px</span>
+      </label>
+      <label class="range-control" for="matrix-horizontal-marker-distance">
+        Horizontal marker distance
+        <input id="matrix-horizontal-marker-distance" type="range" min="0" max="40" step="1" value="7">
+        <span id="matrix-horizontal-marker-distance-value">7 px</span>
+      </label>
+      <label class="range-control" for="matrix-vertical-marker-distance">
+        Vertical marker distance
+        <input id="matrix-vertical-marker-distance" type="range" min="0" max="40" step="1" value="16">
+        <span id="matrix-vertical-marker-distance-value">16 px</span>
+      </label>
+      <label class="range-control" for="matrix-cluster-opacity">
+        Cluster opacity
+        <input id="matrix-cluster-opacity" type="range" min="0.05" max="1" step="0.01" value="0.82">
+        <span id="matrix-cluster-opacity-value">82%</span>
+      </label>
     </header>
 
     <p id="comparison-error" role="alert"></p>
@@ -47,6 +75,11 @@
           <span id="ilp-order-info">—</span>
         </div>
         <div id="ilp-matrix" class="matrix-canvas"><div class="placeholder">Loading…</div></div>
+        <div class="matrix-metric" aria-live="polite">
+          <span>Compactness</span>
+          <strong id="ilp-compactness">-</strong>
+          <small id="ilp-compactness-detail"></small>
+        </div>
       </article>
       <article class="matrix-card">
         <div class="matrix-card-head">
@@ -54,6 +87,11 @@
           <span id="reorder-order-info">—</span>
         </div>
         <div id="reorder-matrix" class="matrix-canvas"><div class="placeholder">Loading…</div></div>
+        <div class="matrix-metric" aria-live="polite">
+          <span>Compactness</span>
+          <strong id="reorder-compactness">-</strong>
+          <small id="reorder-compactness-detail"></small>
+        </div>
       </article>
     </section>
   </main>
